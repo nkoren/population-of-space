@@ -52,7 +52,7 @@
     {/each}
     {#if hovered}<text class="c-value" y="8" pointer-events="none">{hovered.value}</text>{/if}
   </svg>
-  <div class="sub">{hovered ? hovered.label : ''}</div>
+  <div class="sub">&nbsp;{hovered ? hovered.label : ''}&nbsp;</div>
 
   {#if open && items.length}
     <ul class="key">
