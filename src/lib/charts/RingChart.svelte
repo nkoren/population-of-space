@@ -86,7 +86,7 @@
           onmouseleave={() => (hoverKey = null)}
         >
           <span class="swatch" style:background={s.color}></span>
-          <span class="label">{s.label}</span>
+          <span class="name">{s.label}</span>
           <span class="val">{fmtValue(s.value)}</span>
           <span class="pct">{totals.reduce((a, t) => a + t.value, 0) > 0 ? ((s.value / totals.reduce((a, t) => a + t.value, 0)) * 100).toFixed(1) : '0'}%</span>
         </li>

@@ -1,8 +1,9 @@
 <script lang="ts">
   import type { Dataset } from '$lib/data/types';
-  import { aggregate, headline } from '$lib/data/engine';
+  import { aggregate, headline, snapshot } from '$lib/data/engine';
   import { dimensionById } from '$lib/data/dimensions';
   import TimeChart from '$lib/charts/TimeChart.svelte';
+  import RingChart from '$lib/charts/RingChart.svelte';
   import HeadcountTrace from '$lib/charts/HeadcountTrace.svelte';
   import { router } from '$lib/router.svelte';
   import { ERAS, PHOTOS } from '$lib/eras';
@@ -19,6 +20,12 @@
     from: Date.UTC(1961, 0, 1),
     to: ds.dataEnd,
   });
+  // Who is up there right now, three ways. Each ring links to the same cut in the explorer.
+  const rings = [
+    { id: 'nationality', title: 'Nationality' },
+    { id: 'sex', title: 'Sex' },
+    { id: 'age', title: 'Age' },
+  ].map((r) => ({ ...r, totals: snapshot(ds, dimensionById(r.id)), href: router.href('explore', { m: 'population', by: r.id, c: 'ring', from: String(maxYear), to: String(maxYear) }) }));
   const trace = aggregate(ds, {
     metric: 'population',
     dimension: dimensionById('none'),
@@ -119,6 +126,25 @@
       <div class="l">years of uninterrupted human presence<br /><span class="mono faint">since {fmtDate(new Date(h.continuousSince))}</span></div>
     </div>
   {/if}
+</section>
+
+<section class="container now">
+  <div class="section-head">
+    <div>
+      <p class="kicker">Right now</p>
+      <h2>Who is up there</h2>
+    </div>
+    <p class="muted">The {h.inSpaceNow.length} people in space today, by nationality, sex and age.</p>
+  </div>
+  <div class="rings">
+    {#each rings as r}
+      <div class="card ring-card">
+        <h3>{r.title}</h3>
+        <RingChart totals={r.totals} unit="people" height={200} />
+        <a href={r.href}>See this over time <span aria-hidden="true">→</span></a>
+      </div>
+    {/each}
+  </div>
 </section>
 
 <section class="container featured">
@@ -306,6 +332,30 @@
     font-size: 0.74rem;
   }
 
+  /* ---- who is up there */
+  .now {
+    margin-top: 56px;
+  }
+  .rings {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .ring-card {
+    padding: 20px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ring-card h3 {
+    margin: 0;
+  }
+  .ring-card a {
+    font-size: 0.85rem;
+    margin-top: auto;
+    padding-top: 8px;
+  }
+
   /* ---- featured chart */
   .featured {
     margin-top: 56px;
@@ -458,6 +508,9 @@
     }
     .presets {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .rings {
+      grid-template-columns: 1fr;
     }
   }
   @media (max-width: 860px) {

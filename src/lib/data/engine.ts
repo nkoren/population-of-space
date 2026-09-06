@@ -238,6 +238,19 @@ export function headline(ds: Dataset): Headline {
 
 export { utcDay };
 
+// ---------------------------------------------------------------- snapshot of who is up right now
+
+/** Headcount per category among the people in space at the end of the dataset. */
+export function snapshot(ds: Dataset, dim: Dimension): SeriesTotal[] {
+  const raw = new Map<string, number[]>();
+  for (const s of ds.stays) {
+    if (!s.ongoing) continue;
+    const k = dim.key(s);
+    raw.set(k, [(raw.get(k)?.[0] ?? 0) + 1]);
+  }
+  return finalizeSeries(raw, dim, ds, 1).map((s) => ({ key: s.key, label: s.label, color: s.color, value: s.values[0] }));
+}
+
 // ---------------------------------------------------------------- totals over the range (for ring charts)
 
 export interface SeriesTotal {
