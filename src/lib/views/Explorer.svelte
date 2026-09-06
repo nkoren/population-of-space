@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Dataset } from '$lib/data/types';
+  import type { Dataset, Stay } from '$lib/data/types';
   import { aggregate, seriesTotals, METRICS, metricById, type MetricId, type Resolution } from '$lib/data/engine';
   import { DIMENSIONS, dimensionById } from '$lib/data/dimensions';
   import TimeChart, { type ChartMode } from '$lib/charts/TimeChart.svelte';
@@ -24,16 +24,59 @@
   let from = $state(clampYear(+(q.get('from') ?? minYear)));
   let to = $state(clampYear(+(q.get('to') ?? maxYear)));
   let suborbital = $state(q.get('sub') !== '0');
+  // Filter: keep only stays whose value in one dimension is among the chosen keys.
+  let filterBy = $state(q.get('fd') ?? 'none');
+  let filterVals = $state<string[]>((q.get('fv') ?? '').split(',').filter(Boolean));
+  let showAllValues = $state(false);
 
   function clampYear(y: number) {
     return Number.isFinite(y) ? Math.min(maxYear, Math.max(minYear, Math.round(y))) : minYear;
   }
   $effect(() => {
-    router.replaceQuery({ m: metric, by, r: res, c: mode, from: String(from), to: String(to), ...(suborbital ? {} : { sub: '0' }) });
+    router.replaceQuery({
+      m: metric,
+      by,
+      r: res,
+      c: mode,
+      from: String(from),
+      to: String(to),
+      ...(suborbital ? {} : { sub: '0' }),
+      ...(filterActive ? { fd: filterBy, fv: filterVals.join(',') } : {}),
+    });
   });
 
   const m = $derived(metricById(metric));
   const dim = $derived(dimensionById(by));
+  const filterDim = $derived(dimensionById(filterBy));
+  const filterActive = $derived(filterDim.id !== 'none' && filterVals.length > 0);
+  /** Every value the filter dimension takes across the dataset, ordered like the chart would order it. */
+  const filterOptions = $derived.by(() => {
+    if (filterDim.id === 'none') return [];
+    const days = new Map<string, number>();
+    for (const s of ds.stays) {
+      const k = filterDim.key(s);
+      days.set(k, (days.get(k) ?? 0) + s.days);
+    }
+    const order = filterDim.order ?? [];
+    return [...days.entries()]
+      .sort((a, b) => {
+        const ia = order.indexOf(a[0]);
+        const ib = order.indexOf(b[0]);
+        if (ia !== -1 || ib !== -1) return (ia === -1 ? 1e9 : ia) - (ib === -1 ? 1e9 : ib);
+        return b[1] - a[1];
+      })
+      .map(([id]) => ({ id, label: filterDim.labelOf(id, ds) }));
+  });
+  const filterLabel = $derived(filterActive ? filterVals.map((v) => filterDim.labelOf(v, ds)).join(', ') : '');
+  function setFilterBy(id: string) {
+    filterBy = id;
+    filterVals = [];
+    showAllValues = false;
+  }
+  function toggleValue(id: string) {
+    filterVals = filterVals.includes(id) ? filterVals.filter((v) => v !== id) : [...filterVals, id];
+  }
+  const stayFilter = $derived((s: Stay) => (suborbital || s.up.destination !== 'suborbital') && (!filterActive || filterVals.includes(filterDim.key(s))));
   const effectiveRes = $derived<Resolution>(!m.supportsExact && res === 'exact' ? 'month' : res);
   const agg = $derived(
     aggregate(ds, {
@@ -42,21 +85,21 @@
       resolution: effectiveRes,
       from: Date.UTC(from, 0, 1),
       to: Math.min(Date.UTC(to + 1, 0, 1), ds.dataEnd),
-      filter: suborbital ? undefined : (s) => s.up.destination !== 'suborbital',
+      filter: stayFilter,
     }),
   );
 
   const ring = $derived(mode === 'ring');
   const ringData = $derived(seriesTotals(agg));
-  const title = $derived(dim.id === 'none' ? m.label : `${m.label} by ${dim.label.toLowerCase()}`);
+  const title = $derived((dim.id === 'none' ? m.label : `${m.label} by ${dim.label.toLowerCase()}`) + (filterActive ? ` · ${filterLabel}` : ''));
   const subtitle = $derived.by(() => {
     if (ring) {
       const what = m.id === 'population' ? 'Person-days in space' : m.cumulative ? `${m.label} at the end of ${to}` : m.label;
-      return `${what}, ${from}–${to}${suborbital ? '' : ', excluding suborbital flights'}.`;
+      return `${what}, ${from}–${to}${filterActive ? `, ${filterDim.label.toLowerCase()}: ${filterLabel}` : ''}${suborbital ? '' : ', excluding suborbital flights'}.`;
     }
     const r = effectiveRes === 'exact' ? 'at every launch and landing' : effectiveRes === 'year' ? 'per year' : 'per month';
     const what = m.id === 'population' ? (effectiveRes === 'exact' ? 'Headcount' : 'Average headcount') : m.label;
-    return `${what} ${r}, ${from}–${to}${suborbital ? '' : ', excluding suborbital flights'}.`;
+    return `${what} ${r}, ${from}–${to}${filterActive ? `, ${filterDim.label.toLowerCase()}: ${filterLabel}` : ''}${suborbital ? '' : ', excluding suborbital flights'}.`;
   });
 
   // ---- layout: the chart fills the screen on desktop
@@ -64,7 +107,7 @@
   let innerWidth = $state(1440);
   const chartHeight = $derived(innerWidth > 860 ? Math.max(360, Math.min(640, innerHeight - 330)) : 320);
   // On phones the controls live in a bottom sheet; each summary chip opens it at its section.
-  type Section = 'metric' | 'by' | 'chart' | 'res' | 'years';
+  type Section = 'metric' | 'by' | 'filter' | 'chart' | 'res' | 'years';
   let sheet = $state<Section | null>(null);
   let controlsEl = $state<HTMLElement | null>(null);
   async function openSheet(section: Section) {
@@ -121,6 +164,7 @@
       {#snippet caret()}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>{/snippet}
       <button class="chip" onclick={() => openSheet('metric')}><span class="chip-k">Measure</span>{m.label}{@render caret()}</button>
       <button class="chip" onclick={() => openSheet('by')}><span class="chip-k">By</span>{dim.label}{@render caret()}</button>
+      <button class="chip" class:active={filterActive} onclick={() => openSheet('filter')}><span class="chip-k">Filter</span>{filterActive ? filterLabel : 'None'}{@render caret()}</button>
       <button class="chip" onclick={() => openSheet('chart')}><span class="chip-k">Chart</span>{modeLabel}{@render caret()}</button>
       {#if !ring}<button class="chip" onclick={() => openSheet('res')}><span class="chip-k">Every</span>{resOptions.find((r) => r.id === effectiveRes)?.label}{@render caret()}</button>{/if}
       <button class="chip" onclick={() => openSheet('years')}><span class="chip-k">Years</span><span class="mono">{from}–{to}</span>{@render caret()}</button>
@@ -137,6 +181,20 @@
       </div>
       <div data-section="metric"><ChipGroup label="Measure" options={METRICS.map((x) => ({ id: x.id, label: x.label, hint: x.hint }))} value={metric} onchange={(v) => (metric = v as MetricId)} /></div>
       <div data-section="by"><ChipGroup label="Break down by" options={DIMENSIONS.map((d) => ({ id: d.id, label: d.label, hint: d.hint }))} value={by} onchange={(v) => (by = v)} /></div>
+      <div data-section="filter" class="filter">
+        <ChipGroup label="Filter by" options={[{ id: 'none', label: 'None' }, ...DIMENSIONS.filter((d) => d.id !== 'none').map((d) => ({ id: d.id, label: d.label }))]} value={filterBy} onchange={setFilterBy} />
+        {#if filterDim.id !== 'none'}
+          <div class="values" role="group" aria-label="Filter values">
+            {#each showAllValues || filterOptions.length <= 12 ? filterOptions : filterOptions.slice(0, 12) as o}
+              <button class:on={filterVals.includes(o.id)} aria-pressed={filterVals.includes(o.id)} onclick={() => toggleValue(o.id)}>{o.label}</button>
+            {/each}
+            {#if filterOptions.length > 12}
+              <button class="more" onclick={() => (showAllValues = !showAllValues)}>{showAllValues ? 'Fewer' : `All ${filterOptions.length}…`}</button>
+            {/if}
+          </div>
+          <div class="hint">{filterVals.length ? 'Showing only these.' : 'Pick one or more values; nothing selected means no filter.'}</div>
+        {/if}
+      </div>
       <div data-section="chart"><ChipGroup label="Chart" segmented options={[{ id: 'stacked', label: 'Stacked' }, { id: 'line', label: 'Lines' }, { id: 'share', label: 'Share' }, { id: 'ring', label: 'Ring' }]} value={mode} onchange={(v) => (mode = v as ChartMode)} /></div>
       {#if !ring}
         <div data-section="res"><ChipGroup label="Resolution" segmented options={resOptions} value={effectiveRes} onchange={(v) => (res = v as Resolution)} /></div>
@@ -338,6 +396,16 @@
     flex-wrap: wrap;
     gap: 6px;
   }
+  .filter :global(fieldset) {
+    margin-bottom: 8px;
+  }
+  .values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  .values button,
   .presets button {
     height: 30px;
     border: 1px solid var(--line-strong);
@@ -347,10 +415,16 @@
     font-size: 0.8rem;
     padding: 0 11px;
   }
+  .values button:hover,
   .presets button:hover {
     color: var(--ink);
     border-color: var(--accent);
   }
+  .values button.more {
+    color: var(--accent-ink);
+    border-style: dashed;
+  }
+  .values button.on,
   .presets button.on {
     background: var(--accent);
     border-color: var(--accent);
@@ -404,6 +478,16 @@
     color: var(--ink-2);
     font-size: 0.88rem;
     white-space: nowrap;
+  }
+  .chip.active {
+    border-color: var(--accent);
+    color: #fff;
+  }
+  .hint {
+    font-size: 0.78rem;
+    color: var(--ink-3);
+    line-height: 1.4;
+    margin-bottom: 20px;
   }
   .chip-k {
     font-size: 0.68rem;
