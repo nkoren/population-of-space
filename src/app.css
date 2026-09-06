@@ -1,41 +1,33 @@
 :root {
-  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-mono: ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, Consolas, monospace;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-display: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
 
-  --bg: #f7f8fb;
-  --bg-elev: #ffffff;
-  --bg-muted: #eef1f6;
-  --ink: #16213a;
-  --ink-2: #4b5670;
-  --ink-3: #8b93a7;
-  --line: #dfe3ec;
+  /* One cinematic, dark palette: photographs sit behind a glassy UI. */
+  --bg: #06080f;
+  --bg-elev: #0e1322;
+  --bg-muted: rgba(255, 255, 255, 0.06);
+  --glass: rgba(8, 12, 24, 0.55);
+  --ink: #f2f4f8;
+  --ink-2: rgba(242, 244, 248, 0.72);
+  --ink-3: rgba(242, 244, 248, 0.48);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.16);
   --accent: #4c8dff;
-  --accent-ink: #1f5fd1;
+  --accent-ink: #9cc3ff;
+  --accent-soft: rgba(76, 141, 255, 0.22);
   --gold: #f0c674;
-  --space: #0b1230;
-  --space-2: #131c48;
-  --star: #ffffff;
-  --shadow: 0 1px 2px rgba(16, 24, 60, 0.06), 0 8px 24px -12px rgba(16, 24, 60, 0.18);
-  --radius: 12px;
-  --chart-grid: #e6e9f0;
-  --chart-axis: #6b7387;
-  --max-w: 1200px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 16px 40px -20px rgba(0, 0, 0, 0.6);
+  --radius: 14px;
+  --chart-grid: rgba(255, 255, 255, 0.08);
+  --chart-axis: rgba(242, 244, 248, 0.5);
+  --max-w: 1440px;
+  --gutter: 48px;
+  color-scheme: dark;
 }
-@media (prefers-color-scheme: dark) {
+@media (max-width: 700px) {
   :root {
-    --bg: #0d1226;
-    --bg-elev: #151c38;
-    --bg-muted: #1b2447;
-    --ink: #e9ecf5;
-    --ink-2: #b4bbd0;
-    --ink-3: #7e879f;
-    --line: #283258;
-    --accent: #6ea8ff;
-    --accent-ink: #9cc3ff;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
-    --chart-grid: #232c50;
-    --chart-axis: #8b93a7;
+    --gutter: 20px;
   }
 }
 
@@ -60,25 +52,25 @@ a {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  color: #fff;
 }
 h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.01em;
-  line-height: 1.15;
+  line-height: 1.1;
   margin: 0 0 0.4em;
 }
 h1 {
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
 }
 h2 {
-  font-size: 1.6rem;
+  font-size: 2.1rem;
 }
 h3 {
-  font-size: 1.15rem;
+  font-size: 1.5rem;
 }
 p {
   margin: 0 0 1em;
@@ -91,6 +83,12 @@ select {
 }
 button {
   cursor: pointer;
+}
+input,
+select {
+  background: var(--bg-elev);
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
 }
 code {
   font-family: var(--font-mono);
@@ -118,13 +116,14 @@ table {
 .container {
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--gutter);
 }
 .card {
-  background: var(--bg-elev);
+  background: var(--glass);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 .muted {
   color: var(--ink-2);
@@ -135,39 +134,71 @@ table {
 .small {
   font-size: 0.85em;
 }
+.mono {
+  font-family: var(--font-mono);
+}
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.credit {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+}
 .tag {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: 0.72em;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.05em;
   padding: 0.1em 0.45em;
   border-radius: 5px;
-  background: var(--bg-muted);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--ink-2);
   vertical-align: middle;
 }
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4em;
-  border: 1px solid var(--line);
-  background: var(--bg-elev);
-  border-radius: 8px;
-  padding: 0.45em 0.9em;
+  gap: 0.5em;
+  height: 36px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 9px;
+  padding: 0 14px;
   font-weight: 500;
-  font-size: 0.92em;
+  font-size: 0.9rem;
   color: var(--ink);
   transition: border-color 0.15s, background 0.15s;
 }
 .btn:hover {
   border-color: var(--accent);
-  text-decoration: none;
+  color: var(--ink);
 }
 .btn.primary {
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+}
+.btn.primary:hover {
+  background: #5d98ff;
+}
+.btn.large {
+  height: 44px;
+  padding: 0 18px;
+  font-size: 1rem;
 }
 .visually-hidden {
   position: absolute;
@@ -175,4 +206,30 @@ table {
   height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+}
+/* Photograph behind a full-bleed section. The scrim keeps text readable. */
+.photo {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo .scrim {
+  position: absolute;
+  inset: 0;
+}
+/* Horizontal chip rows and strips scroll without a visible bar. */
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.scroll-x::-webkit-scrollbar {
+  display: none;
 }

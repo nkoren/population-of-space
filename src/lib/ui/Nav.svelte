@@ -9,14 +9,12 @@
 </script>
 
 <header>
-  <div class="stars" aria-hidden="true"></div>
   <div class="container bar">
     <a class="brand" href={router.href('home')}>
-      <span class="logo" aria-hidden="true">
-        <span class="planet"></span>
-        <span class="ring"></span>
-        <span class="moon"></span>
-      </span>
+      <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="27" fill="#6ea8fe" />
+        <ellipse cx="50" cy="50" rx="46" ry="12" fill="none" stroke="#f0c674" stroke-width="5" transform="rotate(-20 50 50)" />
+      </svg>
       <span class="name">The Population <em>of</em> Space</span>
     </a>
     <nav>
@@ -29,121 +27,63 @@
 
 <style>
   header {
-    position: relative;
-    background: radial-gradient(1200px 300px at 20% -50%, var(--space-2), var(--space) 70%);
-    color: #fff;
-    overflow: hidden;
-  }
-  .stars {
     position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      radial-gradient(1px 1px at 12% 30%, #fff 60%, transparent 61%),
-      radial-gradient(1px 1px at 28% 70%, #fff 60%, transparent 61%),
-      radial-gradient(1.5px 1.5px at 44% 20%, #fff 60%, transparent 61%),
-      radial-gradient(1px 1px at 58% 60%, #fff 60%, transparent 61%),
-      radial-gradient(1px 1px at 70% 35%, #fff 60%, transparent 61%),
-      radial-gradient(1.5px 1.5px at 83% 75%, #fff 60%, transparent 61%),
-      radial-gradient(1px 1px at 92% 25%, #fff 60%, transparent 61%),
-      radial-gradient(1px 1px at 36% 85%, #fff 60%, transparent 61%),
-      radial-gradient(1px 1px at 76% 12%, #fff 60%, transparent 61%);
-    opacity: 0.55;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(180deg, rgba(6, 8, 15, 0.55), rgba(6, 8, 15, 0));
   }
   .bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
-    position: relative;
+    height: 72px;
   }
   .brand {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #fff;
+    color: var(--ink);
     font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  .brand:hover {
-    text-decoration: none;
+    font-size: 1.3rem;
   }
   .brand em {
     font-style: italic;
-    font-weight: 500;
-    opacity: 0.75;
-  }
-  .logo {
-    position: relative;
-    width: 34px;
-    height: 34px;
-    display: inline-block;
-  }
-  .planet {
-    position: absolute;
-    inset: 8px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #9cc3ff, #4c8dff 60%, #2b5fc4);
-  }
-  .ring {
-    position: absolute;
-    left: -3px;
-    right: -3px;
-    top: 13px;
-    height: 8px;
-    border: 1.5px solid var(--gold);
-    border-radius: 50%;
-    transform: rotate(-20deg);
-    opacity: 0.9;
-  }
-  .moon {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #fff;
-    top: 50%;
-    left: 50%;
-    margin: -2.5px 0 0 -2.5px;
-    transform-origin: 2.5px 2.5px;
-    animation: orbit 6s linear infinite;
-  }
-  @keyframes orbit {
-    from {
-      transform: rotate(0deg) translateX(17px) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translateX(17px) rotate(-360deg);
-    }
+    opacity: 0.7;
   }
   nav {
     display: flex;
     gap: 4px;
   }
   nav a {
-    color: rgba(255, 255, 255, 0.78);
-    padding: 6px 12px;
-    border-radius: 8px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 9px;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    color: var(--ink-2);
   }
   nav a:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.08);
-    text-decoration: none;
   }
   nav a.active {
     color: #fff;
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.12);
   }
   @media (max-width: 600px) {
+    .bar {
+      height: 60px;
+    }
     .name {
       display: none;
     }
     nav a {
-      padding: 6px 9px;
-      font-size: 0.9rem;
+      padding: 0 9px;
+      font-size: 0.85rem;
     }
   }
 </style>

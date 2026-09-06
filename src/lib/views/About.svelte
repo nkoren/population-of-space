@@ -41,12 +41,15 @@
 
     <h2>Sources</h2>
     <p>Flight and crew data are compiled primarily from Wikipedia mission articles, which are linked from the Missions and People pages.</p>
+    <p>
+      Photographs are from the NASA Image and Video Library (public domain) and the China Manned Space Engineering Office via Wikimedia Commons (CC BY 4.0). Each image is credited where it appears.
+    </p>
   </div>
 </div>
 
 <style>
   .page {
-    padding-top: 32px;
+    padding-top: 40px;
   }
   .prose {
     max-width: 720px;

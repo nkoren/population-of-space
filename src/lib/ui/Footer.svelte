@@ -5,16 +5,18 @@
 <footer>
   <div class="container">
     <span>The Population of Space · a data explorer for the human presence beyond Earth.</span>
-    <span><a href={router.href('about')}>Methodology &amp; sources</a> · <a href={router.href('about')}>How to extend the data</a></span>
+    <span>
+      <a href={router.href('about')}>Methodology &amp; sources</a> · <a href={router.href('about')}>How to extend the data</a> · Photographs: NASA; China Manned Space Engineering Office (CC BY 4.0)
+    </span>
   </div>
 </footer>
 
 <style>
   footer {
-    margin-top: 48px;
+    margin-top: 64px;
     border-top: 1px solid var(--line);
-    padding: 20px 0 28px;
-    font-size: 0.85rem;
+    padding: 24px 0 32px;
+    font-size: 0.82rem;
     color: var(--ink-3);
   }
   .container {

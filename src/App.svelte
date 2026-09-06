@@ -16,7 +16,7 @@
 
 <div class="app">
   <Nav />
-  <main>
+  <main class:offset={router.route !== 'home' && router.route !== 'explore'}>
     {#await data}
       <div class="loading container">
         <div class="orbit" aria-hidden="true"><span></span></div>
@@ -50,8 +50,11 @@
   main {
     flex: 1;
   }
+  main.offset {
+    padding-top: 72px;
+  }
   .loading {
-    padding: 80px 20px;
+    padding: 160px 20px 80px;
     text-align: center;
   }
   .orbit {

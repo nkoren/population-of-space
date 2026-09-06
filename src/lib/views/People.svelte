@@ -78,7 +78,7 @@
 
 <style>
   .page {
-    padding-top: 32px;
+    padding-top: 40px;
   }
   .toolbar {
     display: flex;
@@ -106,7 +106,7 @@
     text-align: left;
   }
   th {
-    background: var(--bg-muted);
+    background: var(--bg-elev);
     font-weight: 600;
     white-space: nowrap;
   }

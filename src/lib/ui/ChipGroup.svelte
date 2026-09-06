@@ -18,7 +18,7 @@
 </script>
 
 <fieldset class:segmented>
-  <legend>{label}</legend>
+  <legend class="label">{label}</legend>
   <div class="opts" role="radiogroup" aria-label={label}>
     {#each options as o}
       <button
@@ -40,31 +40,30 @@
   fieldset {
     border: 0;
     padding: 0;
-    margin: 0 0 18px;
+    margin: 0 0 20px;
+    min-width: 0;
   }
   legend {
-    font-size: 0.72rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-3);
     padding: 0;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
   }
   .opts {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 6px;
   }
   button {
-    border: 1px solid var(--line);
-    background: var(--bg-elev);
+    display: inline-flex;
+    align-items: center;
+    height: 34px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
     border-radius: 999px;
-    padding: 4px 11px;
-    font-size: 0.86rem;
+    padding: 0 14px;
+    font-size: 0.88rem;
     color: var(--ink-2);
+    white-space: nowrap;
     transition: background 0.15s, color 0.15s, border-color 0.15s;
-    line-height: 1.4;
   }
   button:hover:not(:disabled) {
     border-color: var(--accent);
@@ -83,22 +82,33 @@
   .segmented .opts {
     display: inline-flex;
     gap: 0;
-    border: 1px solid var(--line);
-    border-radius: 8px;
+    border: 1px solid var(--line-strong);
+    border-radius: 9px;
     overflow: hidden;
   }
   .segmented button {
     border: 0;
     border-radius: 0;
     border-right: 1px solid var(--line);
+    padding: 0 11px;
+    font-size: 0.84rem;
   }
   .segmented button:last-child {
     border-right: 0;
+  }
+  .segmented button.on {
+    background: var(--accent-soft);
+    color: #fff;
   }
   .hint {
     font-size: 0.78rem;
     color: var(--ink-3);
     margin-top: 6px;
     line-height: 1.4;
+  }
+  @media (max-width: 860px) {
+    button {
+      height: 38px;
+    }
   }
 </style>
