@@ -5,6 +5,7 @@
   import TimeChart, { type ChartMode } from '$lib/charts/TimeChart.svelte';
   import RingChart from '$lib/charts/RingChart.svelte';
   import ChipGroup from '$lib/ui/ChipGroup.svelte';
+  import { tick } from 'svelte';
   import { router } from '$lib/router.svelte';
   import { ERAS, PHOTOS } from '$lib/eras';
   import { fmtValue, fmtYear, fmtMonth, fmtDateTime, fmtDate } from '$lib/format';
@@ -62,7 +63,15 @@
   let innerHeight = $state(900);
   let innerWidth = $state(1440);
   const chartHeight = $derived(innerWidth > 860 ? Math.max(360, Math.min(640, innerHeight - 330)) : 320);
-  let showControls = $state(false);
+  // On phones the controls live in a bottom sheet; each summary chip opens it at its section.
+  type Section = 'metric' | 'by' | 'chart' | 'res' | 'years';
+  let sheet = $state<Section | null>(null);
+  let controlsEl = $state<HTMLElement | null>(null);
+  async function openSheet(section: Section) {
+    sheet = section;
+    await tick();
+    controlsEl?.querySelector<HTMLElement>(`[data-section="${section}"]`)?.scrollIntoView({ block: 'start' });
+  }
 
   // ---- table + csv
   let showTable = $state(false);
@@ -107,27 +116,33 @@
   </div>
 
   <div class="container layout">
-    <!-- On small screens the controls collapse behind a summary row. -->
-    <div class="summary scroll-x">
-      <button class="chip on" onclick={() => (showControls = !showControls)} aria-expanded={showControls}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" /><circle cx="15" cy="7" r="2.5" /><circle cx="9" cy="17" r="2.5" /></svg>
-        {showControls ? 'Hide controls' : m.label}
-      </button>
-      <span class="chip">{dim.label}</span>
-      <span class="chip">{modeLabel}</span>
-      {#if !ring}<span class="chip">{resOptions.find((r) => r.id === effectiveRes)?.label}</span>{/if}
-      <span class="chip mono">{from}–{to}</span>
+    <!-- On small screens each chip opens the bottom sheet at that setting. -->
+    <div class="summary scroll-x" role="toolbar" aria-label="Chart settings">
+      {#snippet caret()}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg>{/snippet}
+      <button class="chip" onclick={() => openSheet('metric')}><span class="chip-k">Measure</span>{m.label}{@render caret()}</button>
+      <button class="chip" onclick={() => openSheet('by')}><span class="chip-k">By</span>{dim.label}{@render caret()}</button>
+      <button class="chip" onclick={() => openSheet('chart')}><span class="chip-k">Chart</span>{modeLabel}{@render caret()}</button>
+      {#if !ring}<button class="chip" onclick={() => openSheet('res')}><span class="chip-k">Every</span>{resOptions.find((r) => r.id === effectiveRes)?.label}{@render caret()}</button>{/if}
+      <button class="chip" onclick={() => openSheet('years')}><span class="chip-k">Years</span><span class="mono">{from}–{to}</span>{@render caret()}</button>
     </div>
 
-    <aside class="card controls" class:open={showControls}>
-      <ChipGroup label="Measure" options={METRICS.map((x) => ({ id: x.id, label: x.label, hint: x.hint }))} value={metric} onchange={(v) => (metric = v as MetricId)} />
-      <ChipGroup label="Break down by" options={DIMENSIONS.map((d) => ({ id: d.id, label: d.label, hint: d.hint }))} value={by} onchange={(v) => (by = v)} />
-      <ChipGroup label="Chart" segmented options={[{ id: 'stacked', label: 'Stacked' }, { id: 'line', label: 'Lines' }, { id: 'share', label: 'Share' }, { id: 'ring', label: 'Ring' }]} value={mode} onchange={(v) => (mode = v as ChartMode)} />
+    {#if sheet}
+      <button class="backdrop" aria-label="Close settings" onclick={() => (sheet = null)}></button>
+    {/if}
+
+    <aside class="card controls" class:open={sheet !== null} bind:this={controlsEl} aria-label="Chart settings">
+      <div class="sheet-head">
+        <span class="label">Settings</span>
+        <button class="btn" onclick={() => (sheet = null)}>Done</button>
+      </div>
+      <div data-section="metric"><ChipGroup label="Measure" options={METRICS.map((x) => ({ id: x.id, label: x.label, hint: x.hint }))} value={metric} onchange={(v) => (metric = v as MetricId)} /></div>
+      <div data-section="by"><ChipGroup label="Break down by" options={DIMENSIONS.map((d) => ({ id: d.id, label: d.label, hint: d.hint }))} value={by} onchange={(v) => (by = v)} /></div>
+      <div data-section="chart"><ChipGroup label="Chart" segmented options={[{ id: 'stacked', label: 'Stacked' }, { id: 'line', label: 'Lines' }, { id: 'share', label: 'Share' }, { id: 'ring', label: 'Ring' }]} value={mode} onchange={(v) => (mode = v as ChartMode)} /></div>
       {#if !ring}
-        <ChipGroup label="Resolution" segmented options={resOptions} value={effectiveRes} onchange={(v) => (res = v as Resolution)} />
+        <div data-section="res"><ChipGroup label="Resolution" segmented options={resOptions} value={effectiveRes} onchange={(v) => (res = v as Resolution)} /></div>
       {/if}
 
-      <fieldset class="range">
+      <fieldset class="range" data-section="years">
         <legend class="label">Years</legend>
         <div class="range-row">
           <input type="number" min={minYear} max={to} bind:value={from} onchange={() => (from = clampYear(Math.min(from, to)))} aria-label="From year" />
@@ -390,11 +405,19 @@
     font-size: 0.88rem;
     white-space: nowrap;
   }
-  .chip.on {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
-    font-weight: 500;
+  .chip-k {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .chip :global(svg) {
+    color: var(--ink-3);
+    margin-left: -2px;
+  }
+  .sheet-head,
+  .backdrop {
+    display: none;
   }
   @media (max-width: 860px) {
     .explorer {
@@ -418,15 +441,57 @@
       margin: 0 calc(-1 * var(--gutter));
       padding: 0 var(--gutter) 4px;
     }
-    .controls {
-      display: none;
-      order: 3;
-    }
     .panel {
       position: static;
     }
+    .backdrop {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      border: 0;
+      padding: 0;
+      background: rgba(6, 8, 15, 0.45);
+    }
+    .controls {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 21;
+      max-height: 62vh;
+      overflow-y: auto;
+      border-radius: 18px 18px 0 0;
+      border-bottom: 0;
+      background: rgba(10, 14, 26, 0.92);
+      padding: 0 20px calc(20px + env(safe-area-inset-bottom));
+      box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.5);
+    }
     .controls.open {
       display: flex;
+      animation: rise 0.22s ease-out;
+    }
+    @keyframes rise {
+      from {
+        transform: translateY(24px);
+        opacity: 0;
+      }
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      margin: 0 -20px 14px;
+      padding: 12px 20px 10px;
+      background: rgba(10, 14, 26, 0.96);
+      border-bottom: 1px solid var(--line);
+    }
+    .controls [data-section] {
+      scroll-margin-top: 64px;
     }
     .panel {
       padding: 16px 12px 12px;

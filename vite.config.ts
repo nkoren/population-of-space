@@ -9,5 +9,6 @@ export default defineConfig({
     target: 'es2022',
     sourcemap: false,
   },
-  server: { port: 5173 },
+  // allowedHosts lets a localtunnel / cloudflared URL reach the dev server for phone testing.
+  server: { port: 5173, allowedHosts: ['.loca.lt', '.trycloudflare.com'] },
 });
