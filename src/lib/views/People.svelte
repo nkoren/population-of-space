@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Dataset, PersonStats } from '$lib/data/types';
   import { fmtDate, fmtDays, fmtInt } from '$lib/format';
+  import { bornTime, fmtBorn } from '$lib/data/load';
 
   let { ds }: { ds: Dataset } = $props();
 
@@ -26,7 +27,10 @@
     }
   }
   const arrow = (k: typeof sortKey) => (sortKey === k ? (asc ? ' ↑' : ' ↓') : '');
-  const age = (p: PersonStats) => (p.person.born ? Math.floor((p.first - Date.parse(p.person.born)) / (365.25 * 86_400_000)) : null);
+  const age = (p: PersonStats) => {
+    const b = bornTime(p.person.born);
+    return b === null ? null : Math.floor((p.first - b) / (365.25 * 86_400_000));
+  };
 </script>
 
 <div class="container page">
@@ -64,7 +68,7 @@
             </td>
             <td class="nowrap">{#each p.person.nationality as c}<span class="tag">{c}</span> {/each}</td>
             <td>{p.person.sex}</td>
-            <td class="nowrap">{p.person.born ? fmtDate(new Date(p.person.born)) : '—'}</td>
+            <td class="nowrap">{fmtBorn(p.person.born, fmtDate)}</td>
             <td class="nowrap">{fmtDate(new Date(p.first))}<span class="faint"> · {p.stays[0]?.up.name}</span></td>
             <td class="num">{age(p) ?? '—'}</td>
             <td class="num">{p.flights}</td>

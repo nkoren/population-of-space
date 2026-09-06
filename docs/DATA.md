@@ -52,7 +52,7 @@ Semantics that matter:
 ```yaml
 - id: jonny-kim                        # unique slug, normally derived from the Wikipedia title
   name: Jonny Kim
-  born: '1984-02-05'                   # YYYY-MM-DD, or null if unknown
+  born: '1984-02-05'                   # YYYY-MM-DD; YYYY-MM or YYYY if only that is published; null if unknown
   sex: M                               # M | F
   nationality: [US]                    # codes from nations.yaml; primary citizenship first
   wiki: https://en.wikipedia.org/wiki/Jonny_Kim
@@ -62,7 +62,9 @@ Semantics that matter:
   `people.yaml` for their surname; a spelling variant on Wikipedia is not a new person.
 - Append new people at the end of the file (it is ordered by first launch).
 - Multiple citizenships are listed with the primary one first; breakdowns use the first.
-- If a birth date is genuinely unpublished, use `null` rather than guessing.
+- If only a birth month or year is published (common for Chinese crew), record that much:
+  `'1984-10'` or `'1984'`. Age calculations take the middle of the period. If nothing is
+  published, use `null` rather than guessing.
 
 ## What the validator checks
 

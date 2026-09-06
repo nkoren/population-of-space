@@ -7,6 +7,8 @@ import { z } from 'zod';
 
 const slug = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, 'must be a lowercase-hyphen slug');
 const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'must be YYYY-MM-DD');
+// Birth dates may be partial when only a month or year has been published.
+const partialDate = z.string().regex(/^\d{4}(-\d{2}(-\d{2})?)?$/, 'must be YYYY, YYYY-MM or YYYY-MM-DD');
 const isoDateTime = z
   .string()
   .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/, 'must be YYYY-MM-DDTHH:MM:SSZ (UTC)');
@@ -27,7 +29,7 @@ export const DestinationSchema = z.object({
 export const PersonSchema = z.object({
   id: slug,
   name: z.string().min(1),
-  born: isoDate.nullable(),
+  born: partialDate.nullable(),
   sex: z.enum(['M', 'F']),
   nationality: z.array(nationCode).min(1),
   wiki: z.string().url().optional(),

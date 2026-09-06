@@ -2,6 +2,27 @@ import type { Dataset, RawDataset, Stay, PersonStats, FlightStats } from './type
 
 export const DAY = 86_400_000;
 
+/**
+ * Birth dates may be partial ('1984-10' or '1984'). For age arithmetic a partial date is
+ * taken as the middle of its period, so the error is at most half a month or half a year.
+ */
+export function bornTime(born: string | null): number | null {
+  if (!born) return null;
+  const [y, m, d] = born.split('-').map(Number);
+  if (d) return Date.UTC(y, m - 1, d);
+  if (m) return Date.UTC(y, m - 1, 15);
+  return Date.UTC(y, 6, 1);
+}
+
+/** Human-readable birth date at whatever precision is recorded. */
+export function fmtBorn(born: string | null, full: (d: Date) => string): string {
+  if (!born) return '—';
+  const parts = born.split('-');
+  if (parts.length === 3) return full(new Date(born));
+  if (parts.length === 2) return new Date(Date.UTC(+parts[0], +parts[1] - 1, 1)).toLocaleDateString('en-GB', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+  return parts[0];
+}
+
 let cached: Promise<Dataset> | null = null;
 
 export function loadDataset(): Promise<Dataset> {
@@ -25,7 +46,8 @@ export function enrich(raw: RawDataset): Dataset {
     const end = Math.min(rawEnd ?? dataEnd, dataEnd);
     const nth = (nthByPerson.get(s.person) ?? 0) + 1;
     nthByPerson.set(s.person, nth);
-    const age = person.born ? (start - Date.parse(person.born)) / (365.25 * DAY) : null;
+    const bornT = bornTime(person.born);
+    const age = bornT === null ? null : (start - bornT) / (365.25 * DAY);
     return {
       person,
       up: flightById.get(s.up)!,

@@ -4126,13 +4126,13 @@
   wiki: https://en.wikipedia.org/wiki/Lauren_Sánchez_Bezos
 - id: chen-zhongrui
   name: Chen Zhongrui
-  born: null
+  born: '1984-10'
   sex: M
   nationality: [CN]
   wiki: https://en.wikipedia.org/wiki/Chen_Zhongrui
 - id: wang-jie
   name: Wang Jie
-  born: null
+  born: '1989-09'
   sex: M
   nationality: [CN]
   wiki: https://en.wikipedia.org/wiki/Wang_Jie_(taikonaut)
@@ -4281,13 +4281,13 @@
   nationality: [US]
 - id: wu-fei
   name: Wu Fei
-  born: null
+  born: '1993-10'
   sex: M
   nationality: [CN]
   wiki: https://en.wikipedia.org/wiki/Wu_Fei_(taikonaut)
 - id: zhang-hongzhang
   name: Zhang Hongzhang
-  born: null
+  born: '1986-04'
   sex: M
   nationality: [CN]
   wiki: https://en.wikipedia.org/wiki/Zhang_Hongzhang
@@ -4387,13 +4387,13 @@
   wiki: https://en.wikipedia.org/wiki/Jeremy_Hansen
 - id: zhang-zhiyuan
   name: Zhang Zhiyuan
-  born: null
+  born: '1986-06'
   sex: M
   nationality: [CN]
   wiki: https://en.wikipedia.org/wiki/Zhang_Zhiyuan_(astronaut)
 - id: lai-ka-ying
   name: Lai Ka-ying
-  born: null
+  born: '1982-11'
   sex: F
   nationality: [CN]
   wiki: https://en.wikipedia.org/wiki/Lai_Ka-ying
