@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 2013, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-08m
+  name: Soyuz TMA-08M
+  launch: '2013-03-28T20:43:20Z'
+  landing: '2013-09-11T02:58:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [pavel-vinogradov, alexander-misurkin, christopher-cassidy]
+  crew_down: [pavel-vinogradov, alexander-misurkin, christopher-cassidy]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-08M
+- id: soyuz-tma-09m
+  name: Soyuz TMA-09M
+  launch: '2013-05-28T20:31:24Z'
+  landing: '2013-11-11T02:49:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [fyodor-yurchikhin, luca-parmitano, karen-nyberg]
+  crew_down: [fyodor-yurchikhin, luca-parmitano, karen-nyberg]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-09M
+- id: shenzhou-10
+  name: Shenzhou 10
+  launch: '2013-06-11T09:38:00Z'
+  landing: '2013-06-26T00:07:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [nie-haisheng, zhang-xiaoguang, wang-yaping]
+  crew_down: [nie-haisheng, zhang-xiaoguang, wang-yaping]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_10
+- id: soyuz-tma-10m
+  name: Soyuz TMA-10M
+  launch: '2013-09-25T20:58:50Z'
+  landing: '2014-03-11T03:24:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-kotov, sergey-ryazansky, michael-s-hopkins]
+  crew_down: [oleg-kotov, sergey-ryazansky, michael-s-hopkins]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-10M
+- id: soyuz-tma-11m
+  name: Soyuz TMA-11M
+  launch: '2013-11-07T04:14:00Z'
+  landing: '2014-05-14T01:58:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [mikhail-tyurin, richard-mastracchio, koichi-wakata]
+  crew_down: [mikhail-tyurin, richard-mastracchio, koichi-wakata]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-11M

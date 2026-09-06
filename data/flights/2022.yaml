@@ -1,0 +1,103 @@
+# Crewed spaceflights launched in 2022, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-ms-21
+  name: Soyuz MS-21
+  launch: '2022-03-18T15:55:18Z'
+  landing: '2022-09-29T10:57:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-artemyev, denis-matveev, sergey-korsakov]
+  crew_down: [oleg-artemyev, denis-matveev, sergey-korsakov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-21
+- id: blue-origin-ns-20
+  name: Blue Origin NS-20
+  launch: '2022-03-31T13:57:55Z'
+  landing: '2022-03-31T14:07:59Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [marty-allen, sharon-hagle, marc-hagle, jim-kitchen, george-nield, gary-lai]
+  crew_down: [marty-allen, sharon-hagle, marc-hagle, jim-kitchen, george-nield, gary-lai]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-20
+- id: axiom-mission-1
+  name: Axiom Mission 1
+  launch: '2022-04-08T15:17:00Z'
+  landing: '2022-04-25T17:06:00Z'
+  launch_nation: US
+  destination: iss
+  sector: commercial
+  crew_up: [michael-l-c3-b3pez-alegr-c3-ada, larry-connor, eytan-stibbe, mark-pathy]
+  crew_down: [michael-l-c3-b3pez-alegr-c3-ada, larry-connor, eytan-stibbe, mark-pathy]
+  wiki: https://en.wikipedia.org/wiki/Axiom_Mission_1
+- id: spacex-crew-4
+  name: SpaceX Crew-4
+  launch: '2022-04-27T07:52:55Z'
+  landing: '2022-10-14T20:55:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [kjell-n-lindgren, robert-hines, samantha-cristoforetti, jessica-watkins]
+  crew_down: [kjell-n-lindgren, robert-hines, samantha-cristoforetti, jessica-watkins]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-4
+- id: blue-origin-ns-21
+  name: Blue Origin NS-21
+  launch: '2022-06-04T13:25:00Z'
+  landing: '2022-06-04T13:35:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [evan-dick, katya-echazarreta, hamish-harding, victor-correa-hespanha, list-of-survivor-contestants-jaison-robinson,
+    victor-vescovo]
+  crew_down: [evan-dick, katya-echazarreta, hamish-harding, victor-correa-hespanha, list-of-survivor-contestants-jaison-robinson,
+    victor-vescovo]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-21
+- id: shenzhou-14
+  name: Shenzhou-14
+  launch: '2022-06-05T02:44:00Z'
+  landing: '2022-12-04T12:09:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [chen-dong, liu-yang, cai-xuzhe]
+  crew_down: [chen-dong, liu-yang, cai-xuzhe]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_14
+- id: blue-origin-ns-22
+  name: Blue Origin NS-22
+  launch: '2022-08-04T13:56:07Z'
+  landing: '2022-08-04T14:06:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [dude-perfect, m-c3-a1rio-ferreira, vanessa-o-27brien, sara-sabry, clint-kelly-iii, steve-young]
+  crew_down: [dude-perfect, m-c3-a1rio-ferreira, vanessa-o-27brien, sara-sabry, clint-kelly-iii, steve-young]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-22
+- id: soyuz-ms-22
+  name: Soyuz MS-22
+  launch: '2022-09-21T13:54:00Z'
+  landing: '2023-03-28T11:46:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-prokopyev, dmitry-petelin, francisco-rubio]
+  crew_down: []
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-22
+- id: spacex-crew-5
+  name: SpaceX Crew-5
+  launch: '2022-10-05T16:00:00Z'
+  landing: '2023-03-12T02:02:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [nicole-aunapu-mann, josh-a-cassada, koichi-wakata, anna-kikina]
+  crew_down: [nicole-aunapu-mann, josh-a-cassada, koichi-wakata, anna-kikina]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-5
+- id: shenzhou-15
+  name: Shenzhou-15
+  launch: '2022-11-29T15:08:17Z'
+  landing: '2023-06-03T22:33:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [fei-junlong, deng-qingming, zhang-lu]
+  crew_down: [fei-junlong, deng-qingming, zhang-lu]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_15

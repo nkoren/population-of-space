@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1981, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-t-4
+  name: Soyuz T-4
+  launch: '1981-03-12T19:00:11Z'
+  landing: '1981-05-26T12:37:34Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-kovalyonok, viktor-savinykh]
+  crew_down: [vladimir-kovalyonok, viktor-savinykh]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-4
+- id: soyuz-39
+  name: Soyuz 39
+  launch: '1981-03-22T14:58:55Z'
+  landing: '1981-03-30T11:40:58Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-dzhanibekov, j-c3-bcgderdemidiin-g-c3-bcrragchaa]
+  crew_down: [vladimir-dzhanibekov, j-c3-bcgderdemidiin-g-c3-bcrragchaa]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_39
+- id: sts-1
+  name: STS-1
+  launch: '1981-04-12T12:00:04Z'
+  landing: '1981-04-14T18:20:57Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [john-young, robert-crippen]
+  crew_down: [john-young, robert-crippen]
+  wiki: https://en.wikipedia.org/wiki/STS-1
+- id: soyuz-40
+  name: Soyuz 40
+  launch: '1981-05-14T17:16:38Z'
+  landing: '1981-05-22T13:58:30Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [leonid-popov, dumitru-prunariu]
+  crew_down: [leonid-popov, dumitru-prunariu]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_40
+- id: sts-2
+  name: STS-2
+  launch: '1981-11-12T15:09:59Z'
+  landing: '1981-11-14T21:23:11Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [joe-engle, richard-h-truly]
+  crew_down: [joe-engle, richard-h-truly]
+  wiki: https://en.wikipedia.org/wiki/STS-2

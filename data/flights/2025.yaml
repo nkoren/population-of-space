@@ -1,0 +1,166 @@
+# Crewed spaceflights launched in 2025, in launch order. See docs/DATA.md for the schema.
+- id: blue-origin-ns-30
+  name: Blue Origin NS-30
+  launch: '2025-02-25T15:49:11Z'
+  landing: '2025-02-25T15:59:19Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [lane-bess, jesus-calleja, tushar-shah, richard-scott, elaine-hyde, russell-wilson]
+  crew_down: [lane-bess, jesus-calleja, tushar-shah, richard-scott, elaine-hyde, russell-wilson]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-30
+  note: The sixth passenger was undisclosed by Blue Origin before flight; the mission article names him Russell Wilson, the Wikipedia list page says Robert Wilson.
+- id: spacex-crew-10
+  name: SpaceX Crew-10
+  launch: '2025-03-14T23:03:48Z'
+  landing: '2025-08-09T15:33:44Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [anne-mcclain, nichole-ayers, takuya-onishi, kirill-peskov]
+  crew_down: [anne-mcclain, nichole-ayers, takuya-onishi, kirill-peskov]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-10
+- id: fram2
+  name: Fram2
+  launch: '2025-04-01T01:46:50Z'
+  landing: '2025-04-04T16:19:28Z'
+  launch_nation: US
+  destination: free-flying
+  sector: commercial
+  crew_up: [chun-wang, jannicke-mikkelsen, rabea-rogge, eric-philips]
+  crew_down: [chun-wang, jannicke-mikkelsen, rabea-rogge, eric-philips]
+  wiki: https://en.wikipedia.org/wiki/Fram2
+- id: soyuz-ms-27
+  name: Soyuz MS-27
+  launch: '2025-04-08T05:47:15Z'
+  landing: '2025-12-09T05:03:33Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-ryzhikov, alexey-zubritsky, jonny-kim]
+  crew_down: [sergey-ryzhikov, alexey-zubritsky, jonny-kim]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-27
+- id: blue-origin-ns-31
+  name: Blue Origin NS-31
+  launch: '2025-04-14T13:30:00Z'
+  landing: '2025-04-14T13:40:21Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [aisha-bowe, amanda-nguyen, gayle-king, katy-perry, kerianne-flynn, lauren-sanchez-bezos]
+  crew_down: [aisha-bowe, amanda-nguyen, gayle-king, katy-perry, kerianne-flynn, lauren-sanchez-bezos]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-31
+- id: shenzhou-20
+  name: Shenzhou 20
+  launch: '2025-04-24T09:17:31Z'
+  landing: '2026-01-19T01:34:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [chen-dong, chen-zhongrui, wang-jie]
+  crew_down: []
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_20
+  note: Capsule window damage (suspected debris strike) kept it from returning crew; its crew came home on Shenzhou 21 and it landed uncrewed. Landing given to the minute only on Wikipedia.
+- id: blue-origin-ns-32
+  name: Blue Origin NS-32
+  launch: '2025-05-31T13:39:11Z'
+  landing: '2025-05-31T13:49:18Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [aymette-medina-jorge, gretchen-green, jaime-aleman, jesse-williams, mark-rocket, paul-jeris]
+  crew_down: [aymette-medina-jorge, gretchen-green, jaime-aleman, jesse-williams, mark-rocket, paul-jeris]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-32
+- id: axiom-4
+  name: Axiom 4
+  launch: '2025-06-25T06:31:53Z'
+  landing: '2025-07-15T09:31:41Z'
+  launch_nation: US
+  destination: iss
+  sector: commercial
+  crew_up: [peggy-whitson, shubhanshu-shukla, slawosz-uznanski-wisniewski, tibor-kapu]
+  crew_down: [peggy-whitson, shubhanshu-shukla, slawosz-uznanski-wisniewski, tibor-kapu]
+  wiki: https://en.wikipedia.org/wiki/Axiom_Mission_4
+- id: blue-origin-ns-33
+  name: Blue Origin NS-33
+  launch: '2025-06-29T14:39:56Z'
+  landing: '2025-06-29T14:50:10Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [allie-kuehner, carl-kuehner, leland-larson, freddie-rescigno-jr, owolabi-salis, james-sitkin]
+  crew_down: [allie-kuehner, carl-kuehner, leland-larson, freddie-rescigno-jr, owolabi-salis, james-sitkin]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-33
+- id: spacex-crew-11
+  name: SpaceX Crew-11
+  launch: '2025-08-01T15:43:42Z'
+  landing: '2026-01-15T08:41:36Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [zena-cardman, michael-fincke, kimiya-yui, oleg-platonov]
+  crew_down: [zena-cardman, michael-fincke, kimiya-yui, oleg-platonov]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-11
+- id: blue-origin-ns-34
+  name: Blue Origin NS-34
+  launch: '2025-08-03T12:42:00Z'
+  landing: '2025-08-03T12:52:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [arvinder-singh-bahal, gokhan-erdem, deborah-martorell, lionel-pitchford, j-d-russell, justin-sun]
+  crew_down: [arvinder-singh-bahal, gokhan-erdem, deborah-martorell, lionel-pitchford, j-d-russell, justin-sun]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-34
+  note: Wikipedia gives launch and landing to the minute only (12:42 / 12:52 UTC); seconds set to :00.
+- id: blue-origin-ns-36
+  name: Blue Origin NS-36
+  launch: '2025-10-08T13:40:27Z'
+  landing: '2025-10-08T13:50:48Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [jeff-elgin, danna-karagussova, clint-kelly-iii, aaron-newman, vitalii-ostrovsky, william-h-lewis]
+  crew_down: [jeff-elgin, danna-karagussova, clint-kelly-iii, aaron-newman, vitalii-ostrovsky, william-h-lewis]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-36
+- id: shenzhou-21
+  name: Shenzhou 21
+  launch: '2025-10-31T15:44:46Z'
+  landing: '2025-11-14T08:40:31Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [zhang-lu, wu-fei, zhang-hongzhang]
+  crew_down: [chen-dong, chen-zhongrui, wang-jie]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_21
+  note: Returned the Shenzhou 20 crew after their capsule was damaged; its own crew came home on Shenzhou 22.
+- id: shenzhou-22
+  name: Shenzhou 22
+  launch: '2025-11-25T04:11:45Z'
+  landing: '2026-05-29T12:11:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: []
+  crew_down: [zhang-lu, wu-fei, zhang-hongzhang]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_22
+  note: Launched uncrewed as an emergency replacement return vehicle for the Shenzhou 21 crew. Landing given to the minute only on Wikipedia.
+- id: soyuz-ms-28
+  name: Soyuz MS-28
+  launch: '2025-11-27T09:27:57Z'
+  landing: '2026-07-26T10:27:25Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-kud-sverchkov, sergei-mikayev, christopher-williams]
+  crew_down: [sergey-kud-sverchkov, sergei-mikayev, christopher-williams]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-28
+- id: blue-origin-ns-37
+  name: Blue Origin NS-37
+  launch: '2025-12-20T14:15:00Z'
+  landing: '2025-12-20T14:25:26Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [michaela-benthaus, joey-hyde, hans-koenigsmann, neal-milch, adonis-pouroulis, jason-stansell]
+  crew_down: [michaela-benthaus, joey-hyde, hans-koenigsmann, neal-milch, adonis-pouroulis, jason-stansell]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-37

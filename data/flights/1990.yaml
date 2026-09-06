@@ -1,0 +1,91 @@
+# Crewed spaceflights launched in 1990, in launch order. See docs/DATA.md for the schema.
+- id: sts-32
+  name: STS-32
+  launch: '1990-01-09T12:35:00Z'
+  landing: '1990-01-20T09:35:36Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [daniel-brandenstein, bonnie-j-dunbar, jim-wetherbee, marsha-ivins, g-david-low]
+  crew_down: [daniel-brandenstein, bonnie-j-dunbar, jim-wetherbee, marsha-ivins, g-david-low]
+  wiki: https://en.wikipedia.org/wiki/STS-32
+- id: soyuz-tm-9
+  name: Soyuz TM-9
+  launch: '1990-02-11T06:16:00Z'
+  landing: '1990-08-09T07:33:57Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [anatoly-solovyev, aleksandr-nikolayevich-balandin]
+  crew_down: [anatoly-solovyev, aleksandr-nikolayevich-balandin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-9
+- id: sts-36
+  name: STS-36
+  launch: '1990-02-28T07:50:22Z'
+  landing: '1990-03-04T18:08:44Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [mike-mullane, john-oliver-creighton, david-c-hilmers, john-casper, pierre-j-thuot]
+  crew_down: [mike-mullane, john-oliver-creighton, david-c-hilmers, john-casper, pierre-j-thuot]
+  wiki: https://en.wikipedia.org/wiki/STS-36
+- id: sts-31
+  name: STS-31
+  launch: '1990-04-24T12:33:51Z'
+  landing: '1990-04-29T13:49:57Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [bruce-mccandless-ii, steven-hawley, kathryn-d-sullivan, loren-shriver, charles-bolden]
+  crew_down: [bruce-mccandless-ii, steven-hawley, kathryn-d-sullivan, loren-shriver, charles-bolden]
+  wiki: https://en.wikipedia.org/wiki/STS-31
+- id: soyuz-tm-10
+  name: Soyuz TM-10
+  launch: '1990-08-01T09:32:21Z'
+  landing: '1990-12-10T06:08:12Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [gennady-strekalov, gennady-manakov]
+  crew_down: [gennady-strekalov, gennady-manakov, toyohiro-akiyama]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-10
+- id: sts-41
+  name: STS-41
+  launch: '1990-10-06T11:47:15Z'
+  landing: '1990-10-10T13:57:19Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [william-shepherd, richard-n-richards, robert-d-cabana, bruce-e-melnick, thomas-akers]
+  crew_down: [william-shepherd, richard-n-richards, robert-d-cabana, bruce-e-melnick, thomas-akers]
+  wiki: https://en.wikipedia.org/wiki/STS-41
+- id: sts-38
+  name: STS-38
+  launch: '1990-11-15T23:48:15Z'
+  landing: '1990-11-20T21:42:46Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [richard-o-covey, robert-c-springer, frank-l-culbertson-jr, carl-j-meade, charles-d-gemar]
+  crew_down: [richard-o-covey, robert-c-springer, frank-l-culbertson-jr, carl-j-meade, charles-d-gemar]
+  wiki: https://en.wikipedia.org/wiki/STS-38
+- id: sts-35
+  name: STS-35
+  launch: '1990-12-02T06:49:01Z'
+  landing: '1990-12-11T05:54:09Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [vance-d-brand, robert-a-parker, jeffrey-a-hoffman, guy-gardner, john-m-lounge, samuel-t-durrance, ronald-parise]
+  crew_down: [vance-d-brand, robert-a-parker, jeffrey-a-hoffman, guy-gardner, john-m-lounge, samuel-t-durrance, ronald-parise]
+  wiki: https://en.wikipedia.org/wiki/STS-35
+- id: soyuz-tm-11
+  name: Soyuz TM-11
+  launch: '1990-12-02T08:13:32Z'
+  landing: '1991-05-26T10:04:13Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [musa-manarov, viktor-afanasyev, toyohiro-akiyama]
+  crew_down: [musa-manarov, viktor-afanasyev, helen-sharman]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-11

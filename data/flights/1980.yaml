@@ -1,0 +1,61 @@
+# Crewed spaceflights launched in 1980, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-35
+  name: Soyuz 35
+  launch: '1980-04-09T13:38:22Z'
+  landing: '1980-06-03T15:06:23Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [valery-ryumin, leonid-popov]
+  crew_down: [valery-kubasov, bertalan-farkas]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_35
+- id: soyuz-36
+  name: Soyuz 36
+  launch: '1980-05-26T18:20:39Z'
+  landing: '1980-07-31T15:15:02Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [valery-kubasov, bertalan-farkas]
+  crew_down: [viktor-gorbatko, ph-e1-ba-a1m-tu-c3-a2n]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_36
+- id: soyuz-t-2
+  name: Soyuz T-2
+  launch: '1980-06-05T14:19:30Z'
+  landing: '1980-06-09T12:39:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-aksyonov, yuri-malyshev]
+  crew_down: [vladimir-aksyonov, yuri-malyshev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-2
+- id: soyuz-37
+  name: Soyuz 37
+  launch: '1980-07-23T18:33:03Z'
+  landing: '1980-10-11T09:49:57Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [viktor-gorbatko, ph-e1-ba-a1m-tu-c3-a2n]
+  crew_down: [valery-ryumin, leonid-popov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_37
+- id: soyuz-38
+  name: Soyuz 38
+  launch: '1980-09-18T19:11:00Z'
+  landing: '1980-09-26T15:54:27Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [yuri-romanenko, arnaldo-tamayo-m-c3-a9ndez]
+  crew_down: [yuri-romanenko, arnaldo-tamayo-m-c3-a9ndez]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_38
+- id: soyuz-t-3
+  name: Soyuz T-3
+  launch: '1980-11-27T14:18:28Z'
+  landing: '1980-12-10T09:26:10Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [oleg-makarov, leonid-kizim, gennady-strekalov]
+  crew_down: [oleg-makarov, leonid-kizim, gennady-strekalov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-3

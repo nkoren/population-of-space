@@ -1,0 +1,31 @@
+# Crewed spaceflights launched in 1987, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tm-2
+  name: Soyuz TM-2
+  launch: '1987-02-05T21:38:16Z'
+  landing: '1987-07-30T01:04:12Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [yuri-romanenko, aleksandr-laveykin]
+  crew_down: [aleksandr-laveykin, aleksandr-viktorenko, muhammed-faris]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-2
+- id: soyuz-tm-3
+  name: Soyuz TM-3
+  launch: '1987-07-22T01:59:17Z'
+  landing: '1987-12-29T09:16:15Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [aleksandr-pavlovich-aleksandrov, aleksandr-viktorenko, muhammed-faris]
+  crew_down: [yuri-romanenko, aleksandr-pavlovich-aleksandrov, anatoly-levchenko]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-3
+- id: soyuz-tm-4
+  name: Soyuz TM-4
+  launch: '1987-12-21T11:18:03Z'
+  landing: '1988-06-17T10:12:32Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-titov, anatoly-levchenko, musa-manarov]
+  crew_down: [viktor-savinykh, anatoly-solovyev, aleksandr-panayotov-aleksandrov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-4

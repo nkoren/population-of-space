@@ -1,0 +1,71 @@
+# Crewed spaceflights launched in 2011, in launch order. See docs/DATA.md for the schema.
+- id: sts-133
+  name: STS-133
+  launch: '2011-02-24T21:53:24Z'
+  landing: '2011-03-09T16:58:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [steven-lindsey, eric-boe, nicole-stott, alvin-drew, michael-barratt, stephen-bowen]
+  crew_down: [steven-lindsey, eric-boe, nicole-stott, alvin-drew, michael-barratt, stephen-bowen]
+  wiki: https://en.wikipedia.org/wiki/STS-133
+- id: soyuz-tma-21
+  name: Soyuz TMA-21
+  launch: '2011-04-04T22:18:00Z'
+  landing: '2011-09-16T03:59:39Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksandr-samokutyaev, andrey-borisenko, ronald-j-garan-jr]
+  crew_down: [aleksandr-samokutyaev, andrey-borisenko, ronald-j-garan-jr]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-21
+- id: sts-134
+  name: STS-134
+  launch: '2011-05-16T12:56:28Z'
+  landing: '2011-06-01T06:35:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [mark-kelly, gregory-h-johnson, michael-fincke, roberto-vittori, andrew-j-feustel, gregory-chamitoff]
+  crew_down: [mark-kelly, gregory-h-johnson, michael-fincke, roberto-vittori, andrew-j-feustel, gregory-chamitoff]
+  wiki: https://en.wikipedia.org/wiki/STS-134
+- id: soyuz-tma-02m
+  name: Soyuz TMA-02M
+  launch: '2011-06-07T20:12:00Z'
+  landing: '2011-11-22T02:26:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-volkov, satoshi-furukawa, michael-e-fossum]
+  crew_down: [sergey-volkov, satoshi-furukawa, michael-e-fossum]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-02M
+- id: sts-135
+  name: STS-135
+  launch: '2011-07-08T15:29:00Z'
+  landing: '2011-07-21T09:57:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [christopher-ferguson, doug-hurley, sandra-magnus, rex-j-walheim]
+  crew_down: [christopher-ferguson, doug-hurley, sandra-magnus, rex-j-walheim]
+  wiki: https://en.wikipedia.org/wiki/STS-135
+- id: soyuz-tma-22
+  name: Soyuz TMA-22
+  launch: '2011-11-14T04:14:03Z'
+  landing: '2012-04-27T11:45:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [anton-shkaplerov, anatoly-ivanishin, daniel-c-burbank]
+  crew_down: [anton-shkaplerov, anatoly-ivanishin, daniel-c-burbank]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-22
+- id: soyuz-tma-03m
+  name: Soyuz TMA-03M
+  launch: '2011-12-21T13:16:00Z'
+  landing: '2012-07-01T08:14:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-kononenko, andr-c3-a9-kuipers, donald-pettit]
+  crew_down: [oleg-kononenko, andr-c3-a9-kuipers, donald-pettit]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-03M

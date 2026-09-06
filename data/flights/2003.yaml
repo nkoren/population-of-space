@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 2003, in launch order. See docs/DATA.md for the schema.
+- id: sts-107
+  name: STS-107
+  launch: '2003-01-16T15:39:00Z'
+  landing: '2003-02-01T13:59:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [rick-husband, william-c-mccool, david-m-brown, kalpana-chawla, michael-p-anderson, laurel-clark, ilan-ramon]
+  crew_down: [rick-husband, william-c-mccool, david-m-brown, kalpana-chawla, michael-p-anderson, laurel-clark, ilan-ramon]
+  wiki: https://en.wikipedia.org/wiki/STS-107
+- id: soyuz-tma-2
+  name: Soyuz TMA-2
+  launch: '2003-04-26T03:53:52Z'
+  landing: '2003-10-28T02:40:20Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [yuri-malenchenko, ed-lu]
+  crew_down: [yuri-malenchenko, ed-lu, pedro-duque]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-2
+- id: shenzhou-5
+  name: Shenzhou 5
+  launch: '2003-10-15T01:00:03Z'
+  landing: '2003-10-15T22:22:48Z'
+  launch_nation: CN
+  destination: free-flying
+  sector: government
+  crew_up: [yang-liwei]
+  crew_down: [yang-liwei]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_5
+- id: soyuz-tma-3
+  name: Soyuz TMA-3
+  launch: '2003-10-18T05:38:03Z'
+  landing: '2004-04-30T00:11:15Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksandr-kaleri, michael-foale, pedro-duque]
+  crew_down: [aleksandr-kaleri, michael-foale, andr-c3-a9-kuipers]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-3

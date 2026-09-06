@@ -1,0 +1,61 @@
+# Crewed spaceflights launched in 1982, in launch order. See docs/DATA.md for the schema.
+- id: sts-3
+  name: STS-3
+  launch: '1982-03-22T16:00:00Z'
+  landing: '1982-03-30T16:04:46Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [jack-r-lousma, c-gordon-fullerton]
+  crew_down: [jack-r-lousma, c-gordon-fullerton]
+  wiki: https://en.wikipedia.org/wiki/STS-3
+- id: soyuz-t-5
+  name: Soyuz T-5
+  launch: '1982-05-13T09:58:05Z'
+  landing: '1982-08-27T15:04:16Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [valentin-lebedev, anatoly-berezovoy]
+  crew_down: [leonid-popov, aleksandr-serebrov, svetlana-savitskaya]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-5
+- id: soyuz-t-6
+  name: Soyuz T-6
+  launch: '1982-06-24T16:29:48Z'
+  landing: '1982-07-02T14:20:40Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-dzhanibekov, aleksandr-ivanchenkov, jean-loup-chr-c3-a9tien]
+  crew_down: [vladimir-dzhanibekov, aleksandr-ivanchenkov, jean-loup-chr-c3-a9tien]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-6
+- id: sts-4
+  name: STS-4
+  launch: '1982-06-27T15:00:00Z'
+  landing: '1982-07-04T16:09:31Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [ken-mattingly, henry-hartsfield]
+  crew_down: [ken-mattingly, henry-hartsfield]
+  wiki: https://en.wikipedia.org/wiki/STS-4
+- id: soyuz-t-7
+  name: Soyuz T-7
+  launch: '1982-08-19T17:11:52Z'
+  landing: '1982-12-10T19:02:36Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [leonid-popov, aleksandr-serebrov, svetlana-savitskaya]
+  crew_down: [valentin-lebedev, anatoly-berezovoy]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-7
+- id: sts-5
+  name: STS-5
+  launch: '1982-11-11T12:19:00Z'
+  landing: '1982-11-16T14:33:26Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [vance-d-brand, robert-f-overmyer, joseph-p-allen, william-b-lenoir]
+  crew_down: [vance-d-brand, robert-f-overmyer, joseph-p-allen, william-b-lenoir]
+  wiki: https://en.wikipedia.org/wiki/STS-5

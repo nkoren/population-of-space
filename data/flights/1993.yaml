@@ -1,0 +1,91 @@
+# Crewed spaceflights launched in 1993, in launch order. See docs/DATA.md for the schema.
+- id: sts-54
+  name: STS-54
+  launch: '1993-01-13T13:59:30Z'
+  landing: '1993-01-19T13:37:47Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [john-casper, gregory-j-harbaugh, donald-r-mcmonagle, mario-runco-jr, susan-helms]
+  crew_down: [john-casper, gregory-j-harbaugh, donald-r-mcmonagle, mario-runco-jr, susan-helms]
+  wiki: https://en.wikipedia.org/wiki/STS-54
+- id: soyuz-tm-16
+  name: Soyuz TM-16
+  launch: '1993-01-24T05:58:05Z'
+  landing: '1993-07-22T06:41:50Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [gennady-manakov, aleksandr-poleshchuk]
+  crew_down: [gennady-manakov, aleksandr-poleshchuk, jean-pierre-haigner-c3-a9]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-16
+- id: sts-56
+  name: STS-56
+  launch: '1993-04-08T05:29:00Z'
+  landing: '1993-04-17T11:37:19Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [kenneth-d-cameron, stephen-s-oswald, michael-foale, kenneth-cockrell, ellen-ochoa]
+  crew_down: [kenneth-d-cameron, stephen-s-oswald, michael-foale, kenneth-cockrell, ellen-ochoa]
+  wiki: https://en.wikipedia.org/wiki/STS-56
+- id: sts-55
+  name: STS-55
+  launch: '1993-04-26T14:50:00Z'
+  landing: '1993-05-06T14:29:59Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [steven-r-nagel, jerry-l-ross, terence-t-henricks, charles-j-precourt, bernard-a-harris-jr, ulrich-walter, hans-schlegel]
+  crew_down: [steven-r-nagel, jerry-l-ross, terence-t-henricks, charles-j-precourt, bernard-a-harris-jr, ulrich-walter, hans-schlegel]
+  wiki: https://en.wikipedia.org/wiki/STS-55
+- id: sts-57
+  name: STS-57
+  launch: '1993-06-21T13:07:00Z'
+  landing: '1993-07-01T12:52:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [ronald-j-grabe, g-david-low, brian-duffy, nancy-j-currie-gregg, peter-wisoff, janice-e-voss]
+  crew_down: [ronald-j-grabe, g-david-low, brian-duffy, nancy-j-currie-gregg, peter-wisoff, janice-e-voss]
+  wiki: https://en.wikipedia.org/wiki/STS-57
+- id: soyuz-tm-17
+  name: Soyuz TM-17
+  launch: '1993-07-01T14:32:58Z'
+  landing: '1994-01-14T08:18:20Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [aleksandr-serebrov, vasily-tsibliyev, jean-pierre-haigner-c3-a9]
+  crew_down: [aleksandr-serebrov, vasily-tsibliyev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-17
+- id: sts-51
+  name: STS-51
+  launch: '1993-09-12T11:45:00Z'
+  landing: '1993-09-22T07:56:06Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [frank-l-culbertson-jr, william-f-readdy, james-h-newman, daniel-w-bursch, carl-e-walz]
+  crew_down: [frank-l-culbertson-jr, william-f-readdy, james-h-newman, daniel-w-bursch, carl-e-walz]
+  wiki: https://en.wikipedia.org/wiki/STS-51
+- id: sts-58
+  name: STS-58
+  launch: '1993-10-18T14:53:10Z'
+  landing: '1993-11-01T15:05:04Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [rhea-seddon, shannon-lucid, john-e-blaha, richard-a-searfoss, william-s-mcarthur, david-wolf, martin-j-fettman]
+  crew_down: [rhea-seddon, shannon-lucid, john-e-blaha, richard-a-searfoss, william-s-mcarthur, david-wolf, martin-j-fettman]
+  wiki: https://en.wikipedia.org/wiki/STS-58
+- id: sts-61
+  name: STS-61
+  launch: '1993-12-02T09:27:00Z'
+  landing: '1993-12-13T05:25:33Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [story-musgrave, jeffrey-a-hoffman, richard-o-covey, kathryn-c-thornton, thomas-akers, ken-bowersox, claude-nicollier]
+  crew_down: [story-musgrave, jeffrey-a-hoffman, richard-o-covey, kathryn-c-thornton, thomas-akers, ken-bowersox, claude-nicollier]
+  wiki: https://en.wikipedia.org/wiki/STS-61

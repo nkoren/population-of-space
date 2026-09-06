@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 2004, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-4
+  name: Soyuz TMA-4
+  launch: '2004-04-19T03:19:00Z'
+  landing: '2004-10-24T00:35:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [gennady-padalka, michael-fincke, andr-c3-a9-kuipers]
+  crew_down: [gennady-padalka, michael-fincke, yuri-shargin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-4
+- id: spaceshipone-flight-15p
+  name: SpaceShipOne Flight 15P
+  launch: '2004-06-21T14:50:00Z'
+  landing: '2004-06-21T15:14:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [mike-melvill]
+  crew_down: [mike-melvill]
+  wiki: https://en.wikipedia.org/wiki/SpaceShipOne_flight_15P
+- id: spaceshipone-flight-16p
+  name: SpaceShipOne Flight 16P
+  launch: '2004-09-29T15:09:00Z'
+  landing: '2004-09-29T15:34:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [mike-melvill]
+  crew_down: [mike-melvill]
+  wiki: https://en.wikipedia.org/wiki/SpaceShipOne_flight_16P
+- id: spaceshipone-flight-17p
+  name: SpaceShipOne Flight 17P
+  launch: '2004-10-04T14:49:00Z'
+  landing: '2004-10-04T15:13:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [brian-binnie]
+  crew_down: [brian-binnie]
+  wiki: https://en.wikipedia.org/wiki/SpaceShipOne_flight_17P
+- id: soyuz-tma-5
+  name: Soyuz TMA-5
+  launch: '2004-10-14T03:06:00Z'
+  landing: '2005-04-24T22:08:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [salizhan-sharipov, leroy-chiao, yuri-shargin]
+  crew_down: [salizhan-sharipov, leroy-chiao, roberto-vittori]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-5

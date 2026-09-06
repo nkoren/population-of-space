@@ -1,0 +1,81 @@
+# Crewed spaceflights launched in 1991, in launch order. See docs/DATA.md for the schema.
+- id: sts-37
+  name: STS-37
+  launch: '1991-04-05T14:22:45Z'
+  landing: '1991-04-11T13:55:29Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [steven-r-nagel, jerry-l-ross, kenneth-d-cameron, linda-m-godwin, jerome-apt]
+  crew_down: [steven-r-nagel, jerry-l-ross, kenneth-d-cameron, linda-m-godwin, jerome-apt]
+  wiki: https://en.wikipedia.org/wiki/STS-37
+- id: sts-39
+  name: STS-39
+  launch: '1991-04-28T11:33:14Z'
+  landing: '1991-05-06T18:55:37Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [guion-bluford, michael-coats, l-blaine-hammond, gregory-j-harbaugh, donald-r-mcmonagle, charles-l-veach, richard-hieb]
+  crew_down: [guion-bluford, michael-coats, l-blaine-hammond, gregory-j-harbaugh, donald-r-mcmonagle, charles-l-veach, richard-hieb]
+  wiki: https://en.wikipedia.org/wiki/STS-39
+- id: soyuz-tm-12
+  name: Soyuz TM-12
+  launch: '1991-05-18T12:50:28Z'
+  landing: '1991-10-10T04:12:18Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [sergei-krikalev, anatoly-artsebarsky, helen-sharman]
+  crew_down: [anatoly-artsebarsky, toktar-aubakirov, franz-viehb-c3-b6ck]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-12
+- id: sts-40
+  name: STS-40
+  launch: '1991-06-05T13:24:51Z'
+  landing: '1991-06-14T15:39:11Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [rhea-seddon, bryan-d-o-27connor, james-p-bagian, sidney-m-gutierrez, tamara-e-jernigan, f-drew-gaffney, millie-hughes-fulford]
+  crew_down: [rhea-seddon, bryan-d-o-27connor, james-p-bagian, sidney-m-gutierrez, tamara-e-jernigan, f-drew-gaffney, millie-hughes-fulford]
+  wiki: https://en.wikipedia.org/wiki/STS-40
+- id: sts-43
+  name: STS-43
+  launch: '1991-08-02T15:01:59Z'
+  landing: '1991-08-11T12:23:25Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [dale-gardner, john-e-blaha, james-c-adamson, g-david-low, michael-a-baker]
+  crew_down: [dale-gardner, john-e-blaha, james-c-adamson, g-david-low, michael-a-baker]
+  wiki: https://en.wikipedia.org/wiki/STS-43
+- id: sts-48
+  name: STS-48
+  launch: '1991-09-12T23:11:04Z'
+  landing: '1991-09-18T07:38:42Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [james-buchli, john-oliver-creighton, mark-n-brown, charles-d-gemar, kenneth-s-reightler-jr]
+  crew_down: [james-buchli, john-oliver-creighton, mark-n-brown, charles-d-gemar, kenneth-s-reightler-jr]
+  wiki: https://en.wikipedia.org/wiki/STS-48
+- id: soyuz-tm-13
+  name: Soyuz TM-13
+  launch: '1991-10-02T05:59:38Z'
+  landing: '1992-03-25T08:51:22Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [aleksandr-aleksandrovich-volkov, toktar-aubakirov, franz-viehb-c3-b6ck]
+  crew_down: [aleksandr-aleksandrovich-volkov, sergei-krikalev, klaus-dietrich-flade]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-13
+- id: sts-44
+  name: STS-44
+  launch: '1991-11-24T23:44:00Z'
+  landing: '1991-12-01T22:34:12Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [story-musgrave, jake-garn, terence-t-henricks, james-s-voss, mario-runco-jr, thomas-j-hennen]
+  crew_down: [story-musgrave, jake-garn, terence-t-henricks, james-s-voss, mario-runco-jr, thomas-j-hennen]
+  wiki: https://en.wikipedia.org/wiki/STS-44

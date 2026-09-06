@@ -1,0 +1,71 @@
+# Crewed spaceflights launched in 2023, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-ms-23
+  name: Soyuz MS-23
+  launch: '2023-02-24T00:24:00Z'
+  landing: '2023-09-27T11:17:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: []
+  crew_down: [sergey-prokopyev, dmitry-petelin, francisco-rubio]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-23
+- id: spacex-crew-6
+  name: SpaceX Crew-6
+  launch: '2023-03-02T05:34:00Z'
+  landing: '2023-09-04T04:17:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [stephen-bowen, warren-hoburg, sultan-al-neyadi, andrey-fedyaev]
+  crew_down: [stephen-bowen, warren-hoburg, sultan-al-neyadi, andrey-fedyaev]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-6
+- id: axiom-mission-2
+  name: Axiom Mission 2
+  launch: '2023-05-21T21:37:00Z'
+  landing: '2023-05-31T03:04:00Z'
+  launch_nation: US
+  destination: iss
+  sector: commercial
+  crew_up: [peggy-whitson, john-shoffner, ali-alqarni, rayyanah-barnawi]
+  crew_down: [peggy-whitson, john-shoffner, ali-alqarni, rayyanah-barnawi]
+  wiki: https://en.wikipedia.org/wiki/Axiom_Mission_2
+- id: shenzhou-16
+  name: Shenzhou 16
+  launch: '2023-05-30T01:31:00Z'
+  landing: '2023-10-31T00:12:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [jing-haipeng, zhu-yangzhu, gui-haichao]
+  crew_down: [jing-haipeng, zhu-yangzhu, gui-haichao]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_16
+- id: spacex-crew-7
+  name: SpaceX Crew-7
+  launch: '2023-08-26T07:27:27Z'
+  landing: '2024-03-12T09:47:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [jasmin-moghbeli, andreas-mogensen, satoshi-furukawa, konstantin-borisov]
+  crew_down: [jasmin-moghbeli, andreas-mogensen, satoshi-furukawa, konstantin-borisov]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-7
+- id: soyuz-ms-24
+  name: Soyuz MS-24
+  launch: '2023-09-15T15:44:00Z'
+  landing: '2024-04-06T07:17:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-kononenko, nikolai-chub, loral-o-27hara]
+  crew_down: [oleg-novitsky, loral-o-27hara, maryna-vasileuskaya]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-24
+- id: shenzhou-17
+  name: Shenzhou 17
+  launch: '2023-10-26T03:13:59Z'
+  landing: '2024-04-30T09:46:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [tang-hongbo, index-php-title-tang-shengjie-action-edit-redlink-1, index-php-title-jiang-xinlin-action-edit-redlink-1]
+  crew_down: [tang-hongbo, index-php-title-tang-shengjie-action-edit-redlink-1, index-php-title-jiang-xinlin-action-edit-redlink-1]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_17

@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 1961, in launch order. See docs/DATA.md for the schema.
+- id: vostok-1
+  name: Vostok 1
+  launch: '1961-04-12T06:07:00Z'
+  landing: '1961-04-12T07:55:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [yuri-gagarin]
+  crew_down: [yuri-gagarin]
+  wiki: https://en.wikipedia.org/wiki/Vostok_1
+- id: mercury-redstone-3
+  name: Mercury-Redstone 3
+  launch: '1961-05-05T14:34:13Z'
+  landing: '1961-05-05T14:49:35Z'
+  launch_nation: US
+  destination: suborbital
+  sector: government
+  crew_up: [alan-shepard]
+  crew_down: [alan-shepard]
+  wiki: https://en.wikipedia.org/wiki/Mercury-Redstone_3
+- id: mercury-redstone-4
+  name: Mercury-Redstone 4
+  launch: '1961-07-21T12:20:36Z'
+  landing: '1961-07-21T12:36:13Z'
+  launch_nation: US
+  destination: suborbital
+  sector: government
+  crew_up: [gus-grissom]
+  crew_down: [gus-grissom]
+  wiki: https://en.wikipedia.org/wiki/Mercury-Redstone_4
+- id: vostok-2
+  name: Vostok 2
+  launch: '1961-08-06T06:00:00Z'
+  landing: '1961-08-07T07:18:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [gherman-titov]
+  crew_down: [gherman-titov]
+  wiki: https://en.wikipedia.org/wiki/Vostok_2

@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 2005, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-6
+  name: Soyuz TMA-6
+  launch: '2005-04-15T00:46:25Z'
+  landing: '2005-10-11T01:09:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergei-krikalev, john-l-phillips, roberto-vittori]
+  crew_down: [sergei-krikalev, john-l-phillips, gregory-olsen]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-6
+- id: sts-114
+  name: STS-114
+  launch: '2005-07-26T14:39:00Z'
+  landing: '2005-08-09T12:11:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [eileen-collins, james-m-kelly, soichi-noguchi, stephen-robinson, andy-thomas, wendy-b-lawrence, charles-camarda]
+  crew_down: [eileen-collins, james-m-kelly, soichi-noguchi, stephen-robinson, andy-thomas, wendy-b-lawrence, charles-camarda]
+  wiki: https://en.wikipedia.org/wiki/STS-114
+- id: soyuz-tma-7
+  name: Soyuz TMA-7
+  launch: '2005-10-01T03:55:00Z'
+  landing: '2006-04-08T23:48:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [valeri-tokarev, william-s-mcarthur, gregory-olsen]
+  crew_down: [valeri-tokarev, william-s-mcarthur, marcos-pontes]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-7
+- id: shenzhou-6
+  name: Shenzhou 6
+  launch: '2005-10-12T01:00:00Z'
+  landing: '2005-10-16T20:33:00Z'
+  launch_nation: CN
+  destination: free-flying
+  sector: government
+  crew_up: [fei-junlong, nie-haisheng]
+  crew_down: [fei-junlong, nie-haisheng]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_6

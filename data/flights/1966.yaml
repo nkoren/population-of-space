@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1966, in launch order. See docs/DATA.md for the schema.
+- id: gemini-8
+  name: Gemini 8
+  launch: '1966-03-16T16:41:02Z'
+  landing: '1966-03-17T03:22:28Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [david-scott, neil-armstrong]
+  crew_down: [david-scott, neil-armstrong]
+  wiki: https://en.wikipedia.org/wiki/Gemini_8
+- id: gemini-9a
+  name: Gemini 9A
+  launch: '1966-06-03T13:39:33Z'
+  landing: '1966-06-06T14:00:23Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [thomas-p-stafford, gene-cernan]
+  crew_down: [thomas-p-stafford, gene-cernan]
+  wiki: https://en.wikipedia.org/wiki/Gemini_9A
+- id: gemini-10
+  name: Gemini 10
+  launch: '1966-07-18T22:20:26Z'
+  landing: '1966-07-21T21:07:05Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [john-young, michael-collins]
+  crew_down: [john-young, michael-collins]
+  wiki: https://en.wikipedia.org/wiki/Gemini_10
+- id: gemini-11
+  name: Gemini 11
+  launch: '1966-09-12T14:42:26Z'
+  landing: '1966-09-15T13:59:35Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [pete-conrad, richard-f-gordon-jr]
+  crew_down: [pete-conrad, richard-f-gordon-jr]
+  wiki: https://en.wikipedia.org/wiki/Gemini_11
+- id: gemini-12
+  name: Gemini 12
+  launch: '1966-11-11T20:46:33Z'
+  landing: '1966-11-15T19:21:04Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [jim-lovell, buzz-aldrin]
+  crew_down: [jim-lovell, buzz-aldrin]
+  wiki: https://en.wikipedia.org/wiki/Gemini_12

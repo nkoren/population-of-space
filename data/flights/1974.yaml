@@ -1,0 +1,31 @@
+# Crewed spaceflights launched in 1974, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-14
+  name: Soyuz 14
+  launch: '1974-07-03T18:51:08Z'
+  landing: '1974-07-19T12:21:36Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [pavel-popovich, yuri-artyukhin]
+  crew_down: [pavel-popovich, yuri-artyukhin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_14
+- id: soyuz-15
+  name: Soyuz 15
+  launch: '1974-08-26T19:58:05Z'
+  landing: '1974-08-28T20:10:16Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [gennady-sarafanov, lev-dyomin]
+  crew_down: [gennady-sarafanov, lev-dyomin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_15
+- id: soyuz-16
+  name: Soyuz 16
+  launch: '1974-12-02T09:40:00Z'
+  landing: '1974-12-08T08:03:35Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [anatoly-filipchenko, nikolai-rukavishnikov]
+  crew_down: [anatoly-filipchenko, nikolai-rukavishnikov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_16

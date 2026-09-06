@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1963, in launch order. See docs/DATA.md for the schema.
+- id: mercury-atlas-9
+  name: Mercury-Atlas 9
+  launch: '1963-05-15T13:04:13Z'
+  landing: '1963-05-16T23:24:02Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [gordon-cooper]
+  crew_down: [gordon-cooper]
+  wiki: https://en.wikipedia.org/wiki/Mercury-Atlas_9
+- id: vostok-5
+  name: Vostok 5
+  launch: '1963-06-14T11:58:58Z'
+  landing: '1963-06-19T11:06:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [valery-bykovsky]
+  crew_down: [valery-bykovsky]
+  wiki: https://en.wikipedia.org/wiki/Vostok_5
+- id: vostok-6
+  name: Vostok 6
+  launch: '1963-06-16T09:29:52Z'
+  landing: '1963-06-19T08:20:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [valentina-tereshkova]
+  crew_down: [valentina-tereshkova]
+  wiki: https://en.wikipedia.org/wiki/Vostok_6
+- id: x-15-flight-90
+  name: X-15 Flight 90
+  launch: '1963-07-19T18:18:29Z'
+  landing: '1963-07-19T18:31:29Z'
+  launch_nation: US
+  destination: suborbital
+  sector: government
+  crew_up: [joseph-a-walker]
+  crew_down: [joseph-a-walker]
+  wiki: https://en.wikipedia.org/wiki/X-15_Flight_90
+- id: x-15-flight-91
+  name: X-15 Flight 91
+  launch: '1963-08-22T18:05:05Z'
+  landing: '1963-08-22T18:17:05Z'
+  launch_nation: US
+  destination: suborbital
+  sector: government
+  crew_up: [joseph-a-walker]
+  crew_down: [joseph-a-walker]
+  wiki: https://en.wikipedia.org/wiki/X-15_Flight_91

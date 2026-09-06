@@ -1,0 +1,61 @@
+# Crewed spaceflights launched in 1965, in launch order. See docs/DATA.md for the schema.
+- id: voskhod-2
+  name: Voskhod 2
+  launch: '1965-03-18T07:00:00Z'
+  landing: '1965-03-19T09:02:17Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [alexei-leonov, pavel-belyayev]
+  crew_down: [alexei-leonov, pavel-belyayev]
+  wiki: https://en.wikipedia.org/wiki/Voskhod_2
+- id: gemini-3
+  name: Gemini 3
+  launch: '1965-03-23T14:24:00Z'
+  landing: '1965-03-23T19:16:31Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [gus-grissom, john-young]
+  crew_down: [gus-grissom, john-young]
+  wiki: https://en.wikipedia.org/wiki/Gemini_3
+- id: gemini-4
+  name: Gemini 4
+  launch: '1965-06-03T15:15:59Z'
+  landing: '1965-06-07T17:12:11Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [james-mcdivitt, ed-white]
+  crew_down: [james-mcdivitt, ed-white]
+  wiki: https://en.wikipedia.org/wiki/Gemini_4
+- id: gemini-5
+  name: Gemini 5
+  launch: '1965-08-21T13:59:59Z'
+  landing: '1965-08-29T12:55:13Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [gordon-cooper, pete-conrad]
+  crew_down: [gordon-cooper, pete-conrad]
+  wiki: https://en.wikipedia.org/wiki/Gemini_5
+- id: gemini-7
+  name: Gemini 7
+  launch: '1965-12-04T19:30:03Z'
+  landing: '1965-12-18T14:05:04Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [jim-lovell, frank-borman]
+  crew_down: [jim-lovell, frank-borman]
+  wiki: https://en.wikipedia.org/wiki/Gemini_7
+- id: gemini-6a
+  name: Gemini 6A
+  launch: '1965-12-15T13:37:26Z'
+  landing: '1965-12-16T15:28:50Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [wally-schirra, thomas-p-stafford]
+  crew_down: [wally-schirra, thomas-p-stafford]
+  wiki: https://en.wikipedia.org/wiki/Gemini_6A

@@ -1,0 +1,21 @@
+# Crewed spaceflights launched in 1972, in launch order. See docs/DATA.md for the schema.
+- id: apollo-16
+  name: Apollo 16
+  launch: '1972-04-16T17:54:00Z'
+  landing: '1972-04-27T19:45:05Z'
+  launch_nation: RU
+  destination: moon
+  sector: government
+  crew_up: [john-young, ken-mattingly, charles-duke]
+  crew_down: [john-young, ken-mattingly, charles-duke]
+  wiki: https://en.wikipedia.org/wiki/Apollo_16
+- id: apollo-17
+  name: Apollo 17
+  launch: '1972-12-07T05:33:00Z'
+  landing: '1972-12-19T19:54:58Z'
+  launch_nation: RU
+  destination: moon
+  sector: government
+  crew_up: [gene-cernan, ronald-evans, harrison-schmitt]
+  crew_down: [gene-cernan, ronald-evans, harrison-schmitt]
+  wiki: https://en.wikipedia.org/wiki/Apollo_17

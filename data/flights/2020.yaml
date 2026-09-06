@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 2020, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-ms-16
+  name: Soyuz MS-16
+  launch: '2020-04-09T08:05:00Z'
+  landing: '2020-10-22T02:54:12Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [anatoly-ivanishin, ivan-vagner, christopher-cassidy]
+  crew_down: [anatoly-ivanishin, ivan-vagner, christopher-cassidy]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-16
+- id: crew-dragon-demo-2
+  name: Crew Dragon Demo-2
+  launch: '2020-05-30T19:22:45Z'
+  landing: '2020-08-02T18:48:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [doug-hurley, bob-behnken]
+  crew_down: [doug-hurley, bob-behnken]
+  wiki: https://en.wikipedia.org/wiki/Crew_Dragon_Demo-2
+- id: soyuz-ms-17
+  name: Soyuz MS-17
+  launch: '2020-10-14T05:45:04Z'
+  landing: '2021-04-17T04:55:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-ryzhikov, sergey-kud-sverchkov, kathleen-rubins]
+  crew_down: [sergey-ryzhikov, sergey-kud-sverchkov, kathleen-rubins]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-17
+- id: spacex-crew-1
+  name: SpaceX Crew-1
+  launch: '2020-11-16T00:27:17Z'
+  landing: '2021-05-02T06:56:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [michael-s-hopkins, victor-j-glover, soichi-noguchi, shannon-walker]
+  crew_down: [michael-s-hopkins, victor-j-glover, soichi-noguchi, shannon-walker]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-1

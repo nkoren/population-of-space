@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 2018, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-ms-08
+  name: Soyuz MS-08
+  launch: '2018-03-21T17:44:00Z'
+  landing: '2018-10-04T11:45:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-artemyev, andrew-j-feustel, richard-r-arnold]
+  crew_down: [oleg-artemyev, andrew-j-feustel, richard-r-arnold]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-08
+- id: soyuz-ms-09
+  name: Soyuz MS-09
+  launch: '2018-06-06T11:12:00Z'
+  landing: '2018-12-20T05:02:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-prokopyev, alexander-gerst, serena-au-c3-b1-c3-b3n-chancellor]
+  crew_down: [sergey-prokopyev, alexander-gerst, serena-au-c3-b1-c3-b3n-chancellor]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-09
+- id: soyuz-ms-10
+  name: Soyuz MS-10
+  launch: '2018-10-11T08:40:00Z'
+  landing: '2018-10-11T08:59:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksey-ovchinin, nick-hague]
+  crew_down: [aleksey-ovchinin, nick-hague]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-10
+- id: soyuz-ms-11
+  name: Soyuz MS-11
+  launch: '2018-12-03T11:31:00Z'
+  landing: '2019-06-25T02:47:50Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-kononenko, david-saint-jacques, anne-mcclain]
+  crew_down: [oleg-kononenko, david-saint-jacques, anne-mcclain]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-11

@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1973, in launch order. See docs/DATA.md for the schema.
+- id: skylab-2
+  name: Skylab 2
+  launch: '1973-05-25T13:00:00Z'
+  landing: '1973-06-22T13:49:48Z'
+  launch_nation: US
+  destination: skylab
+  sector: government
+  crew_up: [pete-conrad, joseph-p-kerwin, paul-j-weitz]
+  crew_down: [pete-conrad, joseph-p-kerwin, paul-j-weitz]
+  wiki: https://en.wikipedia.org/wiki/Skylab_2
+- id: skylab-3
+  name: Skylab 3
+  launch: '1973-07-28T11:10:50Z'
+  landing: '1973-09-25T22:19:51Z'
+  launch_nation: US
+  destination: skylab
+  sector: government
+  crew_up: [alan-bean, jack-r-lousma, owen-garriott]
+  crew_down: [alan-bean, jack-r-lousma, owen-garriott]
+  wiki: https://en.wikipedia.org/wiki/Skylab_3
+- id: soyuz-12
+  name: Soyuz 12
+  launch: '1973-09-27T12:18:16Z'
+  landing: '1973-09-29T11:33:48Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vasily-lazarev, oleg-makarov]
+  crew_down: [vasily-lazarev, oleg-makarov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_12
+- id: skylab-4
+  name: Skylab 4
+  launch: '1973-11-16T14:01:23Z'
+  landing: '1974-02-08T15:16:53Z'
+  launch_nation: US
+  destination: skylab
+  sector: government
+  crew_up: [gerald-carr, edward-gibson, william-pogue]
+  crew_down: [gerald-carr, edward-gibson, william-pogue]
+  wiki: https://en.wikipedia.org/wiki/Skylab_4
+- id: soyuz-13
+  name: Soyuz 13
+  launch: '1973-12-18T11:55:00Z'
+  landing: '1973-12-26T08:50:35Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [pyotr-klimuk, valentin-lebedev]
+  crew_down: [pyotr-klimuk, valentin-lebedev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_13

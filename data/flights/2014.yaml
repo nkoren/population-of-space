@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 2014, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-12m
+  name: Soyuz TMA-12M
+  launch: '2014-03-25T21:17:23Z'
+  landing: '2014-09-11T02:23:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksandr-skvortsov, oleg-artemyev, steven-swanson]
+  crew_down: [aleksandr-skvortsov, oleg-artemyev, steven-swanson]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-12M
+- id: soyuz-tma-13m
+  name: Soyuz TMA-13M
+  launch: '2014-05-28T19:57:41Z'
+  landing: '2014-11-10T03:58:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [maksim-surayev, reid-wiseman, alexander-gerst]
+  crew_down: [maksim-surayev, reid-wiseman, alexander-gerst]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-13M
+- id: soyuz-tma-14m
+  name: Soyuz TMA-14M
+  launch: '2014-09-25T20:25:00Z'
+  landing: '2015-03-12T02:07:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksandr-samokutyaev, yelena-serova, barry-e-wilmore]
+  crew_down: [aleksandr-samokutyaev, yelena-serova, barry-e-wilmore]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-14M
+- id: soyuz-tma-15m
+  name: Soyuz TMA-15M
+  launch: '2014-11-23T21:00:00Z'
+  landing: '2015-06-11T02:07:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [anton-shkaplerov, samantha-cristoforetti, terry-w-virts]
+  crew_down: [anton-shkaplerov, samantha-cristoforetti, terry-w-virts]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-15M

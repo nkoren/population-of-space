@@ -1,0 +1,73 @@
+# Crewed spaceflights launched in 2010, in launch order. See docs/DATA.md for the schema.
+- id: sts-130
+  name: STS-130
+  launch: '2010-02-08T09:14:00Z'
+  landing: '2010-02-22T03:22:10Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [george-d-zamka, terry-w-virts, kathryn-p-hire, stephen-robinson, nicholas-patrick, bob-behnken]
+  crew_down: [george-d-zamka, terry-w-virts, kathryn-p-hire, stephen-robinson, nicholas-patrick, bob-behnken]
+  wiki: https://en.wikipedia.org/wiki/STS-130
+- id: soyuz-tma-18
+  name: Soyuz TMA-18
+  launch: '2010-04-02T04:04:00Z'
+  landing: '2010-09-25T05:23:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksandr-skvortsov, mikhail-kornienko, tracy-caldwell-dyson]
+  crew_down: [aleksandr-skvortsov, mikhail-kornienko, tracy-caldwell-dyson]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-18
+- id: sts-131
+  name: STS-131
+  launch: '2010-04-05T10:21:00Z'
+  landing: '2010-04-20T13:08:35Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [alan-g-poindexter, james-dutton, richard-mastracchio, dorothy-metcalf-lindenburger, stephanie-wilson, naoko-yamazaki,
+    clayton-anderson]
+  crew_down: [alan-g-poindexter, james-dutton, richard-mastracchio, dorothy-metcalf-lindenburger, stephanie-wilson, naoko-yamazaki,
+    clayton-anderson]
+  wiki: https://en.wikipedia.org/wiki/STS-131
+- id: sts-132
+  name: STS-132
+  launch: '2010-05-14T18:20:00Z'
+  landing: '2010-05-26T12:49:18Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [kenneth-ham, dominic-a-antonelli, garrett-reisman, michael-t-good, stephen-bowen, piers-sellers]
+  crew_down: [kenneth-ham, dominic-a-antonelli, garrett-reisman, michael-t-good, stephen-bowen, piers-sellers]
+  wiki: https://en.wikipedia.org/wiki/STS-132
+- id: soyuz-tma-19
+  name: Soyuz TMA-19
+  launch: '2010-06-15T21:35:00Z'
+  landing: '2010-11-26T04:46:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [fyodor-yurchikhin, shannon-walker, douglas-h-wheelock]
+  crew_down: [fyodor-yurchikhin, shannon-walker, douglas-h-wheelock]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-19
+- id: soyuz-tma-01m
+  name: Soyuz TMA-01M
+  launch: '2010-10-07T23:10:00Z'
+  landing: '2011-03-16T07:54:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksandr-kaleri, oleg-skripochka, scott-kelly]
+  crew_down: [aleksandr-kaleri, oleg-skripochka, scott-kelly]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-01M
+- id: soyuz-tma-20
+  name: Soyuz TMA-20
+  launch: '2010-12-15T19:09:00Z'
+  landing: '2011-05-24T02:27:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [dmitri-kondratyev, paolo-nespoli, catherine-coleman]
+  crew_down: [dmitri-kondratyev, paolo-nespoli, catherine-coleman]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-20

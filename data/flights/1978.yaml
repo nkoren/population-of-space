@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1978, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-27
+  name: Soyuz 27
+  launch: '1978-01-10T12:26:00Z'
+  landing: '1978-03-16T11:18:47Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [oleg-makarov, vladimir-dzhanibekov]
+  crew_down: [georgy-grechko, yuri-romanenko]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_27
+- id: soyuz-28
+  name: Soyuz 28
+  launch: '1978-03-02T15:28:00Z'
+  landing: '1978-03-10T13:44:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [aleksei-gubarev, vladim-c3-adr-remek]
+  crew_down: [aleksei-gubarev, vladim-c3-adr-remek]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_28
+- id: soyuz-29
+  name: Soyuz 29
+  launch: '1978-06-15T20:16:45Z'
+  landing: '1978-09-03T11:40:34Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-kovalyonok, aleksandr-ivanchenkov]
+  crew_down: [valery-bykovsky, sigmund-j-c3-a4hn]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_29
+- id: soyuz-30
+  name: Soyuz 30
+  launch: '1978-06-27T15:27:21Z'
+  landing: '1978-07-05T13:30:20Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [pyotr-klimuk, miros-c5-82aw-hermaszewski]
+  crew_down: [pyotr-klimuk, miros-c5-82aw-hermaszewski]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_30
+- id: soyuz-31
+  name: Soyuz 31
+  launch: '1978-08-26T14:51:30Z'
+  landing: '1978-11-02T11:04:17Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [valery-bykovsky, sigmund-j-c3-a4hn]
+  crew_down: [vladimir-kovalyonok, aleksandr-ivanchenkov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_31

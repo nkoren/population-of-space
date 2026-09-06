@@ -1,0 +1,72 @@
+# Crewed spaceflights launched in 2008, in launch order. See docs/DATA.md for the schema.
+- id: sts-122
+  name: STS-122
+  launch: '2008-02-07T19:45:00Z'
+  landing: '2008-02-20T14:07:10Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [stephen-frick, alan-g-poindexter, leland-d-melvin, rex-j-walheim, hans-schlegel, stanley-g-love, l-c3-a9opold-eyharts]
+  crew_down: [stephen-frick, alan-g-poindexter, leland-d-melvin, rex-j-walheim, hans-schlegel, stanley-g-love, daniel-m-tani]
+  wiki: https://en.wikipedia.org/wiki/STS-122
+- id: sts-123
+  name: STS-123
+  launch: '2008-03-11T06:28:00Z'
+  landing: '2008-03-27T00:40:41Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [dominic-l-pudwill-gorie, gregory-h-johnson, bob-behnken, michael-foreman, richard-m-linnehan, takao-doi, garrett-reisman]
+  crew_down: [dominic-l-pudwill-gorie, gregory-h-johnson, bob-behnken, michael-foreman, richard-m-linnehan, takao-doi, l-c3-a9opold-eyharts]
+  wiki: https://en.wikipedia.org/wiki/STS-123
+- id: soyuz-tma-12
+  name: Soyuz TMA-12
+  launch: '2008-04-08T11:16:00Z'
+  landing: '2008-10-24T03:37:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-volkov, oleg-kononenko, yi-so-yeon]
+  crew_down: [sergey-volkov, oleg-kononenko, richard-garriott]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-12
+- id: sts-124
+  name: STS-124
+  launch: '2008-05-31T21:02:12Z'
+  landing: '2008-06-14T15:15:19Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [mark-kelly, kenneth-ham, karen-nyberg, ronald-j-garan-jr, michael-e-fossum, akihiko-hoshide, gregory-chamitoff]
+  crew_down: [mark-kelly, kenneth-ham, karen-nyberg, ronald-j-garan-jr, michael-e-fossum, akihiko-hoshide, garrett-reisman]
+  wiki: https://en.wikipedia.org/wiki/STS-124
+- id: shenzhou-7
+  name: Shenzhou 7
+  launch: '2008-09-25T13:10:05Z'
+  landing: '2008-09-28T09:37:00Z'
+  launch_nation: CN
+  destination: free-flying
+  sector: government
+  crew_up: [zhai-zhigang, liu-boming, jing-haipeng]
+  crew_down: [zhai-zhigang, liu-boming, jing-haipeng]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_7
+- id: soyuz-tma-13
+  name: Soyuz TMA-13
+  launch: '2008-10-12T07:01:00Z'
+  landing: '2009-04-08T07:16:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [yury-lonchakov, michael-fincke, richard-garriott]
+  crew_down: [yury-lonchakov, michael-fincke, charles-simonyi]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-13
+- id: sts-126
+  name: STS-126
+  launch: '2008-11-15T00:55:39Z'
+  landing: '2008-11-30T21:25:09Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [christopher-ferguson, eric-boe, donald-pettit, stephen-bowen, heidemarie-stefanyshyn-piper, shane-kimbrough, sandra-magnus]
+  crew_down: [christopher-ferguson, eric-boe, donald-pettit, stephen-bowen, heidemarie-stefanyshyn-piper, shane-kimbrough,
+    gregory-chamitoff]
+  wiki: https://en.wikipedia.org/wiki/STS-126

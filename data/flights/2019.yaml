@@ -1,0 +1,31 @@
+# Crewed spaceflights launched in 2019, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-ms-12
+  name: Soyuz MS-12
+  launch: '2019-03-14T19:14:08Z'
+  landing: '2019-10-03T10:59:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksey-ovchinin, nick-hague, christina-koch]
+  crew_down: [aleksey-ovchinin, nick-hague, hazza-al-mansouri]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-12
+- id: soyuz-ms-13
+  name: Soyuz MS-13
+  launch: '2019-07-20T16:28:21Z'
+  landing: '2020-02-06T09:12:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksandr-skvortsov, luca-parmitano, andrew-r-morgan]
+  crew_down: [aleksandr-skvortsov, luca-parmitano, christina-koch]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-13
+- id: soyuz-ms-15
+  name: Soyuz MS-15
+  launch: '2019-09-25T13:57:00Z'
+  landing: '2020-04-17T05:16:43Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-skripochka, jessica-meir, hazza-al-mansouri]
+  crew_down: [oleg-skripochka, jessica-meir, andrew-r-morgan]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-15

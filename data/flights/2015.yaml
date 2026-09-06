@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 2015, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-16m
+  name: Soyuz TMA-16M
+  launch: '2015-03-27T19:42:00Z'
+  landing: '2015-09-12T00:51:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [gennady-padalka, mikhail-kornienko, scott-kelly]
+  crew_down: [gennady-padalka, andreas-mogensen, aidyn-aimbetov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-16M
+- id: soyuz-tma-17m
+  name: Soyuz TMA-17M
+  launch: '2015-07-22T21:02:00Z'
+  landing: '2015-12-11T13:12:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-kononenko, kimiya-yui, kjell-n-lindgren]
+  crew_down: [oleg-kononenko, kimiya-yui, kjell-n-lindgren]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-17M
+- id: soyuz-tma-18m
+  name: Soyuz TMA-18M
+  launch: '2015-09-02T04:37:00Z'
+  landing: '2016-02-03T04:25:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-volkov, andreas-mogensen, aidyn-aimbetov]
+  crew_down: [sergey-volkov, mikhail-kornienko, scott-kelly]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-18M
+- id: soyuz-tma-19m
+  name: Soyuz TMA-19M
+  launch: '2015-12-15T11:03:09Z'
+  landing: '2016-06-18T09:15:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [yuri-malenchenko, timothy-kopra, tim-peake]
+  crew_down: [yuri-malenchenko, timothy-kopra, tim-peake]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-19M

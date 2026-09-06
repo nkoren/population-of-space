@@ -1,0 +1,21 @@
+# Crewed spaceflights launched in 1970, in launch order. See docs/DATA.md for the schema.
+- id: apollo-13
+  name: Apollo 13
+  launch: '1970-04-11T19:13:00Z'
+  landing: '1970-04-17T18:07:41Z'
+  launch_nation: RU
+  destination: moon
+  sector: government
+  crew_up: [jim-lovell, jack-swigert, fred-haise]
+  crew_down: [jim-lovell, jack-swigert, fred-haise]
+  wiki: https://en.wikipedia.org/wiki/Apollo_13
+- id: soyuz-9
+  name: Soyuz 9
+  launch: '1970-06-01T19:00:00Z'
+  landing: '1970-06-19T11:58:55Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [andriyan-nikolayev, vitaly-sevastyanov]
+  crew_down: [andriyan-nikolayev, vitaly-sevastyanov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_9

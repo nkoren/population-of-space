@@ -1,0 +1,31 @@
+# Crewed spaceflights launched in 1968, in launch order. See docs/DATA.md for the schema.
+- id: apollo-7
+  name: Apollo 7
+  launch: '1968-10-11T15:02:45Z'
+  landing: '1968-10-22T11:11:48Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [wally-schirra, donn-f-eisele, walter-cunningham]
+  crew_down: [wally-schirra, donn-f-eisele, walter-cunningham]
+  wiki: https://en.wikipedia.org/wiki/Apollo_7
+- id: soyuz-3
+  name: Soyuz 3
+  launch: '1968-10-26T08:34:18Z'
+  landing: '1968-10-30T07:25:03Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [georgy-beregovoy]
+  crew_down: [georgy-beregovoy]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_3
+- id: apollo-8
+  name: Apollo 8
+  launch: '1968-12-21T12:51:00Z'
+  landing: '1968-12-27T15:51:42Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [jim-lovell, frank-borman, william-anders]
+  crew_down: [jim-lovell, frank-borman, william-anders]
+  wiki: https://en.wikipedia.org/wiki/Apollo_8

@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 2016, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-20m
+  name: Soyuz TMA-20M
+  launch: '2016-03-18T21:26:38Z'
+  landing: '2016-09-07T01:13:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [aleksey-ovchinin, oleg-skripochka, jeffrey-williams]
+  crew_down: [aleksey-ovchinin, oleg-skripochka, jeffrey-williams]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-20M
+- id: soyuz-ms-01
+  name: Soyuz MS-01
+  launch: '2016-07-07T01:36:00Z'
+  landing: '2016-10-30T03:58:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [anatoly-ivanishin, takuya-onishi, kathleen-rubins]
+  crew_down: [anatoly-ivanishin, takuya-onishi, kathleen-rubins]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-01
+- id: shenzhou-11
+  name: Shenzhou 11
+  launch: '2016-10-16T23:30:00Z'
+  landing: '2016-11-18T05:59:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [jing-haipeng, chen-dong]
+  crew_down: [jing-haipeng, chen-dong]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_11
+- id: soyuz-ms-02
+  name: Soyuz MS-02
+  launch: '2016-10-19T08:05:00Z'
+  landing: '2017-04-10T11:20:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-ryzhikov, andrey-borisenko, shane-kimbrough]
+  crew_down: [sergey-ryzhikov, andrey-borisenko, shane-kimbrough]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-02
+- id: soyuz-ms-03
+  name: Soyuz MS-03
+  launch: '2016-11-17T20:17:00Z'
+  landing: '2017-06-02T14:10:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-novitsky, thomas-pesquet, peggy-whitson]
+  crew_down: [oleg-novitsky, thomas-pesquet]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-03

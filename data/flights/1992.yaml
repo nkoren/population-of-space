@@ -1,0 +1,103 @@
+# Crewed spaceflights launched in 1992, in launch order. See docs/DATA.md for the schema.
+- id: sts-42
+  name: STS-42
+  launch: '1992-01-22T14:52:33Z'
+  landing: '1992-01-30T16:07:17Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [norman-thagard, ulf-merbold, ronald-j-grabe, david-c-hilmers, stephen-s-oswald, william-f-readdy, roberta-bondar]
+  crew_down: [norman-thagard, ulf-merbold, ronald-j-grabe, david-c-hilmers, stephen-s-oswald, william-f-readdy, roberta-bondar]
+  wiki: https://en.wikipedia.org/wiki/STS-42
+- id: soyuz-tm-14
+  name: Soyuz TM-14
+  launch: '1992-03-17T10:54:30Z'
+  landing: '1992-08-10T01:05:02Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [aleksandr-viktorenko, aleksandr-kaleri, klaus-dietrich-flade]
+  crew_down: [aleksandr-viktorenko, aleksandr-kaleri, michel-tognini]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-14
+- id: sts-45
+  name: STS-45
+  launch: '1992-03-24T13:13:39Z'
+  landing: '1992-04-02T11:23:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [byron-k-lichtenberg, kathryn-d-sullivan, david-leestma, charles-bolden, brian-duffy, michael-foale, dirk-frimout]
+  crew_down: [byron-k-lichtenberg, kathryn-d-sullivan, david-leestma, charles-bolden, brian-duffy, michael-foale, dirk-frimout]
+  wiki: https://en.wikipedia.org/wiki/STS-45
+- id: sts-49
+  name: STS-49
+  launch: '1992-05-07T23:40:00Z'
+  landing: '1992-05-16T20:57:38Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [daniel-brandenstein, william-e-thornton, kathryn-c-thornton, pierre-j-thuot, bruce-e-melnick, richard-hieb, kevin-p-chilton]
+  crew_down: [daniel-brandenstein, william-e-thornton, kathryn-c-thornton, pierre-j-thuot, bruce-e-melnick, richard-hieb,
+    kevin-p-chilton]
+  wiki: https://en.wikipedia.org/wiki/STS-49
+- id: sts-50
+  name: STS-50
+  launch: '1992-06-25T16:12:23Z'
+  landing: '1992-07-09T11:42:27Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [bonnie-j-dunbar, richard-n-richards, ellen-s-baker, carl-j-meade, ken-bowersox, lawrence-j-delucas, eugene-h-trinh]
+  crew_down: [bonnie-j-dunbar, richard-n-richards, ellen-s-baker, carl-j-meade, ken-bowersox, lawrence-j-delucas, eugene-h-trinh]
+  wiki: https://en.wikipedia.org/wiki/STS-50
+- id: soyuz-tm-15
+  name: Soyuz TM-15
+  launch: '1992-07-27T06:08:42Z'
+  landing: '1993-02-01T03:49:57Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [anatoly-solovyev, sergey-avdeev, michel-tognini]
+  crew_down: [anatoly-solovyev, sergey-avdeev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-15
+- id: sts-46
+  name: STS-46
+  launch: '1992-07-31T13:56:48Z'
+  landing: '1992-08-08T13:11:50Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [loren-shriver, jeffrey-a-hoffman, franklin-chang-d-c3-adaz, marsha-ivins, andrew-m-allen, claude-nicollier, franco-malerba]
+  crew_down: [loren-shriver, jeffrey-a-hoffman, franklin-chang-d-c3-adaz, marsha-ivins, andrew-m-allen, claude-nicollier,
+    franco-malerba]
+  wiki: https://en.wikipedia.org/wiki/STS-46
+- id: sts-47
+  name: STS-47
+  launch: '1992-09-12T14:23:00Z'
+  landing: '1992-09-20T12:53:24Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-l-gibson, mark-c-lee, jerome-apt, curtis-brown, jan-davis, mae-jemison, mamoru-mohri]
+  crew_down: [robert-l-gibson, mark-c-lee, jerome-apt, curtis-brown, jan-davis, mae-jemison, mamoru-mohri]
+  wiki: https://en.wikipedia.org/wiki/STS-47
+- id: sts-52
+  name: STS-52
+  launch: '1992-10-22T17:09:39Z'
+  landing: '1992-11-01T14:05:52Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [william-shepherd, jim-wetherbee, charles-l-veach, tamara-e-jernigan, michael-a-baker, steve-maclean]
+  crew_down: [william-shepherd, jim-wetherbee, charles-l-veach, tamara-e-jernigan, michael-a-baker, steve-maclean]
+  wiki: https://en.wikipedia.org/wiki/STS-52
+- id: sts-53
+  name: STS-53
+  launch: '1992-12-02T13:24:00Z'
+  landing: '1992-12-09T20:43:17Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [guion-bluford, david-m-walker, robert-d-cabana, james-s-voss, michael-r-clifford]
+  crew_down: [guion-bluford, david-m-walker, robert-d-cabana, james-s-voss, michael-r-clifford]
+  wiki: https://en.wikipedia.org/wiki/STS-53

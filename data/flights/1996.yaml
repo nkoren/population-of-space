@@ -1,0 +1,95 @@
+# Crewed spaceflights launched in 1996, in launch order. See docs/DATA.md for the schema.
+- id: sts-72
+  name: STS-72
+  launch: '1996-01-11T09:41:00Z'
+  landing: '1996-01-20T07:41:41Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [brian-duffy, brent-w-jett-jr, leroy-chiao, winston-e-scott, koichi-wakata, daniel-t-barry]
+  crew_down: [brian-duffy, brent-w-jett-jr, leroy-chiao, winston-e-scott, koichi-wakata, daniel-t-barry]
+  wiki: https://en.wikipedia.org/wiki/STS-72
+- id: soyuz-tm-23
+  name: Soyuz TM-23
+  launch: '1996-02-21T12:34:05Z'
+  landing: '1996-09-02T07:41:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [yury-onufriyenko, yuri-usachov]
+  crew_down: [yury-onufriyenko, yuri-usachov, claudie-haigner-c3-a9]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-23
+- id: sts-75
+  name: STS-75
+  launch: '1996-02-22T20:18:00Z'
+  landing: '1996-03-09T13:58:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [andrew-m-allen, scott-j-horowitz, jeffrey-a-hoffman, maurizio-cheli, claude-nicollier, franklin-chang-d-c3-adaz,
+    umberto-guidoni]
+  crew_down: [andrew-m-allen, scott-j-horowitz, jeffrey-a-hoffman, maurizio-cheli, claude-nicollier, franklin-chang-d-c3-adaz,
+    umberto-guidoni]
+  wiki: https://en.wikipedia.org/wiki/STS-75
+- id: sts-76
+  name: STS-76
+  launch: '1996-03-22T08:13:04Z'
+  landing: '1996-03-31T13:28:57Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [kevin-p-chilton, richard-a-searfoss, ronald-m-sega, michael-r-clifford, linda-m-godwin, shannon-lucid]
+  crew_down: [kevin-p-chilton, richard-a-searfoss, ronald-m-sega, michael-r-clifford, linda-m-godwin]
+  wiki: https://en.wikipedia.org/wiki/STS-76
+- id: sts-77
+  name: STS-77
+  launch: '1996-05-19T10:30:00Z'
+  landing: '1996-05-29T11:09:18Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [john-casper, curtis-brown, andy-thomas, daniel-w-bursch, mario-runco-jr, marc-garneau]
+  crew_down: [john-casper, curtis-brown, andy-thomas, daniel-w-bursch, mario-runco-jr, marc-garneau]
+  wiki: https://en.wikipedia.org/wiki/STS-77
+- id: sts-78
+  name: STS-78
+  launch: '1996-06-20T14:49:00Z'
+  landing: '1996-07-07T12:37:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [terence-t-henricks, kevin-r-kregel, richard-m-linnehan, susan-helms, charles-e-brady-jr, jean-jacques-favier,
+    robert-thirsk]
+  crew_down: [terence-t-henricks, kevin-r-kregel, richard-m-linnehan, susan-helms, charles-e-brady-jr, jean-jacques-favier,
+    robert-thirsk]
+  wiki: https://en.wikipedia.org/wiki/STS-78
+- id: soyuz-tm-24
+  name: Soyuz TM-24
+  launch: '1996-08-17T13:18:03Z'
+  landing: '1997-03-02T06:44:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [valery-korzun, aleksandr-kaleri, claudie-haigner-c3-a9]
+  crew_down: [valery-korzun, aleksandr-kaleri, reinhold-ewald]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-24
+- id: sts-79
+  name: STS-79
+  launch: '1996-09-16T08:54:49Z'
+  landing: '1996-09-26T12:13:20Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [william-f-readdy, terrence-w-wilcutt, jerome-apt, thomas-akers, carl-e-walz, john-e-blaha]
+  crew_down: [william-f-readdy, terrence-w-wilcutt, jerome-apt, thomas-akers, carl-e-walz, shannon-lucid]
+  wiki: https://en.wikipedia.org/wiki/STS-79
+- id: sts-80
+  name: STS-80
+  launch: '1996-11-19T19:55:47Z'
+  landing: '1996-12-07T11:49:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [kenneth-cockrell, kent-rominger, story-musgrave, thomas-david-jones, tamara-e-jernigan]
+  crew_down: [kenneth-cockrell, kent-rominger, story-musgrave, thomas-david-jones, tamara-e-jernigan]
+  wiki: https://en.wikipedia.org/wiki/STS-80

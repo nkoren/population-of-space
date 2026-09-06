@@ -1,0 +1,52 @@
+# Crewed spaceflights launched in 2007, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-10
+  name: Soyuz TMA-10
+  launch: '2007-04-07T17:31:00Z'
+  landing: '2007-10-21T10:36:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-kotov, fyodor-yurchikhin, charles-simonyi]
+  crew_down: [oleg-kotov, fyodor-yurchikhin, sheikh-muszaphar-shukor]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-10
+- id: sts-117
+  name: STS-117
+  launch: '2007-06-08T23:38:00Z'
+  landing: '2007-06-22T19:49:38Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [frederick-w-sturckow, lee-archambault, patrick-g-forrester, steven-swanson, john-d-olivas, james-f-reilly, clayton-anderson]
+  crew_down: [frederick-w-sturckow, lee-archambault, patrick-g-forrester, steven-swanson, john-d-olivas, james-f-reilly, sunita-williams]
+  wiki: https://en.wikipedia.org/wiki/STS-117
+- id: sts-118
+  name: STS-118
+  launch: '2007-08-08T22:36:00Z'
+  landing: '2007-08-21T16:33:20Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [scott-kelly, charles-o-hobaugh, tracy-caldwell-dyson, richard-mastracchio, dafydd-williams, barbara-morgan, alvin-drew]
+  crew_down: [scott-kelly, charles-o-hobaugh, tracy-caldwell-dyson, richard-mastracchio, dafydd-williams, barbara-morgan,
+    alvin-drew]
+  wiki: https://en.wikipedia.org/wiki/STS-118
+- id: soyuz-tma-11
+  name: Soyuz TMA-11
+  launch: '2007-10-10T13:22:00Z'
+  landing: '2008-04-19T08:30:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [yuri-malenchenko, peggy-whitson, sheikh-muszaphar-shukor]
+  crew_down: [yuri-malenchenko, peggy-whitson, yi-so-yeon]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-11
+- id: sts-120
+  name: STS-120
+  launch: '2007-10-23T15:38:19Z'
+  landing: '2007-11-07T18:01:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [pamela-melroy, george-d-zamka, douglas-h-wheelock, stephanie-wilson, scott-e-parazynski, paolo-nespoli, daniel-m-tani]
+  crew_down: [pamela-melroy, george-d-zamka, douglas-h-wheelock, stephanie-wilson, scott-e-parazynski, paolo-nespoli, clayton-anderson]
+  wiki: https://en.wikipedia.org/wiki/STS-120

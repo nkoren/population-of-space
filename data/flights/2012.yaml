@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 2012, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-04m
+  name: Soyuz TMA-04M
+  launch: '2012-05-15T03:01:23Z'
+  landing: '2012-09-17T02:53:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [gennady-padalka, sergey-revin, joseph-m-acaba]
+  crew_down: [gennady-padalka, sergey-revin, joseph-m-acaba]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-04M
+- id: shenzhou-9
+  name: Shenzhou 9
+  launch: '2012-06-16T10:37:24Z'
+  landing: '2012-06-29T02:01:16Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [jing-haipeng, liu-wang, liu-yang]
+  crew_down: [jing-haipeng, liu-wang, liu-yang]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_9
+- id: soyuz-tma-05m
+  name: Soyuz TMA-05M
+  launch: '2012-07-15T02:40:03Z'
+  landing: '2012-11-19T01:53:30Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [yuri-malenchenko, sunita-williams, akihiko-hoshide]
+  crew_down: [yuri-malenchenko, sunita-williams, akihiko-hoshide]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-05M
+- id: soyuz-tma-06m
+  name: Soyuz TMA-06M
+  launch: '2012-10-23T10:51:11Z'
+  landing: '2013-03-16T03:11:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-novitsky, yevgeny-tarelkin, kevin-a-ford]
+  crew_down: [oleg-novitsky, yevgeny-tarelkin, kevin-a-ford]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-06M
+- id: soyuz-tma-07m
+  name: Soyuz TMA-07M
+  launch: '2012-12-19T12:12:36Z'
+  landing: '2013-05-14T02:31:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [roman-romanenko, chris-hadfield, thomas-marshburn]
+  crew_down: [roman-romanenko, chris-hadfield, thomas-marshburn]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-07M

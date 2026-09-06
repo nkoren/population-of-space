@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1988, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tm-5
+  name: Soyuz TM-5
+  launch: '1988-06-07T14:03:13Z'
+  landing: '1988-09-07T00:49:38Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [viktor-savinykh, anatoly-solovyev, aleksandr-panayotov-aleksandrov]
+  crew_down: [vladimir-lyakhov, abdul-ahad-momand]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-5
+- id: soyuz-tm-6
+  name: Soyuz TM-6
+  launch: '1988-08-29T04:23:11Z'
+  landing: '1988-12-21T09:57:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-lyakhov, abdul-ahad-momand, valeri-polyakov]
+  crew_down: [jean-loup-chr-c3-a9tien, vladimir-titov, musa-manarov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-6
+- id: sts-26
+  name: STS-26
+  launch: '1988-09-29T15:37:00Z'
+  landing: '1988-10-03T16:37:11Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [frederick-hauck, george-nelson, richard-o-covey, john-m-lounge, david-c-hilmers]
+  crew_down: [frederick-hauck, george-nelson, richard-o-covey, john-m-lounge, david-c-hilmers]
+  wiki: https://en.wikipedia.org/wiki/STS-26
+- id: soyuz-tm-7
+  name: Soyuz TM-7
+  launch: '1988-11-26T15:49:34Z'
+  landing: '1989-04-27T02:57:58Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [jean-loup-chr-c3-a9tien, aleksandr-aleksandrovich-volkov, sergei-krikalev]
+  crew_down: [aleksandr-aleksandrovich-volkov, sergei-krikalev, valeri-polyakov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-7
+- id: sts-27
+  name: STS-27
+  launch: '1988-12-02T14:30:34Z'
+  landing: '1988-12-06T23:36:11Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-l-gibson, michael-coats, jerry-l-ross, guy-gardner, william-shepherd]
+  crew_down: [robert-l-gibson, michael-coats, jerry-l-ross, guy-gardner, william-shepherd]
+  wiki: https://en.wikipedia.org/wiki/STS-27

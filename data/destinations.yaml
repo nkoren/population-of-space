@@ -1,0 +1,22 @@
+# Destination categories for flights.
+- id: free-flying
+  name: Free-flying orbital
+  description: Orbital flights not docked to a space station (Vostok, Gemini, Apollo Earth-orbit, most Shuttle flights, Inspiration4...).
+- id: suborbital
+  name: Suborbital
+  description: Flights that crossed the 100 km Kármán line without reaching orbit (X-15 flights 90 and 91, Mercury-Redstone, New Shepard, SpaceShipOne). Flights that peaked below 100 km, such as Virgin Galactic, are not counted.
+- id: moon
+  name: Moon
+  description: Apollo lunar missions.
+- id: salyut-mir
+  name: Salyut / Mir
+  description: 'Soviet and Russian space stations: Salyut 1-7 and Mir.'
+- id: skylab
+  name: Skylab
+  description: The US Skylab station (1973-74).
+- id: iss
+  name: International Space Station
+  description: The ISS, continuously crewed since November 2000.
+- id: tiangong
+  name: Tiangong
+  description: 'Chinese space stations: Tiangong-1, Tiangong-2 and the Tiangong modular station.'

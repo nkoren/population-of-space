@@ -1,0 +1,61 @@
+# Crewed spaceflights launched in 1989, in launch order. See docs/DATA.md for the schema.
+- id: sts-29
+  name: STS-29
+  launch: '1989-03-13T14:57:00Z'
+  landing: '1989-03-18T14:35:50Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [michael-coats, james-buchli, john-e-blaha, robert-c-springer, james-p-bagian]
+  crew_down: [michael-coats, james-buchli, john-e-blaha, robert-c-springer, james-p-bagian]
+  wiki: https://en.wikipedia.org/wiki/STS-29
+- id: sts-30
+  name: STS-30
+  launch: '1989-05-04T18:46:59Z'
+  landing: '1989-05-08T19:43:26Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [norman-thagard, david-m-walker, ronald-j-grabe, mary-l-cleave, mark-c-lee]
+  crew_down: [norman-thagard, david-m-walker, ronald-j-grabe, mary-l-cleave, mark-c-lee]
+  wiki: https://en.wikipedia.org/wiki/STS-30
+- id: sts-28
+  name: STS-28
+  launch: '1989-08-08T12:37:00Z'
+  landing: '1989-08-13T13:37:08Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [frederick-hauck, david-leestma, richard-n-richards, james-c-adamson, mark-n-brown]
+  crew_down: [frederick-hauck, david-leestma, richard-n-richards, james-c-adamson, mark-n-brown]
+  wiki: https://en.wikipedia.org/wiki/STS-28
+- id: soyuz-tm-8
+  name: Soyuz TM-8
+  launch: '1989-09-05T21:38:03Z'
+  landing: '1990-02-19T04:36:18Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [aleksandr-serebrov, aleksandr-viktorenko]
+  crew_down: [aleksandr-serebrov, aleksandr-viktorenko]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-8
+- id: sts-34
+  name: STS-34
+  launch: '1989-10-18T16:53:40Z'
+  landing: '1989-10-23T16:33:01Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [donald-e-williams, shannon-lucid, franklin-chang-d-c3-adaz, michael-j-mcculley, ellen-s-baker]
+  crew_down: [donald-e-williams, shannon-lucid, franklin-chang-d-c3-adaz, michael-j-mcculley, ellen-s-baker]
+  wiki: https://en.wikipedia.org/wiki/STS-34
+- id: sts-33
+  name: STS-33
+  launch: '1989-11-23T00:23:30Z'
+  landing: '1989-11-28T00:30:18Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [story-musgrave, frederick-d-gregory, john-e-blaha, sonny-carter, kathryn-c-thornton]
+  crew_down: [story-musgrave, frederick-d-gregory, john-e-blaha, sonny-carter, kathryn-c-thornton]
+  wiki: https://en.wikipedia.org/wiki/STS-33

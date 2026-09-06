@@ -1,0 +1,11 @@
+# Crewed spaceflights launched in 1964, in launch order. See docs/DATA.md for the schema.
+- id: voskhod-1
+  name: Voskhod 1
+  launch: '1964-10-12T07:30:01Z'
+  landing: '1964-10-13T07:47:04Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vladimir-komarov, konstantin-feoktistov, boris-yegorov]
+  crew_down: [vladimir-komarov, konstantin-feoktistov, boris-yegorov]
+  wiki: https://en.wikipedia.org/wiki/Voskhod_1

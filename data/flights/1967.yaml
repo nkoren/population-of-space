@@ -1,0 +1,11 @@
+# Crewed spaceflights launched in 1967, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-1
+  name: Soyuz 1
+  launch: '1967-04-23T00:35:00Z'
+  landing: '1967-04-24T03:22:52Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vladimir-komarov]
+  crew_down: [vladimir-komarov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_1

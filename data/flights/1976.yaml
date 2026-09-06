@@ -1,0 +1,31 @@
+# Crewed spaceflights launched in 1976, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-21
+  name: Soyuz 21
+  launch: '1976-07-06T12:08:45Z'
+  landing: '1976-08-24T18:32:17Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [boris-volynov, vitaly-zholobov]
+  crew_down: [boris-volynov, vitaly-zholobov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_21
+- id: soyuz-22
+  name: Soyuz 22
+  launch: '1976-09-15T09:48:30Z'
+  landing: '1976-09-23T07:40:47Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [valery-bykovsky, vladimir-aksyonov]
+  crew_down: [valery-bykovsky, vladimir-aksyonov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_22
+- id: soyuz-23
+  name: Soyuz 23
+  launch: '1976-10-14T17:39:18Z'
+  landing: '1976-10-16T17:45:53Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vyacheslav-zudov, valery-rozhdestvensky]
+  crew_down: [vyacheslav-zudov, valery-rozhdestvensky]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_23

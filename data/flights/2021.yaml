@@ -1,0 +1,111 @@
+# Crewed spaceflights launched in 2021, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-ms-18
+  name: Soyuz MS-18
+  launch: '2021-04-09T07:42:00Z'
+  landing: '2021-10-17T04:35:44Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-novitsky, pyotr-dubrov, mark-t-vande-hei]
+  crew_down: [oleg-novitsky, klim-shipenko, yulia-peresild]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-18
+- id: spacex-crew-2
+  name: SpaceX Crew-2
+  launch: '2021-04-23T09:49:02Z'
+  landing: '2021-11-09T03:33:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [shane-kimbrough, k-megan-mcarthur, akihiko-hoshide, thomas-pesquet]
+  crew_down: [shane-kimbrough, k-megan-mcarthur, akihiko-hoshide, thomas-pesquet]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-2
+- id: shenzhou-12
+  name: Shenzhou-12
+  launch: '2021-06-17T01:22:27Z'
+  landing: '2021-09-17T05:34:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [nie-haisheng, liu-boming, tang-hongbo]
+  crew_down: [nie-haisheng, liu-boming, tang-hongbo]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_12
+- id: blue-origin-ns-16
+  name: Blue Origin NS-16
+  launch: '2021-07-20T13:11:00Z'
+  landing: '2021-07-20T13:21:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [jeff-bezos, mark-bezos, wally-funk, oliver-daemen]
+  crew_down: [jeff-bezos, mark-bezos, wally-funk, oliver-daemen]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-16
+- id: spacex-inspiration4
+  name: SpaceX Inspiration4
+  launch: '2021-09-16T00:02:56Z'
+  landing: '2021-09-18T23:06:49Z'
+  launch_nation: US
+  destination: free-flying
+  sector: commercial
+  crew_up: [jared-isaacman, sian-proctor, hayley-arceneaux, christopher-sembroski]
+  crew_down: [jared-isaacman, sian-proctor, hayley-arceneaux, christopher-sembroski]
+  wiki: https://en.wikipedia.org/wiki/Inspiration4
+- id: soyuz-ms-19
+  name: Soyuz MS-19
+  launch: '2021-10-05T08:55:00Z'
+  landing: '2022-03-30T11:28:26Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [anton-shkaplerov, klim-shipenko, yulia-peresild]
+  crew_down: [anton-shkaplerov, pyotr-dubrov, mark-t-vande-hei]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-19
+- id: blue-origin-ns-18
+  name: Blue Origin NS-18
+  launch: '2021-10-13T14:49:51Z'
+  landing: '2021-10-13T14:59:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [audrey-powers, glen-de-vries, william-shatner, chris-boshuizen-age-birthday-wikipedia-who-nationality-biography-125002-html]
+  crew_down: [audrey-powers, glen-de-vries, william-shatner, chris-boshuizen-age-birthday-wikipedia-who-nationality-biography-125002-html]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-18
+- id: shenzhou-13
+  name: Shenzhou-13
+  launch: '2021-10-15T16:23:56Z'
+  landing: '2022-04-16T01:56:49Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [zhai-zhigang, wang-yaping, ye-guangfu]
+  crew_down: [zhai-zhigang, wang-yaping, ye-guangfu]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_13
+- id: spacex-crew-3
+  name: SpaceX Crew-3
+  launch: '2021-11-11T02:03:00Z'
+  landing: '2022-05-06T04:43:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [raja-chari, thomas-marshburn, matthias-maurer, kayla-barron]
+  crew_down: [raja-chari, thomas-marshburn, matthias-maurer, kayla-barron]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-3
+- id: soyuz-ms-20
+  name: Soyuz MS-20
+  launch: '2021-12-08T07:38:00Z'
+  landing: '2021-12-20T03:13:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [alexander-misurkin, yusaku-maezawa, yozo-hirano]
+  crew_down: [alexander-misurkin, yusaku-maezawa, yozo-hirano]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-20
+- id: blue-origin-ns-19
+  name: Blue Origin NS-19
+  launch: '2021-12-11T15:00:00Z'
+  landing: '2021-12-11T15:10:00Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [michael-strahan, dylan-taylor, evan-dick, laura-shepard-churchley, cameron-bess, lane-bess]
+  crew_down: [michael-strahan, dylan-taylor, evan-dick, laura-shepard-churchley, cameron-bess, lane-bess]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-19

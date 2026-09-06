@@ -1,0 +1,101 @@
+# Crewed spaceflights launched in 1994, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tm-18
+  name: Soyuz TM-18
+  launch: '1994-01-08T10:05:34Z'
+  landing: '1994-07-09T10:32:35Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [valeri-polyakov, viktor-afanasyev, yuri-usachov]
+  crew_down: [viktor-afanasyev, yuri-usachov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-18
+- id: sts-60
+  name: STS-60
+  launch: '1994-02-03T12:10:00Z'
+  landing: '1994-02-11T19:19:22Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [charles-bolden, franklin-chang-d-c3-adaz, sergei-krikalev, marsha-ivins, jan-davis, ronald-m-sega]
+  crew_down: [charles-bolden, franklin-chang-d-c3-adaz, sergei-krikalev, marsha-ivins, jan-davis, ronald-m-sega]
+  wiki: https://en.wikipedia.org/wiki/STS-60
+- id: sts-62
+  name: STS-62
+  launch: '1994-03-04T13:53:01Z'
+  landing: '1994-03-18T13:10:42Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [marsha-ivins, john-casper, pierre-j-thuot, charles-d-gemar, andrew-m-allen]
+  crew_down: [marsha-ivins, john-casper, pierre-j-thuot, charles-d-gemar, andrew-m-allen]
+  wiki: https://en.wikipedia.org/wiki/STS-62
+- id: sts-59
+  name: STS-59
+  launch: '1994-04-09T11:05:00Z'
+  landing: '1994-04-20T16:55:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [linda-m-godwin, jerome-apt, sidney-m-gutierrez, kevin-p-chilton, michael-r-clifford, thomas-david-jones]
+  crew_down: [linda-m-godwin, jerome-apt, sidney-m-gutierrez, kevin-p-chilton, michael-r-clifford, thomas-david-jones]
+  wiki: https://en.wikipedia.org/wiki/STS-59
+- id: soyuz-tm-19
+  name: Soyuz TM-19
+  launch: '1994-07-01T12:24:50Z'
+  landing: '1994-11-04T11:18:26Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [yuri-malenchenko, talgat-musabayev]
+  crew_down: [yuri-malenchenko, talgat-musabayev, ulf-merbold]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-19
+- id: sts65
+  name: STS65
+  launch: '1994-07-08T16:43:01Z'
+  landing: '1994-07-23T10:38:01Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-d-cabana, richard-hieb, carl-e-walz, james-d-halsell, leroy-chiao, donald-a-thomas, chiaki-mukai]
+  crew_down: [robert-d-cabana, richard-hieb, carl-e-walz, james-d-halsell, leroy-chiao, donald-a-thomas, chiaki-mukai]
+  wiki: https://en.wikipedia.org/wiki/STS-65
+- id: sts-64
+  name: STS-64
+  launch: '1994-09-09T22:22:35Z'
+  landing: '1994-09-20T21:12:52Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [mark-c-lee, richard-n-richards, carl-j-meade, l-blaine-hammond, susan-helms, jerry-m-linenger]
+  crew_down: [mark-c-lee, richard-n-richards, carl-j-meade, l-blaine-hammond, susan-helms, jerry-m-linenger]
+  wiki: https://en.wikipedia.org/wiki/STS-64
+- id: sts-68
+  name: STS-68
+  launch: '1994-09-30T11:16:01Z'
+  landing: '1994-10-11T17:02:09Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [michael-a-baker, peter-wisoff, daniel-w-bursch, thomas-david-jones, terrence-w-wilcutt, steven-smith]
+  crew_down: [michael-a-baker, peter-wisoff, daniel-w-bursch, thomas-david-jones, terrence-w-wilcutt, steven-smith]
+  wiki: https://en.wikipedia.org/wiki/STS-68
+- id: soyuz-tm-20
+  name: Soyuz TM-20
+  launch: '1994-10-03T22:42:30Z'
+  landing: '1995-03-22T04:04:05Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [ulf-merbold, aleksandr-viktorenko, yelena-kondakova]
+  crew_down: [aleksandr-viktorenko, valeri-polyakov, yelena-kondakova]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-20
+- id: sts-66
+  name: STS-66
+  launch: '1994-11-03T16:59:43Z'
+  landing: '1994-11-14T15:33:45Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [donald-r-mcmonagle, curtis-brown, ellen-ochoa, joseph-r-tanner, jean-fran-c3-a7ois-clervoy, scott-e-parazynski]
+  crew_down: [donald-r-mcmonagle, curtis-brown, ellen-ochoa, joseph-r-tanner, jean-fran-c3-a7ois-clervoy, scott-e-parazynski]
+  wiki: https://en.wikipedia.org/wiki/STS-66

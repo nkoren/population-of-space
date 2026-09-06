@@ -1,0 +1,61 @@
+# Crewed spaceflights launched in 1983, in launch order. See docs/DATA.md for the schema.
+- id: sts-6
+  name: STS-6
+  launch: '1983-04-04T18:30:00Z'
+  landing: '1983-04-09T18:53:42Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [paul-j-weitz, karol-j-bobko, story-musgrave, donald-h-peterson]
+  crew_down: [paul-j-weitz, karol-j-bobko, story-musgrave, donald-h-peterson]
+  wiki: https://en.wikipedia.org/wiki/STS-6
+- id: soyuz-t-8
+  name: Soyuz T-8
+  launch: '1983-04-20T13:10:54Z'
+  landing: '1983-04-22T13:28:42Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [gennady-strekalov, aleksandr-serebrov, vladimir-titov]
+  crew_down: [gennady-strekalov, aleksandr-serebrov, vladimir-titov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-8
+- id: sts-7
+  name: STS-7
+  launch: '1983-06-18T11:33:00Z'
+  landing: '1983-06-24T13:56:59Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-crippen, frederick-hauck, john-m-fabian, sally-ride, norman-thagard]
+  crew_down: [robert-crippen, frederick-hauck, john-m-fabian, sally-ride, norman-thagard]
+  wiki: https://en.wikipedia.org/wiki/STS-7
+- id: soyuz-t-9
+  name: Soyuz T-9
+  launch: '1983-06-27T09:12:00Z'
+  landing: '1983-11-23T19:58:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-lyakhov, aleksandr-pavlovich-aleksandrov]
+  crew_down: [vladimir-lyakhov, aleksandr-pavlovich-aleksandrov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-9
+- id: sts-8
+  name: STS-8
+  launch: '1983-08-30T06:32:00Z'
+  landing: '1983-09-05T07:40:43Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [richard-h-truly, daniel-brandenstein, guion-bluford, dale-gardner, william-e-thornton]
+  crew_down: [richard-h-truly, daniel-brandenstein, guion-bluford, dale-gardner, william-e-thornton]
+  wiki: https://en.wikipedia.org/wiki/STS-8
+- id: sts-9
+  name: STS-9
+  launch: '1983-11-28T16:00:00Z'
+  landing: '1983-12-08T23:47:24Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [john-young, owen-garriott, brewster-h-shaw, robert-a-parker, ulf-merbold, byron-k-lichtenberg]
+  crew_down: [john-young, owen-garriott, brewster-h-shaw, robert-a-parker, ulf-merbold, byron-k-lichtenberg]
+  wiki: https://en.wikipedia.org/wiki/STS-9

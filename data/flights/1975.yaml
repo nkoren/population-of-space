@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1975, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-17
+  name: Soyuz 17
+  launch: '1975-01-10T21:43:37Z'
+  landing: '1975-02-09T11:03:22Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [georgy-grechko, aleksei-gubarev]
+  crew_down: [georgy-grechko, aleksei-gubarev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_17
+- id: soyuz-18a
+  name: Soyuz 18A
+  launch: '1975-04-05T11:04:54Z'
+  landing: '1975-04-05T11:26:21Z'
+  launch_nation: RU
+  destination: suborbital
+  sector: government
+  crew_up: [vasily-lazarev, oleg-makarov]
+  crew_down: [vasily-lazarev, oleg-makarov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_7K-T_No.39
+- id: soyuz-18
+  name: Soyuz 18
+  launch: '1975-05-24T14:58:10Z'
+  landing: '1975-07-26T14:18:18Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vitaly-sevastyanov, pyotr-klimuk]
+  crew_down: [vitaly-sevastyanov, pyotr-klimuk]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_18
+- id: soyuz-19
+  name: Soyuz 19
+  launch: '1975-07-15T12:20:00Z'
+  landing: '1975-07-21T10:50:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [alexei-leonov, valery-kubasov]
+  crew_down: [alexei-leonov, valery-kubasov]
+  wiki: https://en.wikipedia.org/wiki/Apollo%E2%80%93Soyuz
+- id: apollo-soyuz
+  name: Apollo-Soyuz
+  launch: '1975-07-15T19:50:00Z'
+  landing: '1975-07-24T21:18:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [thomas-p-stafford, vance-d-brand, deke-slayton]
+  crew_down: [thomas-p-stafford, vance-d-brand, deke-slayton]
+  wiki: https://en.wikipedia.org/wiki/Apollo%E2%80%93Soyuz

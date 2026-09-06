@@ -1,0 +1,21 @@
+# Crewed spaceflights launched in 1986, in launch order. See docs/DATA.md for the schema.
+- id: sts-61-c
+  name: STS-61-C
+  launch: '1986-01-12T11:55:00Z'
+  landing: '1986-01-18T13:58:51Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-l-gibson, george-nelson, steven-hawley, charles-bolden, franklin-chang-d-c3-adaz, bill-nelson, robert-j-cenker]
+  crew_down: [robert-l-gibson, george-nelson, steven-hawley, charles-bolden, franklin-chang-d-c3-adaz, bill-nelson, robert-j-cenker]
+  wiki: https://en.wikipedia.org/wiki/STS-61-C
+- id: soyuz-t-15
+  name: Soyuz T-15
+  launch: '1986-03-13T12:33:09Z'
+  landing: '1986-07-16T12:34:05Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [leonid-kizim, vladimir-solovyov]
+  crew_down: [leonid-kizim, vladimir-solovyov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-15

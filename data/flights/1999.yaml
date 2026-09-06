@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 1999, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tm-29
+  name: Soyuz TM-29
+  launch: '1999-02-20T04:18:01Z'
+  landing: '1999-08-28T00:34:20Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [viktor-afanasyev, jean-pierre-haigner-c3-a9, ivan-bella]
+  crew_down: [viktor-afanasyev, jean-pierre-haigner-c3-a9, sergey-avdeev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-29
+- id: sts-96
+  name: STS-96
+  launch: '1999-05-27T10:49:42Z'
+  landing: '1999-06-06T06:02:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [kent-rominger, rick-husband, daniel-t-barry, ellen-ochoa, tamara-e-jernigan, julie-payette, valeri-tokarev]
+  crew_down: [kent-rominger, rick-husband, daniel-t-barry, ellen-ochoa, tamara-e-jernigan, julie-payette, valeri-tokarev]
+  wiki: https://en.wikipedia.org/wiki/STS-96
+- id: sts-93
+  name: STS-93
+  launch: '1999-07-23T04:31:00Z'
+  landing: '1999-07-28T03:20:35Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [eileen-collins, jeffrey-ashby, catherine-coleman, steven-hawley, michel-tognini]
+  crew_down: [eileen-collins, jeffrey-ashby, catherine-coleman, steven-hawley, michel-tognini]
+  wiki: https://en.wikipedia.org/wiki/STS-93
+- id: sts-103
+  name: STS-103
+  launch: '1999-12-20T00:50:00Z'
+  landing: '1999-12-28T00:01:34Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [curtis-brown, scott-kelly, john-m-grunsfeld, jean-fran-c3-a7ois-clervoy, michael-foale, steven-smith, claude-nicollier]
+  crew_down: [curtis-brown, scott-kelly, john-m-grunsfeld, jean-fran-c3-a7ois-clervoy, michael-foale, steven-smith, claude-nicollier]
+  wiki: https://en.wikipedia.org/wiki/STS-103

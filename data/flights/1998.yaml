@@ -1,0 +1,74 @@
+# Crewed spaceflights launched in 1998, in launch order. See docs/DATA.md for the schema.
+- id: sts-89
+  name: STS-89
+  launch: '1998-01-23T02:48:15Z'
+  landing: '1998-01-31T22:36:00Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [terrence-w-wilcutt, joe-f-edwards-jr, james-f-reilly, michael-p-anderson, bonnie-j-dunbar, salizhan-sharipov,
+    andy-thomas]
+  crew_down: [terrence-w-wilcutt, joe-f-edwards-jr, james-f-reilly, michael-p-anderson, bonnie-j-dunbar, salizhan-sharipov,
+    david-wolf]
+  wiki: https://en.wikipedia.org/wiki/STS-89
+- id: soyuz-tm-27
+  name: Soyuz TM-27
+  launch: '1998-01-29T16:33:42Z'
+  landing: '1998-08-25T05:24:44Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [talgat-musabayev, nikolai-budarin, l-c3-a9opold-eyharts]
+  crew_down: [talgat-musabayev, nikolai-budarin, yuri-baturin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-27
+- id: sts-90
+  name: STS-90
+  launch: '1998-04-17T18:19:00Z'
+  landing: '1998-05-03T16:09:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [richard-a-searfoss, scott-altman, richard-m-linnehan, kathryn-p-hire, dafydd-williams, jay-c-buckey, james-a-pawelczyk]
+  crew_down: [richard-a-searfoss, scott-altman, richard-m-linnehan, kathryn-p-hire, dafydd-williams, jay-c-buckey, james-a-pawelczyk]
+  wiki: https://en.wikipedia.org/wiki/STS-90
+- id: sts-91
+  name: STS-91
+  launch: '1998-06-02T22:06:00Z'
+  landing: '1998-06-12T18:00:00Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [charles-j-precourt, dominic-l-pudwill-gorie, franklin-chang-d-c3-adaz, wendy-b-lawrence, janet-l-kavandi, valery-ryumin]
+  crew_down: [charles-j-precourt, dominic-l-pudwill-gorie, franklin-chang-d-c3-adaz, wendy-b-lawrence, janet-l-kavandi, valery-ryumin,
+    andy-thomas]
+  wiki: https://en.wikipedia.org/wiki/STS-91
+- id: soyuz-tm-28
+  name: Soyuz TM-28
+  launch: '1998-08-13T09:43:11Z'
+  landing: '1999-02-28T02:14:30Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [gennady-padalka, sergey-avdeev, yuri-baturin]
+  crew_down: [gennady-padalka, ivan-bella]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-28
+- id: sts-95
+  name: STS-95
+  launch: '1998-10-29T19:19:34Z'
+  landing: '1998-11-07T17:04:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [curtis-brown, steven-lindsey, stephen-robinson, scott-e-parazynski, pedro-duque, chiaki-mukai, john-glenn]
+  crew_down: [curtis-brown, steven-lindsey, stephen-robinson, scott-e-parazynski, pedro-duque, chiaki-mukai, john-glenn]
+  wiki: https://en.wikipedia.org/wiki/STS-95
+- id: sts-88
+  name: STS-88
+  launch: '1998-12-04T08:35:00Z'
+  landing: '1998-12-16T03:53:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [robert-d-cabana, frederick-w-sturckow, jerry-l-ross, nancy-j-currie-gregg, james-h-newman, sergei-krikalev]
+  crew_down: [robert-d-cabana, frederick-w-sturckow, jerry-l-ross, nancy-j-currie-gregg, james-h-newman, sergei-krikalev]
+  wiki: https://en.wikipedia.org/wiki/STS-88

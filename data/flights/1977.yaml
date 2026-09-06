@@ -1,0 +1,31 @@
+# Crewed spaceflights launched in 1977, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-24
+  name: Soyuz 24
+  launch: '1977-02-07T16:11:00Z'
+  landing: '1977-02-25T09:38:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [viktor-gorbatko, yuri-glazkov]
+  crew_down: [viktor-gorbatko, yuri-glazkov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_24
+- id: soyuz-25
+  name: Soyuz 25
+  launch: '1977-10-09T02:40:35Z'
+  landing: '1977-10-11T03:25:20Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [valery-ryumin, vladimir-kovalyonok]
+  crew_down: [valery-ryumin, vladimir-kovalyonok]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_25
+- id: soyuz-26
+  name: Soyuz 26
+  launch: '1977-12-10T01:18:40Z'
+  landing: '1978-01-16T11:24:58Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [georgy-grechko, yuri-romanenko]
+  crew_down: [oleg-makarov, vladimir-dzhanibekov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_26

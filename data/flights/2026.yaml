@@ -1,0 +1,55 @@
+# Crewed spaceflights launched in 2026, in launch order. See docs/DATA.md for the schema.
+- id: blue-origin-ns-38
+  name: Blue Origin NS-38
+  launch: '2026-01-21T16:25:35Z'
+  landing: '2026-01-21T16:35:47Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [tim-drexler, linda-edwards, alain-fernandez, alberto-gutierrez, jim-hendren, laura-stiles]
+  crew_down: [tim-drexler, linda-edwards, alain-fernandez, alberto-gutierrez, jim-hendren, laura-stiles]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-38
+- id: spacex-crew-12
+  name: SpaceX Crew-12
+  launch: '2026-02-13T10:15:56Z'
+  landing: null
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [jessica-meir, jack-hathaway, sophie-adenot, andrey-fedyaev]
+  crew_down: [jessica-meir, jack-hathaway, sophie-adenot, andrey-fedyaev]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-12
+  note: Return planned for September 2026 after the Crew-13 handover.
+- id: artemis-ii
+  name: Artemis II
+  launch: '2026-04-01T22:35:12Z'
+  landing: '2026-04-11T00:07:27Z'
+  launch_nation: US
+  destination: moon
+  sector: government
+  crew_up: [reid-wiseman, victor-j-glover, christina-koch, jeremy-hansen]
+  crew_down: [reid-wiseman, victor-j-glover, christina-koch, jeremy-hansen]
+  wiki: https://en.wikipedia.org/wiki/Artemis_II
+  note: Crewed lunar flyby; first humans beyond low Earth orbit since Apollo 17.
+- id: shenzhou-23
+  name: Shenzhou 23
+  launch: '2026-05-24T15:08:36Z'
+  landing: null
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [zhu-yangzhu, zhang-zhiyuan, lai-ka-ying]
+  crew_down: [zhu-yangzhu, zhang-zhiyuan, lai-ka-ying]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_23
+  note: Return planned for November 2026.
+- id: soyuz-ms-29
+  name: Soyuz MS-29
+  launch: '2026-07-14T14:47:43Z'
+  landing: null
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [pyotr-dubrov, anna-kikina, anil-menon]
+  crew_down: [pyotr-dubrov, anna-kikina, anil-menon]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-29
+  note: Return planned for April 2027.

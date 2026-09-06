@@ -1,0 +1,81 @@
+# Crewed spaceflights launched in 1984, in launch order. See docs/DATA.md for the schema.
+- id: sts-41-b
+  name: STS-41-B
+  launch: '1984-02-03T13:00:00Z'
+  landing: '1984-02-11T12:15:55Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [vance-d-brand, robert-l-gibson, bruce-mccandless-ii, robert-l-stewart, ronald-mcnair]
+  crew_down: [vance-d-brand, robert-l-gibson, bruce-mccandless-ii, robert-l-stewart, ronald-mcnair]
+  wiki: https://en.wikipedia.org/wiki/STS-41-B
+- id: soyuz-t-10
+  name: Soyuz T-10
+  launch: '1984-02-08T12:07:26Z'
+  landing: '1984-04-11T10:48:48Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [leonid-kizim, vladimir-solovyov, oleg-atkov]
+  crew_down: [yuri-malyshev, gennady-strekalov, rakesh-sharma]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-10
+- id: soyuz-t-11
+  name: Soyuz T-11
+  launch: '1984-04-03T13:08:00Z'
+  landing: '1984-10-02T10:57:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [yuri-malyshev, gennady-strekalov, rakesh-sharma]
+  crew_down: [leonid-kizim, vladimir-solovyov, oleg-atkov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-11
+- id: sts-41-c
+  name: STS-41-C
+  launch: '1984-04-06T13:58:00Z'
+  landing: '1984-04-13T13:38:07Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-crippen, dick-scobee, terry-hart, james-van-hoften, george-nelson]
+  crew_down: [robert-crippen, dick-scobee, terry-hart, james-van-hoften, george-nelson]
+  wiki: https://en.wikipedia.org/wiki/STS-41-C
+- id: soyuz-t-12
+  name: Soyuz T-12
+  launch: '1984-07-17T17:40:54Z'
+  landing: '1984-07-29T12:55:30Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-dzhanibekov, svetlana-savitskaya, igor-volk]
+  crew_down: [vladimir-dzhanibekov, svetlana-savitskaya, igor-volk]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-12
+- id: sts-41-d
+  name: STS-41-D
+  launch: '1984-08-30T12:41:50Z'
+  landing: '1984-09-05T13:37:54Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [henry-hartsfield, michael-coats, mike-mullane, steven-hawley, judith-resnik, charles-d-walker]
+  crew_down: [henry-hartsfield, michael-coats, mike-mullane, steven-hawley, judith-resnik, charles-d-walker]
+  wiki: https://en.wikipedia.org/wiki/STS-41-D
+- id: sts-41-g
+  name: STS-41-G
+  launch: '1984-10-05T11:03:00Z'
+  landing: '1984-10-13T16:26:33Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-crippen, sally-ride, jon-mcbride, kathryn-d-sullivan, david-leestma, paul-scully-power, marc-garneau]
+  crew_down: [robert-crippen, sally-ride, jon-mcbride, kathryn-d-sullivan, david-leestma, paul-scully-power, marc-garneau]
+  wiki: https://en.wikipedia.org/wiki/STS-41-G
+- id: sts-51-a
+  name: STS-51-A
+  launch: '1984-11-08T12:15:00Z'
+  landing: '1984-11-16T11:59:56Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [joseph-p-allen, frederick-hauck, dale-gardner, david-m-walker, anna-lee-fisher]
+  crew_down: [joseph-p-allen, frederick-hauck, dale-gardner, david-m-walker, anna-lee-fisher]
+  wiki: https://en.wikipedia.org/wiki/STS-51-A

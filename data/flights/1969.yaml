@@ -1,0 +1,91 @@
+# Crewed spaceflights launched in 1969, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-4
+  name: Soyuz 4
+  launch: '1969-01-14T07:30:00Z'
+  landing: '1969-01-17T06:50:47Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vladimir-shatalov]
+  crew_down: [vladimir-shatalov, aleksei-yeliseyev, boris-volynov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_4
+- id: soyuz-5
+  name: Soyuz 5
+  launch: '1969-01-15T07:04:57Z'
+  landing: '1969-01-18T07:59:12Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [aleksei-yeliseyev, boris-volynov, yevgeny-khrunov]
+  crew_down: [yevgeny-khrunov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_5
+- id: apollo-9
+  name: Apollo 9
+  launch: '1969-03-03T16:00:00Z'
+  landing: '1969-03-13T17:00:54Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [james-mcdivitt, david-scott, rusty-schweickart]
+  crew_down: [james-mcdivitt, david-scott, rusty-schweickart]
+  wiki: https://en.wikipedia.org/wiki/Apollo_9
+- id: apollo-10
+  name: Apollo 10
+  launch: '1969-05-18T16:49:00Z'
+  landing: '1969-05-26T16:52:23Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [thomas-p-stafford, john-young, gene-cernan]
+  crew_down: [john-young, thomas-p-stafford, gene-cernan]
+  wiki: https://en.wikipedia.org/wiki/Apollo_10
+- id: apollo-11
+  name: Apollo 11
+  launch: '1969-07-16T13:32:00Z'
+  landing: '1969-07-24T16:50:35Z'
+  launch_nation: RU
+  destination: moon
+  sector: government
+  crew_up: [neil-armstrong, michael-collins, buzz-aldrin]
+  crew_down: [neil-armstrong, michael-collins, buzz-aldrin]
+  wiki: https://en.wikipedia.org/wiki/Apollo_11
+- id: soyuz-6
+  name: Soyuz 6
+  launch: '1969-10-11T11:10:00Z'
+  landing: '1969-10-16T09:52:47Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [valery-kubasov, georgy-shonin]
+  crew_down: [valery-kubasov, georgy-shonin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_6
+- id: soyuz-7
+  name: Soyuz 7
+  launch: '1969-10-12T10:44:42Z'
+  landing: '1969-10-17T09:25:05Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vladislav-volkov, anatoly-filipchenko, viktor-gorbatko]
+  crew_down: [vladislav-volkov, anatoly-filipchenko, viktor-gorbatko]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_7
+- id: soyuz-8
+  name: Soyuz 8
+  launch: '1969-10-13T10:19:09Z'
+  landing: '1969-10-18T09:09:58Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vladimir-shatalov, aleksei-yeliseyev]
+  crew_down: [vladimir-shatalov, aleksei-yeliseyev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_8
+- id: apollo-12
+  name: Apollo 12
+  launch: '1969-11-14T16:22:00Z'
+  landing: '1969-11-24T20:58:24Z'
+  launch_nation: RU
+  destination: moon
+  sector: government
+  crew_up: [pete-conrad, richard-f-gordon-jr, alan-bean]
+  crew_down: [pete-conrad, richard-f-gordon-jr, alan-bean]
+  wiki: https://en.wikipedia.org/wiki/Apollo_12

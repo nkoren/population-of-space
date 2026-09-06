@@ -1,0 +1,96 @@
+# Crewed spaceflights launched in 1995, in launch order. See docs/DATA.md for the schema.
+- id: sts-63
+  name: STS-63
+  launch: '1995-02-03T05:22:00Z'
+  landing: '1995-02-11T11:50:00Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [jim-wetherbee, bernard-a-harris-jr, michael-foale, james-s-voss, vladimir-titov, eileen-collins]
+  crew_down: [jim-wetherbee, bernard-a-harris-jr, michael-foale, james-s-voss, vladimir-titov, eileen-collins]
+  wiki: https://en.wikipedia.org/wiki/STS-63
+- id: sts-67
+  name: STS-67
+  launch: '1995-03-02T06:38:00Z'
+  landing: '1995-03-18T21:47:01Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [stephen-s-oswald, william-g-gregory, john-m-grunsfeld, wendy-b-lawrence, tamara-e-jernigan, samuel-t-durrance,
+    ronald-parise]
+  crew_down: [stephen-s-oswald, william-g-gregory, john-m-grunsfeld, wendy-b-lawrence, tamara-e-jernigan, samuel-t-durrance,
+    ronald-parise]
+  wiki: https://en.wikipedia.org/wiki/STS-67
+- id: soyuz-tm-21
+  name: Soyuz TM-21
+  launch: '1995-03-14T06:11:34Z'
+  landing: '1995-09-11T06:52:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-dezhurov, gennady-strekalov, norman-thagard]
+  crew_down: [anatoly-solovyev, nikolai-budarin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-21
+- id: sts-71
+  name: STS-71
+  launch: '1995-06-27T19:32:19Z'
+  landing: '1995-07-07T14:55:00Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [robert-l-gibson, charles-j-precourt, ellen-s-baker, gregory-j-harbaugh, bonnie-j-dunbar, anatoly-solovyev, nikolai-budarin]
+  crew_down: [robert-l-gibson, charles-j-precourt, ellen-s-baker, gregory-j-harbaugh, bonnie-j-dunbar, gennady-strekalov,
+    vladimir-dezhurov, norman-thagard]
+  wiki: https://en.wikipedia.org/wiki/STS-71
+- id: sts-70
+  name: STS-70
+  launch: '1995-07-13T13:41:55Z'
+  landing: '1995-07-22T12:02:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [terence-t-henricks, kevin-r-kregel, donald-a-thomas, nancy-j-currie-gregg, mary-ellen-weber]
+  crew_down: [terence-t-henricks, kevin-r-kregel, donald-a-thomas, nancy-j-currie-gregg, mary-ellen-weber]
+  wiki: https://en.wikipedia.org/wiki/STS-70
+- id: soyuz-tm-22
+  name: Soyuz TM-22
+  launch: '1995-09-03T09:00:00Z'
+  landing: '1996-02-29T10:42:08Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [yuri-gidzenko, sergey-avdeev, thomas-reiter]
+  crew_down: [yuri-gidzenko, sergey-avdeev, thomas-reiter]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-22
+- id: sts-69
+  name: STS-69
+  launch: '1995-09-07T15:09:00Z'
+  landing: '1995-09-18T11:38:56Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [david-m-walker, kenneth-cockrell, james-s-voss, james-h-newman, michael-l-gernhardt]
+  crew_down: [david-m-walker, kenneth-cockrell, james-s-voss, james-h-newman, michael-l-gernhardt]
+  wiki: https://en.wikipedia.org/wiki/STS-69
+- id: sts-73
+  name: STS-73
+  launch: '1995-10-20T13:53:00Z'
+  landing: '1995-11-05T11:45:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [ken-bowersox, kent-rominger, catherine-coleman, michael-l-c3-b3pez-alegr-c3-ada, kathryn-c-thornton, frederick-w-leslie,
+    albert-sacco]
+  crew_down: [ken-bowersox, kent-rominger, catherine-coleman, michael-l-c3-b3pez-alegr-c3-ada, kathryn-c-thornton, frederick-w-leslie,
+    albert-sacco]
+  wiki: https://en.wikipedia.org/wiki/STS-73
+- id: sts-74
+  name: STS-74
+  launch: '1995-11-12T12:30:00Z'
+  landing: '1995-11-20T17:01:27Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [kenneth-d-cameron, james-d-halsell, chris-hadfield, jerry-l-ross, william-s-mcarthur]
+  crew_down: [kenneth-d-cameron, james-d-halsell, chris-hadfield, jerry-l-ross, william-s-mcarthur]
+  wiki: https://en.wikipedia.org/wiki/STS-74

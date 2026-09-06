@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 2017, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-ms-04
+  name: Soyuz MS-04
+  launch: '2017-04-20T07:13:44Z'
+  landing: '2017-09-03T01:22:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [fyodor-yurchikhin, jack-d-fischer]
+  crew_down: [fyodor-yurchikhin, jack-d-fischer, peggy-whitson]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-04
+- id: soyuz-ms-05
+  name: Soyuz MS-05
+  launch: '2017-07-28T15:41:00Z'
+  landing: '2017-12-14T08:38:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-ryazansky, randolph-bresnik, paolo-nespoli]
+  crew_down: [sergey-ryazansky, randolph-bresnik, paolo-nespoli]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-05
+- id: soyuz-ms-06
+  name: Soyuz MS-06
+  launch: '2017-09-12T21:17:00Z'
+  landing: '2018-02-28T02:31:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [alexander-misurkin, mark-t-vande-hei, joseph-m-acaba]
+  crew_down: [alexander-misurkin, mark-t-vande-hei, joseph-m-acaba]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-06
+- id: soyuz-ms-07
+  name: Soyuz MS-07
+  launch: '2017-12-17T07:21:00Z'
+  landing: '2018-06-03T12:39:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [anton-shkaplerov, scott-d-tingle, norishige-kanai]
+  crew_down: [anton-shkaplerov, scott-d-tingle, norishige-kanai]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-07

@@ -1,0 +1,4405 @@
+# Every person who has flown to space, ordered by first launch. See docs/DATA.md for the schema.
+- id: yuri-gagarin
+  name: Yuri Gagarin
+  born: '1934-03-09'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Gagarin
+- id: alan-shepard
+  name: Alan Shepard
+  born: '1923-11-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Alan_Shepard
+- id: gus-grissom
+  name: Gus Grissom
+  born: '1926-04-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gus_Grissom
+- id: gherman-titov
+  name: Gherman Titov
+  born: '1935-09-11'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Gherman_Titov
+- id: john-glenn
+  name: John Glenn
+  born: '1921-07-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_Glenn
+- id: scott-carpenter
+  name: Scott Carpenter
+  born: '1925-05-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Scott_Carpenter
+- id: andriyan-nikolayev
+  name: Andriyan Nikolayev
+  born: '1929-09-05'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Andriyan_Nikolayev
+- id: pavel-popovich
+  name: Pavel Popovich
+  born: '1930-10-05'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Pavel_Popovich
+- id: wally-schirra
+  name: Wally Schirra
+  born: '1923-03-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Wally_Schirra
+- id: gordon-cooper
+  name: Gordon Cooper
+  born: '1927-03-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gordon_Cooper
+- id: valery-bykovsky
+  name: Valery Bykovsky
+  born: '1934-08-02'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valery_Bykovsky
+- id: valentina-tereshkova
+  name: Valentina Tereshkova
+  born: '1937-03-06'
+  sex: F
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valentina_Tereshkova
+- id: joseph-a-walker
+  name: Joe Walker
+  born: '1921-02-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joseph_A._Walker
+- id: boris-yegorov
+  name: Boris Yegorov
+  born: '1937-11-26'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Boris_Yegorov
+- id: konstantin-feoktistov
+  name: Konstantin Feoktistov
+  born: '1926-07-02'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Konstantin_Feoktistov
+- id: vladimir-komarov
+  name: Vladimir Komorav
+  born: '1927-03-16'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Komarov
+- id: alexei-leonov
+  name: Alexei Leonov
+  born: '1934-05-30'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Alexei_Leonov
+- id: pavel-belyayev
+  name: Pavel Belyayev
+  born: '1925-06-26'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Pavel_Belyayev
+- id: john-young
+  name: John Young
+  born: '1930-09-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_Young_(astronaut)
+- id: ed-white
+  name: Ed White
+  born: '1930-11-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ed_White_(astronaut)
+- id: james-mcdivitt
+  name: James McDivitt
+  born: '1929-06-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_McDivitt
+- id: pete-conrad
+  name: Pete Conrad
+  born: '1930-06-02'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Pete_Conrad
+- id: frank-borman
+  name: Frank Borman
+  born: '1928-03-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Frank_Borman
+- id: jim-lovell
+  name: Jim Lovell
+  born: '1928-03-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jim_Lovell
+- id: thomas-p-stafford
+  name: Tom Stafford
+  born: '1930-09-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Thomas_P._Stafford
+- id: david-scott
+  name: David Scott
+  born: '1932-06-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/David_Scott
+- id: neil-armstrong
+  name: Neil Armstrong
+  born: '1930-08-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Neil_Armstrong
+- id: gene-cernan
+  name: Gene Cernan
+  born: '1934-03-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gene_Cernan
+- id: michael-collins
+  name: Michael Collins
+  born: '1930-10-31'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_Collins_(astronaut)
+- id: richard-f-gordon-jr
+  name: Richard Gordon
+  born: '1929-10-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_F._Gordon_Jr.
+- id: buzz-aldrin
+  name: Buzz Aldrin
+  born: '1930-01-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Buzz_Aldrin
+- id: donn-f-eisele
+  name: Donn F. Eisele
+  born: '1930-06-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Donn_F._Eisele
+- id: walter-cunningham
+  name: Walter Cunningham
+  born: '1932-03-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Walter_Cunningham
+- id: georgy-beregovoy
+  name: Georgy Beregovoy
+  born: '1921-04-15'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Georgy_Beregovoy
+- id: william-anders
+  name: William Anders
+  born: '1933-10-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_Anders
+- id: vladimir-shatalov
+  name: Vladimir Shatalov
+  born: '1927-12-08'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Shatalov
+- id: aleksei-yeliseyev
+  name: Aleksei Yeliseyev
+  born: '1934-07-13'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksei_Yeliseyev
+- id: boris-volynov
+  name: Boris Volynov
+  born: '1934-12-18'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Boris_Volynov
+- id: yevgeny-khrunov
+  name: Yevgeny Khrunov
+  born: '1933-09-10'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yevgeny_Khrunov
+- id: rusty-schweickart
+  name: Rusty Schweickart
+  born: '1935-10-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Rusty_Schweickart
+- id: georgy-shonin
+  name: Georgy Shonin
+  born: '1935-08-03'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Georgy_Shonin
+- id: valery-kubasov
+  name: Valery Kubasov
+  born: '1935-01-07'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valery_Kubasov
+- id: anatoly-filipchenko
+  name: Anatoly Filipchenko
+  born: '1928-02-26'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Anatoly_Filipchenko
+- id: viktor-gorbatko
+  name: Victor Gorblatko
+  born: '1934-12-03'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Viktor_Gorbatko
+- id: vladislav-volkov
+  name: Vladislav Volkov
+  born: '1935-11-23'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladislav_Volkov
+- id: alan-bean
+  name: Alan Bean
+  born: '1932-03-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Alan_Bean
+- id: fred-haise
+  name: Fred Haise
+  born: '1933-11-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Fred_Haise
+- id: jack-swigert
+  name: Jack Swigert
+  born: '1931-08-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jack_Swigert
+- id: vitaly-sevastyanov
+  name: Vitaly Sevastyanov
+  born: '1935-07-08'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vitaly_Sevastyanov
+- id: edgar-mitchell
+  name: Edgar Mitchell
+  born: '1930-09-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Edgar_Mitchell
+- id: stuart-roosa
+  name: Stuart Roosa
+  born: '1933-08-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Stuart_Roosa
+- id: nikolai-rukavishnikov
+  name: Nikolai Rukavishnikov
+  born: '1932-09-18'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Nikolai_Rukavishnikov
+- id: georgy-dobrovolsky
+  name: Georgy Doborvolsky
+  born: '1928-06-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Georgy_Dobrovolsky
+- id: viktor-patsayev
+  name: Viktor Patsayev
+  born: '1933-06-19'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Viktor_Patsayev
+- id: alfred-worden
+  name: Alfred Worden
+  born: '1932-02-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Alfred_Worden
+- id: james-irwin
+  name: James Irwin
+  born: '1930-03-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_Irwin
+- id: charles-duke
+  name: Charles Duke
+  born: '1935-10-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_Duke
+- id: ken-mattingly
+  name: Ken Mattingly
+  born: '1936-03-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ken_Mattingly
+- id: harrison-schmitt
+  name: Harrison Schmitt
+  born: '1935-07-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Harrison_Schmitt
+- id: ronald-evans
+  name: Ronald Evans
+  born: '1933-11-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ronald_Evans_(astronaut)
+- id: joseph-p-kerwin
+  name: Joseph P. Kerwin
+  born: '1932-02-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joseph_P._Kerwin
+- id: paul-j-weitz
+  name: Paul J. Weitz
+  born: '1932-07-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Paul_J._Weitz
+- id: jack-r-lousma
+  name: Jack R. Lousma
+  born: '1936-02-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jack_R._Lousma
+- id: owen-garriott
+  name: Owen Garriott
+  born: '1930-11-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Owen_Garriott
+- id: oleg-makarov
+  name: Oleg Makarov
+  born: '1933-01-06'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Makarov_(cosmonaut)
+- id: vasily-lazarev
+  name: Vasily Lazarev
+  born: '1928-02-23'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vasily_Lazarev
+- id: edward-gibson
+  name: Edward Gibson
+  born: '1936-11-08'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Edward_Gibson
+- id: gerald-carr
+  name: Gerald Carr
+  born: '1932-08-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gerald_Carr_(astronaut)
+- id: william-pogue
+  name: William Pogue
+  born: '1930-01-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_Pogue
+- id: pyotr-klimuk
+  name: Pyotr Klimuk
+  born: '1942-07-10'
+  sex: M
+  nationality: [BY]
+  wiki: https://en.wikipedia.org/wiki/Pyotr_Klimuk
+- id: valentin-lebedev
+  name: Valentin Lebedev
+  born: '1942-04-14'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valentin_Lebedev
+- id: yuri-artyukhin
+  name: Yuri Artyukhin
+  born: '1930-06-22'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Artyukhin
+- id: gennady-sarafanov
+  name: Gennady Sarafanov
+  born: '1942-01-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Gennady_Sarafanov
+- id: lev-dyomin
+  name: Lev Dyomin
+  born: '1926-01-11'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Lev_Dyomin
+- id: aleksei-gubarev
+  name: Aleksei Gubarev
+  born: '1931-03-29'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksei_Gubarev
+- id: georgy-grechko
+  name: Georgy Grechko
+  born: '1931-05-25'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Georgy_Grechko
+- id: deke-slayton
+  name: Deke Slayton
+  born: '1924-03-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Deke_Slayton
+- id: vance-d-brand
+  name: Vance D. Brand
+  born: '1931-05-09'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vance_D._Brand
+- id: vitaly-zholobov
+  name: Vitaly Zholobov
+  born: '1937-06-18'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Vitaly_Zholobov
+- id: vladimir-aksyonov
+  name: Vladimir Aksyonov
+  born: '1935-02-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Aksyonov
+- id: valery-rozhdestvensky
+  name: Valery Rozhdestvensky
+  born: '1939-02-13'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valery_Rozhdestvensky
+- id: vyacheslav-zudov
+  name: Vyacheslav Zudov
+  born: '1942-01-08'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vyacheslav_Zudov
+- id: yuri-glazkov
+  name: Yuri Glazkov
+  born: '1939-10-02'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Glazkov
+- id: valery-ryumin
+  name: Valery Ryumin
+  born: '1939-08-16'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valery_Ryumin
+- id: vladimir-kovalyonok
+  name: Vladimir Kovalyonok
+  born: '1942-03-03'
+  sex: M
+  nationality: [BY]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Kovalyonok
+- id: yuri-romanenko
+  name: Yuri Romanenko
+  born: '1949-01-08'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Romanenko
+- id: vladimir-dzhanibekov
+  name: Vladimir Dzhanibekov
+  born: '1942-05-13'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Dzhanibekov
+- id: vladim-c3-adr-remek
+  name: Vladimír Remek
+  born: '1948-09-26'
+  sex: M
+  nationality: [CZ]
+  wiki: https://en.wikipedia.org/wiki/Vladim%C3%ADr_Remek
+- id: aleksandr-ivanchenkov
+  name: Aleksandr Ivanchenkov
+  born: '1940-09-28'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Ivanchenkov
+- id: miros-c5-82aw-hermaszewski
+  name: Mirosław Hermaszewski
+  born: '1937-09-15'
+  sex: M
+  nationality: [PL]
+  wiki: https://en.wikipedia.org/wiki/Miros%C5%82aw_Hermaszewski
+- id: sigmund-j-c3-a4hn
+  name: Sigmund Jähn
+  born: '1937-02-13'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Sigmund_J%C3%A4hn
+- id: vladimir-lyakhov
+  name: Vladimir Lyakhov
+  born: '1941-07-20'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Lyakhov
+- id: georgi-ivanov
+  name: Georgi Ivanov
+  born: '1940-07-02'
+  sex: M
+  nationality: [BG]
+  wiki: https://en.wikipedia.org/wiki/Georgi_Ivanov_(cosmonaut)
+- id: leonid-popov
+  name: Leonid Popov
+  born: '1945-08-31'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Leonid_Popov
+- id: bertalan-farkas
+  name: Bertalan Farkas
+  born: '1949-08-02'
+  sex: M
+  nationality: [HU]
+  wiki: https://en.wikipedia.org/wiki/Bertalan_Farkas
+- id: yuri-malyshev
+  name: Yuri Malyshev
+  born: '1941-08-27'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Malyshev_(cosmonaut)
+- id: ph-e1-ba-a1m-tu-c3-a2n
+  name: Phạm Tuân
+  born: '1947-02-14'
+  sex: M
+  nationality: [VN]
+  wiki: https://en.wikipedia.org/wiki/Ph%E1%BA%A1m_Tu%C3%A2n
+- id: arnaldo-tamayo-m-c3-a9ndez
+  name: Arnaldo Tamayo Méndez
+  born: '1942-01-29'
+  sex: M
+  nationality: [CU]
+  wiki: https://en.wikipedia.org/wiki/Arnaldo_Tamayo_M%C3%A9ndez
+- id: gennady-strekalov
+  name: Gennady Strekalov
+  born: '1940-10-26'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Gennady_Strekalov
+- id: leonid-kizim
+  name: Leonid Kizim
+  born: '1941-08-05'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Leonid_Kizim
+- id: viktor-savinykh
+  name: Viktor Savinykh
+  born: '1940-03-07'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Viktor_Savinykh
+- id: j-c3-bcgderdemidiin-g-c3-bcrragchaa
+  name: Jügderdemidiin Gürragchaa
+  born: '1947-12-15'
+  sex: M
+  nationality: [MN]
+  wiki: https://en.wikipedia.org/wiki/J%C3%BCgderdemidiin_G%C3%BCrragchaa
+- id: robert-crippen
+  name: Robbert Crippen
+  born: '1937-09-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_Crippen
+- id: dumitru-prunariu
+  name: Dumitru Prunariu
+  born: '1952-09-27'
+  sex: M
+  nationality: [RO]
+  wiki: https://en.wikipedia.org/wiki/Dumitru_Prunariu
+- id: joe-engle
+  name: Joe Engle
+  born: '1932-08-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joe_Engle
+- id: richard-h-truly
+  name: Richard H. Truly
+  born: '1937-11-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_H._Truly
+- id: c-gordon-fullerton
+  name: C. Gordon Fullerton
+  born: '1936-10-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/C._Gordon_Fullerton
+- id: anatoly-berezovoy
+  name: Anatoly Berezovoy
+  born: '1942-04-11'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Anatoly_Berezovoy
+- id: jean-loup-chr-c3-a9tien
+  name: Jean-Loup Chrétien
+  born: '1938-08-20'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Jean-Loup_Chr%C3%A9tien
+- id: henry-hartsfield
+  name: Henry Hartsfield
+  born: '1933-11-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Henry_Hartsfield
+- id: aleksandr-serebrov
+  name: Aleksandr Serebrov
+  born: '1944-02-15'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Serebrov
+- id: svetlana-savitskaya
+  name: Svetlana Savitskaya
+  born: '1948-08-08'
+  sex: F
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Svetlana_Savitskaya
+- id: joseph-p-allen
+  name: Joseph P. Allen
+  born: '1937-06-27'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joseph_P._Allen
+- id: robert-f-overmyer
+  name: Robert F. Overmyer
+  born: '1936-07-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_F._Overmyer
+- id: william-b-lenoir
+  name: William B. Lenoir
+  born: '1939-03-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_B._Lenoir
+- id: donald-h-peterson
+  name: Donald H. Peterson
+  born: '1933-10-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Donald_H._Peterson
+- id: karol-j-bobko
+  name: Karol J. Bobko
+  born: '1937-12-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Karol_J._Bobko
+- id: story-musgrave
+  name: Story Musgrave
+  born: '1935-08-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Story_Musgrave
+- id: vladimir-titov
+  name: Vladimir Titov
+  born: '1947-01-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Titov_(cosmonaut)
+- id: frederick-hauck
+  name: Frederick Hauck
+  born: '1941-04-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Frederick_Hauck
+- id: john-m-fabian
+  name: John M. Fabian
+  born: '1939-01-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_M._Fabian
+- id: norman-thagard
+  name: Norman Thagard
+  born: '1943-07-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Norman_Thagard
+- id: sally-ride
+  name: Sally Ride
+  born: '1951-05-26'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sally_Ride
+- id: aleksandr-pavlovich-aleksandrov
+  name: Aleksandr Pavlovich Aleksandrov
+  born: '1943-02-20'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Pavlovich_Aleksandrov
+- id: dale-gardner
+  name: Dale Gardner
+  born: '1948-11-08'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dale_Gardner
+- id: daniel-brandenstein
+  name: Daniel Brandenstein
+  born: '1943-01-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Daniel_Brandenstein
+- id: guion-bluford
+  name: Guion Bluford
+  born: '1942-11-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Guion_Bluford
+- id: william-e-thornton
+  name: William E. Thornton
+  born: '1929-04-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_E._Thornton
+- id: brewster-h-shaw
+  name: Brewster H. Shaw
+  born: '1945-05-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Brewster_H._Shaw
+- id: byron-k-lichtenberg
+  name: Byron K. Lichtenberg
+  born: '1948-02-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Byron_K._Lichtenberg
+- id: robert-a-parker
+  name: Robert A. Parker
+  born: '1936-12-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_A._Parker
+- id: ulf-merbold
+  name: Ulf Merbold
+  born: '1941-06-20'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Ulf_Merbold
+- id: bruce-mccandless-ii
+  name: Bruce McCandless
+  born: '1937-06-08'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Bruce_McCandless_II
+- id: robert-l-gibson
+  name: Robert L. Gibson
+  born: '1946-10-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_L._Gibson
+- id: robert-l-stewart
+  name: Robert L. Stewart
+  born: '1942-08-13'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_L._Stewart
+- id: ronald-mcnair
+  name: Ronald McNair
+  born: '1950-10-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ronald_McNair
+- id: oleg-atkov
+  name: Oleg Atkov
+  born: '1949-05-09'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Atkov
+- id: vladimir-solovyov
+  name: Vladimir Solovyov
+  born: '1946-11-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Solovyov_(cosmonaut)
+- id: rakesh-sharma
+  name: Rakesh Sharma
+  born: '1949-01-13'
+  sex: M
+  nationality: [IN]
+  wiki: https://en.wikipedia.org/wiki/Rakesh_Sharma
+- id: dick-scobee
+  name: Dick Scobee
+  born: '1939-05-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dick_Scobee
+- id: george-nelson
+  name: George Nelson
+  born: '1950-07-13'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/George_Nelson_(astronaut)
+- id: james-van-hoften
+  name: James van Hoften
+  born: '1944-06-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_van_Hoften
+- id: terry-hart
+  name: Terry Hart
+  born: '1946-10-27'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Terry_Hart
+- id: igor-volk
+  name: Igor Volk
+  born: '1937-04-12'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Igor_Volk
+- id: charles-d-walker
+  name: Charles D. Walker
+  born: '1948-08-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_D._Walker
+- id: judith-resnik
+  name: Judith Resnik
+  born: '1949-04-05'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Judith_Resnik
+- id: michael-coats
+  name: Michael Coats
+  born: '1946-01-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_Coats
+- id: mike-mullane
+  name: Mike Mullane
+  born: '1945-09-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mike_Mullane
+- id: steven-hawley
+  name: Steven Hawley
+  born: '1951-12-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Steven_Hawley
+- id: david-leestma
+  name: David Leestma
+  born: '1949-05-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/David_Leestma
+- id: jon-mcbride
+  name: Jon McBride
+  born: '1943-08-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jon_McBride
+- id: kathryn-d-sullivan
+  name: Kathryn D. Sullivan
+  born: '1951-10-03'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kathryn_D._Sullivan
+- id: marc-garneau
+  name: Marc Garneau
+  born: '1949-02-23'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Marc_Garneau
+- id: paul-scully-power
+  name: Paul Scully-Power
+  born: '1944-05-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Paul_Scully-Power
+- id: anna-lee-fisher
+  name: Anna Lee Fisher
+  born: '1949-08-24'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Anna_Lee_Fisher
+- id: david-m-walker
+  name: David M. Walker
+  born: '1944-05-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/David_M._Walker_(astronaut)
+- id: ellison-onizuka
+  name: Ellison Onizuka
+  born: '1946-06-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ellison_Onizuka
+- id: gary-payton
+  name: Gary Payton
+  born: '1948-06-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gary_Payton_(astronaut)
+- id: james-buchli
+  name: James Buchli
+  born: '1945-06-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_Buchli
+- id: loren-shriver
+  name: Loren Shriver
+  born: '1944-09-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Loren_Shriver
+- id: donald-e-williams
+  name: Donald E. Williams
+  born: '1942-02-13'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Donald_E._Williams
+- id: jake-garn
+  name: Jake Garn
+  born: '1932-10-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jake_Garn
+- id: jeffrey-a-hoffman
+  name: Jeffrey A. Hoffman
+  born: '1944-11-02'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jeffrey_A._Hoffman
+- id: rhea-seddon
+  name: Rhea Seddon
+  born: '1947-11-08'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Rhea_Seddon
+- id: s-david-griggs
+  name: S. David Griggs
+  born: '1939-09-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/S._David_Griggs
+- id: don-lind
+  name: Don Lind
+  born: '1930-05-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Don_Lind
+- id: frederick-d-gregory
+  name: Frederick D. Gregory
+  born: '1941-01-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Frederick_D._Gregory
+- id: lodewijk-van-den-berg
+  name: Lodewijk van den Berg
+  born: '1932-03-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Lodewijk_van_den_Berg
+- id: taylor-wang
+  name: Taylor Wang
+  born: '1940-06-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Taylor_Wang
+- id: john-oliver-creighton
+  name: John Oliver Creighton
+  born: '1943-04-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_Oliver_Creighton
+- id: patrick-baudry
+  name: Patrick Baudry
+  born: '1946-03-06'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Patrick_Baudry
+- id: shannon-lucid
+  name: Shannon Lucid
+  born: '1943-01-14'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Shannon_Lucid
+- id: steven-r-nagel
+  name: Steven R. Nagel
+  born: '1946-10-27'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Steven_R._Nagel
+- id: sultan-bin-salman-al-saud
+  name: Sultan bin Salman Al Saud
+  born: '1956-06-27'
+  sex: M
+  nationality: [SA]
+  wiki: https://en.wikipedia.org/wiki/Sultan_bin_Salman_Al_Saud
+- id: anthony-w-england
+  name: Anthony W. England
+  born: '1942-05-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Anthony_W._England
+- id: john-david-f-bartoe
+  name: John-David F. Bartoe
+  born: '1944-11-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John-David_F._Bartoe
+- id: karl-gordon-henize
+  name: Karl Gordon Henize
+  born: '1926-10-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Karl_Gordon_Henize
+- id: loren-acton
+  name: Loren Acton
+  born: '1936-03-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Loren_Acton
+- id: roy-d-bridges-jr
+  name: Roy D. Bridges
+  born: '1943-07-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Roy_D._Bridges_Jr.
+- id: john-m-lounge
+  name: John M. Lounge
+  born: '1946-06-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_M._Lounge
+- id: richard-o-covey
+  name: Richard O. Covey
+  born: '1946-08-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_O._Covey
+- id: william-frederick-fisher
+  name: William Frederick Fisher
+  born: '1946-04-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_Frederick_Fisher
+- id: aleksandr-aleksandrovich-volkov
+  name: Aleksandr Aleksandrovich Volkov
+  born: '1948-05-27'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Aleksandrovich_Volkov
+- id: vladimir-vasyutin
+  name: Vladimir Vasyutin
+  born: '1952-03-08'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Vasyutin
+- id: david-c-hilmers
+  name: David C. Hilmers
+  born: '1950-01-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/David_C._Hilmers
+- id: ronald-j-grabe
+  name: Ronald J. Grabe
+  born: '1945-06-13'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ronald_J._Grabe
+- id: william-a-pailes
+  name: William A. Pailes
+  born: '1952-06-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_A._Pailes
+- id: bonnie-j-dunbar
+  name: Bonnie J. Dunbar
+  born: '1949-03-03'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Bonnie_J._Dunbar
+- id: ernst-messerschmid
+  name: Ernst Messerschmid
+  born: '1945-05-21'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Ernst_Messerschmid
+- id: reinhard-furrer
+  name: Reinhard Furrer
+  born: '1940-11-25'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Reinhard_Furrer
+- id: wubbo-ockels
+  name: Wubbo Ockels
+  born: '1946-03-28'
+  sex: M
+  nationality: [NL]
+  wiki: https://en.wikipedia.org/wiki/Wubbo_Ockels
+- id: bryan-d-o-27connor
+  name: Bryan D. O'Connor
+  born: '1946-09-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Bryan_D._O%27Connor
+- id: jerry-l-ross
+  name: Jerry L. Ross
+  born: '1948-01-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jerry_L._Ross
+- id: mary-l-cleave
+  name: Mary L. Cleave
+  born: '1947-02-05'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mary_L._Cleave
+- id: rodolfo-neri-vela
+  name: Rodolfo Neri Vela
+  born: '1952-02-19'
+  sex: M
+  nationality: [MX]
+  wiki: https://en.wikipedia.org/wiki/Rodolfo_Neri_Vela
+- id: sherwood-c-spring
+  name: Sherwood C. Spring
+  born: '1944-09-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sherwood_C._Spring
+- id: bill-nelson
+  name: Bill Nelson
+  born: '1942-09-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Bill_Nelson
+- id: charles-bolden
+  name: Charles Bolden
+  born: '1946-08-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_Bolden
+- id: franklin-chang-d-c3-adaz
+  name: Franklin Chang-Díaz
+  born: '1950-04-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Franklin_Chang-D%C3%ADaz
+- id: robert-j-cenker
+  name: Robert J. Cenker
+  born: '1948-11-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_J._Cenker
+- id: aleksandr-laveykin
+  name: Aleksandr Laveykin
+  born: '1951-04-21'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Laveykin
+- id: aleksandr-viktorenko
+  name: Aleksandr Viktorenko
+  born: '1947-03-29'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Viktorenko
+- id: muhammed-faris
+  name: Muhammed Faris
+  born: '1951-05-26'
+  sex: M
+  nationality: [SY]
+  wiki: https://en.wikipedia.org/wiki/Muhammed_Faris
+- id: anatoly-levchenko
+  name: Anatoly Levchenko
+  born: '1941-05-09'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Anatoly_Levchenko
+- id: musa-manarov
+  name: Musa Manarov
+  born: '1951-03-22'
+  sex: M
+  nationality: [RU, AZ]
+  wiki: https://en.wikipedia.org/wiki/Musa_Manarov
+- id: aleksandr-panayotov-aleksandrov
+  name: Aleksandr Panayotov Aleksandrov
+  born: '1951-12-01'
+  sex: M
+  nationality: [BG]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Panayotov_Aleksandrov
+- id: anatoly-solovyev
+  name: Anatoly Solovyev
+  born: '1948-01-16'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Anatoly_Solovyev
+- id: abdul-ahad-momand
+  name: Abdul Ahad Momand
+  born: '1959-01-01'
+  sex: M
+  nationality: [AF]
+  wiki: https://en.wikipedia.org/wiki/Abdul_Ahad_Momand
+- id: valeri-polyakov
+  name: Valeri Polyakov
+  born: '1942-04-27'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valeri_Polyakov
+- id: sergei-krikalev
+  name: Sergei Krikalev
+  born: '1958-08-27'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergei_Krikalev
+- id: guy-gardner
+  name: Guy Gardner
+  born: '1948-01-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Guy_Gardner_(astronaut)
+- id: william-shepherd
+  name: William Shepherd
+  born: '1949-07-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_Shepherd
+- id: james-p-bagian
+  name: James P. Bagian
+  born: '1952-02-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_P._Bagian
+- id: john-e-blaha
+  name: John E. Blaha
+  born: '1942-08-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_E._Blaha
+- id: robert-c-springer
+  name: Robert C. Springer
+  born: '1942-05-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_C._Springer
+- id: mark-c-lee
+  name: Mark C. Lee
+  born: '1952-08-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mark_C._Lee
+- id: james-c-adamson
+  name: James C. Adamson
+  born: '1946-03-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_C._Adamson
+- id: mark-n-brown
+  name: Mark N. Brown
+  born: '1951-11-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mark_N._Brown
+- id: richard-n-richards
+  name: Richard N. Richards
+  born: '1946-08-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_N._Richards
+- id: ellen-s-baker
+  name: Ellen S. Baker
+  born: '1953-04-27'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ellen_S._Baker
+- id: michael-j-mcculley
+  name: Michael J. McCulley
+  born: '1943-08-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_J._McCulley
+- id: kathryn-c-thornton
+  name: Kathryn C. Thornton
+  born: '1952-08-17'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kathryn_C._Thornton
+- id: sonny-carter
+  name: Sonny Carter
+  born: '1947-08-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sonny_Carter
+- id: g-david-low
+  name: G. David Low
+  born: '1956-02-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/G._David_Low
+- id: jim-wetherbee
+  name: Jim Wetherbee
+  born: '1952-11-27'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jim_Wetherbee
+- id: marsha-ivins
+  name: Marsha Ivins
+  born: '1951-04-15'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Marsha_Ivins
+- id: aleksandr-nikolayevich-balandin
+  name: Aleksandr Nikolayevich Balandin
+  born: '1953-07-30'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Nikolayevich_Balandin
+- id: john-casper
+  name: John Casper
+  born: '1943-07-09'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_Casper
+- id: pierre-j-thuot
+  name: Pierre J. Thuot
+  born: '1955-05-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Pierre_J._Thuot
+- id: gennady-manakov
+  name: Gennady Manakov
+  born: '1950-06-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Gennady_Manakov
+- id: bruce-e-melnick
+  name: Bruce E. Melnick
+  born: '1949-12-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Bruce_E._Melnick
+- id: robert-d-cabana
+  name: Robert D. Cabana
+  born: '1949-01-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_D._Cabana
+- id: thomas-akers
+  name: Thomas Akers
+  born: '1951-05-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Thomas_Akers
+- id: carl-j-meade
+  name: Carl J. Meade
+  born: '1950-11-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Carl_J._Meade
+- id: charles-d-gemar
+  name: Charles D. Gemar
+  born: '1955-08-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_D._Gemar
+- id: frank-l-culbertson-jr
+  name: Frank L. Culbertson Jr.
+  born: '1949-05-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Frank_L._Culbertson_Jr.
+- id: ronald-parise
+  name: Ronald Parise
+  born: '1951-05-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ronald_Parise
+- id: samuel-t-durrance
+  name: Samuel T. Durrance
+  born: '1943-09-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Samuel_T._Durrance
+- id: toyohiro-akiyama
+  name: Toyohiro Akiyama
+  born: '1942-06-22'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Toyohiro_Akiyama
+- id: viktor-afanasyev
+  name: Viktor Afanasyev
+  born: '1948-12-31'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Viktor_Afanasyev_(cosmonaut)
+- id: jerome-apt
+  name: Jerome Apt
+  born: '1949-04-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jerome_Apt
+- id: kenneth-d-cameron
+  name: Kenneth D. Cameron
+  born: '1949-11-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kenneth_D._Cameron
+- id: linda-m-godwin
+  name: Linda M. Godwin
+  born: '1952-07-02'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Linda_M._Godwin
+- id: charles-l-veach
+  name: Charles L. Veach
+  born: '1944-09-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_L._Veach
+- id: donald-r-mcmonagle
+  name: Donald R. McMonagle
+  born: '1952-05-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Donald_R._McMonagle
+- id: gregory-j-harbaugh
+  name: Gregory J. Harbaugh
+  born: '1956-04-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gregory_J._Harbaugh
+- id: l-blaine-hammond
+  name: L. Blaine Hammond
+  born: '1952-01-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/L._Blaine_Hammond
+- id: richard-hieb
+  name: Richard Hieb
+  born: '1955-09-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_Hieb
+- id: anatoly-artsebarsky
+  name: Anatoly Artsebarsky
+  born: '1956-09-09'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Anatoly_Artsebarsky
+- id: helen-sharman
+  name: Helen Sharman
+  born: '1963-05-30'
+  sex: F
+  nationality: [GB]
+  wiki: https://en.wikipedia.org/wiki/Helen_Sharman
+- id: f-drew-gaffney
+  name: F. Drew Gaffney
+  born: '1946-06-09'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/F._Drew_Gaffney
+- id: millie-hughes-fulford
+  name: Millie Hughs-Fulford
+  born: '1945-12-21'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Millie_Hughes-Fulford
+- id: sidney-m-gutierrez
+  name: Sidney M. Gutierrez
+  born: '1951-06-27'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sidney_M._Gutierrez
+- id: tamara-e-jernigan
+  name: Tamara E. Jernigan
+  born: '1959-05-07'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Tamara_E._Jernigan
+- id: michael-a-baker
+  name: Michael A. Baker
+  born: '1953-10-27'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_A._Baker
+- id: kenneth-s-reightler-jr
+  name: Kenneth S. Reightler Jr.
+  born: '1951-03-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kenneth_S._Reightler_Jr.
+- id: franz-viehb-c3-b6ck
+  name: Franz Viehböck
+  born: '1960-08-24'
+  sex: M
+  nationality: [AT]
+  wiki: https://en.wikipedia.org/wiki/Franz_Viehb%C3%B6ck
+- id: toktar-aubakirov
+  name: Toktar Aubakirov
+  born: '1946-07-27'
+  sex: M
+  nationality: [KZ]
+  wiki: https://en.wikipedia.org/wiki/Toktar_Aubakirov
+- id: james-s-voss
+  name: James S. Voss
+  born: '1949-03-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_S._Voss
+- id: mario-runco-jr
+  name: Mario Runco Jr.
+  born: '1952-01-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mario_Runco_Jr.
+- id: terence-t-henricks
+  name: Terence T. Henricks
+  born: '1952-07-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Terence_T._Henricks
+- id: thomas-j-hennen
+  name: Thomas J. Hennen
+  born: '1952-08-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Thomas_J._Hennen
+- id: roberta-bondar
+  name: Roberta Bondar
+  born: '1945-12-04'
+  sex: F
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Roberta_Bondar
+- id: stephen-s-oswald
+  name: Stephen S. Oswald
+  born: '1951-06-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Stephen_S._Oswald
+- id: william-f-readdy
+  name: William F. Readdy
+  born: '1952-01-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_F._Readdy
+- id: aleksandr-kaleri
+  name: Aleksandr Kaleri
+  born: '1956-05-13'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Kaleri
+- id: klaus-dietrich-flade
+  name: Klaus-Dietrich Flade
+  born: '1952-08-23'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Klaus-Dietrich_Flade
+- id: brian-duffy
+  name: Brian Duffy
+  born: '1953-06-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Brian_Duffy_(astronaut)
+- id: dirk-frimout
+  name: Dirk Frimout
+  born: '1941-03-21'
+  sex: M
+  nationality: [BE]
+  wiki: https://en.wikipedia.org/wiki/Dirk_Frimout
+- id: michael-foale
+  name: Michael Foale
+  born: '1957-01-06'
+  sex: M
+  nationality: [RU, GB]
+  wiki: https://en.wikipedia.org/wiki/Michael_Foale
+- id: kevin-p-chilton
+  name: Kevin P. Chilton
+  born: '1954-11-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kevin_P._Chilton
+- id: eugene-h-trinh
+  name: Eugene H. Trinh
+  born: '1950-09-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Eugene_H._Trinh
+- id: ken-bowersox
+  name: Ken Bowersox
+  born: '1956-11-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ken_Bowersox
+- id: lawrence-j-delucas
+  name: Lawrence J. DeLucas
+  born: '1950-07-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Lawrence_J._DeLucas
+- id: michel-tognini
+  name: Michel Tognini
+  born: '1949-09-30'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Michel_Tognini
+- id: sergey-avdeev
+  name: Sergey Avdeev
+  born: '1956-01-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Avdeev
+- id: andrew-m-allen
+  name: Andrew M. Allen
+  born: '1955-08-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Andrew_M._Allen
+- id: claude-nicollier
+  name: Claude Nicollier
+  born: '1944-09-02'
+  sex: M
+  nationality: [CH]
+  wiki: https://en.wikipedia.org/wiki/Claude_Nicollier
+- id: franco-malerba
+  name: Franco Malerba
+  born: '1946-10-10'
+  sex: M
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Franco_Malerba
+- id: curtis-brown
+  name: Curtis Brown
+  born: '1956-03-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Curtis_Brown
+- id: jan-davis
+  name: Jan Davis
+  born: '1953-11-01'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jan_Davis
+- id: mae-jemison
+  name: Mae Jemison
+  born: '1956-10-17'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mae_Jemison
+- id: mamoru-mohri
+  name: Mamoru Mohri
+  born: '1948-01-29'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Mamoru_Mohri
+- id: steve-maclean
+  name: Steve Maclean
+  born: '1954-12-14'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Steve_MacLean_(astronaut)
+- id: michael-r-clifford
+  name: Michael R. Clifford
+  born: '1952-10-13'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_R._Clifford
+- id: susan-helms
+  name: Susan Helms
+  born: '1958-02-26'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Susan_Helms
+- id: aleksandr-poleshchuk
+  name: Aleksandr Poleshchuk
+  born: '1953-10-30'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Poleshchuk
+- id: ellen-ochoa
+  name: Ellen Ochoa
+  born: '1958-05-10'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ellen_Ochoa
+- id: kenneth-cockrell
+  name: Kenneth Cockrell
+  born: '1950-04-09'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kenneth_Cockrell
+- id: bernard-a-harris-jr
+  name: Bernard A. Harris Jr.
+  born: '1956-06-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Bernard_A._Harris_Jr.
+- id: charles-j-precourt
+  name: Charles J. Precourt
+  born: '1955-06-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_J._Precourt
+- id: hans-schlegel
+  name: Hans Schlegel
+  born: '1951-08-03'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Hans_Schlegel
+- id: ulrich-walter
+  name: Ulrich Walter
+  born: '1954-02-09'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Ulrich_Walter
+- id: janice-e-voss
+  name: Janice E. Voss
+  born: '1956-10-08'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Janice_E._Voss
+- id: nancy-j-currie-gregg
+  name: Nancy J. Currie-Gregg
+  born: '1958-12-29'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Nancy_J._Currie-Gregg
+- id: peter-wisoff
+  name: Peter Wisoff
+  born: '1958-08-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Peter_Wisoff
+- id: jean-pierre-haigner-c3-a9
+  name: Jean-Pierre Haigneré
+  born: '1948-05-19'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Jean-Pierre_Haigner%C3%A9
+- id: vasily-tsibliyev
+  name: Vasily Tsibliyev
+  born: '1954-02-20'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vasily_Tsibliyev
+- id: carl-e-walz
+  name: Carl E. Walz
+  born: '1955-09-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Carl_E._Walz
+- id: daniel-w-bursch
+  name: Daniel W. Bursch
+  born: '1957-07-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Daniel_W._Bursch
+- id: james-h-newman
+  name: James H. Newman
+  born: '1956-10-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_H._Newman
+- id: david-wolf
+  name: David Wolf
+  born: '1956-08-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/David_Wolf_(astronaut)
+- id: martin-j-fettman
+  name: Martin J. Fettman
+  born: '1956-12-31'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Martin_J._Fettman
+- id: richard-a-searfoss
+  name: Rchard A. Searfoss
+  born: '1956-06-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_A._Searfoss
+- id: william-s-mcarthur
+  name: William S. McArthur
+  born: '1951-07-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_S._McArthur
+- id: yuri-usachov
+  name: Yuri Usachov
+  born: '1957-10-09'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Usachov
+- id: ronald-m-sega
+  name: Ronald M. Sega
+  born: '1952-12-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ronald_M._Sega
+- id: thomas-david-jones
+  name: Thomas David Jones
+  born: '1955-01-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Thomas_David_Jones
+- id: talgat-musabayev
+  name: Talgat Musabayev
+  born: '1951-01-07'
+  sex: M
+  nationality: [KZ]
+  wiki: https://en.wikipedia.org/wiki/Talgat_Musabayev
+- id: yuri-malenchenko
+  name: Yuri Malenchenko
+  born: '1961-12-22'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Malenchenko
+- id: chiaki-mukai
+  name: Chikai Mukai
+  born: '1952-05-06'
+  sex: F
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Chiaki_Mukai
+- id: donald-a-thomas
+  name: Donald A Thomas
+  born: '1955-05-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Donald_A._Thomas
+- id: james-d-halsell
+  name: James D. Halsell
+  born: '1956-09-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_D._Halsell
+- id: leroy-chiao
+  name: Leroy Chiao
+  born: '1960-08-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Leroy_Chiao
+- id: jerry-m-linenger
+  name: Jerry M. Linenger
+  born: '1955-01-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jerry_M._Linenger
+- id: steven-smith
+  name: Steven Smith
+  born: '1958-12-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Steven_Smith_(astronaut)
+- id: terrence-w-wilcutt
+  name: Terrence W. Wilcutt
+  born: '1949-10-31'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Terrence_W._Wilcutt
+- id: yelena-kondakova
+  name: Yelena Kondakova
+  born: '1957-03-30'
+  sex: F
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yelena_Kondakova
+- id: jean-fran-c3-a7ois-clervoy
+  name: Jean-François Clervoy
+  born: '1958-11-19'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Clervoy
+- id: joseph-r-tanner
+  name: Joseph R. Tanner
+  born: '1950-01-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joseph_R._Tanner
+- id: scott-e-parazynski
+  name: Scott E. Parazynski
+  born: '1961-07-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Scott_E._Parazynski
+- id: eileen-collins
+  name: Eileen Collins
+  born: '1956-11-19'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Eileen_Collins
+- id: john-m-grunsfeld
+  name: John M. Grunsfeld
+  born: '1958-10-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_M._Grunsfeld
+- id: wendy-b-lawrence
+  name: Wendy B. Lawrence
+  born: '1959-07-02'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Wendy_B._Lawrence
+- id: william-g-gregory
+  name: William G. Gregory
+  born: '1957-05-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_G._Gregory
+- id: vladimir-dezhurov
+  name: Vladimir Dezhurov
+  born: '1962-07-30'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Vladimir_Dezhurov
+- id: nikolai-budarin
+  name: Nikolai Budarin
+  born: '1953-04-29'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Nikolai_Budarin
+- id: kevin-r-kregel
+  name: Kevin R. Kregel
+  born: '1956-09-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kevin_R._Kregel
+- id: mary-ellen-weber
+  name: Mary Ellen Weber
+  born: '1962-08-24'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mary_Ellen_Weber
+- id: thomas-reiter
+  name: Thomas Reiter
+  born: '1958-05-23'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Thomas_Reiter
+- id: yuri-gidzenko
+  name: Yuri Gidzenko
+  born: '1962-03-26'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Gidzenko
+- id: michael-l-gernhardt
+  name: Michael L. Gernhardt
+  born: '1956-05-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_L._Gernhardt
+- id: albert-sacco
+  name: Albert Sacco
+  born: '1949-05-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Albert_Sacco
+- id: catherine-coleman
+  name: Catherine Coleman
+  born: '1960-12-14'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Catherine_Coleman
+- id: frederick-w-leslie
+  name: Frederick W. Leslie
+  born: '1951-12-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Frederick_W._Leslie
+- id: kent-rominger
+  name: Kent Rominger
+  born: '1956-08-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kent_Rominger
+- id: michael-l-c3-b3pez-alegr-c3-ada
+  name: Michael López-Alegría
+  born: '1958-05-30'
+  sex: M
+  nationality: [US, ES]
+  wiki: https://en.wikipedia.org/wiki/Michael_L%C3%B3pez-Alegr%C3%ADa
+- id: chris-hadfield
+  name: Chris Hadfield
+  born: '1959-08-29'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Chris_Hadfield
+- id: brent-w-jett-jr
+  name: Brent W. Jett Jr.
+  born: '1958-10-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Brent_W._Jett_Jr.
+- id: daniel-t-barry
+  name: Daniel T. Barry
+  born: '1953-12-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Daniel_T._Barry
+- id: koichi-wakata
+  name: Koichi Wakata
+  born: '1963-08-01'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Koichi_Wakata
+- id: winston-e-scott
+  name: Winston E. Scott
+  born: '1950-08-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Winston_E._Scott
+- id: yury-onufriyenko
+  name: Yury Onufriyenko
+  born: '1961-02-06'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yury_Onufriyenko
+- id: maurizio-cheli
+  name: Maurizio Cheli
+  born: '1959-05-04'
+  sex: M
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Maurizio_Cheli
+- id: scott-j-horowitz
+  name: Scott J. Horowitz
+  born: '1957-03-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Scott_J._Horowitz
+- id: umberto-guidoni
+  name: Umberto Guidoni
+  born: '1954-08-18'
+  sex: M
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Umberto_Guidoni
+- id: andy-thomas
+  name: Andy Thomas
+  born: '1951-12-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Andy_Thomas
+- id: charles-e-brady-jr
+  name: Charles E. Brady Jr.
+  born: '1951-08-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_E._Brady_Jr.
+- id: jean-jacques-favier
+  name: Jean-Jacques Favier
+  born: '1949-04-13'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Jean-Jacques_Favier
+- id: richard-m-linnehan
+  name: Richard M. Linnehan
+  born: '1957-09-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_M._Linnehan
+- id: robert-thirsk
+  name: Robert Thirsk
+  born: '1953-08-17'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Robert_Thirsk
+- id: claudie-haigner-c3-a9
+  name: Claudie Haigneré
+  born: '1957-05-13'
+  sex: F
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Claudie_Haigner%C3%A9
+- id: valery-korzun
+  name: Valery Korzun
+  born: '1953-03-05'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valery_Korzun
+- id: aleksandr-lazutkin
+  name: Aleksandr Lazutkin
+  born: '1957-10-30'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Lazutkin
+- id: reinhold-ewald
+  name: Reinhold Ewald
+  born: '1956-12-18'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Reinhold_Ewald
+- id: gregory-t-linteris
+  name: Gregory T. Linteris
+  born: '1957-10-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gregory_T._Linteris
+- id: roger-k-crouch
+  name: Roger K. Crouch
+  born: '1940-09-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Roger_K._Crouch
+- id: susan-kilrain
+  name: Susan Kilrain
+  born: '1961-10-24'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Susan_Kilrain
+- id: carlos-i-noriega
+  name: Carlos I. Noriega
+  born: '1959-10-08'
+  sex: M
+  nationality: [US, PE]
+  wiki: https://en.wikipedia.org/wiki/Carlos_I._Noriega
+- id: ed-lu
+  name: Ed Lu
+  born: '1963-07-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ed_Lu
+- id: pavel-vinogradov
+  name: Pavel Vinogradov
+  born: '1953-08-31'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Pavel_Vinogradov
+- id: bjarni-tryggvason
+  name: Bjarni Tryggvason
+  born: '1945-09-21'
+  sex: M
+  nationality: [CA, IS]
+  wiki: https://en.wikipedia.org/wiki/Bjarni_Tryggvason
+- id: robert-curbeam
+  name: Robert Curbeam
+  born: '1962-03-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_Curbeam
+- id: stephen-robinson
+  name: Stephen Robinson
+  born: '1955-10-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Stephen_Robinson
+- id: michael-j-bloomfield
+  name: Michael J. Bloomfield
+  born: '1959-03-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_J._Bloomfield
+- id: kalpana-chawla
+  name: Kalpana Chawla
+  born: '1962-03-17'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kalpana_Chawla
+- id: leonid-kadeniuk
+  name: Leonid Kadeniuk
+  born: '1951-01-28'
+  sex: M
+  nationality: [UA]
+  wiki: https://en.wikipedia.org/wiki/Leonid_Kadeniuk
+- id: steven-lindsey
+  name: Steven Lindsey
+  born: '1960-08-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Steven_Lindsey
+- id: takao-doi
+  name: Takao Doi
+  born: '1954-09-18'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Takao_Doi
+- id: james-f-reilly
+  name: James F. Reilly
+  born: '1954-03-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_F._Reilly
+- id: joe-f-edwards-jr
+  name: Joe F. Edwards Jr.
+  born: '1958-02-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joe_F._Edwards_Jr.
+- id: michael-p-anderson
+  name: Michael P. Anderson
+  born: '1959-12-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_P._Anderson
+- id: salizhan-sharipov
+  name: Salizhan Sharipov
+  born: '1964-08-24'
+  sex: M
+  nationality: [RU, TJ, UZ]
+  wiki: https://en.wikipedia.org/wiki/Salizhan_Sharipov
+- id: l-c3-a9opold-eyharts
+  name: Léopold Eyharts
+  born: '1957-04-28'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/L%C3%A9opold_Eyharts
+- id: dafydd-williams
+  name: Dafydd Williams
+  born: '1954-05-16'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Dafydd_Williams
+- id: james-a-pawelczyk
+  name: James A. Pawelczyk
+  born: '1960-09-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_A._Pawelczyk
+- id: jay-c-buckey
+  name: Jay C. Buckey
+  born: '1956-06-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jay_C._Buckey
+- id: kathryn-p-hire
+  name: Kathryn P. Hire
+  born: '1959-08-26'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kathryn_P._Hire
+- id: scott-altman
+  name: Scott Altman
+  born: '1959-08-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Scott_Altman
+- id: dominic-l-pudwill-gorie
+  name: Dominic L. Pudwill Gorie
+  born: '1957-05-02'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dominic_L._Pudwill_Gorie
+- id: janet-l-kavandi
+  name: Janet L. Kavandi
+  born: '1959-07-17'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Janet_L._Kavandi
+- id: gennady-padalka
+  name: Gennady Padalka
+  born: '1958-06-21'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Gennady_Padalka
+- id: yuri-baturin
+  name: Yuri Baturin
+  born: '1949-06-12'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Baturin
+- id: pedro-duque
+  name: Pedro Duque
+  born: '1963-03-14'
+  sex: M
+  nationality: [ES]
+  wiki: https://en.wikipedia.org/wiki/Pedro_Duque
+- id: frederick-w-sturckow
+  name: Frederick W. Sturckow
+  born: '1961-08-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Frederick_W._Sturckow
+- id: ivan-bella
+  name: Ivan Bella
+  born: '1964-05-21'
+  sex: M
+  nationality: [SK]
+  wiki: https://en.wikipedia.org/wiki/Ivan_Bella
+- id: julie-payette
+  name: Julie Payette
+  born: '1963-10-20'
+  sex: F
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Julie_Payette
+- id: rick-husband
+  name: Rick Husband
+  born: '1957-07-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Rick_Husband
+- id: valeri-tokarev
+  name: Valeri Tokarev
+  born: '1952-10-29'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Valeri_Tokarev
+- id: jeffrey-ashby
+  name: Jeffrey Ashby
+  born: '1954-06-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jeffrey_Ashby
+- id: scott-kelly
+  name: Scott Kelly
+  born: '1964-02-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Scott_Kelly_(astronaut)
+- id: gerhard-thiele
+  name: Gerhard Thiele
+  born: '1953-09-02'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Gerhard_Thiele
+- id: sergey-zalyotin
+  name: Sergey Zalyotin
+  born: '1962-04-21'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Zalyotin
+- id: jeffrey-williams
+  name: Jeffrey Williams
+  born: '1958-01-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jeffrey_Williams_(astronaut)
+- id: boris-morukov
+  name: Boris Morukov
+  born: '1950-10-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Boris_Morukov
+- id: daniel-c-burbank
+  name: Daniel C. Burbank
+  born: '1961-07-27'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Daniel_C._Burbank
+- id: richard-mastracchio
+  name: Richard Mastracchio
+  born: '1960-02-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_Mastracchio
+- id: pamela-melroy
+  name: Pamela Melroy
+  born: '1961-09-17'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Pamela_Melroy
+- id: mark-l-polansky
+  name: Mark L. Polansky
+  born: '1956-06-02'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mark_L._Polansky
+- id: james-m-kelly
+  name: James M. Kelly
+  born: '1964-05-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_M._Kelly_(astronaut)
+- id: paul-w-richards
+  name: Paul W. Richards
+  born: '1964-05-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Paul_W._Richards
+- id: john-l-phillips
+  name: John L. Phillips
+  born: '1951-04-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_L._Phillips
+- id: yury-lonchakov
+  name: Yury Lonchakov
+  born: '1965-03-04'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yury_Lonchakov
+- id: dennis-tito
+  name: Dennis Tito
+  born: '1940-08-08'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dennis_Tito
+- id: charles-o-hobaugh
+  name: Charles O. Hobaugh
+  born: '1961-11-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_O._Hobaugh
+- id: mikhail-tyurin
+  name: Mikhail Tyurin
+  born: '1960-03-02'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Mikhail_Tyurin
+- id: patrick-g-forrester
+  name: Patrick G. Forrester
+  born: '1957-03-31'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Patrick_G._Forrester
+- id: konstantin-kozeyev
+  name: Konstantin Kozeyev
+  born: '1967-12-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Konstantin_Kozeyev
+- id: daniel-m-tani
+  name: Daniel M. Tani
+  born: '1961-02-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Daniel_M._Tani
+- id: mark-kelly
+  name: Mark Kelly
+  born: '1964-02-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mark_Kelly
+- id: duane-g-carey
+  name: Duane G. Carey
+  born: '1957-04-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Duane_G._Carey
+- id: mike-massimino
+  name: Mike Massimino
+  born: '1962-08-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mike_Massimino
+- id: lee-morin
+  name: Lee Morin
+  born: '1952-09-09'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Lee_Morin
+- id: rex-j-walheim
+  name: Rex J. Walheim
+  born: '1962-10-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Rex_J._Walheim
+- id: stephen-frick
+  name: Stephen Frick
+  born: '1964-09-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Stephen_Frick
+- id: mark-shuttleworth
+  name: Mark Shuttleworth
+  born: '1973-09-18'
+  sex: M
+  nationality: [GB, ZA]
+  wiki: https://en.wikipedia.org/wiki/Mark_Shuttleworth
+- id: roberto-vittori
+  name: Roberto Vittori
+  born: '1964-10-15'
+  sex: M
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Roberto_Vittori
+- id: paul-lockhart
+  name: Paul Lockhart
+  born: '1956-04-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Paul_Lockhart
+- id: peggy-whitson
+  name: Peggy Whitson
+  born: '1960-02-09'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Peggy_Whitson
+- id: philippe-perrin
+  name: Philippe Perrin
+  born: '1963-01-06'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Philippe_Perrin
+- id: sergey-treshchov
+  name: Sergey Treshchov
+  born: '1958-08-18'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Treshchov
+- id: fyodor-yurchikhin
+  name: Fyodor Yurchikhin
+  born: '1959-01-03'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Fyodor_Yurchikhin
+- id: piers-sellers
+  name: Piers Sellers
+  born: '1955-04-11'
+  sex: M
+  nationality: [US, GB]
+  wiki: https://en.wikipedia.org/wiki/Piers_Sellers
+- id: sandra-magnus
+  name: Sandra Magnus
+  born: '1964-10-30'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sandra_Magnus
+- id: frank-de-winne
+  name: Frank De Winne
+  born: '1961-04-25'
+  sex: M
+  nationality: [BE]
+  wiki: https://en.wikipedia.org/wiki/Frank_De_Winne
+- id: donald-pettit
+  name: Donald Pettit
+  born: '1955-04-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Donald_Pettit
+- id: john-herrington
+  name: John Herrington
+  born: '1958-09-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_Herrington
+- id: david-m-brown
+  name: David M. Brown
+  born: '1956-04-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/David_M._Brown
+- id: ilan-ramon
+  name: Ilan Ramon
+  born: '1954-06-20'
+  sex: M
+  nationality: [IL]
+  wiki: https://en.wikipedia.org/wiki/Ilan_Ramon
+- id: laurel-clark
+  name: Laurel Clark
+  born: '1961-03-10'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Laurel_Clark
+- id: william-c-mccool
+  name: William C. McCool
+  born: '1961-09-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_C._McCool
+- id: yang-liwei
+  name: Yang Liwei
+  born: '1965-06-21'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Yang_Liwei
+- id: andr-c3-a9-kuipers
+  name: André Kuipers
+  born: '1958-10-05'
+  sex: M
+  nationality: [NL]
+  wiki: https://en.wikipedia.org/wiki/Andr%C3%A9_Kuipers
+- id: michael-fincke
+  name: Michael Fincke
+  born: '1967-03-14'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_Fincke
+- id: mike-melvill
+  name: Mike Melvill
+  born: '1940-11-30'
+  sex: M
+  nationality: [US, ZA]
+  wiki: https://en.wikipedia.org/wiki/Mike_Melvill
+- id: brian-binnie
+  name: Brian Binnie
+  born: '1953-04-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Brian_Binnie
+- id: yuri-shargin
+  name: Yuri Shargin
+  born: '1960-03-20'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yuri_Shargin
+- id: charles-camarda
+  name: Charles Camarda
+  born: '1952-05-08'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Charles_Camarda
+- id: soichi-noguchi
+  name: Soichi Noguchi
+  born: '1965-04-15'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Soichi_Noguchi
+- id: gregory-olsen
+  name: Gregory Olsen
+  born: '1945-04-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gregory_Olsen
+- id: fei-junlong
+  name: Fei Junlong
+  born: '1965-05-05'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Fei_Junlong
+- id: nie-haisheng
+  name: Nie Haisheng
+  born: '1964-10-13'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Nie_Haisheng
+- id: marcos-pontes
+  name: Marcos Pontes
+  born: '1963-03-11'
+  sex: M
+  nationality: [BR]
+  wiki: https://en.wikipedia.org/wiki/Marcos_Pontes
+- id: lisa-nowak
+  name: Lisa Nowak
+  born: '1963-05-10'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Lisa_Nowak
+- id: michael-e-fossum
+  name: Michael E. Fossum
+  born: '1957-12-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_E._Fossum
+- id: stephanie-wilson
+  name: Stephanie Wilson
+  born: '1966-09-27'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Stephanie_Wilson
+- id: christopher-ferguson
+  name: Christopher Ferguson
+  born: '1961-09-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Christopher_Ferguson
+- id: heidemarie-stefanyshyn-piper
+  name: Heidemarie Stefanyshyn-Piper
+  born: '1963-02-07'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Heidemarie_Stefanyshyn-Piper
+- id: anousheh-ansari
+  name: Anousheh Ansari
+  born: '1966-09-12'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Anousheh_Ansari
+- id: christer-fuglesang
+  name: Christer Fuglesang
+  born: '1957-03-18'
+  sex: M
+  nationality: [SE]
+  wiki: https://en.wikipedia.org/wiki/Christer_Fuglesang
+- id: joan-higginbotham
+  name: Joan Higginbotham
+  born: '1964-08-03'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joan_Higginbotham
+- id: nicholas-patrick
+  name: Nicholas Patrick
+  born: '1964-11-19'
+  sex: M
+  nationality: [US, GB]
+  wiki: https://en.wikipedia.org/wiki/Nicholas_Patrick
+- id: sunita-williams
+  name: Sunita Williams
+  born: '1965-09-19'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sunita_Williams
+- id: william-oefelein
+  name: William Oefelein
+  born: '1965-03-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/William_Oefelein
+- id: charles-simonyi
+  name: Charles Simonyi
+  born: '1948-09-10'
+  sex: M
+  nationality: [HU]
+  wiki: https://en.wikipedia.org/wiki/Charles_Simonyi
+- id: oleg-kotov
+  name: Oleg Kotov
+  born: '1965-10-27'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Kotov
+- id: clayton-anderson
+  name: Clayton Anderson
+  born: '1959-02-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Clayton_Anderson
+- id: john-d-olivas
+  name: John D. Olivas
+  born: '1966-05-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_D._Olivas
+- id: lee-archambault
+  name: Lee Archambault
+  born: '1960-08-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Lee_Archambault
+- id: steven-swanson
+  name: Steven Swanson
+  born: '1960-12-03'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Steven_Swanson
+- id: alvin-drew
+  name: Alvin Drew
+  born: '1962-11-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Alvin_Drew
+- id: barbara-morgan
+  name: Barbara Morgan
+  born: '1951-11-28'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Barbara_Morgan
+- id: tracy-caldwell-dyson
+  name: Tracy Caldwell Dyson
+  born: '1969-08-14'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Tracy_Caldwell_Dyson
+- id: sheikh-muszaphar-shukor
+  name: Sheikh Muszaphar Shukor
+  born: '1972-07-27'
+  sex: M
+  nationality: [MY]
+  wiki: https://en.wikipedia.org/wiki/Sheikh_Muszaphar_Shukor
+- id: douglas-h-wheelock
+  name: Douglas H. Wheelock
+  born: '1960-05-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Douglas_H._Wheelock
+- id: george-d-zamka
+  name: George D. Zamka
+  born: '1962-06-29'
+  sex: M
+  nationality: [US, CO]
+  wiki: https://en.wikipedia.org/wiki/George_D._Zamka
+- id: paolo-nespoli
+  name: Paolo Nespoli
+  born: '1957-04-06'
+  sex: M
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Paolo_Nespoli
+- id: alan-g-poindexter
+  name: Alan G. Poindexter
+  born: '1961-11-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Alan_G._Poindexter
+- id: leland-d-melvin
+  name: Leland D. Melvin
+  born: '1964-02-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Leland_D._Melvin
+- id: stanley-g-love
+  name: Stanley G. Love
+  born: '1965-06-08'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Stanley_G._Love
+- id: bob-behnken
+  name: Bob Behnken
+  born: '1970-07-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Bob_Behnken
+- id: garrett-reisman
+  name: Garrett Reisman
+  born: '1968-02-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Garrett_Reisman
+- id: gregory-h-johnson
+  name: Gregory H. Johnson
+  born: '1962-05-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gregory_H._Johnson
+- id: michael-foreman
+  name: Michael Foreman
+  born: '1957-03-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_Foreman_(astronaut)
+- id: oleg-kononenko
+  name: Oleg Kononenko
+  born: '1964-06-21'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Kononenko
+- id: sergey-volkov
+  name: Sergey Volkov
+  born: '1973-04-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Volkov_(cosmonaut)
+- id: yi-so-yeon
+  name: Yi So-yeon
+  born: '1978-06-02'
+  sex: F
+  nationality: [KR]
+  wiki: https://en.wikipedia.org/wiki/Yi_So-yeon
+- id: akihiko-hoshide
+  name: Akihiko Hoshide
+  born: '1968-12-28'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Akihiko_Hoshide
+- id: gregory-chamitoff
+  name: Gregory Chamitoff
+  born: '1962-08-06'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gregory_Chamitoff
+- id: karen-nyberg
+  name: Karen Nyberg
+  born: '1969-10-07'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Karen_Nyberg
+- id: kenneth-ham
+  name: Kenneth Ham
+  born: '1964-12-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kenneth_Ham
+- id: ronald-j-garan-jr
+  name: Ronald J. Garan Jr.
+  born: '1961-10-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ronald_J._Garan_Jr.
+- id: jing-haipeng
+  name: Jing Haipeng
+  born: '1966-10-24'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Jing_Haipeng
+- id: liu-boming
+  name: Liu Boming
+  born: '1966-09-17'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Liu_Boming_(taikonaut)
+- id: zhai-zhigang
+  name: Zhai Zhigang
+  born: '1966-10-11'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Zhai_Zhigang
+- id: richard-garriott
+  name: Richard Garriott
+  born: '1961-07-04'
+  sex: M
+  nationality: [US, GB]
+  wiki: https://en.wikipedia.org/wiki/Richard_Garriott
+- id: eric-boe
+  name: Eric Boe
+  born: '1964-10-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Eric_Boe
+- id: shane-kimbrough
+  name: Shane Kimbrough
+  born: '1967-06-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Shane_Kimbrough
+- id: stephen-bowen
+  name: Stephen Bowen
+  born: '1964-02-13'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Stephen_Bowen_(astronaut)
+- id: dominic-a-antonelli
+  name: Dominic A. Antonelli
+  born: '1967-08-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dominic_A._Antonelli
+- id: joseph-m-acaba
+  name: Joseph M. Acaba
+  born: '1967-05-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Joseph_M._Acaba
+- id: richard-r-arnold
+  name: Richard R. Arnold
+  born: '1963-11-26'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Richard_R._Arnold
+- id: michael-barratt
+  name: Michael Barratt
+  born: '1959-04-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_Barratt_(astronaut)
+- id: andrew-j-feustel
+  name: Andrew J. Feustel
+  born: '1965-08-25'
+  sex: M
+  nationality: [US, CA]
+  wiki: https://en.wikipedia.org/wiki/Andrew_J._Feustel
+- id: gregory-c-johnson
+  name: Gregory C. Johnson
+  born: '1954-07-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gregory_C._Johnson
+- id: k-megan-mcarthur
+  name: K. Megan McArthur
+  born: '1971-08-30'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/K._Megan_McArthur
+- id: michael-t-good
+  name: Michael T. Good
+  born: '1962-10-13'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_T._Good
+- id: roman-romanenko
+  name: Roman Romanenko
+  born: '1971-08-09'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Roman_Romanenko
+- id: christopher-cassidy
+  name: Christopher Cassidy
+  born: '1970-01-04'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Christopher_Cassidy
+- id: doug-hurley
+  name: Doug Hurley
+  born: '1966-10-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Doug_Hurley
+- id: thomas-marshburn
+  name: Thomas Marshburn
+  born: '1960-08-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Thomas_Marshburn
+- id: timothy-kopra
+  name: Timothy Kopra
+  born: '1963-04-09'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Timothy_Kopra
+- id: jos-c3-a9-m-hern-c3-a1ndez
+  name: José M. Hernández
+  born: '1962-08-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jos%C3%A9_M._Hern%C3%A1ndez
+- id: kevin-a-ford
+  name: Kevin A. Ford
+  born: '1960-07-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kevin_A._Ford
+- id: nicole-stott
+  name: Nicole Stott
+  born: '1962-11-19'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Nicole_Stott
+- id: guy-lalibert-c3-a9
+  name: Guy Laliberté
+  born: '1959-09-02'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Guy_Lalibert%C3%A9
+- id: maksim-surayev
+  name: Maksim Surayev
+  born: '1972-05-24'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Maksim_Surayev
+- id: barry-e-wilmore
+  name: Barry E. Wilmore
+  born: '1962-12-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Barry_E._Wilmore
+- id: randolph-bresnik
+  name: Randolph Bresnik
+  born: '1967-09-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Randolph_Bresnik
+- id: robert-satcher
+  name: Robert Satcher
+  born: '1965-09-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_Satcher
+- id: timothy-creamer
+  name: Timothy Creamer
+  born: '1959-11-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Timothy_Creamer
+- id: terry-w-virts
+  name: Terry W. Virts
+  born: '1967-12-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Terry_W._Virts
+- id: aleksandr-skvortsov
+  name: Aleksandr Skvortsov
+  born: '1966-05-06'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Skvortsov_(cosmonaut)
+- id: mikhail-kornienko
+  name: Mikhail Kornienko
+  born: '1960-04-15'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Mikhail_Kornienko
+- id: dorothy-metcalf-lindenburger
+  name: Dorothy Metcalf-Lindenburger
+  born: '1975-05-15'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dorothy_Metcalf-Lindenburger
+- id: james-dutton
+  name: James Dutton
+  born: '1968-11-20'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/James_Dutton_(astronaut)
+- id: naoko-yamazaki
+  name: Naoko Yamazaki
+  born: '1970-12-27'
+  sex: F
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Naoko_Yamazaki
+- id: shannon-walker
+  name: Shannon Walker
+  born: '1965-06-04'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Shannon_Walker
+- id: oleg-skripochka
+  name: Oleg Skripochka
+  born: '1969-12-24'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Skripochka
+- id: dmitri-kondratyev
+  name: Dmitri Kondratyev
+  born: '1969-05-25'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Dmitri_Kondratyev
+- id: aleksandr-samokutyaev
+  name: Aleksandr Samokutyaev
+  born: '1970-03-13'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Samokutyaev
+- id: andrey-borisenko
+  name: Andrey Borisenko
+  born: '1964-04-17'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Andrey_Borisenko
+- id: satoshi-furukawa
+  name: Satoshi Furukawa
+  born: '1964-04-04'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Satoshi_Furukawa
+- id: anatoly-ivanishin
+  name: Anatoly Ivanishin
+  born: '1969-01-15'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Anatoly_Ivanishin
+- id: anton-shkaplerov
+  name: Anton Shkaplerov
+  born: '1972-02-20'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Anton_Shkaplerov
+- id: sergey-revin
+  name: Sergey Revin
+  born: '1966-01-12'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Revin
+- id: liu-wang
+  name: Liu Wang
+  born: '1969-03-25'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Liu_Wang
+- id: liu-yang
+  name: Liu Yang
+  born: '1978-10-06'
+  sex: F
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Liu_Yang_(taikonaut)
+- id: oleg-novitsky
+  name: Oleg Novitsky
+  born: '1971-10-12'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Novitsky
+- id: yevgeny-tarelkin
+  name: Yevgeny Tarelkin
+  born: '1974-12-29'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yevgeny_Tarelkin
+- id: alexander-misurkin
+  name: Alexander Misurkin
+  born: '1977-09-23'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Alexander_Misurkin
+- id: luca-parmitano
+  name: Luca Parmitano
+  born: '1976-09-27'
+  sex: M
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Luca_Parmitano
+- id: wang-yaping
+  name: Wang Yaping
+  born: '1980-06-27'
+  sex: F
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Wang_Yaping
+- id: zhang-xiaoguang
+  name: Zhang Xiaoguang
+  born: '1966-05-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Zhang_Xiaoguang
+- id: michael-s-hopkins
+  name: Michael S. Hopkins
+  born: '1968-12-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_S._Hopkins
+- id: sergey-ryazansky
+  name: Sergey Ryazansky
+  born: '1974-11-13'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Ryazansky
+- id: oleg-artemyev
+  name: Oleg Artemyev
+  born: '1970-12-28'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Artemyev
+- id: alexander-gerst
+  name: Alexander Gerst
+  born: '1976-05-03'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Alexander_Gerst
+- id: reid-wiseman
+  name: Reid Wiseman
+  born: '1975-11-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Reid_Wiseman
+- id: yelena-serova
+  name: Yelena Serova
+  born: '1976-04-22'
+  sex: F
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yelena_Serova
+- id: samantha-cristoforetti
+  name: Samantha Cristoforetti
+  born: '1977-04-26'
+  sex: F
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Samantha_Cristoforetti
+- id: kimiya-yui
+  name: Kimiya Yui
+  born: '1970-01-30'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Kimiya_Yui
+- id: kjell-n-lindgren
+  name: Kjell N. Lindgren
+  born: '1973-01-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kjell_N._Lindgren
+- id: aidyn-aimbetov
+  name: Aidyn Aimbetov
+  born: '1972-07-27'
+  sex: M
+  nationality: [KZ]
+  wiki: https://en.wikipedia.org/wiki/Aidyn_Aimbetov
+- id: andreas-mogensen
+  name: Andreas Mogensen
+  born: '1976-11-02'
+  sex: M
+  nationality: [NL]
+  wiki: https://en.wikipedia.org/wiki/Andreas_Mogensen
+- id: tim-peake
+  name: Tim Peake
+  born: '1972-04-07'
+  sex: M
+  nationality: [GB]
+  wiki: https://en.wikipedia.org/wiki/Tim_Peake
+- id: aleksey-ovchinin
+  name: Aleksey Ovchinin
+  born: '1971-09-28'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksey_Ovchinin
+- id: kathleen-rubins
+  name: Kathleen Rubins
+  born: '1978-10-14'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kathleen_Rubins
+- id: takuya-onishi
+  name: Takuya Onishi
+  born: '1975-12-22'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Takuya_Onishi
+- id: chen-dong
+  name: Chen Dong
+  born: '1978-12-12'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Chen_Dong_(taikonaut)
+- id: sergey-ryzhikov
+  name: Sergey Ryzhikov
+  born: '1974-08-19'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Ryzhikov_(cosmonaut)
+- id: thomas-pesquet
+  name: Thomas Pesquet
+  born: '1978-02-27'
+  sex: M
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Thomas_Pesquet
+- id: jack-d-fischer
+  name: Jack D. Fischer
+  born: '1974-01-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jack_D._Fischer
+- id: mark-t-vande-hei
+  name: Mark T. Vande Hei
+  born: '1966-11-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mark_T._Vande_Hei
+- id: norishige-kanai
+  name: Norishige Kanai
+  born: '1976-12-05'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Norishige_Kanai
+- id: scott-d-tingle
+  name: Scott D. Tingle
+  born: '1965-07-19'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Scott_D._Tingle
+- id: serena-au-c3-b1-c3-b3n-chancellor
+  name: Serena Auñón-Chancellor
+  born: '1976-04-09'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Serena_Au%C3%B1%C3%B3n-Chancellor
+- id: sergey-prokopyev
+  name: Sergey Prokopyev
+  born: '1975-02-19'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)
+- id: nick-hague
+  name: Nick Hague
+  born: '1975-09-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Nick_Hague
+- id: anne-mcclain
+  name: Anne McClain
+  born: '1979-06-07'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Anne_McClain
+- id: david-saint-jacques
+  name: David Saint-Jacques
+  born: '1970-01-06'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/David_Saint-Jacques
+- id: christina-koch
+  name: Christina Koch
+  born: '1979-01-29'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Christina_Koch
+- id: andrew-r-morgan
+  name: Andrew R. Morgan
+  born: '1976-02-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Andrew_R._Morgan
+- id: hazza-al-mansouri
+  name: Hazza Al Mansouri
+  born: '1983-12-13'
+  sex: M
+  nationality: [AE]
+  wiki: https://en.wikipedia.org/wiki/Hazza_Al_Mansouri
+- id: jessica-meir
+  name: Jessica Meir
+  born: '1977-07-01'
+  sex: F
+  nationality: [US, SE]
+  wiki: https://en.wikipedia.org/wiki/Jessica_Meir
+- id: ivan-vagner
+  name: Ivan Vagner
+  born: '1985-07-10'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Ivan_Vagner
+- id: sergey-kud-sverchkov
+  name: Sergey Kud-Sverchkov
+  born: '1983-08-23'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Kud-Sverchkov
+- id: victor-j-glover
+  name: Victor J. Glover
+  born: '1976-04-30'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Victor_J._Glover
+- id: pyotr-dubrov
+  name: Pyotr Dubrov
+  born: '1978-01-30'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Pyotr_Dubrov
+- id: tang-hongbo
+  name: Tang Hongbo
+  born: '1975-10-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Tang_Hongbo
+- id: jeff-bezos
+  name: Jeff Bezos
+  born: '1964-01-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jeff_Bezos
+- id: mark-bezos
+  name: Mark Bezos
+  born: '1968-05-17'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Mark_Bezos
+- id: oliver-daemen
+  name: Oliver Daemen
+  born: '2002-08-20'
+  sex: M
+  nationality: [NL]
+  wiki: https://en.wikipedia.org/wiki/Oliver_Daemen
+- id: wally-funk
+  name: Wally Funk
+  born: '1939-02-01'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Wally_Funk
+- id: christopher-sembroski
+  name: Christopher Sembroski
+  born: '1979-08-28'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Christopher_Sembroski
+- id: hayley-arceneaux
+  name: Hayley Arceneaux
+  born: '1991-12-04'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Hayley_Arceneaux
+- id: jared-isaacman
+  name: Jared Isaacman
+  born: '1983-02-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jared_Isaacman
+- id: sian-proctor
+  name: Sian Proctor
+  born: '1970-03-28'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sian_Proctor
+- id: klim-shipenko
+  name: Klim Shipenko
+  born: '1983-06-16'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Klim_Shipenko
+- id: yulia-peresild
+  name: Yulia Peresild
+  born: '1984-09-05'
+  sex: F
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Yulia_Peresild
+- id: audrey-powers
+  name: Audrey Powers
+  born: '1980-01-01'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Audrey_Powers
+- id: chris-boshuizen-age-birthday-wikipedia-who-nationality-biography-125002-html
+  name: Chris Boshuizen
+  born: '1985-01-01'
+  sex: M
+  nationality: [AU]
+  wiki: https://www.tvguidetime.com/people/chris-boshuizen-age-birthday-wikipedia-who-nationality-biography-125002.html
+- id: glen-de-vries
+  name: Glen de Vries
+  born: '1972-06-29'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Glen_de_Vries
+- id: william-shatner
+  name: William Shatner
+  born: '1931-03-22'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/William_Shatner
+- id: ye-guangfu
+  name: Ye Guangfu
+  born: '1980-09-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Ye_Guangfu
+- id: kayla-barron
+  name: Kayla Barron
+  born: '1987-09-19'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kayla_Barron
+- id: matthias-maurer
+  name: Matthias Maurer
+  born: '1970-03-18'
+  sex: M
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Matthias_Maurer
+- id: raja-chari
+  name: Raja Chari
+  born: '1977-06-24'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Raja_Chari
+- id: yozo-hirano
+  name: Yozo Hirano
+  born: '1985-10-12'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Yozo_Hirano
+- id: yusaku-maezawa
+  name: Yusaku Maezawa
+  born: '1975-11-22'
+  sex: M
+  nationality: [JP]
+  wiki: https://en.wikipedia.org/wiki/Yusaku_Maezawa
+- id: cameron-bess
+  name: Cameron Bess
+  born: '2001-01-01'
+  sex: M
+  nationality: [US]
+- id: dylan-taylor
+  name: Dylan Taylor (executive)
+  born: '1970-10-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dylan_Taylor_(executive)
+- id: evan-dick
+  name: Evan Dick
+  born: '1976-01-01'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Evan_Dick
+- id: lane-bess
+  name: Lane Bess
+  born: '1961-09-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Lane_Bess
+- id: laura-shepard-churchley
+  name: Laura Shepard Churchley
+  born: '1947-01-01'
+  sex: F
+  nationality: [US]
+- id: michael-strahan
+  name: Michael Strahan
+  born: '1971-11-21'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Michael_Strahan
+- id: denis-matveev
+  name: Denis Matveev
+  born: '1983-04-25'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Denis_Matveev
+- id: sergey-korsakov
+  name: Sergey Korsakov
+  born: '1984-09-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergey_Korsakov_(cosmonaut)
+- id: gary-lai
+  name: Gary Lai
+  born: null
+  sex: M
+  nationality: [US]
+- id: george-nield
+  name: George Nield
+  born: null
+  sex: M
+  nationality: [US]
+- id: jim-kitchen
+  name: Jim Kitchen
+  born: null
+  sex: M
+  nationality: [US]
+- id: marc-hagle
+  name: Marc Hagle
+  born: null
+  sex: M
+  nationality: [US]
+- id: marty-allen
+  name: Marty Allen
+  born: null
+  sex: M
+  nationality: [US]
+- id: sharon-hagle
+  name: Sharon Hagle
+  born: null
+  sex: F
+  nationality: [US]
+- id: eytan-stibbe
+  name: Eytan Stibbe
+  born: '1958-01-12'
+  sex: M
+  nationality: [IL]
+  wiki: https://en.wikipedia.org/wiki/Eytan_Stibbe
+- id: larry-connor
+  name: Larry Connor
+  born: '1950-01-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Larry_Connor
+- id: mark-pathy
+  name: Mark Pathy
+  born: '1969-07-01'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Mark_Pathy
+- id: jessica-watkins
+  name: Jessica Watkins
+  born: '1988-05-14'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jessica_Watkins
+- id: robert-hines
+  name: Robert Hines
+  born: '1975-01-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Robert_Hines_(astronaut)
+- id: hamish-harding
+  name: Hamish Harding
+  born: '1964-06-24'
+  sex: M
+  nationality: [GB]
+  wiki: https://en.wikipedia.org/wiki/Hamish_Harding
+- id: katya-echazarreta
+  name: Katya Echazarreta
+  born: '1995-06-15'
+  sex: F
+  nationality: [US, MX]
+  wiki: https://en.wikipedia.org/wiki/Katya_Echazarreta
+- id: list-of-survivor-contestants-jaison-robinson
+  name: Jaison Robinson
+  born: null
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/List_of_Survivor_(2_TV_series)_contestants#Jaison_Robinson
+- id: victor-correa-hespanha
+  name: Victor Correa Hespanha
+  born: null
+  sex: M
+  nationality: [BR]
+- id: victor-vescovo
+  name: Victor Vescovo
+  born: '1966-02-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Victor_Vescovo
+- id: cai-xuzhe
+  name: Cai Xuzhe
+  born: '1976-05-09'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Cai_Xuzhe
+- id: clint-kelly-iii
+  name: Clint Kelly III
+  born: null
+  sex: M
+  nationality: [US]
+- id: dude-perfect
+  name: Coby Cotton
+  born: null
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Dude_Perfect
+- id: m-c3-a1rio-ferreira
+  name: Mário Ferreira
+  born: null
+  sex: M
+  nationality: [PT]
+  wiki: https://en.wikipedia.org/wiki/M%C3%A1rio_Ferreira
+- id: sara-sabry
+  name: Sara Sabry
+  born: null
+  sex: F
+  nationality: [EG]
+  wiki: https://en.wikipedia.org/wiki/Sara_Sabry
+- id: steve-young
+  name: Steve Young
+  born: null
+  sex: M
+  nationality: [US]
+- id: vanessa-o-27brien
+  name: Vanessa O'Brien
+  born: '1964-12-02'
+  sex: F
+  nationality: [US, GB]
+  wiki: https://en.wikipedia.org/wiki/Vanessa_O%27Brien
+- id: dmitry-petelin
+  name: Dmitry Petelin
+  born: '1983-07-10'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Dmitry_Petelin
+- id: francisco-rubio
+  name: Francisco Rubio
+  born: '1975-12-11'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Francisco_Rubio_(astronaut)
+- id: anna-kikina
+  name: Anna Kikina
+  born: '1984-08-27'
+  sex: F
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Anna_Kikina
+- id: josh-a-cassada
+  name: Josh A. Cassada
+  born: '1973-07-18'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Josh_A._Cassada
+- id: nicole-aunapu-mann
+  name: Nicole Aunapu Mann
+  born: '1977-06-27'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Nicole_Aunapu_Mann
+- id: deng-qingming
+  name: Deng Qingming
+  born: '1966-03-16'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Deng_Qingming
+- id: zhang-lu
+  name: Zhang Lu
+  born: '1976-11-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Zhang_Lu_(taikonaut)
+- id: andrey-fedyaev
+  name: Andrey Fedyaev
+  born: '1981-02-26'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Andrey_Fedyaev
+- id: sultan-al-neyadi
+  name: Sultan Al Neyadi
+  born: '1981-05-25'
+  sex: M
+  nationality: [AE]
+  wiki: https://en.wikipedia.org/wiki/Sultan_Al_Neyadi
+- id: warren-hoburg
+  name: Warren Hoburg
+  born: '1985-09-16'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Warren_Hoburg
+- id: ali-alqarni
+  name: Ali AlQarni
+  born: '1992-03-01'
+  sex: M
+  nationality: [SA]
+  wiki: https://en.wikipedia.org/wiki/Ali_AlQarni
+- id: john-shoffner
+  name: John Shoffner
+  born: '1955-07-25'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/John_Shoffner
+- id: rayyanah-barnawi
+  name: Rayyanah Barnawi
+  born: '1988-09-01'
+  sex: F
+  nationality: [SA]
+  wiki: https://en.wikipedia.org/wiki/Rayyanah_Barnawi
+- id: gui-haichao
+  name: Gui Haichao
+  born: '1986-11-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Gui_Haichao
+- id: zhu-yangzhu
+  name: Zhu Yangzhu
+  born: '1986-09-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Zhu_Yangzhu
+- id: jasmin-moghbeli
+  name: Jasmin Moghbeli
+  born: '1983-06-24'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jasmin_Moghbeli
+- id: konstantin-borisov
+  name: Konstantin Borisov
+  born: '1984-08-14'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Konstantin_Borisov
+- id: loral-o-27hara
+  name: Loral O'Hara
+  born: '1983-05-03'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Loral_O%27Hara
+- id: nikolai-chub
+  name: Nikolai Chub
+  born: '1984-06-10'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Nikolai_Chub
+- id: index-php-title-jiang-xinlin-action-edit-redlink-1
+  name: Jiang Xinlin
+  born: '1988-02-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/w/index.php?title=Jiang_Xinlin&action=edit&redlink=1
+- id: index-php-title-tang-shengjie-action-edit-redlink-1
+  name: Tang Shengjie
+  born: '1989-12-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/w/index.php?title=Tang_Shengjie&action=edit&redlink=1
+- id: alper-gezeravc-c4-b1
+  name: Alper Gezeravcı
+  born: '1979-12-02'
+  sex: M
+  nationality: [TR]
+  wiki: https://en.wikipedia.org/wiki/Alper_Gezeravc%C4%B1
+- id: marcus-wandt
+  name: Marcus Wandt
+  born: '1980-09-22'
+  sex: M
+  nationality: [SE, 'NO']
+  wiki: https://en.wikipedia.org/wiki/Marcus_Wandt
+- id: walter-villadei
+  name: Walter Villadei
+  born: '1974-04-29'
+  sex: M
+  nationality: [IT]
+  wiki: https://en.wikipedia.org/wiki/Walter_Villadei
+- id: alexander-grebenkin
+  name: Alexander Grebenkin
+  born: '1982-07-15'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Alexander_Grebenkin
+- id: jeanette-epps
+  name: Jeanette Epps
+  born: '1970-11-03'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jeanette_Epps
+- id: matthew-dominick
+  name: Matthew Dominick
+  born: '1981-12-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Matthew_Dominick
+- id: maryna-vasileuskaya
+  name: Maryna Vasileuskaya
+  born: '1990-09-14'
+  sex: F
+  nationality: [BY]
+  wiki: https://en.wikipedia.org/wiki/Maryna_Vasileuskaya
+- id: li-cong
+  name: Li Cong
+  born: '1989-10-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Li_Cong_(taikonaut)
+- id: li-guangsu
+  name: Li Guangsu
+  born: '1987-07-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Li_Guangsu
+- id: carol-schaller
+  name: Carol Schaller
+  born: null
+  sex: F
+  nationality: [US]
+- id: ed-dwight
+  name: Ed Dwight
+  born: '1933-09-09'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Ed_Dwight
+- id: gopichand-thotakura
+  name: Gopichand Thotakura
+  born: null
+  sex: M
+  nationality: [IN]
+- id: kenneth-hess
+  name: Kenneth Hess
+  born: '1953-01-22'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kenneth_Hess
+- id: mason-angel
+  name: Mason Angel
+  born: null
+  sex: M
+  nationality: [US]
+- id: sylvain-chiron
+  name: Sylvain Chiron
+  born: null
+  sex: M
+  nationality: [FR]
+- id: eiman-jahangir
+  name: Eiman Jahangir
+  born: null
+  sex: M
+  nationality: [US, IR]
+- id: ephraim-rabin
+  name: Ephraim Rabin
+  born: null
+  sex: M
+  nationality: [US, IL]
+- id: eugene-grin
+  name: Eugene Grin
+  born: null
+  sex: M
+  nationality: [UA]
+- id: karsen-kitchen
+  name: Karsen Kitchen
+  born: null
+  sex: F
+  nationality: [US]
+- id: nicolina-elrick
+  name: Nicolina Elrick
+  born: null
+  sex: F
+  nationality: [GB, SG]
+- id: rob-ferl
+  name: Rob Ferl
+  born: null
+  sex: M
+  nationality: [US]
+- id: anna-menon
+  name: Anna Menon
+  born: '1985-12-24'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Anna_Menon
+- id: sarah-gillis
+  name: Sarah Gillis
+  born: '1994-01-01'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Sarah_Gillis
+- id: scott-poteet
+  name: Scott Poteet
+  born: '1973-12-07'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Scott_Poteet
+- id: aleksandr-gorbunov
+  name: Aleksandr Gorbunov
+  born: '1990-05-24'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Aleksandr_Gorbunov
+- id: song-lingdong
+  name: Song Lingdong
+  born: '1990-08-01'
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Song_Lingdong
+- id: wang-haoze
+  name: Wang Haoze
+  born: '1990-03-01'
+  sex: F
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Wang_Haoze
+- id: emily-calandrelli
+  name: Emily Calandrelli
+  born: null
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Emily_Calandrelli
+- id: austin-litteral
+  name: Austin Litteral
+  born: null
+  sex: M
+  nationality: [US]
+- id: j-d-russell
+  name: J. D. Russell
+  born: null
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/J._D._Russell
+- id: henry-wolfond
+  name: Henry Wolfond
+  born: null
+  sex: M
+  nationality: [CA]
+- id: jesus-calleja
+  name: Jesús Calleja
+  born: '1965-04-11'
+  sex: M
+  nationality: [ES]
+  wiki: https://en.wikipedia.org/wiki/Jesús_Calleja
+- id: tushar-shah
+  name: Tushar Shah
+  born: null
+  sex: M
+  nationality: [US]
+- id: richard-scott
+  name: Richard Scott
+  born: null
+  sex: M
+  nationality: [US]
+- id: elaine-hyde
+  name: Elaine Chia Hyde
+  born: null
+  sex: F
+  nationality: [AU]
+- id: russell-wilson
+  name: Russell Wilson
+  born: null
+  sex: M
+  nationality: [AU]
+- id: nichole-ayers
+  name: Nichole Ayers
+  born: '1988-12-13'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Nichole_Ayers
+- id: kirill-peskov
+  name: Kirill Peskov
+  born: '1990-05-01'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Kirill_Peskov
+- id: chun-wang
+  name: Chun Wang
+  born: null
+  sex: M
+  nationality: [MT, KN]
+  wiki: https://en.wikipedia.org/wiki/Chun_Wang
+- id: jannicke-mikkelsen
+  name: Jannicke Mikkelsen
+  born: '1986-06-08'
+  sex: F
+  nationality: [NO, GB]
+  wiki: https://en.wikipedia.org/wiki/Jannicke_Mikkelsen
+- id: rabea-rogge
+  name: Rabea Rogge
+  born: null
+  sex: F
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Rabea_Rogge
+- id: eric-philips
+  name: Eric Philips
+  born: '1962-04-30'
+  sex: M
+  nationality: [AU]
+  wiki: https://en.wikipedia.org/wiki/Eric_Philips_(explorer)
+- id: alexey-zubritsky
+  name: Alexey Zubritsky
+  born: '1992-08-22'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Alexey_Zubritsky
+- id: jonny-kim
+  name: Jonny Kim
+  born: '1984-02-05'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jonny_Kim
+- id: aisha-bowe
+  name: Aisha Bowe
+  born: '1985-11-04'
+  sex: F
+  nationality: [US, BS]
+  wiki: https://en.wikipedia.org/wiki/Aisha_Bowe
+- id: amanda-nguyen
+  name: Amanda Nguyen
+  born: '1991-10-10'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Amanda_Nguyen
+- id: gayle-king
+  name: Gayle King
+  born: '1954-12-28'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Gayle_King
+- id: katy-perry
+  name: Katy Perry
+  born: '1984-10-25'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Katy_Perry
+- id: kerianne-flynn
+  name: Kerianne Flynn
+  born: null
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Kerianne_Flynn
+- id: lauren-sanchez-bezos
+  name: Lauren Sánchez Bezos
+  born: '1969-12-19'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Lauren_Sánchez_Bezos
+- id: chen-zhongrui
+  name: Chen Zhongrui
+  born: null
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Chen_Zhongrui
+- id: wang-jie
+  name: Wang Jie
+  born: null
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Wang_Jie_(taikonaut)
+- id: aymette-medina-jorge
+  name: Aymette Medina Jorge
+  born: null
+  sex: F
+  nationality: [US]
+- id: gretchen-green
+  name: Gretchen Green
+  born: null
+  sex: F
+  nationality: [US]
+- id: jaime-aleman
+  name: Jaime Alemán
+  born: '1953-11-14'
+  sex: M
+  nationality: [PA]
+  wiki: https://en.wikipedia.org/wiki/Jaime_Alemán
+- id: jesse-williams
+  name: Jesse Williams
+  born: null
+  sex: M
+  nationality: [CA]
+- id: mark-rocket
+  name: Mark Rocket
+  born: null
+  sex: M
+  nationality: [NZ]
+  wiki: https://en.wikipedia.org/wiki/Mark_Rocket
+- id: paul-jeris
+  name: Paul Jeris
+  born: null
+  sex: M
+  nationality: [US]
+- id: shubhanshu-shukla
+  name: Shubhanshu Shukla
+  born: '1985-10-10'
+  sex: M
+  nationality: [IN]
+  wiki: https://en.wikipedia.org/wiki/Shubhanshu_Shukla
+- id: slawosz-uznanski-wisniewski
+  name: Sławosz Uznański-Wiśniewski
+  born: '1984-04-12'
+  sex: M
+  nationality: [PL]
+  wiki: https://en.wikipedia.org/wiki/Sławosz_Uznański-Wiśniewski
+- id: tibor-kapu
+  name: Tibor Kapu
+  born: '1991-11-05'
+  sex: M
+  nationality: [HU]
+  wiki: https://en.wikipedia.org/wiki/Tibor_Kapu
+- id: allie-kuehner
+  name: Allie Kuehner
+  born: null
+  sex: F
+  nationality: [US]
+- id: carl-kuehner
+  name: Carl Kuehner
+  born: null
+  sex: M
+  nationality: [US]
+- id: leland-larson
+  name: Leland Larson
+  born: null
+  sex: M
+  nationality: [US]
+- id: freddie-rescigno-jr
+  name: Freddie Rescigno Jr.
+  born: null
+  sex: M
+  nationality: [US]
+- id: owolabi-salis
+  name: Owolabi Salis
+  born: null
+  sex: M
+  nationality: [NG]
+- id: james-sitkin
+  name: James Sitkin
+  born: null
+  sex: M
+  nationality: [US]
+- id: zena-cardman
+  name: Zena Cardman
+  born: '1987-10-26'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Zena_Cardman
+- id: oleg-platonov
+  name: Oleg Platonov
+  born: '1986-06-27'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Oleg_Platonov_(cosmonaut)
+- id: arvinder-singh-bahal
+  name: Arvinder Singh Bahal
+  born: null
+  sex: M
+  nationality: [US]
+- id: gokhan-erdem
+  name: Gökhan Erdem
+  born: null
+  sex: M
+  nationality: [TR]
+- id: deborah-martorell
+  name: Deborah Martorell
+  born: null
+  sex: F
+  nationality: [US]
+- id: lionel-pitchford
+  name: Lionel Pitchford
+  born: null
+  sex: M
+  nationality: [GB]
+- id: justin-sun
+  name: Justin Sun
+  born: '1990-07-30'
+  sex: M
+  nationality: [KN]
+  wiki: https://en.wikipedia.org/wiki/Justin_Sun
+- id: jeff-elgin
+  name: Jeff Elgin
+  born: null
+  sex: M
+  nationality: [US]
+- id: danna-karagussova
+  name: Danna Karagussova
+  born: null
+  sex: F
+  nationality: [KZ]
+- id: aaron-newman
+  name: Aaron Newman
+  born: null
+  sex: M
+  nationality: [US]
+- id: vitalii-ostrovsky
+  name: Vitalii Ostrovsky
+  born: null
+  sex: M
+  nationality: [UA]
+- id: william-h-lewis
+  name: William H. Lewis
+  born: null
+  sex: M
+  nationality: [US]
+- id: wu-fei
+  name: Wu Fei
+  born: null
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Wu_Fei_(taikonaut)
+- id: zhang-hongzhang
+  name: Zhang Hongzhang
+  born: null
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Zhang_Hongzhang
+- id: sergei-mikayev
+  name: Sergei Mikayev
+  born: '1986-08-15'
+  sex: M
+  nationality: [RU]
+  wiki: https://en.wikipedia.org/wiki/Sergei_Mikayev
+- id: christopher-williams
+  name: Christopher Williams
+  born: '1983-10-23'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Christopher_Williams_(astronaut)
+- id: michaela-benthaus
+  name: Michaela Benthaus
+  born: null
+  sex: F
+  nationality: [DE]
+  wiki: https://en.wikipedia.org/wiki/Michaela_Benthaus
+- id: joey-hyde
+  name: Joey Hyde
+  born: null
+  sex: M
+  nationality: [US]
+- id: hans-koenigsmann
+  name: Hans Koenigsmann
+  born: null
+  sex: M
+  nationality: [DE, US]
+  wiki: https://en.wikipedia.org/wiki/Hans_Koenigsmann
+- id: neal-milch
+  name: Neal Milch
+  born: null
+  sex: M
+  nationality: [US]
+- id: adonis-pouroulis
+  name: Adonis Pouroulis
+  born: null
+  sex: M
+  nationality: [ZA]
+- id: jason-stansell
+  name: Jason Stansell
+  born: null
+  sex: M
+  nationality: [US]
+- id: tim-drexler
+  name: Tim Drexler
+  born: null
+  sex: M
+  nationality: [US]
+- id: linda-edwards
+  name: Linda Edwards
+  born: null
+  sex: F
+  nationality: [US]
+- id: alain-fernandez
+  name: Alain Fernandez
+  born: null
+  sex: M
+  nationality: [FR]
+- id: alberto-gutierrez
+  name: Alberto Gutiérrez
+  born: null
+  sex: M
+  nationality: [ES]
+- id: jim-hendren
+  name: Jim Hendren
+  born: '1963-08-12'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jim_Hendren
+- id: laura-stiles
+  name: Laura Stiles
+  born: '1986-04-14'
+  sex: F
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Laura_Stiles
+- id: jack-hathaway
+  name: Jack Hathaway
+  born: '1982-05-10'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Jack_Hathaway
+- id: sophie-adenot
+  name: Sophie Adenot
+  born: '1982-07-05'
+  sex: F
+  nationality: [FR]
+  wiki: https://en.wikipedia.org/wiki/Sophie_Adenot
+- id: jeremy-hansen
+  name: Jeremy Hansen
+  born: '1976-01-27'
+  sex: M
+  nationality: [CA]
+  wiki: https://en.wikipedia.org/wiki/Jeremy_Hansen
+- id: zhang-zhiyuan
+  name: Zhang Zhiyuan
+  born: null
+  sex: M
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Zhang_Zhiyuan_(astronaut)
+- id: lai-ka-ying
+  name: Lai Ka-ying
+  born: null
+  sex: F
+  nationality: [CN]
+  wiki: https://en.wikipedia.org/wiki/Lai_Ka-ying
+- id: anil-menon
+  name: Anil Menon
+  born: '1976-10-15'
+  sex: M
+  nationality: [US]
+  wiki: https://en.wikipedia.org/wiki/Anil_Menon

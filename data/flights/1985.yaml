@@ -1,0 +1,114 @@
+# Crewed spaceflights launched in 1985, in launch order. See docs/DATA.md for the schema.
+- id: sts-51-c
+  name: STS-51-C
+  launch: '1985-01-24T19:50:00Z'
+  landing: '1985-01-27T21:23:23Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [ken-mattingly, loren-shriver, ellison-onizuka, james-buchli, gary-payton]
+  crew_down: [ken-mattingly, loren-shriver, ellison-onizuka, james-buchli, gary-payton]
+  wiki: https://en.wikipedia.org/wiki/STS-51-C
+- id: sts-51-d
+  name: STS-51-D
+  launch: '1985-04-12T13:59:05Z'
+  landing: '1985-04-19T13:54:28Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [karol-j-bobko, charles-d-walker, donald-e-williams, rhea-seddon, s-david-griggs, jeffrey-a-hoffman, jake-garn]
+  crew_down: [karol-j-bobko, charles-d-walker, donald-e-williams, rhea-seddon, s-david-griggs, jeffrey-a-hoffman, jake-garn]
+  wiki: https://en.wikipedia.org/wiki/STS-51-D
+- id: sts-51-b
+  name: STS-51-B
+  launch: '1985-04-29T16:02:18Z'
+  landing: '1985-05-06T16:11:04Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [robert-f-overmyer, norman-thagard, william-e-thornton, frederick-d-gregory, don-lind, lodewijk-van-den-berg, taylor-wang]
+  crew_down: [robert-f-overmyer, norman-thagard, william-e-thornton, frederick-d-gregory, don-lind, lodewijk-van-den-berg,
+    taylor-wang]
+  wiki: https://en.wikipedia.org/wiki/STS-51-B
+- id: soyuz-t-13
+  name: Soyuz T-13
+  launch: '1985-06-06T06:39:52Z'
+  landing: '1985-09-26T09:51:58Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladimir-dzhanibekov, viktor-savinykh]
+  crew_down: [vladimir-dzhanibekov, georgy-grechko]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-13
+- id: sts-51-g
+  name: STS-51-G
+  launch: '1985-06-17T11:33:00Z'
+  landing: '1985-06-24T13:11:52Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [john-m-fabian, daniel-brandenstein, john-oliver-creighton, steven-r-nagel, shannon-lucid, patrick-baudry, sultan-bin-salman-al-saud]
+  crew_down: [john-m-fabian, daniel-brandenstein, john-oliver-creighton, steven-r-nagel, shannon-lucid, patrick-baudry, sultan-bin-salman-al-saud]
+  wiki: https://en.wikipedia.org/wiki/STS-51-G
+- id: sts-51-f
+  name: STS-51-F
+  launch: '1985-07-29T21:00:00Z'
+  landing: '1985-08-06T19:45:26Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [c-gordon-fullerton, story-musgrave, roy-d-bridges-jr, karl-gordon-henize, anthony-w-england, loren-acton, john-david-f-bartoe]
+  crew_down: [c-gordon-fullerton, story-musgrave, roy-d-bridges-jr, karl-gordon-henize, anthony-w-england, loren-acton, john-david-f-bartoe]
+  wiki: https://en.wikipedia.org/wiki/STS-51-F
+- id: sts-51-i
+  name: STS-51-I
+  launch: '1985-08-27T10:58:01Z'
+  landing: '1985-09-03T13:15:43Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [joe-engle, james-van-hoften, richard-o-covey, john-m-lounge, william-frederick-fisher]
+  crew_down: [joe-engle, james-van-hoften, richard-o-covey, john-m-lounge, william-frederick-fisher]
+  wiki: https://en.wikipedia.org/wiki/STS-51-I
+- id: soyuz-t-14
+  name: Soyuz T-14
+  launch: '1985-09-17T12:38:52Z'
+  landing: '1985-11-21T10:31:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [georgy-grechko, vladimir-vasyutin, aleksandr-aleksandrovich-volkov]
+  crew_down: [viktor-savinykh, vladimir-vasyutin, aleksandr-aleksandrovich-volkov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_T-14
+- id: sts-51-j
+  name: STS-51-J
+  launch: '1985-10-03T15:15:30Z'
+  landing: '1985-10-07T17:00:08Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [karol-j-bobko, robert-l-stewart, ronald-j-grabe, david-c-hilmers, william-a-pailes]
+  crew_down: [karol-j-bobko, robert-l-stewart, ronald-j-grabe, david-c-hilmers, william-a-pailes]
+  wiki: https://en.wikipedia.org/wiki/STS-51-J
+- id: sts-61-a
+  name: STS-61-A
+  launch: '1985-10-30T17:00:00Z'
+  landing: '1985-11-06T17:44:51Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [henry-hartsfield, guion-bluford, james-buchli, steven-r-nagel, bonnie-j-dunbar, reinhard-furrer, ernst-messerschmid,
+    wubbo-ockels]
+  crew_down: [henry-hartsfield, guion-bluford, james-buchli, steven-r-nagel, bonnie-j-dunbar, reinhard-furrer, ernst-messerschmid,
+    wubbo-ockels]
+  wiki: https://en.wikipedia.org/wiki/STS-61-A
+- id: sts-61-b
+  name: STS-61-B
+  launch: '1985-11-27T00:29:00Z'
+  landing: '1985-12-03T21:33:49Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [brewster-h-shaw, charles-d-walker, bryan-d-o-27connor, jerry-l-ross, mary-l-cleave, sherwood-c-spring, rodolfo-neri-vela]
+  crew_down: [brewster-h-shaw, charles-d-walker, bryan-d-o-27connor, jerry-l-ross, mary-l-cleave, sherwood-c-spring, rodolfo-neri-vela]
+  wiki: https://en.wikipedia.org/wiki/STS-61-B

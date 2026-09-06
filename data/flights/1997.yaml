@@ -1,0 +1,103 @@
+# Crewed spaceflights launched in 1997, in launch order. See docs/DATA.md for the schema.
+- id: sts-81
+  name: STS-81
+  launch: '1997-01-12T09:27:00Z'
+  landing: '1997-01-22T14:23:51Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [michael-a-baker, brent-w-jett-jr, peter-wisoff, john-m-grunsfeld, marsha-ivins, jerry-m-linenger]
+  crew_down: [michael-a-baker, brent-w-jett-jr, peter-wisoff, john-m-grunsfeld, marsha-ivins, john-e-blaha]
+  wiki: https://en.wikipedia.org/wiki/STS-81
+- id: soyuz-tm-25
+  name: Soyuz TM-25
+  launch: '1997-02-10T14:09:00Z'
+  landing: '1997-08-14T12:17:10Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vasily-tsibliyev, aleksandr-lazutkin, reinhold-ewald]
+  crew_down: [vasily-tsibliyev, aleksandr-lazutkin]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-25
+- id: sts-82
+  name: STS-82
+  launch: '1997-02-11T08:55:00Z'
+  landing: '1997-02-21T08:32:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [ken-bowersox, scott-j-horowitz, joseph-r-tanner, steven-hawley, gregory-j-harbaugh, mark-c-lee, steven-smith]
+  crew_down: [ken-bowersox, scott-j-horowitz, joseph-r-tanner, steven-hawley, gregory-j-harbaugh, mark-c-lee, steven-smith]
+  wiki: https://en.wikipedia.org/wiki/STS-82
+- id: sts-83
+  name: STS-83
+  launch: '1997-04-04T19:20:00Z'
+  landing: '1997-04-08T18:33:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [james-d-halsell, susan-kilrain, janice-e-voss, michael-l-gernhardt, donald-a-thomas, roger-k-crouch, gregory-t-linteris]
+  crew_down: [james-d-halsell, susan-kilrain, janice-e-voss, michael-l-gernhardt, donald-a-thomas, roger-k-crouch, gregory-t-linteris]
+  wiki: https://en.wikipedia.org/wiki/STS-83
+- id: sts-84
+  name: STS-84
+  launch: '1997-05-15T09:07:49Z'
+  landing: '1997-05-24T13:27:44Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [charles-j-precourt, eileen-collins, jean-fran-c3-a7ois-clervoy, carlos-i-noriega, ed-lu, yelena-kondakova, michael-foale]
+  crew_down: [charles-j-precourt, eileen-collins, jean-fran-c3-a7ois-clervoy, carlos-i-noriega, ed-lu, yelena-kondakova, jerry-m-linenger]
+  wiki: https://en.wikipedia.org/wiki/STS-84
+- id: sts-94
+  name: STS-94
+  launch: '1997-07-01T18:02:00Z'
+  landing: '1997-07-17T10:47:29Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [james-d-halsell, susan-kilrain, janice-e-voss, michael-l-gernhardt, donald-a-thomas, roger-k-crouch, gregory-t-linteris]
+  crew_down: [james-d-halsell, susan-kilrain, janice-e-voss, michael-l-gernhardt, donald-a-thomas, roger-k-crouch, gregory-t-linteris]
+  wiki: https://en.wikipedia.org/wiki/STS-94
+- id: soyuz-tm-26
+  name: Soyuz TM-26
+  launch: '1997-08-05T15:35:00Z'
+  landing: '1998-02-19T09:10:30Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [anatoly-solovyev, pavel-vinogradov]
+  crew_down: [anatoly-solovyev, pavel-vinogradov, l-c3-a9opold-eyharts]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-26
+- id: sts-85
+  name: STS-85
+  launch: '1997-08-07T14:41:00Z'
+  landing: '1997-08-19T11:08:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [curtis-brown, kent-rominger, jan-davis, robert-curbeam, stephen-robinson, bjarni-tryggvason]
+  crew_down: [curtis-brown, kent-rominger, jan-davis, robert-curbeam, stephen-robinson, bjarni-tryggvason]
+  wiki: https://en.wikipedia.org/wiki/STS-85
+- id: sts-86
+  name: STS-86
+  launch: '1997-09-26T02:34:19Z'
+  landing: '1997-10-06T21:55:00Z'
+  launch_nation: US
+  destination: salyut-mir
+  sector: government
+  crew_up: [jim-wetherbee, michael-j-bloomfield, vladimir-titov, scott-e-parazynski, jean-loup-chr-c3-a9tien, wendy-b-lawrence,
+    david-wolf]
+  crew_down: [jim-wetherbee, michael-j-bloomfield, vladimir-titov, scott-e-parazynski, jean-loup-chr-c3-a9tien, wendy-b-lawrence,
+    michael-foale]
+  wiki: https://en.wikipedia.org/wiki/STS-86
+- id: sts-87
+  name: STS-87
+  launch: '1997-11-19T19:46:00Z'
+  landing: '1997-12-05T12:20:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [kevin-r-kregel, steven-lindsey, kalpana-chawla, winston-e-scott, takao-doi, leonid-kadeniuk]
+  crew_down: [kevin-r-kregel, steven-lindsey, kalpana-chawla, winston-e-scott, takao-doi, leonid-kadeniuk]
+  wiki: https://en.wikipedia.org/wiki/STS-87

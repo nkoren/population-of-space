@@ -1,0 +1,51 @@
+# Crewed spaceflights launched in 1962, in launch order. See docs/DATA.md for the schema.
+- id: mercury-atlas-6
+  name: Mercury-Atlas 6
+  launch: '1962-02-20T14:47:39Z'
+  landing: '1962-02-20T19:43:02Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [john-glenn]
+  crew_down: [john-glenn]
+  wiki: https://en.wikipedia.org/wiki/Mercury-Atlas_6
+- id: mercury-atlas-7
+  name: Mercury-Atlas 7
+  launch: '1962-05-24T12:45:16Z'
+  landing: '1962-05-24T17:41:21Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [scott-carpenter]
+  crew_down: [scott-carpenter]
+  wiki: https://en.wikipedia.org/wiki/Mercury-Atlas_7
+- id: vostok-3
+  name: Vostok 3
+  launch: '1962-08-11T08:24:00Z'
+  landing: '1962-08-15T06:52:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [andriyan-nikolayev]
+  crew_down: [andriyan-nikolayev]
+  wiki: https://en.wikipedia.org/wiki/Vostok_3_and_4
+- id: vostok-4
+  name: Vostok 4
+  launch: '1962-08-12T08:02:33Z'
+  landing: '1962-08-15T06:59:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [pavel-popovich]
+  crew_down: [pavel-popovich]
+  wiki: https://en.wikipedia.org/wiki/Vostok_3_and_4
+- id: mercury-atlas-8
+  name: Mercury-Atlas 8
+  launch: '1962-10-03T12:15:12Z'
+  landing: '1962-10-03T21:28:22Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [wally-schirra]
+  crew_down: [wally-schirra]
+  wiki: https://en.wikipedia.org/wiki/Mercury-Atlas_8

@@ -1,0 +1,73 @@
+# Crewed spaceflights launched in 2002, in launch order. See docs/DATA.md for the schema.
+- id: sts-109
+  name: STS-109
+  launch: '2002-03-01T11:22:00Z'
+  landing: '2002-03-12T09:33:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [scott-altman, duane-g-carey, john-m-grunsfeld, nancy-j-currie-gregg, richard-m-linnehan, james-h-newman, mike-massimino]
+  crew_down: [scott-altman, duane-g-carey, john-m-grunsfeld, nancy-j-currie-gregg, richard-m-linnehan, james-h-newman, mike-massimino]
+  wiki: https://en.wikipedia.org/wiki/STS-109
+- id: sts-110
+  name: STS-110
+  launch: '2002-04-08T20:44:19Z'
+  landing: '2002-04-19T16:26:57Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [michael-j-bloomfield, stephen-frick, rex-j-walheim, ellen-ochoa, lee-morin, jerry-l-ross, steven-smith]
+  crew_down: [michael-j-bloomfield, stephen-frick, rex-j-walheim, ellen-ochoa, lee-morin, jerry-l-ross, steven-smith]
+  wiki: https://en.wikipedia.org/wiki/STS-110
+- id: soyuz-tm-34
+  name: Soyuz TM-34
+  launch: '2002-04-25T06:26:35Z'
+  landing: '2002-11-10T00:04:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [yuri-gidzenko, roberto-vittori, mark-shuttleworth]
+  crew_down: [sergey-zalyotin, frank-de-winne, yury-lonchakov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-34
+- id: sts-111
+  name: STS-111
+  launch: '2002-06-05T21:22:49Z'
+  landing: '2002-06-19T17:58:45Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [kenneth-cockrell, paul-lockhart, philippe-perrin, franklin-chang-d-c3-adaz, valery-korzun, peggy-whitson, sergey-treshchov]
+  crew_down: [kenneth-cockrell, paul-lockhart, philippe-perrin, franklin-chang-d-c3-adaz, yury-onufriyenko, carl-e-walz, daniel-w-bursch]
+  wiki: https://en.wikipedia.org/wiki/STS-111
+- id: sts-112
+  name: STS-112
+  launch: '2002-10-07T19:45:00Z'
+  landing: '2002-10-18T15:44:35Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [jeffrey-ashby, pamela-melroy, david-wolf, sandra-magnus, piers-sellers, fyodor-yurchikhin]
+  crew_down: [jeffrey-ashby, pamela-melroy, david-wolf, sandra-magnus, piers-sellers, fyodor-yurchikhin]
+  wiki: https://en.wikipedia.org/wiki/STS-112
+- id: soyuz-tma-1
+  name: Soyuz TMA-1
+  launch: '2002-10-30T03:11:11Z'
+  landing: '2003-05-04T02:04:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [sergey-zalyotin, frank-de-winne, yury-lonchakov]
+  crew_down: [nikolai-budarin, ken-bowersox, donald-pettit]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-1
+- id: sts-113
+  name: STS-113
+  launch: '2002-11-24T00:49:47Z'
+  landing: '2002-12-07T19:38:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [jim-wetherbee, paul-lockhart, michael-l-c3-b3pez-alegr-c3-ada, john-herrington, ken-bowersox, nikolai-budarin,
+    donald-pettit]
+  crew_down: [jim-wetherbee, paul-lockhart, michael-l-c3-b3pez-alegr-c3-ada, john-herrington, valery-korzun, peggy-whitson,
+    sergey-treshchov]
+  wiki: https://en.wikipedia.org/wiki/STS-113

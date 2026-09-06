@@ -1,0 +1,82 @@
+# Crewed spaceflights launched in 2001, in launch order. See docs/DATA.md for the schema.
+- id: sts-98
+  name: STS-98
+  launch: '2001-02-07T23:13:00Z'
+  landing: '2001-02-20T20:33:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [kenneth-cockrell, mark-l-polansky, robert-curbeam, marsha-ivins, thomas-david-jones]
+  crew_down: [kenneth-cockrell, mark-l-polansky, robert-curbeam, marsha-ivins, thomas-david-jones]
+  wiki: https://en.wikipedia.org/wiki/STS-98
+- id: sts-102
+  name: STS-102
+  launch: '2001-03-08T11:42:00Z'
+  landing: '2001-03-21T07:33:06Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [jim-wetherbee, james-m-kelly, andy-thomas, paul-w-richards, yuri-usachov, james-s-voss, susan-helms]
+  crew_down: [jim-wetherbee, james-m-kelly, andy-thomas, paul-w-richards, william-shepherd, yuri-gidzenko, sergei-krikalev]
+  wiki: https://en.wikipedia.org/wiki/STS-102
+- id: sts-100
+  name: STS-100
+  launch: '2001-04-19T18:40:42Z'
+  landing: '2001-05-01T16:11:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [kent-rominger, jeffrey-ashby, chris-hadfield, john-l-phillips, scott-e-parazynski, umberto-guidoni, yury-lonchakov]
+  crew_down: [kent-rominger, jeffrey-ashby, chris-hadfield, john-l-phillips, scott-e-parazynski, umberto-guidoni, yury-lonchakov]
+  wiki: https://en.wikipedia.org/wiki/STS-100
+- id: soyuz-tm-32
+  name: Soyuz TM-32
+  launch: '2001-04-28T07:37:20Z'
+  landing: '2001-10-31T05:00:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [talgat-musabayev, yuri-baturin, dennis-tito]
+  crew_down: [viktor-afanasyev, claudie-haigner-c3-a9, konstantin-kozeyev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-32
+- id: sts-104
+  name: STS-104
+  launch: '2001-07-12T09:04:00Z'
+  landing: '2001-07-25T03:38:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [steven-lindsey, charles-o-hobaugh, michael-l-gernhardt, janet-l-kavandi, james-f-reilly]
+  crew_down: [steven-lindsey, charles-o-hobaugh, michael-l-gernhardt, janet-l-kavandi, james-f-reilly]
+  wiki: https://en.wikipedia.org/wiki/STS-104
+- id: sts-105
+  name: STS-105
+  launch: '2001-08-10T21:10:00Z'
+  landing: '2001-08-22T18:23:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [scott-j-horowitz, frederick-w-sturckow, patrick-g-forrester, daniel-t-barry, frank-l-culbertson-jr, mikhail-tyurin,
+    vladimir-dezhurov]
+  crew_down: [scott-j-horowitz, frederick-w-sturckow, patrick-g-forrester, daniel-t-barry, yuri-usachov, james-s-voss, susan-helms]
+  wiki: https://en.wikipedia.org/wiki/STS-105
+- id: soyuz-tm-33
+  name: Soyuz TM-33
+  launch: '2001-10-21T08:59:35Z'
+  landing: '2002-05-05T03:51:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [viktor-afanasyev, claudie-haigner-c3-a9, konstantin-kozeyev]
+  crew_down: [yuri-gidzenko, roberto-vittori, mark-shuttleworth]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-33
+- id: sts-108
+  name: STS-108
+  launch: '2001-12-05T22:19:00Z'
+  landing: '2001-12-17T17:56:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [dominic-l-pudwill-gorie, mark-kelly, linda-m-godwin, daniel-m-tani, yury-onufriyenko, carl-e-walz, daniel-w-bursch]
+  crew_down: [dominic-l-pudwill-gorie, mark-kelly, linda-m-godwin, daniel-m-tani, frank-l-culbertson-jr, mikhail-tyurin, vladimir-dezhurov]
+  wiki: https://en.wikipedia.org/wiki/STS-108

@@ -1,0 +1,41 @@
+# Crewed spaceflights launched in 1971, in launch order. See docs/DATA.md for the schema.
+- id: apollo-14
+  name: Apollo 14
+  launch: '1971-01-31T21:03:02Z'
+  landing: '1971-02-09T21:05:00Z'
+  launch_nation: RU
+  destination: moon
+  sector: government
+  crew_up: [alan-shepard, stuart-roosa, edgar-mitchell]
+  crew_down: [alan-shepard, stuart-roosa, edgar-mitchell]
+  wiki: https://en.wikipedia.org/wiki/Apollo_14
+- id: soyuz-10
+  name: Soyuz 10
+  launch: '1971-04-22T23:54:06Z'
+  landing: '1971-04-24T23:40:00Z'
+  launch_nation: RU
+  destination: free-flying
+  sector: government
+  crew_up: [vladimir-shatalov, aleksei-yeliseyev, nikolai-rukavishnikov]
+  crew_down: [vladimir-shatalov, aleksei-yeliseyev, nikolai-rukavishnikov]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_10
+- id: soyuz-11
+  name: Soyuz 11
+  launch: '1971-06-06T04:55:09Z'
+  landing: '1971-06-29T23:16:52Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [vladislav-volkov, georgy-dobrovolsky, viktor-patsayev]
+  crew_down: [vladislav-volkov, georgy-dobrovolsky, viktor-patsayev]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_11
+- id: apollo-15
+  name: Apollo 15
+  launch: '1971-07-26T13:34:00Z'
+  landing: '1971-08-07T20:45:53Z'
+  launch_nation: RU
+  destination: moon
+  sector: government
+  crew_up: [david-scott, alfred-worden, james-irwin]
+  crew_down: [david-scott, alfred-worden, james-irwin]
+  wiki: https://en.wikipedia.org/wiki/Apollo_15

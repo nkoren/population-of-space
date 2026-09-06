@@ -1,0 +1,73 @@
+# Crewed spaceflights launched in 2000, in launch order. See docs/DATA.md for the schema.
+- id: sts-99
+  name: STS-99
+  launch: '2000-02-11T17:43:00Z'
+  landing: '2000-02-22T23:23:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [kevin-r-kregel, dominic-l-pudwill-gorie, gerhard-thiele, janet-l-kavandi, janice-e-voss, mamoru-mohri]
+  crew_down: [kevin-r-kregel, dominic-l-pudwill-gorie, gerhard-thiele, janet-l-kavandi, janice-e-voss, mamoru-mohri]
+  wiki: https://en.wikipedia.org/wiki/STS-99
+- id: soyuz-tm-30
+  name: Soyuz TM-30
+  launch: '2000-04-04T05:01:00Z'
+  landing: '2000-06-16T00:44:00Z'
+  launch_nation: RU
+  destination: salyut-mir
+  sector: government
+  crew_up: [sergey-zalyotin, aleksandr-kaleri]
+  crew_down: [sergey-zalyotin, aleksandr-kaleri]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-30
+- id: sts-101
+  name: STS-101
+  launch: '2000-05-19T10:11:00Z'
+  landing: '2000-05-29T06:20:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [james-d-halsell, scott-j-horowitz, mary-ellen-weber, jeffrey-williams, james-s-voss, susan-helms, yuri-usachov]
+  crew_down: [james-d-halsell, scott-j-horowitz, mary-ellen-weber, jeffrey-williams, james-s-voss, susan-helms, yuri-usachov]
+  wiki: https://en.wikipedia.org/wiki/STS-101
+- id: sts-106
+  name: STS-106
+  launch: '2000-09-08T12:45:00Z'
+  landing: '2000-09-20T07:56:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [terrence-w-wilcutt, scott-altman, ed-lu, richard-mastracchio, daniel-c-burbank, yuri-malenchenko, boris-morukov]
+  crew_down: [terrence-w-wilcutt, scott-altman, ed-lu, richard-mastracchio, daniel-c-burbank, yuri-malenchenko, boris-morukov]
+  wiki: https://en.wikipedia.org/wiki/STS-106
+- id: sts-92
+  name: STS-92
+  launch: '2000-10-11T23:17:00Z'
+  landing: '2000-10-24T20:59:47Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [brian-duffy, pamela-melroy, koichi-wakata, william-s-mcarthur, peter-wisoff, michael-l-c3-b3pez-alegr-c3-ada,
+    leroy-chiao]
+  crew_down: [brian-duffy, pamela-melroy, koichi-wakata, william-s-mcarthur, peter-wisoff, michael-l-c3-b3pez-alegr-c3-ada,
+    leroy-chiao]
+  wiki: https://en.wikipedia.org/wiki/STS-92
+- id: soyuz-tm-31
+  name: Soyuz TM-31
+  launch: '2000-10-31T07:52:47Z'
+  landing: '2001-05-06T05:41:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [yuri-gidzenko, sergei-krikalev, william-shepherd]
+  crew_down: [talgat-musabayev, yuri-baturin, dennis-tito]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TM-31
+- id: sts-97
+  name: STS-97
+  launch: '2000-12-01T03:06:00Z'
+  landing: '2000-12-11T23:04:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [brent-w-jett-jr, michael-j-bloomfield, joseph-r-tanner, marc-garneau, carlos-i-noriega]
+  crew_down: [brent-w-jett-jr, michael-j-bloomfield, joseph-r-tanner, marc-garneau, carlos-i-noriega]
+  wiki: https://en.wikipedia.org/wiki/STS-97

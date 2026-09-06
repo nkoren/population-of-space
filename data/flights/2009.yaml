@@ -1,0 +1,93 @@
+# Crewed spaceflights launched in 2009, in launch order. See docs/DATA.md for the schema.
+- id: sts-119
+  name: STS-119
+  launch: '2009-03-15T23:43:00Z'
+  landing: '2009-03-28T19:13:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [lee-archambault, dominic-a-antonelli, joseph-m-acaba, steven-swanson, richard-r-arnold, john-l-phillips, koichi-wakata]
+  crew_down: [lee-archambault, dominic-a-antonelli, joseph-m-acaba, steven-swanson, richard-r-arnold, john-l-phillips, sandra-magnus]
+  wiki: https://en.wikipedia.org/wiki/STS-119
+- id: soyuz-tma-14
+  name: Soyuz TMA-14
+  launch: '2009-03-26T11:49:18Z'
+  landing: '2009-10-11T04:32:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [gennady-padalka, michael-barratt, charles-simonyi]
+  crew_down: [gennady-padalka, michael-barratt, guy-lalibert-c3-a9]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-14
+- id: sts-125
+  name: STS-125
+  launch: '2009-05-11T18:01:00Z'
+  landing: '2009-05-24T15:39:05Z'
+  launch_nation: US
+  destination: free-flying
+  sector: government
+  crew_up: [scott-altman, gregory-c-johnson, michael-t-good, k-megan-mcarthur, john-m-grunsfeld, mike-massimino, andrew-j-feustel]
+  crew_down: [scott-altman, gregory-c-johnson, michael-t-good, k-megan-mcarthur, john-m-grunsfeld, mike-massimino, andrew-j-feustel]
+  wiki: https://en.wikipedia.org/wiki/STS-125
+- id: soyuz-tma-15
+  name: Soyuz TMA-15
+  launch: '2009-05-27T10:34:53Z'
+  landing: '2009-12-01T07:17:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [roman-romanenko, frank-de-winne, robert-thirsk]
+  crew_down: [roman-romanenko, frank-de-winne, robert-thirsk]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-15
+- id: sts-127
+  name: STS-127
+  launch: '2009-07-15T22:03:00Z'
+  landing: '2009-07-31T14:48:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [mark-l-polansky, doug-hurley, christopher-cassidy, julie-payette, thomas-marshburn, david-wolf, timothy-kopra]
+  crew_down: [mark-l-polansky, doug-hurley, christopher-cassidy, julie-payette, thomas-marshburn, david-wolf, koichi-wakata]
+  wiki: https://en.wikipedia.org/wiki/STS-127
+- id: sts-128
+  name: STS-128
+  launch: '2009-08-29T03:59:00Z'
+  landing: '2009-09-12T00:53:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [frederick-w-sturckow, kevin-a-ford, patrick-g-forrester, jos-c3-a9-m-hern-c3-a1ndez, john-d-olivas, christer-fuglesang,
+    nicole-stott]
+  crew_down: [frederick-w-sturckow, kevin-a-ford, patrick-g-forrester, jos-c3-a9-m-hern-c3-a1ndez, john-d-olivas, christer-fuglesang,
+    timothy-kopra]
+  wiki: https://en.wikipedia.org/wiki/STS-128
+- id: soyuz-tma-16
+  name: Soyuz TMA-16
+  launch: '2009-09-30T07:14:45Z'
+  landing: '2010-03-18T11:24:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [maksim-surayev, jeffrey-williams, guy-lalibert-c3-a9]
+  crew_down: [maksim-surayev, jeffrey-williams]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-16
+- id: sts-129
+  name: STS-129
+  launch: '2009-11-16T19:28:09Z'
+  landing: '2009-11-27T14:44:22Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [charles-o-hobaugh, barry-e-wilmore, leland-d-melvin, randolph-bresnik, michael-foreman, robert-satcher]
+  crew_down: [charles-o-hobaugh, barry-e-wilmore, leland-d-melvin, randolph-bresnik, michael-foreman, robert-satcher, nicole-stott]
+  wiki: https://en.wikipedia.org/wiki/STS-129
+- id: soyuz-tma-17
+  name: Soyuz TMA-17
+  launch: '2009-12-20T21:52:00Z'
+  landing: '2010-06-02T03:25:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-kotov, soichi-noguchi, timothy-creamer]
+  crew_down: [oleg-kotov, soichi-noguchi, timothy-creamer]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-17

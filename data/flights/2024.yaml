@@ -1,0 +1,124 @@
+# Crewed spaceflights launched in 2024, in launch order. See docs/DATA.md for the schema.
+- id: axiom-3
+  name: Axiom 3
+  launch: '2024-01-18T21:49:00Z'
+  landing: '2024-02-09T13:30:00Z'
+  launch_nation: US
+  destination: iss
+  sector: commercial
+  crew_up: [michael-l-c3-b3pez-alegr-c3-ada, walter-villadei, alper-gezeravc-c4-b1, marcus-wandt]
+  crew_down: [michael-l-c3-b3pez-alegr-c3-ada, walter-villadei, alper-gezeravc-c4-b1, marcus-wandt]
+  wiki: https://en.wikipedia.org/wiki/Axiom_Mission_3
+- id: spacex-crew-8
+  name: SpaceX Crew-8
+  launch: '2024-03-04T03:53:00Z'
+  landing: '2024-10-25T07:29:02Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [michael-barratt, matthew-dominick, jeanette-epps, alexander-grebenkin]
+  crew_down: [michael-barratt, matthew-dominick, jeanette-epps, alexander-grebenkin]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-8
+- id: soyuz-ms-25
+  name: Soyuz MS-25
+  launch: '2024-03-23T12:36:00Z'
+  landing: '2024-09-23T11:58:16Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [oleg-novitsky, tracy-caldwell-dyson, maryna-vasileuskaya]
+  crew_down: [tracy-caldwell-dyson, oleg-kononenko, nikolai-chub]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-25
+- id: shenzhou-18
+  name: Shenzhou 18
+  launch: '2024-04-25T12:59:00Z'
+  landing: '2024-11-03T17:24:00Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [ye-guangfu, li-cong, li-guangsu]
+  crew_down: [ye-guangfu, li-cong, li-guangsu]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_18
+- id: blue-origin-ns-25
+  name: Blue Origin NS-25
+  launch: '2024-05-19T14:35:09Z'
+  landing: '2024-05-19T14:45:02Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [mason-angel, sylvain-chiron, ed-dwight, kenneth-hess, carol-schaller, gopichand-thotakura]
+  crew_down: [mason-angel, sylvain-chiron, ed-dwight, kenneth-hess, carol-schaller, gopichand-thotakura]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-25
+- id: boeing-crew-flight-test
+  name: Boeing Crew Flight Test
+  launch: '2024-06-05T14:52:15Z'
+  landing: '2024-09-07T04:01:35Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [sunita-williams, barry-e-wilmore]
+  crew_down: []
+  wiki: https://en.wikipedia.org/wiki/Boeing_Crew_Flight_Test
+- id: blue-origin-ns-26
+  name: Blue Origin NS-26
+  launch: '2024-08-29T13:07:03Z'
+  landing: '2024-08-29T13:17:11Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [nicolina-elrick, rob-ferl, eugene-grin, eiman-jahangir, karsen-kitchen, ephraim-rabin]
+  crew_down: [nicolina-elrick, rob-ferl, eugene-grin, eiman-jahangir, karsen-kitchen, ephraim-rabin]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-26
+- id: polaris-dawn
+  name: Polaris Dawn
+  launch: '2024-09-10T09:23:49Z'
+  landing: '2024-09-15T07:37:00Z'
+  launch_nation: US
+  destination: free-flying
+  sector: commercial
+  crew_up: [jared-isaacman, scott-poteet, sarah-gillis, anna-menon]
+  crew_down: [jared-isaacman, scott-poteet, sarah-gillis, anna-menon]
+  wiki: https://en.wikipedia.org/wiki/Polaris_Dawn
+- id: soyuz-ms-26
+  name: Soyuz MS-26
+  launch: '2024-09-11T16:23:12Z'
+  landing: '2025-04-20T01:20:35Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [donald-pettit, aleksey-ovchinin, ivan-vagner]
+  crew_down: [donald-pettit, aleksey-ovchinin, ivan-vagner]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_MS-26
+  note: Landing time verified against the Wikipedia infobox (2026-09).
+- id: spacex-crew-9
+  name: SpaceX Crew 9
+  launch: '2024-09-28T17:17:21Z'
+  landing: '2025-03-18T21:57:07Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [nick-hague, aleksandr-gorbunov]
+  crew_down: [nick-hague, aleksandr-gorbunov, sunita-williams, barry-e-wilmore]
+  wiki: https://en.wikipedia.org/wiki/SpaceX_Crew-9
+  note: Landing time verified against the Wikipedia infobox (2026-09).
+- id: shenzhou-19
+  name: Shenzhou 19
+  launch: '2024-10-29T20:27:34Z'
+  landing: '2025-04-30T05:08:12Z'
+  launch_nation: CN
+  destination: tiangong
+  sector: government
+  crew_up: [cai-xuzhe, song-lingdong, wang-haoze]
+  crew_down: [cai-xuzhe, song-lingdong, wang-haoze]
+  wiki: https://en.wikipedia.org/wiki/Shenzhou_19
+  note: Launch seconds and landing time verified against the Wikipedia infobox (2026-09).
+- id: blue-origin-ns-28
+  name: Blue Origin NS-28
+  launch: '2024-11-22T15:30:00Z'
+  landing: '2024-11-22T15:40:14Z'
+  launch_nation: US
+  destination: suborbital
+  sector: commercial
+  crew_up: [emily-calandrelli, sharon-hagle, marc-hagle, austin-litteral, j-d-russell, henry-wolfond]
+  crew_down: [emily-calandrelli, sharon-hagle, marc-hagle, austin-litteral, j-d-russell, henry-wolfond]
+  wiki: https://en.wikipedia.org/wiki/Blue_Origin_NS-28

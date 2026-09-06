@@ -1,0 +1,52 @@
+# Crewed spaceflights launched in 2006, in launch order. See docs/DATA.md for the schema.
+- id: soyuz-tma-8
+  name: Soyuz TMA-8
+  launch: '2006-03-30T02:30:00Z'
+  landing: '2006-09-29T01:13:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [pavel-vinogradov, jeffrey-williams, marcos-pontes]
+  crew_down: [pavel-vinogradov, jeffrey-williams, anousheh-ansari]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-8
+- id: sts-121
+  name: STS-121
+  launch: '2006-07-04T18:37:00Z'
+  landing: '2006-07-17T13:14:43Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [steven-lindsey, mark-kelly, michael-e-fossum, lisa-nowak, stephanie-wilson, piers-sellers, thomas-reiter]
+  crew_down: [steven-lindsey, mark-kelly, michael-e-fossum, lisa-nowak, stephanie-wilson, piers-sellers]
+  wiki: https://en.wikipedia.org/wiki/STS-121
+- id: sts-115
+  name: STS-115
+  launch: '2006-09-09T15:14:00Z'
+  landing: '2006-09-21T10:21:30Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [brent-w-jett-jr, christopher-ferguson, steve-maclean, daniel-c-burbank, joseph-r-tanner, heidemarie-stefanyshyn-piper]
+  crew_down: [brent-w-jett-jr, christopher-ferguson, steve-maclean, daniel-c-burbank, joseph-r-tanner, heidemarie-stefanyshyn-piper]
+  wiki: https://en.wikipedia.org/wiki/STS-115
+- id: soyuz-tma-9
+  name: Soyuz TMA-9
+  launch: '2006-09-18T04:08:00Z'
+  landing: '2007-04-21T12:31:00Z'
+  launch_nation: RU
+  destination: iss
+  sector: government
+  crew_up: [mikhail-tyurin, michael-l-c3-b3pez-alegr-c3-ada, anousheh-ansari]
+  crew_down: [mikhail-tyurin, michael-l-c3-b3pez-alegr-c3-ada, charles-simonyi]
+  wiki: https://en.wikipedia.org/wiki/Soyuz_TMA-9
+- id: sts-116
+  name: STS-116
+  launch: '2006-12-10T01:47:00Z'
+  landing: '2006-12-22T22:32:00Z'
+  launch_nation: US
+  destination: iss
+  sector: government
+  crew_up: [mark-l-polansky, william-oefelein, nicholas-patrick, robert-curbeam, christer-fuglesang, joan-higginbotham, sunita-williams]
+  crew_down: [mark-l-polansky, william-oefelein, nicholas-patrick, robert-curbeam, christer-fuglesang, joan-higginbotham,
+    thomas-reiter]
+  wiki: https://en.wikipedia.org/wiki/STS-116
