@@ -78,7 +78,7 @@
     for (let i = 0; i < f.x.length; i++) {
       if (m === 'stacked') max = Math.max(max, f.series.reduce((a, s) => a + s.values[i], 0));
       else for (const s of f.series) max = Math.max(max, s.values[i]);
-      if (f.band) max = Math.max(max, f.band.max[i]);
+      if (f.band && m === 'line' && f.series.length === 1) max = Math.max(max, f.band.max[i]);
     }
     return max > 0 ? scaleLinear().domain([0, max]).nice(5).domain()[1] : 1;
   }
@@ -164,9 +164,9 @@
     );
   }
 
-  // Low/high headcount envelope around the total. Only meaningful on the total, so it is drawn
-  // for stacked charts and for single-series line charts.
-  const showBand = $derived(frame.band !== null && mode !== 'share' && (mode === 'stacked' || live.length === 1));
+  // Low/high headcount envelope: only on a line chart of a single series (no breakdown, or a
+  // filter that leaves one group), where the line is the total and the band reads as its range.
+  const showBand = $derived(frame.band !== null && mode === 'line' && live.length === 1);
   const bandPath = $derived.by(() => {
     const b = frame.band;
     if (!b || !showBand) return '';

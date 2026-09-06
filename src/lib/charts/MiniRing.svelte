@@ -13,7 +13,6 @@
   let { title, totals, size = 96, href }: Props = $props();
 
   const items = $derived(totals.filter((s) => s.value > 0));
-  const sum = $derived(items.reduce((a, s) => a + s.value, 0));
   const r = $derived(size / 2);
   const inner = $derived(r * 0.64);
   const arcs = $derived(
@@ -51,9 +50,9 @@
         role="presentation"
       />
     {/each}
-    <text class="c-value" y="8" pointer-events="none">{hovered ? hovered.value : sum}</text>
+    {#if hovered}<text class="c-value" y="8" pointer-events="none">{hovered.value}</text>{/if}
   </svg>
-  <div class="sub">{hovered ? hovered.label : items.length + (items.length === 1 ? ' group' : ' groups')}</div>
+  <div class="sub">{hovered ? hovered.label : ''}</div>
 
   {#if open && items.length}
     <ul class="key">

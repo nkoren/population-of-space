@@ -75,6 +75,12 @@
     showAllValues = false;
   }
   function toggleValue(id: string) {
+    // A two-valued dimension (sex, sector) behaves as a switch: picking one replaces the other,
+    // since selecting both is the same as no filter at all.
+    if (filterOptions.length <= 2) {
+      filterVals = filterVals.includes(id) ? [] : [id];
+      return;
+    }
     filterVals = filterVals.includes(id) ? filterVals.filter((v) => v !== id) : [...filterVals, id];
   }
   const stayFilter = $derived((s: Stay) => (suborbital || s.up.destination !== 'suborbital') && (!filterActive || filterVals.includes(filterDim.key(s))));
@@ -193,7 +199,7 @@
               <button class="more" onclick={() => (showAllValues = !showAllValues)}>{showAllValues ? 'Fewer' : `All ${filterOptions.length}…`}</button>
             {/if}
           </div>
-          <div class="hint">{filterVals.length ? 'Showing only these.' : 'Pick one or more values; nothing selected means no filter.'}</div>
+          <div class="hint">{filterVals.length ? 'Showing only these.' : filterOptions.length <= 2 ? 'Pick one; nothing selected means no filter.' : 'Pick one or more values; nothing selected means no filter.'}</div>
         {/if}
       </div>
       <div data-section="chart"><ChipGroup label="Chart" segmented options={[{ id: 'stacked', label: 'Stacked' }, { id: 'line', label: 'Lines' }, { id: 'share', label: 'Share' }, { id: 'ring', label: 'Ring' }]} value={mode} onchange={(v) => (mode = v as ChartMode)} /></div>

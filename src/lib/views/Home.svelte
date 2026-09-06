@@ -11,7 +11,6 @@
 
   let { ds }: { ds: Dataset } = $props();
   const h = headline(ds);
-  const maxYear = new Date(ds.dataEnd).getUTCFullYear();
   const YEAR = 365.25 * 86_400_000;
 
   // ---- intro numbers
@@ -29,7 +28,7 @@
   ].map((r) => ({
     ...r,
     totals: snapshot(ds, dimensionById(r.id)),
-    href: router.href('explore', { m: 'population', by: r.id, c: 'ring', from: String(maxYear), to: String(maxYear) }),
+    href: router.href('explore', { m: 'population', by: r.id, r: 'year', c: 'stacked' }),
   }));
   let tab = $state<'demographics' | 'residents'>('demographics');
 
@@ -92,7 +91,7 @@
             <MiniRing title={r.title} totals={r.totals} href={r.href} />
           {/each}
         </div>
-        <div class="hint mono faint">Hover a ring for its key · click to see it over time</div>
+        <div class="hint mono faint">Click a ring to see it over time</div>
       {:else}
         <div class="residents">
           {#each groups as [place, stays]}
