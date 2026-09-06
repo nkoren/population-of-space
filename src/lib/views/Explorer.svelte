@@ -5,6 +5,7 @@
   import TimeChart, { type ChartMode } from '$lib/charts/TimeChart.svelte';
   import RingChart from '$lib/charts/RingChart.svelte';
   import ChipGroup from '$lib/ui/ChipGroup.svelte';
+  import SelectGroup from '$lib/ui/SelectGroup.svelte';
   import { tick } from 'svelte';
   import { router } from '$lib/router.svelte';
   import { ERAS, PHOTOS } from '$lib/eras';
@@ -179,10 +180,10 @@
         <span class="label">Settings</span>
         <button class="btn" onclick={() => (sheet = null)}>Done</button>
       </div>
-      <div data-section="metric"><ChipGroup label="Measure" options={METRICS.map((x) => ({ id: x.id, label: x.label, hint: x.hint }))} value={metric} onchange={(v) => (metric = v as MetricId)} /></div>
-      <div data-section="by"><ChipGroup label="Break down by" options={DIMENSIONS.map((d) => ({ id: d.id, label: d.label, hint: d.hint }))} value={by} onchange={(v) => (by = v)} /></div>
+      <div data-section="metric"><SelectGroup label="Measure" options={METRICS.map((x) => ({ id: x.id, label: x.label, hint: x.hint }))} value={metric} onchange={(v) => (metric = v as MetricId)} /></div>
+      <div data-section="by"><SelectGroup label="Break down by" options={DIMENSIONS.map((d) => ({ id: d.id, label: d.label, hint: d.hint }))} value={by} onchange={(v) => (by = v)} /></div>
       <div data-section="filter" class="filter">
-        <ChipGroup label="Filter by" options={[{ id: 'none', label: 'None' }, ...DIMENSIONS.filter((d) => d.id !== 'none').map((d) => ({ id: d.id, label: d.label }))]} value={filterBy} onchange={setFilterBy} />
+        <SelectGroup label="Filter by" options={[{ id: 'none', label: 'None' }, ...DIMENSIONS.filter((d) => d.id !== 'none').map((d) => ({ id: d.id, label: d.label }))]} value={filterBy} onchange={setFilterBy} />
         {#if filterDim.id !== 'none'}
           <div class="values" role="group" aria-label="Filter values">
             {#each showAllValues || filterOptions.length <= 12 ? filterOptions : filterOptions.slice(0, 12) as o}
