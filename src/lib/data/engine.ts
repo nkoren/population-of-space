@@ -44,6 +44,8 @@ export interface Aggregate {
   xEnd: number[];
   series: Series[];
   total: number[];
+  /** lowest / highest exact headcount inside each bin (population metric at year/month resolution only) */
+  band?: { min: number[]; max: number[] };
   resolution: Resolution;
   metric: Metric;
 }
@@ -147,7 +149,35 @@ export function aggregate(ds: Dataset, q: Query): Aggregate {
   const series = finalizeSeries(raw, dim, ds, n);
   const total = new Array<number>(n).fill(0);
   for (const s of series) for (let i = 0; i < n; i++) total[i] += s.values[i];
-  return { x, xEnd, series, total, resolution: res, metric };
+  const band = metric.id === 'population' ? populationBand(stays, x, xEnd) : undefined;
+  return { x, xEnd, series, total, band, resolution: res, metric };
+}
+
+/** Min and max of the exact total headcount within each bin, by sweeping launch/landing events. */
+function populationBand(stays: Stay[], x: number[], xEnd: number[]): { min: number[]; max: number[] } {
+  const evs: { t: number; d: number }[] = [];
+  for (const s of stays) {
+    evs.push({ t: s.start, d: 1 });
+    evs.push({ t: s.end, d: -1 });
+  }
+  evs.sort((a, b) => a.t - b.t || a.d - b.d);
+  const min: number[] = [];
+  const max: number[] = [];
+  let cur = 0;
+  let j = 0;
+  for (let i = 0; i < x.length; i++) {
+    while (j < evs.length && evs[j].t < x[i]) cur += evs[j++].d;
+    let lo = cur;
+    let hi = cur;
+    while (j < evs.length && evs[j].t < xEnd[i]) {
+      cur += evs[j++].d;
+      lo = Math.min(lo, cur);
+      hi = Math.max(hi, cur);
+    }
+    min.push(lo);
+    max.push(hi);
+  }
+  return { min, max };
 }
 
 /** Step function: population at every launch/landing event. */

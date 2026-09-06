@@ -30,8 +30,9 @@
     xEnd: number[];
     res: Resolution;
     series: Series[];
+    band: { min: number[]; max: number[] } | null;
   }
-  const toFrame = (a: Aggregate): Frame => ({ x: a.x, xEnd: a.xEnd, res: a.resolution, series: a.series });
+  const toFrame = (a: Aggregate): Frame => ({ x: a.x, xEnd: a.xEnd, res: a.resolution, series: a.series, band: a.band ?? null });
 
   /** Step-after lookup of an old series onto a new time axis. */
   function resample(oldX: number[], vals: number[], newX: number[]): number[] {
@@ -55,11 +56,19 @@
       if (bKeys.has(s.key)) continue;
       merged.push({ meta: { ...s, values: zeros }, from: sameAxis ? s.values : resample(a.x, s.values, b.x), to: zeros });
     }
+    // The band tweens from the outgoing band (resampled), or grows out of the total when there was none.
+    const totalsA = a.x.map((_, i) => a.series.reduce((acc, s) => acc + s.values[i], 0));
+    const bandFrom = (key: 'min' | 'max') => (a.band ? (sameAxis ? a.band[key] : resample(a.x, a.band[key], b.x)) : resample(a.x, totalsA, b.x));
+    const band = b.band
+      ? { min: { from: bandFrom('min'), to: b.band.min }, max: { from: bandFrom('max'), to: b.band.max } }
+      : null;
+    const lerp = (from: number[], to: number[], t: number) => from.map((v, i) => v + (to[i] - v) * t);
     return (t: number): Frame => ({
       x: b.x,
       xEnd: b.xEnd,
       res: b.res,
-      series: merged.map((m) => ({ ...m.meta, values: m.from.map((v, i) => v + (m.to[i] - v) * t) })),
+      series: merged.map((m) => ({ ...m.meta, values: lerp(m.from, m.to, t) })),
+      band: band ? { min: lerp(band.min.from, band.min.to, t), max: lerp(band.max.from, band.max.to, t) } : null,
     });
   }
 
@@ -69,6 +78,7 @@
     for (let i = 0; i < f.x.length; i++) {
       if (m === 'stacked') max = Math.max(max, f.series.reduce((a, s) => a + s.values[i], 0));
       else for (const s of f.series) max = Math.max(max, s.values[i]);
+      if (f.band) max = Math.max(max, f.band.max[i]);
     }
     return max > 0 ? scaleLinear().domain([0, max]).nice(5).domain()[1] : 1;
   }
@@ -154,6 +164,21 @@
     );
   }
 
+  // Low/high headcount envelope around the total. Only meaningful on the total, so it is drawn
+  // for stacked charts and for single-series line charts.
+  const showBand = $derived(frame.band !== null && mode !== 'share' && (mode === 'stacked' || live.length === 1));
+  const bandPath = $derived.by(() => {
+    const b = frame.band;
+    if (!b || !showBand) return '';
+    return (
+      area<number>()
+        .x((i) => xScale(px[i]))
+        .y0((i) => yScale(b.min[i]))
+        .y1((i) => yScale(b.max[i]))
+        .curve(curveMonotoneX)(idx) ?? ''
+    );
+  });
+
   const yTicks = $derived(yScale.ticks(5));
   const xTicks = $derived(xScale.ticks(Math.max(2, Math.floor(innerW / 90))));
   const fmtY = $derived((v: number) => (mode === 'share' ? `${Math.round(v * 100)}%` : fmtCompact(v)));
@@ -221,6 +246,10 @@
           {/if}
         {/each}
 
+        {#if showBand}
+          <path class="band" d={bandPath} />
+        {/if}
+
         <!-- hover -->
         {#if hoverI !== null}
           <line class="rule" x1={xScale(px[hoverI])} x2={xScale(px[hoverI])} y1="0" y2={innerH} />
@@ -250,6 +279,14 @@
             <span class="tt-label">Total</span>
             <span class="tt-val">{fmtValue(totals[hoverI])}</span>
             {#if mode !== 'line'}<span class="tt-share"></span>{/if}
+          </div>
+        {/if}
+        {#if showBand && frame.band}
+          <div class="tt-row band-row">
+            <span class="swatch band-swatch"></span>
+            <span class="tt-label">Low – high</span>
+            <span class="tt-val">{fmtValue(frame.band.min[hoverI])} – {fmtValue(frame.band.max[hoverI])}</span>
+            {#if live.length > 1 && mode !== 'line'}<span class="tt-share"></span>{/if}
           </div>
         {/if}
         {#if unit}<div class="tt-unit">{unit}</div>{/if}
@@ -306,6 +343,18 @@
     stroke-width: 1;
     shape-rendering: crispEdges;
     pointer-events: none;
+  }
+  .band {
+    fill: var(--ink);
+    opacity: 0.13;
+    pointer-events: none;
+  }
+  .band-swatch {
+    background: var(--ink);
+    opacity: 0.3;
+  }
+  .band-row {
+    color: var(--ink-2);
   }
   .line {
     fill: none;
