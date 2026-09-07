@@ -211,7 +211,7 @@
         <button class="btn" onclick={() => (sheet = null)}>Done</button>
       </div>
       <div data-section="metric"><SelectGroup label="Measure" options={METRICS.map((x) => ({ id: x.id, label: x.label, hint: x.hint }))} value={metric} onchange={(v) => (metric = v as MetricId)} /></div>
-      <div data-section="by"><SelectGroup label="Break down by" options={DIMENSIONS.map((d) => ({ id: d.id, label: d.label, hint: d.hint }))} value={by} onchange={(v) => (by = v)} /></div>
+      <div data-section="by"><SelectGroup label="Categorize by" options={DIMENSIONS.map((d) => ({ id: d.id, label: d.label, hint: d.hint }))} value={by} onchange={(v) => (by = v)} /></div>
       <div data-section="filter" class="filter">
         <SelectGroup label="Filter by" options={[{ id: 'none', label: 'None' }, ...DIMENSIONS.filter((d) => d.id !== 'none').map((d) => ({ id: d.id, label: d.label }))]} value={filterBy} onchange={setFilterBy} />
         {#if filterDim.id !== 'none'}
