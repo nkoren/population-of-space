@@ -229,6 +229,26 @@ export interface Headline {
   continuousSince: number | null;
 }
 
+/**
+ * Start of the current unbroken stretch in which at least one of `stays` was in space, or null
+ * if none of them is in space now. Pass a filtered list to ask about a subset (one sex, say).
+ */
+export function occupiedSince(stays: Stay[]): number | null {
+  const evs: { t: number; d: number }[] = [];
+  for (const s of stays) {
+    evs.push({ t: s.start, d: 1 });
+    if (!s.ongoing) evs.push({ t: s.end, d: -1 });
+  }
+  evs.sort((a, b) => a.t - b.t || a.d - b.d);
+  let cur = 0;
+  let since: number | null = null;
+  for (const e of evs) {
+    if (cur === 0 && e.d > 0) since = e.t;
+    cur += e.d;
+  }
+  return cur > 0 ? since : null;
+}
+
 export function headline(ds: Dataset): Headline {
   const inSpaceNow = ds.stays.filter((s) => s.ongoing);
   // peak simultaneous

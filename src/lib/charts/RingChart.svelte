@@ -19,8 +19,10 @@
     hole?: number;
     /** Let the ring use the full container width (by default it leaves room for the legend beside it). */
     wide?: boolean;
+    /** Respond to hover (slice highlight and centre read-out); off for tiny decorative rings. */
+    interactive?: boolean;
   }
-  let { totals, unit = '', height = 420, centerImage, centerAlt = '', legend = true, hole = 0.62, wide = false }: Props = $props();
+  let { totals, unit = '', height = 420, centerImage, centerAlt = '', legend = true, hole = 0.62, wide = false, interactive = true }: Props = $props();
 
   type Frame = SeriesTotal[];
   function interpolateFrame(a: Frame, b: Frame) {
@@ -69,7 +71,7 @@
           d={hoverKey === a.data.key ? arcGenHover(a) : arcGen(a)}
           fill={a.data.color}
           opacity={hoverKey !== null && hoverKey !== a.data.key ? 0.35 : 1}
-          onmouseenter={() => (hoverKey = a.data.key)}
+          onmouseenter={() => interactive && (hoverKey = a.data.key)}
           onmouseleave={() => (hoverKey = null)}
           role="presentation"
         />

@@ -81,9 +81,9 @@
 <script lang="ts">
   // Story: women in space. Narrative sections with embedded explorer charts on fixed presets.
   import type { Dataset } from '$lib/data/types';
-  import { aggregate, seriesTotals } from '$lib/data/engine';
+  import { aggregate, seriesTotals, occupiedSince } from '$lib/data/engine';
   import { dimensionById } from '$lib/data/dimensions';
-  import { fmtInt, fmtPct, fmtCompact } from '$lib/format';
+  import { fmtInt, fmtPct, fmtCompact, fmtDate } from '$lib/format';
   import TimeChart from '$lib/charts/TimeChart.svelte';
   import RingChart from '$lib/charts/RingChart.svelte';
   import Moments from '$lib/charts/Moments.svelte';
@@ -150,10 +150,88 @@
   const dragonEra = aggregate(ds, {
     metric: 'population',
     dimension: dimensionById('sex'),
-    resolution: 'year',
+    resolution: 'month',
     from: Date.UTC(2020, 0, 1),
     to: ds.dataEnd,
   });
+
+  // ---- all time, every nation: person-days by sex, most female first
+  let nationsSuborbital = $state(false);
+  const nations = $derived.by(() => {
+    const acc = new Map<string, { F: number; M: number }>();
+    for (const st of ds.stays) {
+      if (!nationsSuborbital && st.up.destination === 'suborbital') continue;
+      const k = st.person.nationality[0];
+      const e = acc.get(k) ?? { F: 0, M: 0 };
+      e[st.person.sex === 'F' ? 'F' : 'M'] += st.days;
+      acc.set(k, e);
+    }
+    // Same colours the time charts use for the two series.
+    const color = (k: string) => firstRace.series.find((x) => x.key === k)?.color ?? '';
+    return [...acc.entries()]
+      .map(([code, e]) => ({
+        code,
+        name: ds.nationByCode.get(code)?.name ?? code,
+        total: e.F + e.M,
+        share: e.F + e.M > 0 ? e.F / (e.F + e.M) : 0,
+        totals: [
+          { key: 'M', label: 'Men', color: color('M'), value: e.M },
+          { key: 'F', label: 'Women', color: color('F'), value: e.F },
+        ],
+      }))
+      .filter((n) => n.total > 0)
+      .sort((a, b) => b.share - a.share || b.total - a.total);
+  });
+
+  // ---- conclusion: all women ever, by nationality; who is up there right now; and how long each
+  // sex has been continuously represented in space (suborbital hops excluded from the streaks)
+  const womenByNation = (() => {
+    const t = seriesTotals(
+      aggregate(ds, {
+        metric: 'population',
+        dimension: dimensionById('nationality'),
+        resolution: 'year',
+        from: Date.UTC(1960, 0, 1),
+        to: ds.dataEnd,
+        filter: (st) => st.person.sex === 'F',
+      }),
+    );
+    // The explorer keeps nations in first-flight order; here, largest first with "Other" last.
+    const isOther = (x: { label: string }) => x.label === 'Other';
+    return { ...t, totals: [...t.totals].sort((a, b) => Number(isOther(a)) - Number(isOther(b)) || b.value - a.value) };
+  })();
+  const nowBySex = (() => {
+    const up = ds.stays.filter((st) => st.ongoing);
+    const sexColor = (k: string) => firstRace.series.find((x) => x.key === k)?.color ?? '';
+    return {
+      totals: (['M', 'F'] as const).map((k) => ({ key: k, label: k === 'M' ? 'Men' : 'Women', color: sexColor(k), value: up.filter((st) => st.person.sex === k).length })),
+      names: (k: 'M' | 'F') => up.filter((st) => st.person.sex === k).map((st) => st.person.name),
+    };
+  })();
+  const orbital = ds.stays.filter((st) => st.up.destination !== 'suborbital');
+  const menSince = occupiedSince(orbital.filter((st) => st.person.sex === 'M'));
+  const womenSince = occupiedSince(orbital.filter((st) => st.person.sex === 'F'));
+  // Live clock for the counters, ticking once a second.
+  let now = $state(Date.now());
+  $effect(() => {
+    const id = setInterval(() => (now = Date.now()), 1000);
+    return () => clearInterval(id);
+  });
+  const elapsed = (since: number | null) => {
+    if (since === null) return null;
+    let ms = Math.max(0, now - since);
+    const YEAR = 365.25 * 86400e3;
+    const years = Math.floor(ms / YEAR);
+    ms -= years * YEAR;
+    const days = Math.floor(ms / 86400e3);
+    ms -= days * 86400e3;
+    const hours = Math.floor(ms / 3600e3);
+    ms -= hours * 3600e3;
+    const minutes = Math.floor(ms / 60e3);
+    return { years, days, hours, minutes };
+  };
+  const plural = (n: number, w: string) => `${fmtInt(n)} ${w}${n === 1 ? '' : 's'}`;
+  const fmtElapsed = (e: ReturnType<typeof elapsed>) => (e ? [plural(e.years, 'year'), plural(e.days, 'day'), plural(e.hours, 'hour'), plural(e.minutes, 'minute')].join(', ') : '');
 
   /** The same view in the explorer; each chart links to its own. */
   const explore = (from: number, to: number, r: 'exact' | 'month' | 'year') => router.href('explore', { m: 'population', by: 'sex', r, c: 'stacked', from: String(from), to: String(to) });
@@ -329,7 +407,7 @@
     <h2>Women in the Dragon / Tiangong Era (2020–{maxYear})</h2>
 
     <div class="figure">
-      <a class="chart-link" href={explore(2020, maxYear, 'year')} title="Open this chart in the explorer" bind:clientWidth={width4}>
+      <a class="chart-link" href={explore(2020, maxYear, 'month')} title="Open this chart in the explorer" bind:clientWidth={width4}>
         <TimeChart
           agg={dragonEra}
           mode="stacked"
@@ -361,6 +439,67 @@
         after Vostok 6, women are still a minority of the people in space, but they are no longer an exception on any
         vehicle, any station or any kind of mission.
       </p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <h2>Conclusion</h2>
+    <div class="prose">
+      <p>
+        Add up every day anyone has spent in space, by the flag they flew under, and the picture is uneven. A few nations
+        with only a handful of flights sit at the top of the list because their one or two women happened to fly long
+        missions. Among the countries that have spent real time in orbit, Italy, the United States and France come
+        closest to parity, and even there women account for well under a third. Russia, which has logged more person-days
+        than any other nation, sits near the bottom, and most of the fifty-odd countries that have sent someone to space
+        have never sent a woman.
+      </p>
+      <p>
+        {#if menSince !== null}
+          Space has been continuously occupied by men for <strong class="counter">{fmtElapsed(elapsed(menSince))}</strong>,
+          since {fmtDate(new Date(menSince))}.
+        {:else}
+          No man is in space right now.
+        {/if}
+        {#if womenSince !== null}
+          It has been continuously occupied by women for <strong class="counter">{fmtElapsed(elapsed(womenSince))}</strong>,
+          since {fmtDate(new Date(womenSince))}.
+        {:else}
+          No woman is in space right now.
+        {/if}
+      </p>
+    </div>
+
+    <div class="rings conclusion-rings">
+      <a class="chart-link ring-link" href={router.href('explore', { m: 'population', by: 'nationality', c: 'ring', from: '1960', to: String(maxYear), fd: 'sex', fv: 'F' })} title="Open this chart in the explorer">
+        <h3 class="ring-title">All women's time in space, by nationality</h3>
+        <RingChart totals={womenByNation.totals} unit={womenByNation.unit} height={300} />
+      </a>
+      <div class="ring-link">
+        <h3 class="ring-title">In space right now</h3>
+        <RingChart totals={nowBySex.totals} unit="people" height={300} />
+        <p class="small faint now-names">
+          {#each ['F', 'M'] as const as k}
+            {#if nowBySex.names(k).length}<span><b>{k === 'F' ? 'Women' : 'Men'}:</b> {nowBySex.names(k).join(', ')}.</span> {/if}
+          {/each}
+        </p>
+      </div>
+    </div>
+
+    <div class="figure nations">
+      <p class="muted lede">Share of each nation's time in space spent by women, all flights since 1961. Most female first.</p>
+      <label class="check">
+        <input type="checkbox" bind:checked={nationsSuborbital} />
+        Include suborbital flights
+      </label>
+      <ul class="nation-grid">
+        {#each nations as n (n.code)}
+          <li>
+            <RingChart totals={n.totals} height={88} legend={false} hole={0.74} wide interactive={false} centerImage={img(`flags/${n.code.toLowerCase()}.svg`)} centerAlt="Flag of {n.name}" />
+            <div class="nation-name">{n.name}</div>
+            <div class="nation-share">{fmtPct(n.share)} women</div>
+          </li>
+        {/each}
+      </ul>
     </div>
   </section>
 </article>
@@ -413,6 +552,68 @@
   }
   .chart-link:hover {
     background: var(--bg-muted);
+  }
+  .lede {
+    max-width: 720px;
+    margin: 0 auto 20px;
+  }
+  .check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: -8px 0 20px;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+  }
+  .check input {
+    accent-color: var(--accent);
+    width: 18px;
+    height: 18px;
+    margin: 0;
+  }
+  .nation-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    gap: 20px 12px;
+  }
+  .nation-grid li {
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  .nation-name {
+    margin-top: 6px;
+    color: var(--ink-2);
+  }
+  .nation-share {
+    color: var(--ink-3);
+    font-size: 0.74rem;
+  }
+  .counter {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .conclusion-rings {
+    max-width: none;
+    margin-bottom: 40px;
+  }
+  .ring-title {
+    font-size: 1.15rem;
+    margin: 0 0 8px;
+    text-align: center;
+    color: var(--ink-2);
+  }
+  .now-names {
+    margin: 8px 0 0;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .small {
+    font-size: 0.8rem;
   }
   .rings {
     display: grid;
