@@ -31,7 +31,10 @@ export function loadDataset(): Promise<Dataset> {
 }
 
 export function enrich(raw: RawDataset): Dataset {
-  const dataEnd = Date.parse(raw.meta.dataEnd);
+  // The build stamps dataEnd with its own clock when someone is in orbit; the visitor's clock is
+  // the better "now" for those stays, so the headcount, days aloft and "as of" stay current.
+  const builtEnd = Date.parse(raw.meta.dataEnd);
+  const dataEnd = raw.stays.some((s) => !s.end) ? Math.max(builtEnd, Date.now()) : builtEnd;
   const nationByCode = new Map(raw.nations.map((n) => [n.code, n]));
   const destById = new Map(raw.destinations.map((d) => [d.id, d]));
   const personById = new Map(raw.people.map((p) => [p.id, p]));

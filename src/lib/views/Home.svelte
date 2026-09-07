@@ -13,6 +13,18 @@
   const h = headline(ds);
   const YEAR = 365.25 * 86_400_000;
 
+  // A live clock for the "as of" line and the per-person day counts, while anyone is in orbit;
+  // otherwise the dataset's own end time. The ticking is display-only: the engine's snapshot
+  // was taken at load, which is accurate until the next launch or landing.
+  let now = $state(Date.now());
+  const live = h.inSpaceNow.length > 0;
+  $effect(() => {
+    if (!live) return;
+    const id = setInterval(() => (now = Date.now()), 30_000);
+    return () => clearInterval(id);
+  });
+  const asOf = $derived(live ? Math.max(ds.dataEnd, now) : ds.dataEnd);
+
   // ---- intro numbers
   const flown = ds.personStats.filter((p) => p.flights > 0);
   const countryCount = new Set(flown.map((p) => p.person.nationality[0])).size;
@@ -36,10 +48,10 @@
   const groups = Object.entries(
     h.inSpaceNow.reduce<Record<string, typeof h.inSpaceNow>>((acc, s) => ((acc[location(s)] ??= []).push(s), acc), {}),
   );
-  const dayUp = (start: number) => Math.max(1, Math.floor((ds.dataEnd - start) / 86_400_000) + 1);
+  const dayUp = (start: number) => Math.max(1, Math.floor((asOf - start) / 86_400_000) + 1);
   /** ISO 3166 alpha-2 code → regional-indicator flag emoji (the alt text; Windows has no colour flag font) */
   const flag = (code: string) => [...code.toUpperCase()].map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65)).join('');
-  const ageNow = (born: string | null) => (born ? Math.floor((ds.dataEnd - Date.parse(born)) / YEAR) : '?');
+  const ageNow = (born: string | null) => (born ? Math.floor((asOf - Date.parse(born)) / YEAR) : '?');
 
   // ---- population, year by year, with the low/high band the engine computes for it
   const population = aggregate(ds, {
@@ -66,7 +78,7 @@
 
   <div class="container hero-grid">
     <div class="lead">
-      <p class="kicker">As of {fmtDateTime(new Date(ds.dataEnd))}</p>
+      <p class="kicker">As of {fmtDateTime(new Date(asOf))}</p>
       <h1>
         <span class="big">{h.inSpaceNow.length}</span>
         {h.inSpaceNow.length === 1 ? 'person is' : 'people are'} in space right now.
