@@ -235,14 +235,21 @@
    *  keeps very short flights (minutes-long suborbital hops) visible as 1px ticks even when
    *  their filled area is far narrower than a pixel. */
   function edgePath(l: Layer) {
+    // Built by hand rather than with a step curve: a step's vertical connectors would run the
+    // full height of the stack, painting this layer's colour over the layers beneath it. Here
+    // each non-zero interval gets its top edge plus verticals spanning only its own thickness.
     const v = l.s.values;
-    return (
-      line<number>()
-        .defined((i) => v[i] > 1e-6 || (i > 0 && v[i - 1] > 1e-6))
-        .x((i) => xScale(px[i]))
-        .y((i) => yScale(l.y1[i]))
-        .curve(curveStepAfter)(idx) ?? ''
-    );
+    const n = idx.length;
+    let d = '';
+    for (let i = 0; i < n; i++) {
+      if (v[i] <= 1e-6) continue;
+      const x0 = xScale(px[i]);
+      const x1 = i + 1 < n ? xScale(px[i + 1]) : innerW;
+      const top = yScale(l.y1[i]);
+      const bot = yScale(l.y0[i]);
+      d += `M${x0},${bot}V${top}H${x1}V${bot}`;
+    }
+    return d;
   }
   function linePath(l: Layer, gl: GridLayer | undefined) {
     if (step || !gl) {
