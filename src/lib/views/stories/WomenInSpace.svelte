@@ -5,7 +5,7 @@
    * Moments the story annotates, in launch order. The explorer shows the same list (titles only)
    * when the population is broken down by sex. Portrait credits appear on hover.
    */
-  export const WOMEN_IN_SPACE_MOMENTS: { flight: string; title: string; sub: string; image: string; alt: string; credit: string; focus?: string }[] = [
+  export const WOMEN_IN_SPACE_MOMENTS: { flight: string; title: string; sub: string; image?: string; alt?: string; credit?: string; focus?: string }[] = [
     {
       flight: 'vostok-6',
       title: 'Valentina Tereshkova: First Woman in Space',
@@ -64,6 +64,17 @@
       alt: 'Eileen Collins in her flight suit before STS-93',
       credit: 'NASA / Robert Markowitz, 1999, public domain',
     },
+    { flight: 'sts-102', title: 'Susan Helms: First Woman to Live Aboard the ISS', sub: 'Expedition 2 · March–August 2001' },
+    { flight: 'soyuz-tma-11', title: 'Peggy Whitson: First Woman to Command the ISS', sub: 'Expedition 16 · October 2007' },
+    { flight: 'sts-131', title: 'Four Women in Orbit at Once', sub: 'STS-131 and Expedition 23 · April 2010' },
+    { flight: 'shenzhou-9', title: 'Liu Yang: First Chinese Woman in Space', sub: 'Shenzhou 9 · June 2012' },
+    { flight: 'soyuz-ms-12', title: 'Christina Koch: 328 Days, and the First All-Female Spacewalk', sub: 'ISS · March 2019 – February 2020' },
+    { flight: 'blue-origin-ns-16', title: 'Wally Funk: A Mercury 13 Pilot Finally Flies, at 82', sub: 'New Shepard · July 2021' },
+    { flight: 'shenzhou-13', title: 'Wang Yaping: First Woman Aboard Tiangong, First Chinese Woman to Walk in Space', sub: 'Shenzhou 13 · October 2021' },
+    { flight: 'axiom-mission-2', title: 'Rayyanah Barnawi: First Arab Woman in Space', sub: 'Axiom Mission 2 · May 2023' },
+    { flight: 'polaris-dawn', title: 'Sarah Gillis and Anna Menon: First Commercial Spacewalk', sub: 'Polaris Dawn · September 2024' },
+    { flight: 'blue-origin-ns-31', title: 'First All-Female Crew Since Vostok 6', sub: 'New Shepard · April 2025' },
+    { flight: 'artemis-ii', title: 'Christina Koch: First Woman to Fly to the Moon', sub: 'Artemis II · April 2026' },
   ];
 </script>
 
@@ -125,18 +136,43 @@
   ];
   const exploreRing = (code: string) => router.href('explore', { m: 'population', by: 'sex', c: 'ring', from: '1980', to: '2000', fd: 'launchNation', fv: code });
 
+  // ---- population by sex through the ISS era, year by year
+  const issEra = aggregate(ds, {
+    metric: 'population',
+    dimension: dimensionById('sex'),
+    resolution: 'year',
+    from: Date.UTC(2000, 0, 1),
+    to: Date.UTC(2021, 0, 1),
+  });
+
+  // ---- population by sex since 2020, year by year, up to the end of the data
+  const maxYear = new Date(ds.dataEnd).getUTCFullYear();
+  const dragonEra = aggregate(ds, {
+    metric: 'population',
+    dimension: dimensionById('sex'),
+    resolution: 'year',
+    from: Date.UTC(2020, 0, 1),
+    to: ds.dataEnd,
+  });
+
   /** The same view in the explorer; each chart links to its own. */
-  const explore = (from: number, to: number, r: 'exact' | 'month') => router.href('explore', { m: 'population', by: 'sex', r, c: 'stacked', from: String(from), to: String(to) });
+  const explore = (from: number, to: number, r: 'exact' | 'month' | 'year') => router.href('explore', { m: 'population', by: 'sex', r, c: 'stacked', from: String(from), to: String(to) });
 
   const launchOf = (flight: string) => Date.parse(ds.flightById.get(flight)!.launch);
   const withTime = (mos: typeof WOMEN_IN_SPACE_MOMENTS) => mos.map((mo) => ({ ...mo, t: launchOf(mo.flight) }));
   const raceMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(0, 1));
-  const eraMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(1));
+  const eraMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(1, 7));
+  const issMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(7, 12));
+  const dragonMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(12));
   // Each chart reports its markers' x positions; the annotations below it line up with them.
   let layout1 = $state({ markerX: [] as number[], axisY: 0 });
   let layout2 = $state({ markerX: [] as number[], axisY: 0 });
+  let layout3 = $state({ markerX: [] as number[], axisY: 0 });
+  let layout4 = $state({ markerX: [] as number[], axisY: 0 });
   let width1 = $state(0);
   let width2 = $state(0);
+  let width3 = $state(0);
+  let width4 = $state(0);
   const place = (mos: ReturnType<typeof withTime>, layout: { markerX: number[] }) => mos.map((mo, i) => ({ key: mo.flight, x: layout.markerX[i] ?? 0, ...mo }));
   const CHART_H = 240;
 </script>
@@ -238,14 +274,93 @@
     </div>
   </section>
 
-  <section class="chapter">
-    <h2>Population of space by launching country, 1980–2000</h2>
+  <section class="chapter sub">
+    <h3>Population of space by launching country, 1980–2000</h3>
     <div class="rings">
       {#each rings as r (r.code)}
         <a class="chart-link ring-link" href={exploreRing(r.code)} title="Open this chart in the explorer">
           <RingChart totals={r.totals} unit={r.unit} height={340} legend={false} hole={0.8} wide centerImage={r.flag} centerAlt={r.flagAlt} />
         </a>
       {/each}
+    </div>
+  </section>
+  <section class="chapter">
+    <h2>Women in the ISS Era (2000–2020)</h2>
+
+    <div class="figure">
+      <a class="chart-link" href={explore(2000, 2020, 'year')} title="Open this chart in the explorer" bind:clientWidth={width3}>
+        <TimeChart
+          agg={issEra}
+          mode="stacked"
+          unit="people"
+          height={CHART_H}
+          legend={false}
+          xAxis="top"
+          markers={issMoments.map((mo) => mo.t)}
+          bind:layout={layout3}
+        />
+      </a>
+      <Moments width={width3} moments={place(issMoments, layout3)} portraits={false} />
+    </div>
+
+    <div class="prose">
+      <p>
+        From November 2000 the International Space Station has never been empty, and the population of space settled into a
+        steady rhythm of rotating crews. Women became part of that rhythm from the start. Susan Helms joined Expedition 2 in
+        March 2001 as the first woman to live aboard the station, and on the way up she and Jim Voss made the longest
+        spacewalk ever recorded, nearly nine hours. In October 2007 Peggy Whitson took command of Expedition 16, the first
+        woman to lead the station; when Pamela Melroy arrived commanding the Shuttle that month, two women were in charge of
+        two spacecraft docked together. In April 2010 the arrival of STS-131 brought four women into orbit at once, still a
+        record. Liu Yang became the first Chinese woman in space in 2012, and Christina Koch's 328 days aboard in 2019–20
+        set the record for a single flight by a woman, during which she and Jessica Meir made the first all-female
+        spacewalk.
+      </p>
+      <p>
+        The era had its losses too. Kalpana Chawla and Laurel Clark died with the rest of the Columbia crew in February
+        2003, and it was Eileen Collins who commanded the Shuttle's return to flight two years later. But the wider trend
+        was slow. With station crews fixed at six, and most seats filled by rotation, the share of women in orbit in any
+        given year tracked the make-up of the astronaut corps rather than any single milestone: the pink band widens, but
+        it never comes close to half.
+      </p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <h2>Women in the Dragon / Tiangong Era (2020–{maxYear})</h2>
+
+    <div class="figure">
+      <a class="chart-link" href={explore(2020, maxYear, 'year')} title="Open this chart in the explorer" bind:clientWidth={width4}>
+        <TimeChart
+          agg={dragonEra}
+          mode="stacked"
+          unit="people"
+          height={CHART_H}
+          legend={false}
+          xAxis="top"
+          markers={dragonMoments.map((mo) => mo.t)}
+          bind:layout={layout4}
+        />
+      </a>
+      <Moments width={width4} moments={place(dragonMoments, layout4)} portraits={false} />
+    </div>
+
+    <div class="prose">
+      <p>
+        The 2020s broke the rotation. Crew Dragon gave the United States its own ride to the station again, China opened
+        Tiangong, and for the first time paying passengers and private crews began to add to the population of space in
+        numbers. Women were part of every strand. Wang Yaping was the first woman aboard Tiangong in October 2021 and the
+        first Chinese woman to walk in space a few weeks later. Rayyanah Barnawi became the first Arab woman in space on
+        Axiom's second private mission to the ISS in 2023, and on Polaris Dawn in 2024 Sarah Gillis and Anna Menon made the
+        first commercial spacewalk, at the highest altitude any woman had reached.
+      </p>
+      <p>
+        Suborbital flight added a different kind of first. Wally Funk, one of the thirteen women who passed NASA's astronaut
+        tests in 1961 and were never allowed to fly, crossed the Kármán line on New Shepard in July 2021, aged 82. In April
+        2025 the same vehicle carried six women and no men, the first all-female crew since Tereshkova flew alone. And in
+        April 2026 Christina Koch flew around the Moon on Artemis II, the first woman to leave low Earth orbit. Sixty years
+        after Vostok 6, women are still a minority of the people in space, but they are no longer an exception on any
+        vehicle, any station or any kind of mission.
+      </p>
     </div>
   </section>
 </article>
@@ -275,6 +390,16 @@
   }
   .chapter h2 {
     font-size: 1.8rem;
+  }
+  /* A figure that belongs to the chapter above it: tighter, and a quieter heading. */
+  .chapter.sub {
+    margin-top: 8px;
+  }
+  .chapter.sub h3 {
+    max-width: 720px;
+    margin: 0 auto 12px;
+    font-size: 1.25rem;
+    color: var(--ink-2);
   }
   .figure {
     margin: 0 0 32px;

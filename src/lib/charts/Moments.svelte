@@ -24,14 +24,19 @@
     width,
     portraits = true,
     rowHeight = portraits ? 112 : 42,
-  }: { moments: Moment[]; width: number; portraits?: boolean; rowHeight?: number } = $props();
+    minScale = 0.4,
+  }: { moments: Moment[]; width: number; portraits?: boolean; rowHeight?: number; minScale?: number } = $props();
   let heights = $state<number[]>([]);
+  // Sized for four rows. Beyond that everything shrinks in inverse proportion, so each doubling
+  // of the count halves the row pitch, the type size and the lead lines' opacity, down to `minScale`.
+  const scale = $derived(Math.max(minScale, Math.min(1, 4 / Math.max(1, moments.length))));
+  const pitch = $derived(rowHeight * scale);
 </script>
 
-<div class="moments" class:portraits style:height="{moments.length * rowHeight + 8}px">
+<div class="moments" class:portraits style:height="{moments.length * pitch + 8}px" style:--scale={scale}>
   {#each moments as mo, i (mo.key)}
-    <div class="line" style:left="{mo.x}px" style:height="{i * rowHeight + 8 + (heights[i] ?? 0)}px"></div>
-    <div class="label" class:flip={mo.x > width * 0.7} style:left="{mo.x}px" style:top="{i * rowHeight + 8}px" bind:clientHeight={heights[i]}>
+    <div class="line" style:left="{mo.x}px" style:height="{i * pitch + 8 + (heights[i] ?? 0)}px"></div>
+    <div class="label" class:flip={mo.x > width * 0.7} style:left="{mo.x}px" style:top="{i * pitch + 8}px" bind:clientHeight={heights[i]}>
       {#if portraits && mo.image}
         <img class="portrait" src={mo.image} alt={mo.credit ? `${mo.alt ?? mo.title}. ${mo.credit}` : (mo.alt ?? mo.title)} title={mo.credit} style:object-position={mo.focus} />
       {/if}
@@ -52,6 +57,7 @@
     top: 0;
     width: 0;
     border-left: 1.5px dashed var(--gold);
+    opacity: var(--scale, 1);
     pointer-events: none;
   }
   .label {
@@ -59,7 +65,7 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 3px 10px 4px;
+    padding: calc(3px * var(--scale, 1)) calc(10px * var(--scale, 1)) calc(4px * var(--scale, 1));
     margin-left: 6px;
     background: var(--moments-bg, var(--bg));
     border-radius: 6px;
@@ -89,7 +95,7 @@
   .title {
     color: var(--ink-2);
     font-weight: 300;
-    font-size: 0.8rem;
+    font-size: calc(0.8rem * var(--scale, 1));
   }
   .portraits .title {
     font-family: var(--font-display, inherit);
@@ -100,7 +106,7 @@
     margin-bottom: 0.2em;
   }
   .sub {
-    font-size: 0.72rem;
+    font-size: calc(0.72rem * var(--scale, 1));
     font-weight: 300;
     color: var(--ink-3);
   }
