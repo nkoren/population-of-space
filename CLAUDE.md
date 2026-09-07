@@ -12,7 +12,8 @@ person by person, since 1961. Think "Our World in Data" for people in orbit.
   person's continuous stint in space). Adding a breakdown = adding an entry to
   `src/lib/data/dimensions.ts`; adding a measure = extending `METRICS` in `engine.ts`.
 - Source data is YAML under `data/`; `scripts/build-data.ts` validates it and writes
-  `public/data/dataset.json` (gitignored, rebuilt on `npm run dev` / `npm run build`).
+  `public/data/dataset.json` (gitignored, rebuilt on `npm run dev` / `npm run build`; the dev server
+  also watches `data/**` and rebuilds on change, see `watchData` in `vite.config.ts`).
 - Production: `npm run build` then `npm start` (sirv serving `dist/`, SPA fallback). Railway
   can run exactly that.
 

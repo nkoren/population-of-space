@@ -3,7 +3,7 @@
   name: Apollo 14
   launch: '1971-01-31T21:03:02Z'
   landing: '1971-02-09T21:05:00Z'
-  launch_nation: RU
+  launch_nation: US
   destination: moon
   sector: government
   crew_up: [alan-shepard, stuart-roosa, edgar-mitchell]
@@ -33,7 +33,7 @@
   name: Apollo 15
   launch: '1971-07-26T13:34:00Z'
   landing: '1971-08-07T20:45:53Z'
-  launch_nation: RU
+  launch_nation: US
   destination: moon
   sector: government
   crew_up: [david-scott, alfred-worden, james-irwin]

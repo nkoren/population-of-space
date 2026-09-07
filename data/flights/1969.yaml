@@ -23,7 +23,7 @@
   name: Apollo 9
   launch: '1969-03-03T16:00:00Z'
   landing: '1969-03-13T17:00:54Z'
-  launch_nation: RU
+  launch_nation: US
   destination: free-flying
   sector: government
   crew_up: [james-mcdivitt, david-scott, rusty-schweickart]
@@ -33,7 +33,7 @@
   name: Apollo 10
   launch: '1969-05-18T16:49:00Z'
   landing: '1969-05-26T16:52:23Z'
-  launch_nation: RU
+  launch_nation: US
   destination: free-flying
   sector: government
   crew_up: [thomas-p-stafford, john-young, gene-cernan]
@@ -43,7 +43,7 @@
   name: Apollo 11
   launch: '1969-07-16T13:32:00Z'
   landing: '1969-07-24T16:50:35Z'
-  launch_nation: RU
+  launch_nation: US
   destination: moon
   sector: government
   crew_up: [neil-armstrong, michael-collins, buzz-aldrin]
@@ -83,7 +83,7 @@
   name: Apollo 12
   launch: '1969-11-14T16:22:00Z'
   landing: '1969-11-24T20:58:24Z'
-  launch_nation: RU
+  launch_nation: US
   destination: moon
   sector: government
   crew_up: [pete-conrad, richard-f-gordon-jr, alan-bean]

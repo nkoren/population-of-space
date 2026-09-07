@@ -3,7 +3,7 @@
   name: Apollo 13
   launch: '1970-04-11T19:13:00Z'
   landing: '1970-04-17T18:07:41Z'
-  launch_nation: RU
+  launch_nation: US
   destination: moon
   sector: government
   crew_up: [jim-lovell, jack-swigert, fred-haise]

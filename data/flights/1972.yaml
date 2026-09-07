@@ -3,7 +3,7 @@
   name: Apollo 16
   launch: '1972-04-16T17:54:00Z'
   landing: '1972-04-27T19:45:05Z'
-  launch_nation: RU
+  launch_nation: US
   destination: moon
   sector: government
   crew_up: [john-young, ken-mattingly, charles-duke]
@@ -13,7 +13,7 @@
   name: Apollo 17
   launch: '1972-12-07T05:33:00Z'
   landing: '1972-12-19T19:54:58Z'
-  launch_nation: RU
+  launch_nation: US
   destination: moon
   sector: government
   crew_up: [gene-cernan, ronald-evans, harrison-schmitt]
