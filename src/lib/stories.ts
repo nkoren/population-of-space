@@ -1,6 +1,7 @@
 // Story pages: scrollable sequences of charts and narrative about one subject.
 // Until each story page exists, its card opens the explorer on the closest cut.
 import { img } from './eras';
+import type { Route } from './router.svelte';
 
 export interface Story {
   id: string;
@@ -12,6 +13,8 @@ export interface Story {
   credit: string;
   /** explorer query used as the link target until the story page is built */
   params: Record<string, string>;
+  /** the story page's route, once it exists */
+  route?: Route;
 }
 
 export const STORIES: Story[] = [
@@ -19,10 +22,11 @@ export const STORIES: Story[] = [
     id: 'women',
     title: 'Women in space',
     blurb: 'From Tereshkova to today',
-    image: img('tereshkova-1963.jpg'),
-    alt: 'Valentina Tereshkova in 1963',
-    credit: 'Alexander Mokletsov / RIA Novosti · CC BY-SA 3.0',
+    image: img('tereshkova-suit-1963.jpg'),
+    alt: 'Valentina Tereshkova in her spacesuit beside the Vostok 6 capsule, June 1963',
+    credit: 'NASA / StarChild, colourised · public domain',
     params: { m: 'population', by: 'sex', r: 'year', c: 'share' },
+    route: 'women-in-space',
   },
   {
     id: 'nations',

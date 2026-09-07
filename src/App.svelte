@@ -8,6 +8,7 @@
   import Missions from '$lib/views/Missions.svelte';
   import People from '$lib/views/People.svelte';
   import About from '$lib/views/About.svelte';
+  import WomenInSpace from '$lib/views/stories/WomenInSpace.svelte';
 
   const data = loadDataset();
 </script>
@@ -31,6 +32,8 @@
         <Missions {ds} />
       {:else if router.route === 'people'}
         <People {ds} />
+      {:else if router.route === 'women-in-space'}
+        <WomenInSpace {ds} />
       {:else}
         <About {ds} />
       {/if}

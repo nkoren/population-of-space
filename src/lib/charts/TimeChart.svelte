@@ -24,8 +24,28 @@
     onrange?: (from: number, to: number) => void;
     /** Inclusive [min, max] years the range may cover; pans keep their span within these. */
     yearBounds?: [number, number];
+    /** Where the year labels go. */
+    xAxis?: 'top' | 'bottom';
+    /** Instants whose pixel positions the caller wants back through `layout` (story annotations). */
+    markers?: number[];
+    /**
+     * Bound output for callers that draw annotations around the chart: each marker's x position
+     * and the zero axis's y position, both in px from the chart's top-left corner.
+     */
+    layout?: { markerX: number[]; axisY: number };
   }
-  let { agg, mode: modeProp = 'stacked', height = 420, unit = '', legend = true, onrange, yearBounds }: Props = $props();
+  let {
+    agg,
+    mode: modeProp = 'stacked',
+    height = 420,
+    unit = '',
+    legend = true,
+    onrange,
+    yearBounds,
+    xAxis = 'bottom',
+    markers = [],
+    layout = $bindable({ markerX: [], axisY: 0 }),
+  }: Props = $props();
   // 'ring' is rendered by RingChart; treat it as stacked here so the fallback is sane.
   const mode = $derived(modeProp === 'ring' ? 'stacked' : modeProp);
 
@@ -96,7 +116,7 @@
 
   // ------------------------------------------------------------ layout
   let width = $state(800);
-  const margin = { top: 12, right: 16, bottom: 30, left: 48 };
+  const margin = $derived(xAxis === 'top' ? { top: 30, right: 16, bottom: 12, left: 48 } : { top: 12, right: 16, bottom: 30, left: 48 });
   const innerW = $derived(Math.max(10, width - margin.left - margin.right));
   const innerH = $derived(height - margin.top - margin.bottom);
 
@@ -254,6 +274,13 @@
         .y1((i) => yScale(b.max[i]))
         .curve(curveLinear)(idx) ?? ''
     );
+  });
+
+  $effect(() => {
+    const markerX = markers.map((t) => xScale(t) + margin.left);
+    const axisY = margin.top + innerH;
+    const same = axisY === layout.axisY && markerX.length === layout.markerX.length && markerX.every((x, i) => Math.abs(x - layout.markerX[i]) < 0.01);
+    if (!same) layout = { markerX, axisY };
   });
 
   const yTicks = $derived(yScale.ticks(5));
@@ -442,9 +469,12 @@
           <text class="ytick" x="-8" y={yScale(t)} dy="0.32em" text-anchor="end">{fmtY(t)}</text>
         {/each}
         {#each xTicks as t}
-          <text class="xtick" x={xScale(t)} y={innerH + 20} text-anchor="middle">{fmtYear(t)}</text>
+          <text class="xtick" x={xScale(t)} y={xAxis === 'top' ? -10 : innerH + 20} text-anchor="middle">{fmtYear(t)}</text>
         {/each}
         <line class="axis" x1="0" x2={innerW} y1={innerH} y2={innerH} />
+        {#if xAxis === 'top'}
+          <line class="axis" x1="0" x2={innerW} y1="0" y2="0" />
+        {/if}
 
         <!-- layers -->
         {#each layers as l, li (l.s.key)}

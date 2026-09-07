@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Dataset, Stay } from '$lib/data/types';
   import { aggregate, seriesTotals, METRICS, metricById, type MetricId, type Resolution } from '$lib/data/engine';
-  import { DIMENSIONS, dimensionById } from '$lib/data/dimensions';
+  import { DIMENSIONS, dimensionById, orderOf } from '$lib/data/dimensions';
   import TimeChart, { type ChartMode } from '$lib/charts/TimeChart.svelte';
   import RingChart from '$lib/charts/RingChart.svelte';
   import ChipGroup from '$lib/ui/ChipGroup.svelte';
@@ -59,7 +59,7 @@
       const k = filterDim.key(s);
       days.set(k, (days.get(k) ?? 0) + s.days);
     }
-    const order = filterDim.order ?? [];
+    const order = orderOf(filterDim, ds);
     return [...days.entries()]
       .sort((a, b) => {
         const ia = order.indexOf(a[0]);

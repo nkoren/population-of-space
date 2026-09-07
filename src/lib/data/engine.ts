@@ -5,7 +5,7 @@ import { utcYear, utcMonth, utcDay, type CountableTimeInterval } from 'd3-time';
 import { bisector } from 'd3-array';
 import type { Dataset, Stay } from './types';
 import { DAY } from './load';
-import { OTHER, PALETTE, fixedColor, type Dimension } from './dimensions';
+import { OTHER, PALETTE, fixedColor, orderOf, type Dimension } from './dimensions';
 
 export type Resolution = 'year' | 'month' | 'exact';
 export type MetricId = 'population' | 'personDays' | 'cumulativeDays' | 'launched' | 'newcomers' | 'cumulativePeople';
@@ -84,8 +84,9 @@ function finalizeSeries(raw: Map<string, number[]>, dim: Dimension, ds: Dataset,
     for (const e of rest) for (let i = 0; i < n; i++) other[i] += e.values[i];
     entries = [...keep, { key: OTHER, values: other, size: sum(other) }];
   }
-  if (dim.order) {
-    const rank = new Map(dim.order.map((k, i) => [k, i]));
+  const order = orderOf(dim, ds);
+  if (order.length) {
+    const rank = new Map(order.map((k, i) => [k, i]));
     entries.sort((a, b) => (rank.get(a.key) ?? 999) - (rank.get(b.key) ?? 999) || b.size - a.size);
   }
   let paletteIdx = 0;

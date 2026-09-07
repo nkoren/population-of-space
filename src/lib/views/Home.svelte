@@ -140,7 +140,7 @@
   </div>
   <div class="story-grid scroll-x">
     {#each STORIES as s (s.id)}
-      <a class="story" href={router.href('explore', s.params)}>
+      <a class="story" href={s.route ? router.href(s.route) : router.href('explore', s.params)}>
         <img src={s.image} alt={s.alt} loading="lazy" />
         <div class="story-scrim"></div>
         <div class="story-text">

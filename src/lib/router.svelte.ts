@@ -1,7 +1,7 @@
 // Tiny history-based router. The app is a handful of views; state that
 // should be shareable (explorer settings) lives in the query string.
 
-export type Route = 'home' | 'explore' | 'missions' | 'people' | 'about';
+export type Route = 'home' | 'explore' | 'missions' | 'people' | 'about' | 'women-in-space';
 
 const PATHS: Record<Route, string> = {
   home: '/',
@@ -9,6 +9,8 @@ const PATHS: Record<Route, string> = {
   missions: '/missions',
   people: '/people',
   about: '/about',
+  // Story pages live at a plain slug each.
+  'women-in-space': '/women-in-space',
 };
 
 function parse(pathname: string): Route {

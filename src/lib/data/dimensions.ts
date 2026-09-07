@@ -10,8 +10,11 @@ export interface Dimension {
   hint: string;
   key: (s: Stay) => string;
   labelOf: (key: string, ds: Dataset) => string;
-  /** fixed display order for keys; keys not listed are sorted by size */
-  order?: string[];
+  /**
+   * Fixed display order for keys; keys not listed are sorted by size. May be a function of the
+   * dataset for orders that are derived from the data (e.g. first-flight date).
+   */
+  order?: string[] | ((ds: Dataset) => string[]);
   /** if set, only the top-N keys (by value) are shown individually; the rest become "other" */
   topN?: number;
   color?: (key: string) => string | undefined;
@@ -100,6 +103,23 @@ export function birthDecade(born: string | null): string {
   return `${Math.floor(+born.slice(0, 4) / 10) * 10}s`;
 }
 
+const firstFlightCache = new WeakMap<Dataset, string[]>();
+/** Nationalities in the order in which each sent its first person to space. */
+export function nationsByFirstFlight(ds: Dataset): string[] {
+  let cached = firstFlightCache.get(ds);
+  if (!cached) {
+    const first = new Map<string, number>();
+    for (const s of ds.stays) {
+      const k = s.person.nationality[0];
+      const t = first.get(k);
+      if (t === undefined || s.start < t) first.set(k, s.start);
+    }
+    cached = [...first.entries()].sort((a, b) => a[1] - b[1]).map(([k]) => k);
+    firstFlightCache.set(ds, cached);
+  }
+  return cached;
+}
+
 export const DIMENSIONS: Dimension[] = [
   {
     id: 'none',
@@ -123,6 +143,8 @@ export const DIMENSIONS: Dimension[] = [
     key: (s) => s.person.nationality[0],
     labelOf: (k, ds) => ds.nationByCode.get(k)?.name ?? k,
     topN: 9,
+    // Fixed order so categories don't swap places as the date range changes.
+    order: nationsByFirstFlight,
   },
   {
     id: 'age',
@@ -175,5 +197,10 @@ export const DIMENSIONS: Dimension[] = [
     order: ['1910s', '1920s', '1930s', '1940s', '1950s', '1960s', '1970s', '1980s', '1990s', '2000s', UNKNOWN],
   },
 ];
+
+/** Resolves a dimension's display order against the dataset (empty if it has none). */
+export function orderOf(dim: Dimension, ds: Dataset): string[] {
+  return typeof dim.order === 'function' ? dim.order(ds) : (dim.order ?? []);
+}
 
 export const dimensionById = (id: string) => DIMENSIONS.find((d) => d.id === id) ?? DIMENSIONS[0];
