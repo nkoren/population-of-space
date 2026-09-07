@@ -13,8 +13,11 @@ const PATHS: Record<Route, string> = {
   'women-in-space': '/women-in-space',
 };
 
+// Vite's base URL ('/' locally, '/population-of-space/' on GitHub Pages), without the trailing slash.
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 function parse(pathname: string): Route {
-  const p = pathname.replace(/\/+$/, '') || '/';
+  const p = (pathname.startsWith(BASE) ? pathname.slice(BASE.length) : pathname).replace(/\/+$/, '') || '/';
   return (Object.keys(PATHS) as Route[]).find((r) => PATHS[r] === p) ?? 'home';
 }
 
@@ -31,7 +34,7 @@ class Router {
   }
   href(route: Route, params?: Record<string, string>) {
     const qs = params ? new URLSearchParams(params).toString() : '';
-    return PATHS[route] + (qs ? `?${qs}` : '');
+    return BASE + PATHS[route] + (qs ? `?${qs}` : '');
   }
   go(route: Route, params?: Record<string, string>) {
     history.pushState(null, '', this.href(route, params));
@@ -41,7 +44,7 @@ class Router {
   /** Update the query string in place without adding a history entry. */
   replaceQuery(params: Record<string, string>) {
     const qs = new URLSearchParams(params).toString();
-    history.replaceState(null, '', PATHS[this.route] + (qs ? `?${qs}` : ''));
+    history.replaceState(null, '', BASE + PATHS[this.route] + (qs ? `?${qs}` : ''));
     this.query = new URLSearchParams(qs);
   }
   /** Intercepts clicks on in-app links so they don't reload the page. */

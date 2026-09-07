@@ -48,6 +48,8 @@ function watchData(): Plugin {
 }
 
 export default defineConfig({
+  // GitHub Pages serves a project site under /<repo>/; set BASE_PATH in CI, leave unset elsewhere.
+  base: process.env.BASE_PATH ?? '/',
   plugins: [svelte(), watchData()],
   resolve: { alias: { $lib: path.resolve(ROOT, 'src/lib') } },
   build: {
