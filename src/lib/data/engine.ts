@@ -8,7 +8,7 @@ import { DAY } from './load';
 import { OTHER, PALETTE, fixedColor, orderOf, type Dimension } from './dimensions';
 
 export type Resolution = 'year' | 'month' | 'exact';
-export type MetricId = 'population' | 'personDays' | 'cumulativeDays' | 'launched' | 'newcomers' | 'cumulativePeople';
+export type MetricId = 'population' | 'cumulativeDays' | 'launched' | 'newcomers' | 'cumulativePeople';
 
 export interface Metric {
   id: MetricId;
@@ -23,7 +23,6 @@ export interface Metric {
 
 export const METRICS: Metric[] = [
   { id: 'population', label: 'Population of space', unit: 'people', hint: 'Average number of people in space over each period (exact headcount at “event” resolution).', supportsExact: true, cumulative: false },
-  { id: 'personDays', label: 'Person-days in space', unit: 'person-days', hint: 'Total days of human presence accumulated in each period.', supportsExact: false, cumulative: false },
   { id: 'cumulativeDays', label: 'Cumulative person-days', unit: 'person-days', hint: 'Running total of all human time in space since 1961.', supportsExact: false, cumulative: true },
   { id: 'launched', label: 'People launched', unit: 'people', hint: 'Number of people who left Earth in each period (one per launch, repeat flyers counted again).', supportsExact: false, cumulative: false },
   { id: 'newcomers', label: 'First-time flyers', unit: 'people', hint: 'People making their first trip to space in each period.', supportsExact: false, cumulative: false },
@@ -122,7 +121,7 @@ export function aggregate(ds: Dataset, q: Query): Aggregate {
   };
   const bis = bisector<number, number>((d) => d).right;
 
-  if (metric.id === 'population' || metric.id === 'personDays' || metric.id === 'cumulativeDays') {
+  if (metric.id === 'population' || metric.id === 'cumulativeDays') {
     for (const s of stays) {
       if (s.end <= from || s.start >= to) continue;
       const r = row(dim.key(s));
