@@ -4,12 +4,14 @@
   import { DIMENSIONS, dimensionById, orderOf } from '$lib/data/dimensions';
   import TimeChart, { type ChartMode } from '$lib/charts/TimeChart.svelte';
   import RingChart from '$lib/charts/RingChart.svelte';
+  import Moments from '$lib/charts/Moments.svelte';
   import ChipGroup from '$lib/ui/ChipGroup.svelte';
   import SelectGroup from '$lib/ui/SelectGroup.svelte';
   import { tick } from 'svelte';
   import { router } from '$lib/router.svelte';
   import { ERAS, PHOTOS } from '$lib/eras';
   import { fmtValue, fmtYear, fmtMonth, fmtDateTime, fmtDate } from '$lib/format';
+  import { WOMEN_IN_SPACE_MOMENTS } from '$lib/views/stories/WomenInSpace.svelte';
 
   let { ds }: { ds: Dataset } = $props();
 
@@ -113,7 +115,7 @@
   // ---- layout: the chart fills the screen on desktop
   let innerHeight = $state(900);
   let innerWidth = $state(1440);
-  const chartHeight = $derived(innerWidth > 860 ? Math.max(360, Math.min(640, innerHeight - 330)) : 320);
+  const chartHeight = $derived(innerWidth > 860 ? Math.max(360, Math.min(480, innerHeight - 330)) : 320);
   // On phones the controls live in a bottom sheet; each summary chip opens it at its section.
   type Section = 'metric' | 'by' | 'filter' | 'chart' | 'res' | 'years';
   let sheet = $state<Section | null>(null);
@@ -148,7 +150,7 @@
   const resOptions = $derived([
     { id: 'year', label: 'Yearly' },
     { id: 'month', label: 'Monthly' },
-    { id: 'exact', label: 'Every event', disabled: !m.supportsExact, hint: m.supportsExact ? 'Exact headcount at each launch and landing' : 'Only available for “People in space”' },
+    { id: 'exact', label: 'Every event', disabled: !m.supportsExact, hint: m.supportsExact ? 'Exact headcount at each launch and landing' : 'Only available for “Population of space”' },
   ]);
   const yearPresets = [
     { label: 'All', from: minYear, to: maxYear },
@@ -156,6 +158,27 @@
     { label: '2020s', from: 2020, to: maxYear },
   ];
   const modeLabel = $derived({ stacked: 'Stacked', line: 'Lines', share: 'Share', ring: 'Ring' }[mode]);
+
+  // ---- story annotations: with the population broken down by sex (and women not filtered out),
+  // the year labels move to the top and the story's moments hang below their point on the timeline.
+  const womenVisible = $derived(dim.id === 'sex' && !ring && !(filterActive && filterDim.id === 'sex' && !filterVals.includes('F')));
+  const moments = $derived(
+    womenVisible
+      ? WOMEN_IN_SPACE_MOMENTS.flatMap((mo) => {
+          const f = ds.flightById.get(mo.flight);
+          return f ? [{ ...mo, t: Date.parse(f.launch) }] : [];
+        })
+      : [],
+  );
+  let chartLayout = $state({ markerX: [] as number[], axisY: 0 });
+  let chartWidth = $state(0);
+  /** Moments whose launch falls inside the plotted range, with their x position in px from the chart's left edge. */
+  const visibleMoments = $derived(
+    moments
+      .map((mo, i) => ({ ...mo, x: chartLayout.markerX[i] ?? -1 }))
+      .filter((mo) => mo.x >= 48 && mo.x <= chartWidth - 16),
+  );
+  const storyHref = router.href('women-in-space');
 </script>
 
 <svelte:window bind:innerHeight bind:innerWidth />
@@ -279,17 +302,25 @@
         {:else if ring}
           <RingChart totals={ringData.totals} unit={ringData.unit} height={chartHeight} />
         {:else}
-          <TimeChart
-            {agg}
-            {mode}
-            unit={m.unit}
-            height={chartHeight}
-            yearBounds={[minYear, maxYear]}
-            onrange={(f, t) => {
-              from = clampYear(f);
-              to = clampYear(t);
-            }}
-          />
+          <div class="chart-wrap" bind:clientWidth={chartWidth}>
+            <TimeChart
+              {agg}
+              {mode}
+              unit={m.unit}
+              height={chartHeight}
+              yearBounds={[minYear, maxYear]}
+              xAxis={womenVisible ? 'top' : 'bottom'}
+              markers={moments.map((mo) => mo.t)}
+              bind:layout={chartLayout}
+              onrange={(f, t) => {
+                from = clampYear(f);
+                to = clampYear(t);
+              }}
+            />
+            {#if visibleMoments.length}
+              <Moments width={chartWidth} portraits={false} moments={visibleMoments.map((mo) => ({ key: mo.flight, x: mo.x, title: mo.title }))} />
+            {/if}
+          </div>
         {/if}
       </div>
       <p class="footnote faint small">
@@ -297,6 +328,7 @@
         {m.hint}
         {#if dim.id !== 'none'}{dim.hint}{/if}
         Data complete through {fmtDate(new Date(ds.dataEnd))}.
+        {#if womenVisible}<a class="story-link" href={storyHref}>Read more about women in space →</a>{/if}
       </p>
     </section>
   </div>
@@ -364,9 +396,21 @@
   .body {
     flex: 1;
   }
+  .chart-wrap {
+    position: relative;
+  }
+  .chart-wrap {
+    --moments-bg: var(--bg-elev);
+  }
   .footnote {
     margin: 12px 0 0;
     line-height: 1.45;
+  }
+  .story-link {
+    display: block;
+    margin-top: 6px;
+    color: var(--accent-ink);
+    font-size: 0.9rem;
   }
   .credit-row {
     position: relative;

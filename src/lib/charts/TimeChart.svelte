@@ -454,6 +454,22 @@
   {#if frame.x.length === 0 || live.length === 0}
     <div class="empty" style:height="{height}px">No data for this selection.</div>
   {:else}
+    {#if legend && live.length > 1}
+      <div class="legend">
+        {#each [...layers].reverse() as l (l.s.key)}
+          <button
+            class="chip"
+            class:dim={hoverKey !== null && hoverKey !== l.s.key}
+            onmouseenter={() => (hoverKey = l.s.key)}
+            onmouseleave={() => (hoverKey = null)}
+            onfocus={() => (hoverKey = l.s.key)}
+            onblur={() => (hoverKey = null)}
+          >
+            <span class="swatch" style:background={l.s.color}></span>{l.s.label}
+          </button>
+        {/each}
+      </div>
+    {/if}
     <svg
       bind:this={svgEl}
       {width}
@@ -544,22 +560,6 @@
       </div>
     {/if}
 
-    {#if legend && live.length > 1}
-      <div class="legend">
-        {#each [...layers].reverse() as l (l.s.key)}
-          <button
-            class="chip"
-            class:dim={hoverKey !== null && hoverKey !== l.s.key}
-            onmouseenter={() => (hoverKey = l.s.key)}
-            onmouseleave={() => (hoverKey = null)}
-            onfocus={() => (hoverKey = l.s.key)}
-            onblur={() => (hoverKey = null)}
-          >
-            <span class="swatch" style:background={l.s.color}></span>{l.s.label}
-          </button>
-        {/each}
-      </div>
-    {/if}
   {/if}
 </div>
 
@@ -697,7 +697,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 4px 6px;
-    padding: 10px 0 0 48px;
+    padding: 0 0 8px 48px;
   }
   .chip {
     display: inline-flex;

@@ -49,8 +49,8 @@
   crew_up: [yuri-malenchenko, talgat-musabayev]
   crew_down: [yuri-malenchenko, talgat-musabayev, ulf-merbold]
   wiki: https://en.wikipedia.org/wiki/Soyuz_TM-19
-- id: sts65
-  name: STS65
+- id: sts-65
+  name: STS-65
   launch: '1994-07-08T16:43:01Z'
   landing: '1994-07-23T10:38:01Z'
   launch_nation: US

@@ -21,7 +21,7 @@
 
     <h2>How the numbers are computed</h2>
     <ul>
-      <li><strong>People in space</strong> at yearly or monthly resolution is the average headcount over that period: total person-days divided by the days in the period. At “every event” resolution it is the exact count after each launch and landing.</li>
+      <li><strong>Population of space</strong> at yearly or monthly resolution is the average headcount over that period: total person-days divided by the days in the period. At “every event” resolution it is the exact count after each launch and landing.</li>
       <li><strong>Person-days</strong> are days of human presence accumulated in the period, so a six-person crew for 30 days is 180 person-days.</li>
       <li><strong>Breakdowns</strong> attribute each stay to a single category: a person’s primary nationality, their sex as recorded, their age at the start of the stay, and the destination, launch nation and sector of the flight that took them up.</li>
       <li><strong>Nationality</strong> follows the dataset’s assignments. Soviet-era cosmonauts are attributed to modern successor states (Russia, Ukraine, Kazakhstan…). People with multiple citizenships are counted under the first one listed.</li>

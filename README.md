@@ -8,7 +8,7 @@ age, location (ISS, Tiangong, Mir, the Moon…), launch nation and government vs
 
 ```
 npm install
-npm run dev          # http://localhost:5173
+npm run dev          # http://localhost:5174
 ```
 
 `npm run build` produces a fully static site in `dist/`; `npm start` serves it (this is what

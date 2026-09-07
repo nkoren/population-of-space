@@ -22,7 +22,7 @@ export interface Metric {
 }
 
 export const METRICS: Metric[] = [
-  { id: 'population', label: 'People in space', unit: 'people', hint: 'Average number of people in space over each period (exact headcount at “event” resolution).', supportsExact: true, cumulative: false },
+  { id: 'population', label: 'Population of space', unit: 'people', hint: 'Average number of people in space over each period (exact headcount at “event” resolution).', supportsExact: true, cumulative: false },
   { id: 'personDays', label: 'Person-days in space', unit: 'person-days', hint: 'Total days of human presence accumulated in each period.', supportsExact: false, cumulative: false },
   { id: 'cumulativeDays', label: 'Cumulative person-days', unit: 'person-days', hint: 'Running total of all human time in space since 1961.', supportsExact: false, cumulative: true },
   { id: 'launched', label: 'People launched', unit: 'people', hint: 'Number of people who left Earth in each period (one per launch, repeat flyers counted again).', supportsExact: false, cumulative: false },

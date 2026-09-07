@@ -126,7 +126,7 @@ export const DIMENSIONS: Dimension[] = [
     label: 'Total',
     hint: 'Everyone in space, undivided.',
     key: () => 'all',
-    labelOf: () => 'People in space',
+    labelOf: () => 'Population of space',
   },
   {
     id: 'sex',

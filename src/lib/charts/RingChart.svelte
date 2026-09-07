@@ -11,8 +11,16 @@
     totals: SeriesTotal[];
     unit?: string;
     height?: number;
+    /** Image shown in the hole instead of the total (the total still appears while hovering a slice). */
+    centerImage?: string;
+    centerAlt?: string;
+    legend?: boolean;
+    /** Hole radius as a fraction of the outer radius; larger is a thinner ring. */
+    hole?: number;
+    /** Let the ring use the full container width (by default it leaves room for the legend beside it). */
+    wide?: boolean;
   }
-  let { totals, unit = '', height = 420 }: Props = $props();
+  let { totals, unit = '', height = 420, centerImage, centerAlt = '', legend = true, hole = 0.62, wide = false }: Props = $props();
 
   type Frame = SeriesTotal[];
   function interpolateFrame(a: Frame, b: Frame) {
@@ -32,9 +40,9 @@
   let width = $state(800);
   const frame = $derived(tween.current.filter((s) => s.value > 1e-9));
   const sum = $derived(frame.reduce((a, s) => a + s.value, 0));
-  const size = $derived(Math.min(height, width * 0.6, 460));
+  const size = $derived(Math.min(height, wide ? width : width * 0.6, 460));
   const r = $derived(size / 2 - 8);
-  const inner = $derived(r * 0.62);
+  const inner = $derived(r * hole);
 
   // Keep the drawing order stable (largest first is what the engine already gives us).
   const arcs = $derived(
@@ -71,6 +79,9 @@
           <text class="c-label" y="-14">{hovered.label}</text>
           <text class="c-value" y="14">{fmtCompact(hovered.value)}</text>
           <text class="c-sub" y="34">{sum > 0 ? Math.round((hovered.value / sum) * 100) : 0}% of {fmtCompact(sum)} {unit}</text>
+        {:else if centerImage}
+          <!-- Fitted, not cropped: the image keeps its own aspect ratio inside a box that stays clear of the band. -->
+          <image href={centerImage} x={-inner * 0.6} y={-inner * 0.36} width={inner * 1.2} height={inner * 0.72} preserveAspectRatio="xMidYMid meet" aria-label={centerAlt} />
         {:else}
           <text class="c-value" y="4">{fmtCompact(sum)}</text>
           <text class="c-sub" y="26">{unit}</text>
@@ -78,7 +89,7 @@
       </g>
     </svg>
 
-    <ul class="legend">
+    <ul class="legend" hidden={!legend}>
       {#each finalTotals as s (s.key)}
         <li
           class:dim={hoverKey !== null && hoverKey !== s.key}

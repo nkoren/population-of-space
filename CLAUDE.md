@@ -20,7 +20,7 @@ person by person, since 1961. Think "Our World in Data" for people in orbit.
 ## Commands
 
 ```
-npm run dev        # rebuild data + Vite dev server on :5173
+npm run dev        # rebuild data + Vite dev server on :5174
 npm run validate   # check data only (exit 1 with a list of problems)
 npm run data       # validate + write public/data/dataset.json
 npm run build      # data + production build into dist/
