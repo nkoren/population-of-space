@@ -4,7 +4,7 @@
   // including across breakdowns and resolutions, by resampling the outgoing
   // frame onto the incoming time axis before tweening.
   import { scaleUtc, scaleLinear } from 'd3-scale';
-  import { area, line, curveMonotoneX, curveStepAfter } from 'd3-shape';
+  import { area, line, curveLinear, curveStepAfter } from 'd3-shape';
   import { bisector } from 'd3-array';
   import { Tween } from 'svelte/motion';
   import { cubicOut } from 'svelte/easing';
@@ -20,8 +20,12 @@
     unit?: string;
     /** hide the legend (e.g. for single-series charts) */
     legend?: boolean;
+    /** Called when the user zooms or pans the year range with the wheel, a drag or a pinch. */
+    onrange?: (from: number, to: number) => void;
+    /** Inclusive [min, max] years the range may cover; pans keep their span within these. */
+    yearBounds?: [number, number];
   }
-  let { agg, mode: modeProp = 'stacked', height = 420, unit = '', legend = true }: Props = $props();
+  let { agg, mode: modeProp = 'stacked', height = 420, unit = '', legend = true, onrange, yearBounds }: Props = $props();
   // 'ring' is rendered by RingChart; treat it as stacked here so the fallback is sane.
   const mode = $derived(modeProp === 'ring' ? 'stacked' : modeProp);
 
@@ -98,8 +102,14 @@
 
   const frame = $derived(tween.current);
   const step = $derived(frame.res === 'exact');
-  // Draw bins at their midpoints, events at their instant.
-  const px = $derived(step ? frame.x : frame.x.map((x, i) => (x + frame.xEnd[i]) / 2));
+  // Draw bins at their midpoints, events at their instant. The first and last bins are
+  // pinned to the ends of the range instead, so the selected years are the chart's exact
+  // left and right bounds and the curve neither plateaus nor stops short of the edge.
+  const px = $derived.by(() => {
+    if (step) return frame.x;
+    const n = frame.x.length;
+    return frame.x.map((x, i) => (n > 1 && i === 0 ? x : n > 1 && i === n - 1 ? frame.xEnd[i] : (x + frame.xEnd[i]) / 2));
+  });
   const xScale = $derived(
     scaleUtc()
       .domain([frame.x[0] ?? 0, frame.xEnd[frame.xEnd.length - 1] ?? 1])
@@ -133,13 +143,72 @@
   });
 
   const idx = $derived(frame.x.map((_, i) => i));
-  function areaPath(l: Layer) {
+
+  const EPS = 1e-9;
+  /** Drawing grid for the binned (non-step) resolutions: every bin midpoint plus every bin
+   *  boundary, shared by all series so the stacked layers meet exactly. Between midpoints a
+   *  series is interpolated linearly, except that a series which is zero on either side of
+   *  a boundary is pinned to zero at that boundary, so a bump stays inside the bins that
+   *  actually contain it (e.g. no women in space in 1962 just because there were in 1963).
+   *  Series are stacked and share-normalised on this grid, so the layers are consistent by
+   *  construction. */
+  interface GridLayer {
+    s: Series;
+    y0: number[];
+    y1: number[];
+  }
+  const grid = $derived.by((): { t: number[]; layers: GridLayer[] } => {
+    const n = frame.x.length;
+    const t: number[] = [];
+    const vals: number[][] = live.map(() => []);
+    for (let i = 0; i < n; i++) {
+      if (i > 0) {
+        const b = frame.x[i];
+        const k = (b - px[i - 1]) / (px[i] - px[i - 1]);
+        t.push(b);
+        live.forEach((s, j) => {
+          const a = s.values[i - 1];
+          const c = s.values[i];
+          vals[j].push(a <= EPS || c <= EPS ? 0 : a + (c - a) * k);
+        });
+      }
+      t.push(px[i]);
+      live.forEach((s, j) => vals[j].push(s.values[i]));
+    }
+    const m = t.length;
+    const tot = new Array<number>(m).fill(0);
+    for (const v of vals) for (let g = 0; g < m; g++) tot[g] += v[g];
+    const base = new Array<number>(m).fill(0);
+    const layers = live.map((s, j) => {
+      const y0 = base.slice();
+      const y1 = vals[j].map((v, g) => {
+        const val = mode === 'share' ? (tot[g] > 0 ? v / tot[g] : 0) : v;
+        const top = mode === 'line' ? val : base[g] + val;
+        if (mode !== 'line') base[g] = top;
+        return top;
+      });
+      return { s, y0: mode === 'line' ? y1 : y0, y1 };
+    });
+    return { t, layers };
+  });
+  const gridIdx = $derived(grid.t.map((_, g) => g));
+
+  function areaPath(l: Layer, gl: GridLayer | undefined) {
+    if (step || !gl) {
+      return (
+        area<number>()
+          .x((i) => xScale(px[i]))
+          .y0((i) => yScale(l.y0[i]))
+          .y1((i) => yScale(l.y1[i]))
+          .curve(curveStepAfter)(idx) ?? ''
+      );
+    }
     return (
       area<number>()
-        .x((i) => xScale(px[i]))
-        .y0((i) => yScale(l.y0[i]))
-        .y1((i) => yScale(l.y1[i]))
-        .curve(step ? curveStepAfter : curveMonotoneX)(idx) ?? ''
+        .x((g) => xScale(grid.t[g]))
+        .y0((g) => yScale(gl.y0[g]))
+        .y1((g) => yScale(gl.y1[g]))
+        .curve(curveLinear)(gridIdx) ?? ''
     );
   }
   /** Hairline along a layer's top edge, only where the layer is non-zero. In event mode this
@@ -155,12 +224,20 @@
         .curve(curveStepAfter)(idx) ?? ''
     );
   }
-  function linePath(l: Layer) {
+  function linePath(l: Layer, gl: GridLayer | undefined) {
+    if (step || !gl) {
+      return (
+        line<number>()
+          .x((i) => xScale(px[i]))
+          .y((i) => yScale(l.y1[i]))
+          .curve(curveStepAfter)(idx) ?? ''
+      );
+    }
     return (
       line<number>()
-        .x((i) => xScale(px[i]))
-        .y((i) => yScale(l.y1[i]))
-        .curve(step ? curveStepAfter : curveMonotoneX)(idx) ?? ''
+        .x((g) => xScale(grid.t[g]))
+        .y((g) => yScale(gl.y1[g]))
+        .curve(curveLinear)(gridIdx) ?? ''
     );
   }
 
@@ -175,12 +252,15 @@
         .x((i) => xScale(px[i]))
         .y0((i) => yScale(b.min[i]))
         .y1((i) => yScale(b.max[i]))
-        .curve(curveMonotoneX)(idx) ?? ''
+        .curve(curveLinear)(idx) ?? ''
     );
   });
 
   const yTicks = $derived(yScale.ticks(5));
-  const xTicks = $derived(xScale.ticks(Math.max(2, Math.floor(innerW / 90))));
+  const xTicks = $derived.by(() => {
+    const end = xScale.domain()[1].getTime();
+    return xScale.ticks(Math.max(2, Math.floor(innerW / 90))).filter((t) => t.getTime() < end);
+  });
   const fmtY = $derived((v: number) => (mode === 'share' ? `${Math.round(v * 100)}%` : fmtCompact(v)));
 
   // ------------------------------------------------------------ hover
@@ -199,6 +279,125 @@
     const t = xScale.invert(x).getTime();
     hoverI = step ? Math.max(0, bisector<number, number>((d) => d).right(frame.x, t) - 1) : bisX(px, t);
   }
+  // ------------------------------------------------------------ range gestures
+  // Wheel zooms, drag pans, and on touch screens a two-finger pinch zooms. All of them read
+  // the range from the target aggregate (not the tweened frame) so quick successive inputs
+  // accumulate instead of recomputing against a mid-animation axis.
+  const curRange = () => {
+    if (agg.x.length === 0) return null;
+    const from = new Date(agg.x[0]).getUTCFullYear();
+    const to = new Date(agg.xEnd[agg.xEnd.length - 1] - 1).getUTCFullYear();
+    return { from, to, span: to - from + 1 };
+  };
+  /** Clamp to yearBounds. keepSpan slides the whole window back inside (for pans); otherwise
+   *  the two ends are clamped independently (for zooms). Returns null if the range collapses. */
+  function emitRange(nf: number, nt: number, keepSpan: boolean) {
+    if (!onrange) return;
+    nf = Math.round(nf);
+    nt = Math.round(nt);
+    const [lo, hi] = yearBounds ?? [-Infinity, Infinity];
+    if (keepSpan) {
+      const s = nt - nf;
+      if (nf < lo) (nf = lo), (nt = lo + s);
+      if (nt > hi) (nt = hi), (nf = hi - s);
+    }
+    nf = Math.max(lo, nf);
+    nt = Math.min(hi, nt);
+    if (nf > nt) return;
+    onrange(nf, nt);
+  }
+  /** Pointer x as a fraction of the plot width, clamped to [0, 1]. */
+  const fracOf = (el: Element, clientX: number) => {
+    const rect = el.getBoundingClientRect();
+    return Math.min(1, Math.max(0, (clientX - rect.left - margin.left) / innerW));
+  };
+
+  // Svelte registers wheel handlers as passive, so attach one by hand to be able to
+  // preventDefault and keep the page from scrolling.
+  let svgEl = $state<SVGSVGElement | null>(null);
+  $effect(() => {
+    const el = svgEl;
+    if (!el || !onrange) return;
+    const onWheel = (e: WheelEvent) => {
+      if (e.deltaY === 0) return;
+      e.preventDefault();
+      const r = curRange();
+      if (!r) return;
+      // The pointer's position decides which end moves: far right shrinks from the start,
+      // far left from the end, the middle both equally.
+      const f = fracOf(el, e.clientX);
+      const d = Math.max(1, Math.round(r.span * 0.15));
+      const dFrom = Math.round(d * f);
+      const dTo = d - dFrom;
+      const dir = e.deltaY < 0 ? 1 : -1; // wheel up = zoom in
+      emitRange(r.from + dir * dFrom, r.to - dir * dTo, false);
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  });
+
+  // Drag (mouse or one finger) pans; two fingers pinch-zoom around their midpoint and pan
+  // with it. The svg has touch-action: pan-y so vertical swipes still scroll the page.
+  type Gesture = { from: number; to: number; span: number; f0: number; d0: number };
+  const pointers = new Map<number, number>(); // pointerId -> clientX
+  let gesture: Gesture | null = null;
+  let dragging = $state(false);
+  const pinchState = (el: Element) => {
+    const xs = [...pointers.values()];
+    const c = xs.reduce((a, b) => a + b, 0) / xs.length;
+    const d = xs.length > 1 ? Math.abs(xs[0] - xs[1]) : 0;
+    return { f: fracOf(el, c), d };
+  };
+  function startGesture(el: Element) {
+    const r = curRange();
+    if (!r) return;
+    const { f, d } = pinchState(el);
+    gesture = { ...r, f0: f, d0: d };
+  }
+  function onPointerDown(e: PointerEvent) {
+    if (!onrange || (e.pointerType === 'mouse' && e.button !== 0)) return;
+    const el = e.currentTarget as SVGSVGElement;
+    try {
+      el.setPointerCapture(e.pointerId);
+    } catch {
+      /* synthetic events have no capturable pointer */
+    }
+    pointers.set(e.pointerId, e.clientX);
+    if (pointers.size <= 2) startGesture(el);
+    dragging = true;
+    if (e.pointerType === 'mouse') e.preventDefault(); // no text selection while dragging
+  }
+  function onPointerMove(e: PointerEvent) {
+    if (!pointers.has(e.pointerId) || !gesture) return;
+    pointers.set(e.pointerId, e.clientX);
+    const el = e.currentTarget as SVGSVGElement;
+    const g = gesture;
+    const { f, d } = pinchState(el);
+    if (pointers.size >= 2 && g.d0 > 0) {
+      // Pinch: keep the year that was under the fingers' midpoint under it, at the new span.
+      const span = Math.max(1, Math.round((g.span * g.d0) / Math.max(1, d)));
+      const yearAtCenter = g.from + g.f0 * g.span;
+      const nf = yearAtCenter - f * span;
+      emitRange(nf, nf + span - 1, true);
+    } else {
+      // Pan: the content follows the pointer, so dragging right moves the window earlier.
+      const shift = -(f - g.f0) * g.span;
+      emitRange(g.from + shift, g.to + shift, true);
+    }
+  }
+  function onPointerUp(e: PointerEvent) {
+    if (!pointers.has(e.pointerId)) return;
+    pointers.delete(e.pointerId);
+    const el = e.currentTarget as SVGSVGElement;
+    if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId);
+    // A finger lifting mid-pinch restarts the gesture from the remaining pointer(s).
+    if (pointers.size > 0) startGesture(el);
+    else {
+      gesture = null;
+      dragging = false;
+    }
+  }
+
   const labelFor = $derived((i: number) => {
     const t = frame.x[i];
     if (frame.res === 'year') return fmtYear(new Date(t));
@@ -221,7 +420,21 @@
   {#if frame.x.length === 0 || live.length === 0}
     <div class="empty" style:height="{height}px">No data for this selection.</div>
   {:else}
-    <svg {width} {height} onmousemove={onMove} onmouseleave={() => (hoverI = null)} role="img" aria-label="Chart">
+    <svg
+      bind:this={svgEl}
+      {width}
+      {height}
+      class:pannable={!!onrange}
+      class:dragging
+      onmousemove={onMove}
+      onmouseleave={() => (hoverI = null)}
+      onpointerdown={onPointerDown}
+      onpointermove={onPointerMove}
+      onpointerup={onPointerUp}
+      onpointercancel={onPointerUp}
+      role="img"
+      aria-label="Chart"
+    >
       <g transform="translate({margin.left},{margin.top})">
         <!-- grid + axes -->
         {#each yTicks as t}
@@ -234,12 +447,13 @@
         <line class="axis" x1="0" x2={innerW} y1={innerH} y2={innerH} />
 
         <!-- layers -->
-        {#each layers as l (l.s.key)}
+        {#each layers as l, li (l.s.key)}
           {@const dim = hoverKey !== null && hoverKey !== l.s.key}
+          {@const gl = grid.layers[li]}
           {#if mode === 'line'}
-            <path class="line" d={linePath(l)} stroke={l.s.color} opacity={dim ? 0.2 : 1} />
+            <path class="line" d={linePath(l, gl)} stroke={l.s.color} opacity={dim ? 0.2 : 1} />
           {:else}
-            <path class="area" d={areaPath(l)} fill={l.s.color} opacity={dim ? 0.25 : 0.9} />
+            <path class="area" d={areaPath(l, gl)} fill={l.s.color} opacity={dim ? 0.25 : 0.9} />
             {#if step}
               <path class="edge" d={edgePath(l)} stroke={l.s.color} opacity={dim ? 0.25 : 1} />
             {/if}
@@ -321,6 +535,15 @@
     display: block;
     overflow: visible;
     font-family: var(--font-body);
+  }
+  svg.pannable {
+    cursor: grab;
+    touch-action: pan-y; /* vertical swipes scroll the page; horizontal ones and pinches pan/zoom the range */
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  svg.dragging {
+    cursor: grabbing;
   }
   .grid {
     stroke: var(--chart-grid);

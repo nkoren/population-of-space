@@ -46,7 +46,7 @@
     metric: 'population',
     dimension: dimensionById('none'),
     resolution: 'year',
-    from: Date.UTC(1961, 0, 1),
+    from: Date.UTC(1960, 0, 1),
     to: ds.dataEnd,
   });
 

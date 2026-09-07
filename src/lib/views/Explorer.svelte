@@ -13,7 +13,8 @@
 
   let { ds }: { ds: Dataset } = $props();
 
-  const minYear = 1961;
+  // 1960 rather than 1961 so a full-range chart starts from zero before Gagarin.
+  const minYear = 1960;
   const maxYear = new Date(ds.dataEnd).getUTCFullYear();
 
   // ---- state, mirrored to the query string so views are shareable
@@ -278,7 +279,17 @@
         {:else if ring}
           <RingChart totals={ringData.totals} unit={ringData.unit} height={chartHeight} />
         {:else}
-          <TimeChart {agg} {mode} unit={m.unit} height={chartHeight} />
+          <TimeChart
+            {agg}
+            {mode}
+            unit={m.unit}
+            height={chartHeight}
+            yearBounds={[minYear, maxYear]}
+            onrange={(f, t) => {
+              from = clampYear(f);
+              to = clampYear(t);
+            }}
+          />
         {/if}
       </div>
       <p class="footnote faint small">
