@@ -28,6 +28,7 @@
   let from = $state(clampYear(+(q.get('from') ?? minYear)));
   let to = $state(clampYear(+(q.get('to') ?? maxYear)));
   let suborbital = $state(q.get('sub') !== '0');
+  let bands = $state(q.get('nb') !== '1');
   // Filter: keep only stays whose value in one dimension is among the chosen keys.
   let filterBy = $state(q.get('fd') ?? 'none');
   let filterVals = $state<string[]>((q.get('fv') ?? '').split(',').filter(Boolean));
@@ -45,6 +46,7 @@
       from: String(from),
       to: String(to),
       ...(suborbital ? {} : { sub: '0' }),
+      ...(bands ? {} : { nb: '1' }),
       ...(filterActive ? { fd: filterBy, fv: filterVals.join(',') } : {}),
     });
   });
@@ -226,7 +228,14 @@
           <div class="hint">{filterVals.length ? 'Showing only these.' : filterOptions.length <= 2 ? 'Pick one; nothing selected means no filter.' : 'Pick one or more values; nothing selected means no filter.'}</div>
         {/if}
       </div>
-      <div data-section="chart"><ChipGroup label="Chart" segmented options={[{ id: 'stacked', label: 'Stacked' }, { id: 'line', label: 'Lines' }, { id: 'share', label: 'Share' }, { id: 'ring', label: 'Ring' }]} value={mode} onchange={(v) => (mode = v as ChartMode)} /></div>
+      <div data-section="chart"><ChipGroup label="Chart" segmented options={[{ id: 'stacked', label: 'Stacked' }, { id: 'line', label: 'Lines' }, { id: 'share', label: 'Share' }, { id: 'ring', label: 'Ring' }]} value={mode} onchange={(v) => (mode = v as ChartMode)} />
+        {#if mode === 'line' && m.id === 'population'}
+          <label class="check">
+            <input type="checkbox" bind:checked={bands} />
+            Show min/max bands
+          </label>
+        {/if}
+      </div>
       {#if !ring}
         <div data-section="res"><ChipGroup label="Resolution" segmented options={resOptions} value={effectiveRes} onchange={(v) => (res = v as Resolution)} /></div>
       {/if}
@@ -306,6 +315,7 @@
             <TimeChart
               {agg}
               {mode}
+              {bands}
               unit={m.unit}
               height={chartHeight}
               yearBounds={[minYear, maxYear]}
@@ -498,6 +508,9 @@
     gap: 10px;
     font-size: 0.9rem;
     color: var(--ink-2);
+  }
+  [data-section='chart'] .check {
+    margin-top: 10px;
   }
   .check input {
     accent-color: var(--accent);

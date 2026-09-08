@@ -20,6 +20,8 @@
     unit?: string;
     /** hide the legend (e.g. for single-series charts) */
     legend?: boolean;
+    /** draw the low/high headcount band around each line (line mode, binned resolutions) */
+    bands?: boolean;
     /** Called when the user zooms or pans the year range with the wheel, a drag or a pinch. */
     onrange?: (from: number, to: number) => void;
     /** Inclusive [min, max] years the range may cover; pans keep their span within these. */
@@ -40,6 +42,7 @@
     height = 420,
     unit = '',
     legend = true,
+    bands = true,
     onrange,
     yearBounds,
     xAxis = 'bottom',
@@ -308,7 +311,7 @@
 
   // Low/high headcount envelope around each line (population metric at binned resolutions),
   // drawn in the line's own colour and with the same gaps as the line.
-  const showBands = $derived(mode === 'line' && !step);
+  const showBands = $derived(bands && mode === 'line' && !step);
   function bandPath(l: Layer) {
     const b = l.s.band;
     if (!b || !showBands) return '';
