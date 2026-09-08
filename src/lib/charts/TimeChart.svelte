@@ -271,9 +271,11 @@
    *  not a flat line along zero. */
   function linePath(l: Layer, gl: GridLayer | undefined) {
     if (step || !gl) {
+      // In step mode the point where a series drops to zero is kept, so the last stint
+      // still runs horizontally to its end before the gap begins.
       return (
         line<number>()
-          .defined((i) => l.y1[i] > EPS)
+          .defined((i) => l.y1[i] > EPS || (i > 0 && l.y1[i - 1] > EPS))
           .x((i) => xScale(px[i]))
           .y((i) => yScale(l.y1[i]))
           .curve(curveStepAfter)(idx) ?? ''
