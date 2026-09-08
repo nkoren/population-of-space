@@ -271,15 +271,27 @@
    *  not a flat line along zero. */
   function linePath(l: Layer, gl: GridLayer | undefined) {
     if (step || !gl) {
-      // In step mode the point where a series drops to zero is kept, so the last stint
-      // still runs horizontally to its end before the gap begins.
-      return (
-        line<number>()
-          .defined((i) => l.y1[i] > EPS || (i > 0 && l.y1[i - 1] > EPS))
-          .x((i) => xScale(px[i]))
-          .y((i) => yScale(l.y1[i]))
-          .curve(curveStepAfter)(idx) ?? ''
-      );
+      // Built by hand: each run of non-zero events is one step subpath that rises from the
+      // axis at its first event and drops back to it at its end. Runs of zero draw nothing.
+      const v = l.y1;
+      const n = idx.length;
+      const zero = yScale(0);
+      let d = '';
+      let open = false;
+      for (let i = 0; i < n; i++) {
+        const x1 = i + 1 < n ? xScale(px[i + 1]) : innerW;
+        if (v[i] <= EPS) {
+          if (open) d += `V${zero}`;
+          open = false;
+          continue;
+        }
+        const y = yScale(v[i]);
+        if (!open) d += `M${xScale(px[i])},${zero}`;
+        d += `V${y}H${x1}`;
+        open = true;
+      }
+      if (open) d += `V${zero}`;
+      return d;
     }
     return (
       line<number>()
