@@ -123,6 +123,9 @@ export function aggregate(ds: Dataset, q: Query): Aggregate {
 
   if (metric.id === 'population' || metric.id === 'cumulativeDays') {
     for (const s of stays) {
+      // Running totals carry in everything accumulated before the range starts, so the
+      // curve never restarts from zero when the chart begins after 1961.
+      if (metric.cumulative && s.start < from) row(dim.key(s))[0] += (Math.min(s.end, from) - s.start) / DAY;
       if (s.end <= from || s.start >= to) continue;
       const r = row(dim.key(s));
       let i = Math.max(0, bis(x, s.start) - 1);
@@ -140,7 +143,11 @@ export function aggregate(ds: Dataset, q: Query): Aggregate {
         if (seen.has(s.person.id)) continue;
         seen.add(s.person.id);
       }
-      if (s.start < from || s.start > to) continue;
+      if (s.start > to) continue;
+      if (s.start < from) {
+        if (metric.cumulative) row(dim.key(s))[0] += 1; // carry-in, see above
+        continue;
+      }
       row(dim.key(s))[Math.min(n - 1, bis(x, s.start) - 1)] += 1;
     }
   }
