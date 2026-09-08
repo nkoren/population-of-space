@@ -273,24 +273,28 @@
     if (step || !gl) {
       // Built by hand: each run of non-zero events is one step subpath that rises from the
       // axis at its first event and drops back to it at its end. Runs of zero draw nothing.
+      // The window clips stays in progress at its edges, so the series reads as zero at its
+      // very first and last instants; those are not real rises or drops, so no vertical there.
       const v = l.y1;
       const n = idx.length;
       const zero = yScale(0);
+      const atEdge = (x: number) => x <= 0.5 || x >= innerW - 0.5;
       let d = '';
       let open = false;
       for (let i = 0; i < n; i++) {
+        const x0 = xScale(px[i]);
         const x1 = i + 1 < n ? xScale(px[i + 1]) : innerW;
         if (v[i] <= EPS) {
-          if (open) d += `V${zero}`;
+          if (open && !atEdge(x0)) d += `V${zero}`;
           open = false;
           continue;
         }
         const y = yScale(v[i]);
-        if (!open) d += `M${xScale(px[i])},${zero}`;
-        d += `V${y}H${x1}`;
+        if (!open) d += atEdge(x0) ? `M${x0},${y}` : `M${x0},${zero}V${y}`;
+        else d += `V${y}`;
+        d += `H${x1}`;
         open = true;
       }
-      if (open) d += `V${zero}`;
       return d;
     }
     return (
