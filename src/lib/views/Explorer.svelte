@@ -376,6 +376,14 @@
     display: flex;
     flex-direction: column;
   }
+  /* One consistent gap between sections, owned by the section wrapper rather than by
+     whatever control happens to sit last inside it. */
+  .controls > [data-section] {
+    margin-bottom: 22px;
+  }
+  .controls > [data-section] :global(fieldset) {
+    margin-bottom: 0;
+  }
   .panel {
     padding: 24px 28px 18px;
     min-width: 0;
@@ -432,7 +440,7 @@
   fieldset.range {
     border: 0;
     padding: 0;
-    margin: 0 0 20px;
+    margin: 0;
   }
   legend {
     padding: 0;
@@ -468,14 +476,14 @@
     flex-wrap: wrap;
     gap: 6px;
   }
-  .filter :global(fieldset) {
-    margin-bottom: 8px;
-  }
   .values {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 8px;
+    margin-top: 8px;
+  }
+  .filter .hint {
+    margin: 8px 0 0;
   }
   .values button,
   .presets button {
@@ -510,7 +518,13 @@
     color: var(--ink-2);
   }
   [data-section='chart'] .check {
-    margin-top: 10px;
+    margin: 8px 0 0 12px;
+    font-size: 0.78rem;
+    color: var(--ink-3);
+  }
+  [data-section='chart'] .check input {
+    width: 15px;
+    height: 15px;
   }
   .check input {
     accent-color: var(--accent);
