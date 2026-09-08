@@ -58,12 +58,16 @@
   }
   const toFrame = (a: Aggregate): Frame => ({ x: a.x, xEnd: a.xEnd, res: a.resolution, series: a.series, band: a.band ?? null });
 
-  /** Step-after lookup of an old series onto a new time axis. */
-  function resample(oldX: number[], vals: number[], newX: number[]): number[] {
+  /** Step-after lookup of an old series onto a new time axis. Bins outside the old axis's
+   *  span (revealed by a pan or zoom-out) take their value from `fill`, so newly-visible data
+   *  is simply there rather than rising up from zero. */
+  function resample(oldX: number[], oldXEnd: number[], vals: number[], newX: number[], fill: number[]): number[] {
     const bis = bisector<number, number>((d) => d).right;
-    return newX.map((t) => {
+    const end = oldXEnd[oldXEnd.length - 1] ?? -Infinity;
+    return newX.map((t, j) => {
       const i = bis(oldX, t) - 1;
-      return i < 0 ? 0 : vals[Math.min(i, vals.length - 1)];
+      if (i < 0 || t >= end) return fill[j];
+      return vals[Math.min(i, vals.length - 1)];
     });
   }
   function interpolateFrame(a: Frame, b: Frame) {
@@ -74,15 +78,18 @@
     const merged: { meta: Series; from: number[]; to: number[] }[] = [];
     for (const s of b.series) {
       const prev = aByKey.get(s.key);
-      merged.push({ meta: s, from: prev ? (sameAxis ? prev.values : resample(a.x, prev.values, b.x)) : zeros, to: s.values });
+      merged.push({ meta: s, from: prev ? (sameAxis ? prev.values : resample(a.x, a.xEnd, prev.values, b.x, s.values)) : zeros, to: s.values });
     }
     for (const s of a.series) {
       if (bKeys.has(s.key)) continue;
-      merged.push({ meta: { ...s, values: zeros }, from: sameAxis ? s.values : resample(a.x, s.values, b.x), to: zeros });
+      merged.push({ meta: { ...s, values: zeros }, from: sameAxis ? s.values : resample(a.x, a.xEnd, s.values, b.x, zeros), to: zeros });
     }
     // The band tweens from the outgoing band (resampled), or grows out of the total when there was none.
     const totalsA = a.x.map((_, i) => a.series.reduce((acc, s) => acc + s.values[i], 0));
-    const bandFrom = (key: 'min' | 'max') => (a.band ? (sameAxis ? a.band[key] : resample(a.x, a.band[key], b.x)) : resample(a.x, totalsA, b.x));
+    const bandFrom = (key: 'min' | 'max') => {
+      const target = b.band ? b.band[key] : zeros;
+      return a.band ? (sameAxis ? a.band[key] : resample(a.x, a.xEnd, a.band[key], b.x, target)) : resample(a.x, a.xEnd, totalsA, b.x, target);
+    };
     const band = b.band
       ? { min: { from: bandFrom('min'), to: b.band.min }, max: { from: bandFrom('max'), to: b.band.max } }
       : null;
