@@ -35,6 +35,8 @@ export interface Series {
   label: string;
   color: string;
   values: number[];
+  /** lowest / highest exact headcount of this group inside each bin (population metric at year/month resolution only) */
+  band?: { min: number[]; max: number[] };
 }
 export interface Aggregate {
   /** bin start times (ms) or event times for exact resolution */
@@ -43,8 +45,6 @@ export interface Aggregate {
   xEnd: number[];
   series: Series[];
   total: number[];
-  /** lowest / highest exact headcount inside each bin (population metric at year/month resolution only) */
-  band?: { min: number[]; max: number[] };
   resolution: Resolution;
   metric: Metric;
 }
@@ -156,14 +156,23 @@ export function aggregate(ds: Dataset, q: Query): Aggregate {
   const series = finalizeSeries(raw, dim, ds, n);
   const total = new Array<number>(n).fill(0);
   for (const s of series) for (let i = 0; i < n; i++) total[i] += s.values[i];
-  const band = metric.id === 'population' ? populationBand(stays, x, xEnd) : undefined;
-  return { x, xEnd, series, total, band, resolution: res, metric };
+  if (metric.id === 'population') {
+    // Each series gets its own low/high envelope. Keys that were folded into "Other" are
+    // exactly those not owned by any other series.
+    const named = new Set(series.filter((s) => s.key !== OTHER).map((s) => s.key));
+    for (const s of series) {
+      const mine = s.key === OTHER ? (k: string) => !named.has(k) : (k: string) => k === s.key;
+      s.band = populationBand(stays, x, xEnd, (st) => mine(dim.key(st)));
+    }
+  }
+  return { x, xEnd, series, total, resolution: res, metric };
 }
 
-/** Min and max of the exact total headcount within each bin, by sweeping launch/landing events. */
-function populationBand(stays: Stay[], x: number[], xEnd: number[]): { min: number[]; max: number[] } {
+/** Min and max of the exact headcount within each bin, by sweeping launch/landing events. */
+function populationBand(stays: Stay[], x: number[], xEnd: number[], include: (s: Stay) => boolean): { min: number[]; max: number[] } {
   const evs: { t: number; d: number }[] = [];
   for (const s of stays) {
+    if (!include(s)) continue;
     evs.push({ t: s.start, d: 1 });
     evs.push({ t: s.end, d: -1 });
   }

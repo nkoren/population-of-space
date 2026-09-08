@@ -54,9 +54,8 @@
     xEnd: number[];
     res: Resolution;
     series: Series[];
-    band: { min: number[]; max: number[] } | null;
   }
-  const toFrame = (a: Aggregate): Frame => ({ x: a.x, xEnd: a.xEnd, res: a.resolution, series: a.series, band: a.band ?? null });
+  const toFrame = (a: Aggregate): Frame => ({ x: a.x, xEnd: a.xEnd, res: a.resolution, series: a.series });
 
   /** Step-after lookup of an old series onto a new time axis. Bins outside the old axis's
    *  span (revealed by a pan or zoom-out) take their value from `fill`, so newly-visible data
@@ -75,31 +74,42 @@
     const aByKey = new Map(a.series.map((s) => [s.key, s]));
     const bKeys = new Set(b.series.map((s) => s.key));
     const zeros = new Array(b.x.length).fill(0);
-    const merged: { meta: Series; from: number[]; to: number[] }[] = [];
+    type Band = { min: number[]; max: number[] };
+    interface Merged {
+      meta: Series;
+      from: number[];
+      to: number[];
+      band: { min: { from: number[]; to: number[] }; max: { from: number[]; to: number[] } } | null;
+    }
+    const merged: Merged[] = [];
+    const onto = (vals: number[], target: number[]) => (sameAxis ? vals : resample(a.x, a.xEnd, vals, b.x, target));
+    // A band tweens from the outgoing band (resampled), or grows out of the line when there was none.
+    const bandOf = (prev: Series | undefined, target: Band | undefined, fromVals: number[]) =>
+      target
+        ? {
+            min: { from: prev?.band ? onto(prev.band.min, target.min) : fromVals, to: target.min },
+            max: { from: prev?.band ? onto(prev.band.max, target.max) : fromVals, to: target.max },
+          }
+        : null;
     for (const s of b.series) {
       const prev = aByKey.get(s.key);
-      merged.push({ meta: s, from: prev ? (sameAxis ? prev.values : resample(a.x, a.xEnd, prev.values, b.x, s.values)) : zeros, to: s.values });
+      const from = prev ? onto(prev.values, s.values) : zeros;
+      merged.push({ meta: s, from, to: s.values, band: bandOf(prev, s.band, from) });
     }
     for (const s of a.series) {
       if (bKeys.has(s.key)) continue;
-      merged.push({ meta: { ...s, values: zeros }, from: sameAxis ? s.values : resample(a.x, a.xEnd, s.values, b.x, zeros), to: zeros });
+      merged.push({ meta: { ...s, values: zeros, band: undefined }, from: onto(s.values, zeros), to: zeros, band: null });
     }
-    // The band tweens from the outgoing band (resampled), or grows out of the total when there was none.
-    const totalsA = a.x.map((_, i) => a.series.reduce((acc, s) => acc + s.values[i], 0));
-    const bandFrom = (key: 'min' | 'max') => {
-      const target = b.band ? b.band[key] : zeros;
-      return a.band ? (sameAxis ? a.band[key] : resample(a.x, a.xEnd, a.band[key], b.x, target)) : resample(a.x, a.xEnd, totalsA, b.x, target);
-    };
-    const band = b.band
-      ? { min: { from: bandFrom('min'), to: b.band.min }, max: { from: bandFrom('max'), to: b.band.max } }
-      : null;
     const lerp = (from: number[], to: number[], t: number) => from.map((v, i) => v + (to[i] - v) * t);
     return (t: number): Frame => ({
       x: b.x,
       xEnd: b.xEnd,
       res: b.res,
-      series: merged.map((m) => ({ ...m.meta, values: lerp(m.from, m.to, t) })),
-      band: band ? { min: lerp(band.min.from, band.min.to, t), max: lerp(band.max.from, band.max.to, t) } : null,
+      series: merged.map((m) => ({
+        ...m.meta,
+        values: lerp(m.from, m.to, t),
+        band: m.band ? { min: lerp(m.band.min.from, m.band.min.to, t), max: lerp(m.band.max.from, m.band.max.to, t) } : undefined,
+      })),
     });
   }
 
@@ -108,8 +118,7 @@
     let max = 0;
     for (let i = 0; i < f.x.length; i++) {
       if (m === 'stacked') max = Math.max(max, f.series.reduce((a, s) => a + s.values[i], 0));
-      else for (const s of f.series) max = Math.max(max, s.values[i]);
-      if (f.band && m === 'line' && f.series.length === 1) max = Math.max(max, f.band.max[i]);
+      else for (const s of f.series) max = Math.max(max, s.values[i], m === 'line' && s.band ? s.band.max[i] : 0);
     }
     return max > 0 ? scaleLinear().domain([0, max]).nice(5).domain()[1] : 1;
   }
@@ -258,10 +267,13 @@
     }
     return d;
   }
+  /** A line is only drawn where the series has data: bins with nothing in them are gaps,
+   *  not a flat line along zero. */
   function linePath(l: Layer, gl: GridLayer | undefined) {
     if (step || !gl) {
       return (
         line<number>()
+          .defined((i) => l.y1[i] > EPS)
           .x((i) => xScale(px[i]))
           .y((i) => yScale(l.y1[i]))
           .curve(curveStepAfter)(idx) ?? ''
@@ -269,26 +281,28 @@
     }
     return (
       line<number>()
+        .defined((g) => gl.y1[g] > EPS)
         .x((g) => xScale(grid.t[g]))
         .y((g) => yScale(gl.y1[g]))
         .curve(curveLinear)(gridIdx) ?? ''
     );
   }
 
-  // Low/high headcount envelope: only on a line chart of a single series (no breakdown, or a
-  // filter that leaves one group), where the line is the total and the band reads as its range.
-  const showBand = $derived(frame.band !== null && mode === 'line' && live.length === 1);
-  const bandPath = $derived.by(() => {
-    const b = frame.band;
-    if (!b || !showBand) return '';
+  // Low/high headcount envelope around each line (population metric at binned resolutions),
+  // drawn in the line's own colour and with the same gaps as the line.
+  const showBands = $derived(mode === 'line' && !step);
+  function bandPath(l: Layer) {
+    const b = l.s.band;
+    if (!b || !showBands) return '';
     return (
       area<number>()
+        .defined((i) => l.y1[i] > EPS)
         .x((i) => xScale(px[i]))
         .y0((i) => yScale(b.min[i]))
         .y1((i) => yScale(b.max[i]))
         .curve(curveLinear)(idx) ?? ''
     );
-  });
+  }
 
   $effect(() => {
     const markerX = markers.map((t) => xScale(t) + margin.left);
@@ -506,6 +520,15 @@
           <line class="axis" x1="0" x2={innerW} y1="0" y2="0" />
         {/if}
 
+        <!-- bands sit under every line so no envelope covers another series' stroke -->
+        {#if showBands}
+          {#each layers as l (l.s.key)}
+            {#if l.s.band}
+              <path class="band" d={bandPath(l)} fill={l.s.color} opacity={hoverKey !== null && hoverKey !== l.s.key ? 0.05 : 0.2} />
+            {/if}
+          {/each}
+        {/if}
+
         <!-- layers -->
         {#each layers as l, li (l.s.key)}
           {@const dim = hoverKey !== null && hoverKey !== l.s.key}
@@ -519,10 +542,6 @@
             {/if}
           {/if}
         {/each}
-
-        {#if showBand}
-          <path class="band" d={bandPath} />
-        {/if}
 
         <!-- hover -->
         {#if hoverI !== null}
@@ -545,6 +564,7 @@
             <span class="tt-label">{r.s.label}</span>
             <span class="tt-val">{fmtValue(r.v)}</span>
             {#if live.length > 1 && mode !== 'line'}<span class="tt-share">{Math.round(r.share * 100)}%</span>{/if}
+            {#if showBands && r.s.band}<span class="tt-range">{fmtValue(r.s.band.min[hoverI])} – {fmtValue(r.s.band.max[hoverI])}</span>{/if}
           </div>
         {/each}
         {#if live.length > 1}
@@ -553,14 +573,6 @@
             <span class="tt-label">Total</span>
             <span class="tt-val">{fmtValue(totals[hoverI])}</span>
             {#if mode !== 'line'}<span class="tt-share"></span>{/if}
-          </div>
-        {/if}
-        {#if showBand && frame.band}
-          <div class="tt-row band-row">
-            <span class="swatch band-swatch"></span>
-            <span class="tt-label">Low – high</span>
-            <span class="tt-val">{fmtValue(frame.band.min[hoverI])} – {fmtValue(frame.band.max[hoverI])}</span>
-            {#if live.length > 1 && mode !== 'line'}<span class="tt-share"></span>{/if}
           </div>
         {/if}
         {#if unit}<div class="tt-unit">{unit}</div>{/if}
@@ -612,16 +624,14 @@
     pointer-events: none;
   }
   .band {
-    fill: var(--ink);
-    opacity: 0.13;
     pointer-events: none;
+    transition: opacity 0.2s;
   }
-  .band-swatch {
-    background: var(--ink);
-    opacity: 0.3;
-  }
-  .band-row {
+  .tt-range {
     color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    margin-left: 8px;
   }
   .line {
     fill: none;
