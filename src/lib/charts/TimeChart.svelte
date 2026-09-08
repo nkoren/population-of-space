@@ -300,9 +300,12 @@
       }
       return d;
     }
+    // A zero next to a non-zero point is kept: it is the bin boundary a bump rises from or
+    // falls to. A zero flanked by zeros is a gap.
+    const y = gl.y1;
     return (
       line<number>()
-        .defined((g) => gl.y1[g] > EPS)
+        .defined((g) => y[g] > EPS || (g > 0 && y[g - 1] > EPS) || (g + 1 < y.length && y[g + 1] > EPS))
         .x((g) => xScale(grid.t[g]))
         .y((g) => yScale(gl.y1[g]))
         .curve(curveLinear)(gridIdx) ?? ''
