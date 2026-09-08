@@ -31,12 +31,26 @@
   // of the count halves the row pitch, the type size and the lead lines' opacity, down to `minScale`.
   const scale = $derived(Math.max(minScale, Math.min(1, 4 / Math.max(1, moments.length))));
   const pitch = $derived(rowHeight * scale);
+  // Row tops: the regular pitch, except that a label which wrapped taller than its row (narrow
+  // screens) pushes the rows below it down instead of overlapping them.
+  const tops = $derived.by(() => {
+    const out: number[] = [];
+    let y = 8;
+    for (let i = 0; i < moments.length; i++) {
+      out.push(y);
+      y += Math.max(pitch, (heights[i] ?? 0) + 6 * scale);
+    }
+    return { rows: out, total: y };
+  });
+  const flip = (x: number) => x > width * 0.6;
+  // The label may extend from its marker to the nearer edge of the chart, but no further.
+  const budget = (x: number) => Math.max(0, (flip(x) ? x : width - x) - 8);
 </script>
 
-<div class="moments" class:portraits style:height="{moments.length * pitch + 8}px" style:--scale={scale}>
+<div class="moments" class:portraits style:height="{tops.total}px" style:--scale={scale}>
   {#each moments as mo, i (mo.key)}
-    <div class="line" style:left="{mo.x}px" style:height="{i * pitch + 8 + (heights[i] ?? 0)}px"></div>
-    <div class="label" class:flip={mo.x > width * 0.7} style:left="{mo.x}px" style:top="{i * pitch + 8}px" bind:clientHeight={heights[i]}>
+    <div class="line" style:left="{mo.x}px" style:height="{tops.rows[i] + (heights[i] ?? 0)}px"></div>
+    <div class="label" class:flip={flip(mo.x)} style:left="{mo.x}px" style:top="{tops.rows[i]}px" style:max-width="{budget(mo.x)}px" bind:clientHeight={heights[i]}>
       {#if portraits && mo.image}
         <img class="portrait" src={mo.image} alt={mo.credit ? `${mo.alt ?? mo.title}. ${mo.credit}` : (mo.alt ?? mo.title)} title={mo.credit} style:object-position={mo.focus} />
       {/if}
@@ -67,6 +81,7 @@
     gap: 14px;
     padding: calc(3px * var(--scale, 1)) calc(10px * var(--scale, 1)) calc(4px * var(--scale, 1));
     margin-left: 6px;
+    z-index: 1;
     background: var(--moments-bg, var(--bg));
     border-radius: 6px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.85);
@@ -113,10 +128,29 @@
   .portraits .sub {
     font-size: 0.78rem;
   }
+  .text {
+    min-width: 0;
+  }
   @media (max-width: 700px) {
     .label {
       white-space: normal;
-      max-width: 240px;
+      gap: 10px;
+    }
+    .portraits .label {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 8px 10px 6px;
+    }
+    .portraits .label.flip {
+      align-items: flex-end;
+    }
+    .portrait {
+      width: 56px;
+      height: 56px;
+    }
+    .portraits .title {
+      font-size: 1.05rem;
     }
   }
 </style>

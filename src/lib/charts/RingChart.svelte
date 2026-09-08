@@ -42,7 +42,8 @@
   let width = $state(800);
   const frame = $derived(tween.current.filter((s) => s.value > 1e-9));
   const sum = $derived(frame.reduce((a, s) => a + s.value, 0));
-  const size = $derived(Math.min(height, wide ? width : width * 0.6, 460));
+  // Below ~480px the legend wraps underneath the ring, so the ring may take the full width.
+  const size = $derived(Math.min(height, wide || !legend || width < 480 ? width : width * 0.6, 460));
   const r = $derived(size / 2 - 8);
   const inner = $derived(r * hole);
 
@@ -116,6 +117,7 @@
     gap: 32px;
     flex-wrap: wrap;
     width: 100%;
+    min-width: 0;
   }
   svg {
     display: block;
@@ -147,7 +149,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    min-width: 240px;
+    min-width: min(240px, 100%);
     max-width: 340px;
     font-size: 13px;
   }

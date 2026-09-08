@@ -253,7 +253,13 @@
   let width4 = $state(0);
   const place = (mos: ReturnType<typeof withTime>, layout: { markerX: number[] }) => mos.map((mo, i) => ({ key: mo.flight, x: layout.markerX[i] ?? 0, ...mo }));
   const CHART_H = 240;
+  let pageWidth = $state(1000);
+  const narrow = $derived(pageWidth < 600);
+  const RING_H = $derived(narrow ? 260 : 340);
+  const CONC_RING_H = $derived(narrow ? 240 : 300);
 </script>
+
+<svelte:window bind:innerWidth={pageWidth} />
 
 <article class="container page">
   <header class="intro">
@@ -357,7 +363,7 @@
     <div class="rings">
       {#each rings as r (r.code)}
         <a class="chart-link ring-link" href={exploreRing(r.code)} title="Open this chart in the explorer">
-          <RingChart totals={r.totals} unit={r.unit} height={340} legend={false} hole={0.8} wide centerImage={r.flag} centerAlt={r.flagAlt} />
+          <RingChart totals={r.totals} unit={r.unit} height={RING_H} legend={false} hole={0.8} wide centerImage={r.flag} centerAlt={r.flagAlt} />
         </a>
       {/each}
     </div>
@@ -472,11 +478,11 @@
     <div class="rings conclusion-rings">
       <a class="chart-link ring-link" href={router.href('explore', { m: 'population', by: 'nationality', c: 'ring', from: '1960', to: String(maxYear), fd: 'sex', fv: 'F' })} title="Open this chart in the explorer">
         <h3 class="ring-title">All women's time in space, by nationality</h3>
-        <RingChart totals={womenByNation.totals} unit={womenByNation.unit} height={300} />
+        <RingChart totals={womenByNation.totals} unit={womenByNation.unit} height={CONC_RING_H} />
       </a>
       <div class="ring-link">
         <h3 class="ring-title">In space right now</h3>
-        <RingChart totals={nowBySex.totals} unit="people" height={300} />
+        <RingChart totals={nowBySex.totals} unit="people" height={CONC_RING_H} />
         <p class="small faint now-names">
           {#each ['F', 'M'] as const as k}
             {#if nowBySex.names(k).length}<span><b>{k === 'F' ? 'Women' : 'Men'}:</b> {nowBySex.names(k).join(', ')}.</span> {/if}
@@ -624,10 +630,38 @@
   }
   .ring-link {
     padding: 12px 8px 12px;
+    min-width: 0;
   }
   @media (max-width: 600px) {
+    .page {
+      padding-top: 24px;
+      padding-bottom: 56px;
+    }
+    .intro {
+      margin-bottom: 36px;
+    }
+    h1 {
+      font-size: 2.2rem;
+    }
+    .chapter h2 {
+      font-size: 1.45rem;
+    }
+    .chapter.sub h3 {
+      font-size: 1.1rem;
+    }
+    .prose p {
+      font-size: 1rem;
+    }
     .rings {
       grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .ring-link {
+      padding: 8px 0;
+    }
+    .nation-grid {
+      grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+      gap: 16px 8px;
     }
   }
 </style>

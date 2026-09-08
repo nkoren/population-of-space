@@ -86,4 +86,19 @@
       font-size: 0.85rem;
     }
   }
+  @media (max-width: 380px) {
+    .bar {
+      gap: 6px;
+    }
+    nav {
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a {
+      padding: 0 7px;
+      font-size: 0.8rem;
+      height: 30px;
+    }
+  }
 </style>
