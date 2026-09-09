@@ -136,11 +136,11 @@
   ];
   const exploreRing = (code: string) => router.href('explore', { m: 'population', by: 'sex', c: 'ring', from: '1980', to: '2000', fd: 'launchNation', fv: code });
 
-  // ---- population by sex through the ISS era, year by year
+  // ---- population by sex through the ISS era, month by month
   const issEra = aggregate(ds, {
     metric: 'population',
     dimension: dimensionById('sex'),
-    resolution: 'year',
+    resolution: 'month',
     from: Date.UTC(2000, 0, 1),
     to: Date.UTC(2021, 0, 1),
   });
@@ -200,14 +200,16 @@
     const isOther = (x: { label: string }) => x.label === 'Other';
     return { ...t, totals: [...t.totals].sort((a, b) => Number(isOther(a)) - Number(isOther(b)) || b.value - a.value) };
   })();
+  const sexColor = (k: string) => firstRace.series.find((x) => x.key === k)?.color ?? '';
   const nowBySex = (() => {
     const up = ds.stays.filter((st) => st.ongoing);
-    const sexColor = (k: string) => firstRace.series.find((x) => x.key === k)?.color ?? '';
     return {
       totals: (['M', 'F'] as const).map((k) => ({ key: k, label: k === 'M' ? 'Men' : 'Women', color: sexColor(k), value: up.filter((st) => st.person.sex === k).length })),
       names: (k: 'M' | 'F') => up.filter((st) => st.person.sex === k).map((st) => st.person.name),
     };
   })();
+  // ---- lead figure: how long space has been continuously occupied by each sex
+  // (suborbital hops excluded from the streaks)
   const orbital = ds.stays.filter((st) => st.up.destination !== 'suborbital');
   const menSince = occupiedSince(orbital.filter((st) => st.person.sex === 'M'));
   const womenSince = occupiedSince(orbital.filter((st) => st.person.sex === 'F'));
@@ -232,9 +234,19 @@
   };
   const plural = (n: number, w: string) => `${fmtInt(n)} ${w}${n === 1 ? '' : 's'}`;
   const fmtElapsed = (e: ReturnType<typeof elapsed>) => (e ? [plural(e.years, 'year'), plural(e.days, 'day'), plural(e.hours, 'hour'), plural(e.minutes, 'minute')].join(', ') : '');
+  /** The two streak bars, longest first, each as a fraction of the longest. */
+  const streaks = $derived.by(() => {
+    const rows = [
+      { key: 'M', label: 'Men', since: menSince },
+      { key: 'F', label: 'Women', since: womenSince },
+    ].map((r) => ({ ...r, color: sexColor(r.key), ms: r.since === null ? 0 : Math.max(0, now - r.since) }));
+    const max = Math.max(1, ...rows.map((r) => r.ms));
+    return rows.map((r) => ({ ...r, frac: r.ms / max, elapsed: elapsed(r.since) }));
+  });
 
   /** The same view in the explorer; each chart links to its own. */
-  const explore = (from: number, to: number, r: 'exact' | 'month' | 'year') => router.href('explore', { m: 'population', by: 'sex', r, c: 'stacked', from: String(from), to: String(to) });
+  const explore = (from: number, to: number, r: 'exact' | 'month' | 'year', c: 'stacked' | 'line' = 'stacked') =>
+    router.href('explore', { m: 'population', by: 'sex', r, c, from: String(from), to: String(to) });
 
   const launchOf = (flight: string) => Date.parse(ds.flightById.get(flight)!.launch);
   const withTime = (mos: typeof WOMEN_IN_SPACE_MOMENTS) => mos.map((mo) => ({ ...mo, t: launchOf(mo.flight) }));
@@ -267,15 +279,40 @@
     <h1>Women in space</h1>
     <div class="prose">
       <p>
-        For most of the history of human spaceflight, the population of space has been almost entirely male. Of the
-        <strong>{fmtInt(everyone)} people</strong> who have crossed the Kármán line, <strong>{fmtInt(women)}</strong> have
-        been women: about <strong>{fmtPct(womenShare)}</strong>. That is not a story of ability. The first women to fly were
-        excluded from the astronaut corps by rules written around military test pilots, and for two decades after the first
-        woman reached orbit no other woman followed her.
+        Of the <strong>{fmtInt(everyone)} people</strong> who have crossed the Kármán line, <strong>{fmtInt(women)}</strong>
+        have been women: about <strong>{fmtPct(womenShare)}</strong>. One pair of numbers says the most. Since the first
+        crew moved into the International Space Station, there has been a man in space every second. Women's presence
+        has been broken again and again.
       </p>
+    </div>
+
+    <figure class="streaks" aria-label="How long space has been continuously occupied by men and by women">
+      <figcaption>Space has been continuously occupied by…</figcaption>
+      {#each streaks as r (r.key)}
+        <div class="streak">
+          <div class="streak-head">
+            <span class="streak-label"><span class="swatch" style:background={r.color}></span>{r.label}</span>
+            {#if r.since !== null}
+              <span class="streak-since faint">without a break since {fmtDate(new Date(r.since))}</span>
+            {/if}
+          </div>
+          <div class="streak-bar">
+            <div class="streak-fill" style:width="{r.frac * 100}%" style:background={r.color}></div>
+          </div>
+          <div class="streak-value counter">
+            {#if r.since !== null}{fmtElapsed(r.elapsed)}{:else}No {r.label.toLowerCase()} in space right now.{/if}
+          </div>
+        </div>
+      {/each}
+      <p class="small faint streak-note">Orbital flights only. The clocks run live.</p>
+    </figure>
+
+    <div class="prose">
       <p>
-        The picture is changing. Women now fly on most crew rotations, command stations and lead spacewalks. But the gap
-        built up over sixty years is large, and the charts below show how far there still is to go.
+        That is not a story of ability. The first women to fly were excluded from the astronaut corps by rules written
+        around military test pilots, and for two decades after the first woman reached orbit no other woman followed
+        her. Women now fly on most crew rotations, command stations and lead spacewalks, but the gap built up over sixty
+        years is large. The charts below show how it grew, era by era.
       </p>
     </div>
   </header>
@@ -283,7 +320,8 @@
   <section class="chapter">
     <h2>Women in the First Space Race (1960–1980)</h2>
 
-    <div class="figure">
+    <div class="figure swipe">
+      <div class="swipe-inner">
       <a class="chart-link" href={explore(1960, 1980, 'exact')} title="Open this chart in the explorer" bind:clientWidth={width1}>
         <TimeChart
           agg={firstRace}
@@ -297,6 +335,7 @@
         />
       </a>
       <Moments width={width1} moments={place(raceMoments, layout1)} />
+      </div>
     </div>
 
     <div class="prose">
@@ -321,7 +360,8 @@
   <section class="chapter">
     <h2>Women in the Shuttle/Mir Era (1980–2000)</h2>
 
-    <div class="figure">
+    <div class="figure swipe">
+      <div class="swipe-inner">
       <a class="chart-link" href={explore(1980, 2000, 'month')} title="Open this chart in the explorer" bind:clientWidth={width2}>
         <TimeChart
           agg={shuttleMir}
@@ -335,6 +375,7 @@
         />
       </a>
       <Moments width={width2} moments={place(eraMoments, layout2)} portraits={false} />
+      </div>
     </div>
 
     <div class="prose">
@@ -371,11 +412,12 @@
   <section class="chapter">
     <h2>Women in the ISS Era (2000–2020)</h2>
 
-    <div class="figure">
-      <a class="chart-link" href={explore(2000, 2020, 'year')} title="Open this chart in the explorer" bind:clientWidth={width3}>
+    <div class="figure swipe">
+      <div class="swipe-inner">
+      <a class="chart-link" href={explore(2000, 2020, 'month', 'line')} title="Open this chart in the explorer" bind:clientWidth={width3}>
         <TimeChart
           agg={issEra}
-          mode="stacked"
+          mode="line"
           unit="people"
           height={CHART_H}
           legend={false}
@@ -385,6 +427,7 @@
         />
       </a>
       <Moments width={width3} moments={place(issMoments, layout3)} portraits={false} />
+      </div>
     </div>
 
     <div class="prose">
@@ -403,8 +446,8 @@
         The era had its losses too. Kalpana Chawla and Laurel Clark died with the rest of the Columbia crew in February
         2003, and it was Eileen Collins who commanded the Shuttle's return to flight two years later. But the wider trend
         was slow. With station crews fixed at six, and most seats filled by rotation, the share of women in orbit in any
-        given year tracked the make-up of the astronaut corps rather than any single milestone: the pink band widens, but
-        it never comes close to half.
+        given month tracked the make-up of the astronaut corps rather than any single milestone: the women's line
+        climbs, but it never comes close to the men's.
       </p>
     </div>
   </section>
@@ -412,7 +455,8 @@
   <section class="chapter">
     <h2>Women in the Dragon / Tiangong Era (2020–{maxYear})</h2>
 
-    <div class="figure">
+    <div class="figure swipe">
+      <div class="swipe-inner">
       <a class="chart-link" href={explore(2020, maxYear, 'month')} title="Open this chart in the explorer" bind:clientWidth={width4}>
         <TimeChart
           agg={dragonEra}
@@ -426,6 +470,7 @@
         />
       </a>
       <Moments width={width4} moments={place(dragonMoments, layout4)} portraits={false} />
+      </div>
     </div>
 
     <div class="prose">
@@ -458,20 +503,6 @@
         closest to parity, and even there women account for well under a third. Russia, which has logged more person-days
         than any other nation, sits near the bottom, and most of the fifty-odd countries that have sent someone to space
         have never sent a woman.
-      </p>
-      <p>
-        {#if menSince !== null}
-          Space has been continuously occupied by men for <strong class="counter">{fmtElapsed(elapsed(menSince))}</strong>,
-          since {fmtDate(new Date(menSince))}.
-        {:else}
-          No man is in space right now.
-        {/if}
-        {#if womenSince !== null}
-          It has been continuously occupied by women for <strong class="counter">{fmtElapsed(elapsed(womenSince))}</strong>,
-          since {fmtDate(new Date(womenSince))}.
-        {:else}
-          No woman is in space right now.
-        {/if}
       </p>
     </div>
 
@@ -603,6 +634,65 @@
     font-variant-numeric: tabular-nums;
     color: var(--ink);
   }
+  /* Lead figure: one bar per sex, proportional to how long it has been continuously in space. */
+  .streaks {
+    max-width: 720px;
+    margin: 32px auto 36px;
+  }
+  .streaks figcaption {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+  }
+  .streak + .streak {
+    margin-top: 18px;
+  }
+  .streak-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+  }
+  .streak-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+  }
+  .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+  .streak-since {
+    font-size: 0.85rem;
+    text-align: right;
+  }
+  .streak-bar {
+    height: 22px;
+    border-radius: 4px;
+    background: var(--bg-muted);
+    overflow: hidden;
+  }
+  .streak-fill {
+    height: 100%;
+    min-width: 3px;
+    border-radius: 4px;
+    transition: width 1s linear;
+  }
+  .streak-value {
+    margin-top: 6px;
+    font-size: 1.2rem;
+  }
+  .streak-note {
+    margin: 14px 0 0;
+  }
+  /* Time-chart figures: on narrow screens the chart is a few screens wide and swipes sideways. */
+  .swipe-inner {
+    width: 100%;
+  }
   .conclusion-rings {
     max-width: none;
     margin-bottom: 40px;
@@ -662,6 +752,28 @@
     .nation-grid {
       grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
       gap: 16px 8px;
+    }
+    .streak-head {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+    .streak-since {
+      text-align: left;
+    }
+    .streak-value {
+      font-size: 1rem;
+    }
+    .swipe {
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      margin-left: calc(-1 * var(--gutter));
+      margin-right: calc(-1 * var(--gutter));
+      padding: 0 var(--gutter);
+    }
+    .swipe-inner {
+      width: 340vw;
     }
   }
 </style>
