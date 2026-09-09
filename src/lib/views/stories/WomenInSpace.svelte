@@ -88,6 +88,7 @@
   import RingChart from '$lib/charts/RingChart.svelte';
   import Moments from '$lib/charts/Moments.svelte';
   import { router } from '$lib/router.svelte';
+  import { fade } from 'svelte/transition';
 
   let { ds }: { ds: Dataset } = $props();
 
@@ -230,19 +231,55 @@
     const hours = Math.floor(ms / 3600e3);
     ms -= hours * 3600e3;
     const minutes = Math.floor(ms / 60e3);
-    return { years, days, hours, minutes };
+    ms -= minutes * 60e3;
+    const seconds = Math.floor(ms / 1e3);
+    return { years, days, hours, minutes, seconds };
   };
   const plural = (n: number, w: string) => `${fmtInt(n)} ${w}${n === 1 ? '' : 's'}`;
   const fmtElapsed = (e: ReturnType<typeof elapsed>) => (e ? [plural(e.years, 'year'), plural(e.days, 'day'), plural(e.hours, 'hour'), plural(e.minutes, 'minute')].join(', ') : '');
-  /** The two streak bars, longest first, each as a fraction of the longest. */
-  const streaks = $derived.by(() => {
-    const rows = [
+  /** The two live clocks: big figures, small units, ticking once a second. */
+  const pad2 = (n: number) => String(n).padStart(2, '0');
+  const clocks = $derived(
+    [
       { key: 'M', label: 'Men', since: menSince },
       { key: 'F', label: 'Women', since: womenSince },
-    ].map((r) => ({ ...r, color: sexColor(r.key), ms: r.since === null ? 0 : Math.max(0, now - r.since) }));
-    const max = Math.max(1, ...rows.map((r) => r.ms));
-    return rows.map((r) => ({ ...r, frac: r.ms / max, elapsed: elapsed(r.since) }));
-  });
+    ].map((r) => {
+      const e = elapsed(r.since);
+      const digits = e
+        ? [
+            { n: String(e.years), unit: e.years === 1 ? 'year' : 'years' },
+            { n: String(e.days), unit: e.days === 1 ? 'day' : 'days' },
+            { n: pad2(e.hours), unit: e.hours === 1 ? 'hour' : 'hours' },
+            { n: pad2(e.minutes), unit: e.minutes === 1 ? 'minute' : 'minutes' },
+            { n: pad2(e.seconds), unit: e.seconds === 1 ? 'second' : 'seconds' },
+          ]
+        : null;
+      return { ...r, color: sexColor(r.key), digits };
+    }),
+  );
+
+  // ---- backdrop: one photograph per chapter, crossfading as the reader scrolls
+  const BACKDROPS = [
+    { id: 'intro', image: img('iss-2011.jpg'), credit: 'NASA · S134-E-010137 · the ISS from a departing Soyuz, 2011', pos: 'center 40%' },
+    { id: 'race', image: img('apollo-11-launch.jpg'), credit: 'NASA · GPN-2000-000630 · Apollo 11 lifts off, 16 July 1969', pos: 'center 30%' },
+    { id: 'shuttle-mir', image: img('mmu-1984.jpg'), credit: 'NASA · S84-27031 · Bruce McCandless untethered above Earth, 1984', pos: 'center 30%' },
+    { id: 'iss', image: img('atlantis-sts132-2010.jpg'), credit: 'NASA · STS-132 · Atlantis in orbit after undocking from the ISS, 2010', pos: 'center' },
+    { id: 'dragon', image: img('shenzhou-13.jpg'), credit: 'China Manned Space Engineering Office · Shenzhou 13 spacewalk, 2021 · CC BY 4.0', pos: 'center 30%' },
+    { id: 'conclusion', image: img('tiangong-2023.jpg'), credit: 'China Manned Space Engineering Office · Tiangong from Shenzhou 15, 2023 · CC BY 4.0', pos: 'center' },
+  ];
+  let backdrop = $state('intro');
+  const backdropCredit = $derived(BACKDROPS.find((b) => b.id === backdrop)?.credit ?? '');
+  /** Action: the chapter crossing the middle of the viewport picks the backdrop. */
+  const chapter = (node: HTMLElement, id: string) => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) backdrop = id;
+      },
+      { rootMargin: '-50% 0px -50% 0px', threshold: 0 },
+    );
+    io.observe(node);
+    return { destroy: () => io.disconnect() };
+  };
 
   /** The same view in the explorer; each chart links to its own. */
   const explore = (from: number, to: number, r: 'exact' | 'month' | 'year', c: 'stacked' | 'line' = 'stacked') =>
@@ -273,8 +310,18 @@
 
 <svelte:window bind:innerWidth={pageWidth} />
 
+<div class="backdrop" aria-hidden="true">
+  {#each BACKDROPS as b (b.id)}
+    <img src={b.image} alt="" class:on={b.id === backdrop} style:object-position={b.pos} decoding="async" />
+  {/each}
+  <div class="scrim"></div>
+</div>
+{#key backdrop}
+  <p class="backdrop-credit" transition:fade={{ duration: 2000 }}>{backdropCredit}</p>
+{/key}
+
 <article class="container page">
-  <header class="intro">
+  <header class="intro" use:chapter={'intro'}>
     <p class="kicker">Story</p>
     <h1>Women in space</h1>
     <div class="prose">
@@ -286,25 +333,26 @@
       </p>
     </div>
 
-    <figure class="streaks" aria-label="How long space has been continuously occupied by men and by women">
+    <figure class="clocks" aria-label="How long space has been continuously occupied by men and by women">
       <figcaption>Space has been continuously occupied by…</figcaption>
-      {#each streaks as r (r.key)}
-        <div class="streak">
-          <div class="streak-head">
-            <span class="streak-label"><span class="swatch" style:background={r.color}></span>{r.label}</span>
-            {#if r.since !== null}
-              <span class="streak-since faint">without a break since {fmtDate(new Date(r.since))}</span>
-            {/if}
+      {#each clocks as r (r.key)}
+        <div class="clock">
+          <div class="clock-head">
+            <span class="clock-label"><span class="swatch" style:background={r.color}></span>{r.label}</span>
+            {#if r.since !== null}<span class="faint">without a break since {fmtDate(new Date(r.since))}</span>{/if}
           </div>
-          <div class="streak-bar">
-            <div class="streak-fill" style:width="{r.frac * 100}%" style:background={r.color}></div>
-          </div>
-          <div class="streak-value counter">
-            {#if r.since !== null}{fmtElapsed(r.elapsed)}{:else}No {r.label.toLowerCase()} in space right now.{/if}
-          </div>
+          {#if r.digits}
+            <div class="digits counter">
+              {#each r.digits as d (d.unit)}
+                <span class="digit"><span class="num">{d.n}</span><span class="unit">{d.unit}</span></span>
+              {/each}
+            </div>
+          {:else}
+            <div class="digits"><span class="num none">No {r.label.toLowerCase()} in space right now.</span></div>
+          {/if}
         </div>
       {/each}
-      <p class="small faint streak-note">Orbital flights only. The clocks run live.</p>
+      <p class="small faint clock-note">Orbital flights only.</p>
     </figure>
 
     <div class="prose">
@@ -317,7 +365,7 @@
     </div>
   </header>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'race'}>
     <h2>Women in the First Space Race (1960–1980)</h2>
 
     <div class="figure swipe">
@@ -357,7 +405,7 @@
     </div>
   </section>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'shuttle-mir'}>
     <h2>Women in the Shuttle/Mir Era (1980–2000)</h2>
 
     <div class="figure swipe">
@@ -409,7 +457,7 @@
       {/each}
     </div>
   </section>
-  <section class="chapter">
+  <section class="chapter" use:chapter={'iss'}>
     <h2>Women in the ISS Era (2000–2020)</h2>
 
     <div class="figure swipe">
@@ -452,7 +500,7 @@
     </div>
   </section>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'dragon'}>
     <h2>Women in the Dragon / Tiangong Era (2020–{maxYear})</h2>
 
     <div class="figure swipe">
@@ -493,7 +541,7 @@
     </div>
   </section>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'conclusion'}>
     <h2>Conclusion</h2>
     <div class="prose">
       <p>
@@ -634,28 +682,28 @@
     font-variant-numeric: tabular-nums;
     color: var(--ink);
   }
-  /* Lead figure: one bar per sex, proportional to how long it has been continuously in space. */
-  .streaks {
+  /* Lead figure: two live clocks, big figures and small units, ticking once a second. */
+  .clocks {
     max-width: 720px;
-    margin: 32px auto 36px;
+    margin: 36px auto 40px;
   }
-  .streaks figcaption {
+  .clocks figcaption {
     font-family: var(--font-display);
     font-size: 1.35rem;
-    margin-bottom: 14px;
+    margin-bottom: 18px;
   }
-  .streak + .streak {
-    margin-top: 18px;
+  .clock + .clock {
+    margin-top: 26px;
   }
-  .streak-head {
+  .clock-head {
     display: flex;
-    justify-content: space-between;
     align-items: baseline;
-    gap: 12px;
-    margin-bottom: 6px;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
     font-size: 0.95rem;
   }
-  .streak-label {
+  .clock-label {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -666,28 +714,86 @@
     height: 10px;
     border-radius: 2px;
   }
-  .streak-since {
-    font-size: 0.85rem;
-    text-align: right;
+  .digits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.55em;
+    row-gap: 4px;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    line-height: 1.05;
   }
-  .streak-bar {
-    height: 22px;
-    border-radius: 4px;
-    background: var(--bg-muted);
+  .digit {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.16em;
+    white-space: nowrap;
+  }
+  .num {
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .num.none {
+    font-size: 0.5em;
+    color: var(--ink-2);
+  }
+  .unit {
+    font-family: var(--font-body);
+    font-size: 0.24em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .clock-note {
+    margin: 18px 0 0;
+  }
+  /* Backdrop: a fixed full-viewport photograph per chapter, crossfading over two seconds. */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
     overflow: hidden;
+    pointer-events: none;
   }
-  .streak-fill {
+  .backdrop img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
     height: 100%;
-    min-width: 3px;
-    border-radius: 4px;
-    transition: width 1s linear;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    filter: saturate(0.9);
   }
-  .streak-value {
-    margin-top: 6px;
-    font-size: 1.2rem;
+  .backdrop img.on {
+    opacity: 1;
   }
-  .streak-note {
-    margin: 14px 0 0;
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 8, 15, 0.62) 0%, rgba(6, 8, 15, 0.8) 55%, rgba(6, 8, 15, 0.9) 100%);
+  }
+  .backdrop-credit {
+    position: fixed;
+    right: 12px;
+    bottom: 10px;
+    z-index: 1;
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    text-align: right;
+    max-width: 60vw;
+    pointer-events: none;
+  }
+  .page {
+    position: relative;
+    z-index: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .backdrop img {
+      transition: none;
+    }
   }
   /* Time-chart figures: on narrow screens the chart is a few screens wide and swipes sideways. */
   .swipe-inner {
@@ -753,16 +859,11 @@
       grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
       gap: 16px 8px;
     }
-    .streak-head {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 2px;
+    .clock-head {
+      gap: 2px 10px;
     }
-    .streak-since {
-      text-align: left;
-    }
-    .streak-value {
-      font-size: 1rem;
+    .backdrop-credit {
+      display: none;
     }
     .swipe {
       overflow-x: auto;
