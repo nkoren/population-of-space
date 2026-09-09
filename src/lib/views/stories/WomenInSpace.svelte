@@ -88,6 +88,7 @@
   import RingChart from '$lib/charts/RingChart.svelte';
   import Moments from '$lib/charts/Moments.svelte';
   import { router } from '$lib/router.svelte';
+  import { fade } from 'svelte/transition';
 
   let { ds }: { ds: Dataset } = $props();
 
@@ -136,11 +137,11 @@
   ];
   const exploreRing = (code: string) => router.href('explore', { m: 'population', by: 'sex', c: 'ring', from: '1980', to: '2000', fd: 'launchNation', fv: code });
 
-  // ---- population by sex through the ISS era, year by year
+  // ---- population by sex through the ISS era, month by month
   const issEra = aggregate(ds, {
     metric: 'population',
     dimension: dimensionById('sex'),
-    resolution: 'year',
+    resolution: 'month',
     from: Date.UTC(2000, 0, 1),
     to: Date.UTC(2021, 0, 1),
   });
@@ -200,14 +201,16 @@
     const isOther = (x: { label: string }) => x.label === 'Other';
     return { ...t, totals: [...t.totals].sort((a, b) => Number(isOther(a)) - Number(isOther(b)) || b.value - a.value) };
   })();
+  const sexColor = (k: string) => firstRace.series.find((x) => x.key === k)?.color ?? '';
   const nowBySex = (() => {
     const up = ds.stays.filter((st) => st.ongoing);
-    const sexColor = (k: string) => firstRace.series.find((x) => x.key === k)?.color ?? '';
     return {
       totals: (['M', 'F'] as const).map((k) => ({ key: k, label: k === 'M' ? 'Men' : 'Women', color: sexColor(k), value: up.filter((st) => st.person.sex === k).length })),
       names: (k: 'M' | 'F') => up.filter((st) => st.person.sex === k).map((st) => st.person.name),
     };
   })();
+  // ---- lead figure: how long space has been continuously occupied by each sex
+  // (suborbital hops excluded from the streaks)
   const orbital = ds.stays.filter((st) => st.up.destination !== 'suborbital');
   const menSince = occupiedSince(orbital.filter((st) => st.person.sex === 'M'));
   const womenSince = occupiedSince(orbital.filter((st) => st.person.sex === 'F'));
@@ -228,13 +231,59 @@
     const hours = Math.floor(ms / 3600e3);
     ms -= hours * 3600e3;
     const minutes = Math.floor(ms / 60e3);
-    return { years, days, hours, minutes };
+    ms -= minutes * 60e3;
+    const seconds = Math.floor(ms / 1e3);
+    return { years, days, hours, minutes, seconds };
   };
   const plural = (n: number, w: string) => `${fmtInt(n)} ${w}${n === 1 ? '' : 's'}`;
   const fmtElapsed = (e: ReturnType<typeof elapsed>) => (e ? [plural(e.years, 'year'), plural(e.days, 'day'), plural(e.hours, 'hour'), plural(e.minutes, 'minute')].join(', ') : '');
+  /** The two live clocks: big figures, small units, ticking once a second. */
+  const pad2 = (n: number) => String(n).padStart(2, '0');
+  const clocks = $derived(
+    [
+      { key: 'M', label: 'Men', since: menSince },
+      { key: 'F', label: 'Women', since: womenSince },
+    ].map((r) => {
+      const e = elapsed(r.since);
+      const digits = e
+        ? [
+            { n: String(e.years), unit: e.years === 1 ? 'year' : 'years' },
+            { n: String(e.days), unit: e.days === 1 ? 'day' : 'days' },
+            { n: pad2(e.hours), unit: e.hours === 1 ? 'hour' : 'hours' },
+            { n: pad2(e.minutes), unit: e.minutes === 1 ? 'minute' : 'minutes' },
+            { n: pad2(e.seconds), unit: e.seconds === 1 ? 'second' : 'seconds' },
+          ]
+        : null;
+      return { ...r, color: sexColor(r.key), digits };
+    }),
+  );
+
+  // ---- backdrop: one photograph per chapter, crossfading as the reader scrolls
+  const BACKDROPS = [
+    { id: 'intro', image: img('iss-2011.jpg'), credit: 'NASA · S134-E-010137 · the ISS from a departing Soyuz, 2011', pos: 'center 40%' },
+    { id: 'race', image: img('apollo-11-launch.jpg'), credit: 'NASA · GPN-2000-000630 · Apollo 11 lifts off, 16 July 1969', pos: 'center 30%' },
+    { id: 'shuttle-mir', image: img('mmu-1984.jpg'), credit: 'NASA · S84-27031 · Bruce McCandless untethered above Earth, 1984', pos: 'center 30%' },
+    { id: 'iss', image: img('atlantis-sts132-2010.jpg'), credit: 'NASA · STS-132 · Atlantis in orbit after undocking from the ISS, 2010', pos: 'center' },
+    { id: 'dragon', image: img('shenzhou-13.jpg'), credit: 'China Manned Space Engineering Office · Shenzhou 13 spacewalk, 2021 · CC BY 4.0', pos: 'center 30%' },
+    { id: 'conclusion', image: img('tiangong-2023.jpg'), credit: 'China Manned Space Engineering Office · Tiangong from Shenzhou 15, 2023 · CC BY 4.0', pos: 'center' },
+  ];
+  let backdrop = $state('intro');
+  const backdropCredit = $derived(BACKDROPS.find((b) => b.id === backdrop)?.credit ?? '');
+  /** Action: the chapter crossing the middle of the viewport picks the backdrop. */
+  const chapter = (node: HTMLElement, id: string) => {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) backdrop = id;
+      },
+      { rootMargin: '-50% 0px -50% 0px', threshold: 0 },
+    );
+    io.observe(node);
+    return { destroy: () => io.disconnect() };
+  };
 
   /** The same view in the explorer; each chart links to its own. */
-  const explore = (from: number, to: number, r: 'exact' | 'month' | 'year') => router.href('explore', { m: 'population', by: 'sex', r, c: 'stacked', from: String(from), to: String(to) });
+  const explore = (from: number, to: number, r: 'exact' | 'month' | 'year', c: 'stacked' | 'line' = 'stacked') =>
+    router.href('explore', { m: 'population', by: 'sex', r, c, from: String(from), to: String(to) });
 
   const launchOf = (flight: string) => Date.parse(ds.flightById.get(flight)!.launch);
   const withTime = (mos: typeof WOMEN_IN_SPACE_MOMENTS) => mos.map((mo) => ({ ...mo, t: launchOf(mo.flight) }));
@@ -261,29 +310,66 @@
 
 <svelte:window bind:innerWidth={pageWidth} />
 
+<div class="backdrop" aria-hidden="true">
+  {#each BACKDROPS as b (b.id)}
+    <img src={b.image} alt="" class:on={b.id === backdrop} style:object-position={b.pos} decoding="async" />
+  {/each}
+  <div class="scrim"></div>
+</div>
+{#key backdrop}
+  <p class="backdrop-credit" transition:fade={{ duration: 2000 }}>{backdropCredit}</p>
+{/key}
+
 <article class="container page">
-  <header class="intro">
+  <header class="intro" use:chapter={'intro'}>
     <p class="kicker">Story</p>
     <h1>Women in space</h1>
     <div class="prose">
       <p>
-        For most of the history of human spaceflight, the population of space has been almost entirely male. Of the
-        <strong>{fmtInt(everyone)} people</strong> who have crossed the Kármán line, <strong>{fmtInt(women)}</strong> have
-        been women: about <strong>{fmtPct(womenShare)}</strong>. That is not a story of ability. The first women to fly were
-        excluded from the astronaut corps by rules written around military test pilots, and for two decades after the first
-        woman reached orbit no other woman followed her.
+        Of the <strong>{fmtInt(everyone)} people</strong> who have crossed the Kármán line, <strong>{fmtInt(women)}</strong>
+        have been women: about <strong>{fmtPct(womenShare)}</strong>. One pair of numbers says the most. Since the first
+        crew moved into the International Space Station, there has been a man in space every second. Women's presence
+        has been broken again and again.
       </p>
+    </div>
+
+    <figure class="clocks" aria-label="How long space has been continuously occupied by men and by women">
+      <figcaption>Space has been continuously occupied by…</figcaption>
+      {#each clocks as r (r.key)}
+        <div class="clock">
+          <div class="clock-head">
+            <span class="clock-label"><span class="swatch" style:background={r.color}></span>{r.label}</span>
+            {#if r.since !== null}<span class="faint">without a break since {fmtDate(new Date(r.since))}</span>{/if}
+          </div>
+          {#if r.digits}
+            <div class="digits counter">
+              {#each r.digits as d (d.unit)}
+                <span class="digit"><span class="num">{d.n}</span><span class="unit">{d.unit}</span></span>
+              {/each}
+            </div>
+          {:else}
+            <div class="digits"><span class="num none">No {r.label.toLowerCase()} in space right now.</span></div>
+          {/if}
+        </div>
+      {/each}
+      <p class="small faint clock-note">Orbital flights only.</p>
+    </figure>
+
+    <div class="prose">
       <p>
-        The picture is changing. Women now fly on most crew rotations, command stations and lead spacewalks. But the gap
-        built up over sixty years is large, and the charts below show how far there still is to go.
+        That is not a story of ability. The first women to fly were excluded from the astronaut corps by rules written
+        around military test pilots, and for two decades after the first woman reached orbit no other woman followed
+        her. Women now fly on most crew rotations, command stations and lead spacewalks, but the gap built up over sixty
+        years is large. The charts below show how it grew, era by era.
       </p>
     </div>
   </header>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'race'}>
     <h2>Women in the First Space Race (1960–1980)</h2>
 
-    <div class="figure">
+    <div class="figure swipe">
+      <div class="swipe-inner">
       <a class="chart-link" href={explore(1960, 1980, 'exact')} title="Open this chart in the explorer" bind:clientWidth={width1}>
         <TimeChart
           agg={firstRace}
@@ -297,6 +383,7 @@
         />
       </a>
       <Moments width={width1} moments={place(raceMoments, layout1)} />
+      </div>
     </div>
 
     <div class="prose">
@@ -318,10 +405,11 @@
     </div>
   </section>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'shuttle-mir'}>
     <h2>Women in the Shuttle/Mir Era (1980–2000)</h2>
 
-    <div class="figure">
+    <div class="figure swipe">
+      <div class="swipe-inner">
       <a class="chart-link" href={explore(1980, 2000, 'month')} title="Open this chart in the explorer" bind:clientWidth={width2}>
         <TimeChart
           agg={shuttleMir}
@@ -335,6 +423,7 @@
         />
       </a>
       <Moments width={width2} moments={place(eraMoments, layout2)} portraits={false} />
+      </div>
     </div>
 
     <div class="prose">
@@ -368,14 +457,15 @@
       {/each}
     </div>
   </section>
-  <section class="chapter">
+  <section class="chapter" use:chapter={'iss'}>
     <h2>Women in the ISS Era (2000–2020)</h2>
 
-    <div class="figure">
-      <a class="chart-link" href={explore(2000, 2020, 'year')} title="Open this chart in the explorer" bind:clientWidth={width3}>
+    <div class="figure swipe">
+      <div class="swipe-inner">
+      <a class="chart-link" href={explore(2000, 2020, 'month', 'line')} title="Open this chart in the explorer" bind:clientWidth={width3}>
         <TimeChart
           agg={issEra}
-          mode="stacked"
+          mode="line"
           unit="people"
           height={CHART_H}
           legend={false}
@@ -385,6 +475,7 @@
         />
       </a>
       <Moments width={width3} moments={place(issMoments, layout3)} portraits={false} />
+      </div>
     </div>
 
     <div class="prose">
@@ -403,16 +494,17 @@
         The era had its losses too. Kalpana Chawla and Laurel Clark died with the rest of the Columbia crew in February
         2003, and it was Eileen Collins who commanded the Shuttle's return to flight two years later. But the wider trend
         was slow. With station crews fixed at six, and most seats filled by rotation, the share of women in orbit in any
-        given year tracked the make-up of the astronaut corps rather than any single milestone: the pink band widens, but
-        it never comes close to half.
+        given month tracked the make-up of the astronaut corps rather than any single milestone: the women's line
+        climbs, but it never comes close to the men's.
       </p>
     </div>
   </section>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'dragon'}>
     <h2>Women in the Dragon / Tiangong Era (2020–{maxYear})</h2>
 
-    <div class="figure">
+    <div class="figure swipe">
+      <div class="swipe-inner">
       <a class="chart-link" href={explore(2020, maxYear, 'month')} title="Open this chart in the explorer" bind:clientWidth={width4}>
         <TimeChart
           agg={dragonEra}
@@ -426,6 +518,7 @@
         />
       </a>
       <Moments width={width4} moments={place(dragonMoments, layout4)} portraits={false} />
+      </div>
     </div>
 
     <div class="prose">
@@ -448,7 +541,7 @@
     </div>
   </section>
 
-  <section class="chapter">
+  <section class="chapter" use:chapter={'conclusion'}>
     <h2>Conclusion</h2>
     <div class="prose">
       <p>
@@ -458,20 +551,6 @@
         closest to parity, and even there women account for well under a third. Russia, which has logged more person-days
         than any other nation, sits near the bottom, and most of the fifty-odd countries that have sent someone to space
         have never sent a woman.
-      </p>
-      <p>
-        {#if menSince !== null}
-          Space has been continuously occupied by men for <strong class="counter">{fmtElapsed(elapsed(menSince))}</strong>,
-          since {fmtDate(new Date(menSince))}.
-        {:else}
-          No man is in space right now.
-        {/if}
-        {#if womenSince !== null}
-          It has been continuously occupied by women for <strong class="counter">{fmtElapsed(elapsed(womenSince))}</strong>,
-          since {fmtDate(new Date(womenSince))}.
-        {:else}
-          No woman is in space right now.
-        {/if}
       </p>
     </div>
 
@@ -603,6 +682,123 @@
     font-variant-numeric: tabular-nums;
     color: var(--ink);
   }
+  /* Lead figure: two live clocks, big figures and small units, ticking once a second. */
+  .clocks {
+    max-width: 720px;
+    margin: 36px auto 40px;
+  }
+  .clocks figcaption {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    margin-bottom: 18px;
+  }
+  .clock + .clock {
+    margin-top: 26px;
+  }
+  .clock-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  .clock-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+  }
+  .swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+  .digits {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 0.55em;
+    row-gap: 4px;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+    line-height: 1.05;
+  }
+  .digit {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.16em;
+    white-space: nowrap;
+  }
+  .num {
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .num.none {
+    font-size: 0.5em;
+    color: var(--ink-2);
+  }
+  .unit {
+    font-family: var(--font-body);
+    font-size: 0.24em;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .clock-note {
+    margin: 18px 0 0;
+  }
+  /* Backdrop: a fixed full-viewport photograph per chapter, crossfading over two seconds. */
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .backdrop img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    filter: saturate(0.9);
+  }
+  .backdrop img.on {
+    opacity: 1;
+  }
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6, 8, 15, 0.62) 0%, rgba(6, 8, 15, 0.8) 55%, rgba(6, 8, 15, 0.9) 100%);
+  }
+  .backdrop-credit {
+    position: fixed;
+    right: 12px;
+    bottom: 10px;
+    z-index: 1;
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--ink-3);
+    text-align: right;
+    max-width: 60vw;
+    pointer-events: none;
+  }
+  .page {
+    position: relative;
+    z-index: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .backdrop img {
+      transition: none;
+    }
+  }
+  /* Time-chart figures: on narrow screens the chart is a few screens wide and swipes sideways. */
+  .swipe-inner {
+    width: 100%;
+  }
   .conclusion-rings {
     max-width: none;
     margin-bottom: 40px;
@@ -662,6 +858,23 @@
     .nation-grid {
       grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
       gap: 16px 8px;
+    }
+    .clock-head {
+      gap: 2px 10px;
+    }
+    .backdrop-credit {
+      display: none;
+    }
+    .swipe {
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      margin-left: calc(-1 * var(--gutter));
+      margin-right: calc(-1 * var(--gutter));
+      padding: 0 var(--gutter);
+    }
+    .swipe-inner {
+      width: 340vw;
     }
   }
 </style>
