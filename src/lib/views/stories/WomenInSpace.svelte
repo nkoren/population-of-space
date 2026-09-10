@@ -101,7 +101,7 @@
   const firstRace = aggregate(ds, {
     metric: 'population',
     dimension: dimensionById('sex'),
-    resolution: 'exact',
+    resolution: 'month',
     from: Date.UTC(1960, 0, 1),
     to: Date.UTC(1981, 0, 1),
   });
@@ -370,10 +370,10 @@
 
     <div class="figure swipe">
       <div class="swipe-inner">
-      <a class="chart-link" href={explore(1960, 1980, 'exact')} title="Open this chart in the explorer" bind:clientWidth={width1}>
+      <a class="chart-link" href={explore(1960, 1980, 'month', 'line')} title="Open this chart in the explorer" bind:clientWidth={width1}>
         <TimeChart
           agg={firstRace}
-          mode="stacked"
+          mode="line"
           unit="people"
           height={CHART_H}
           legend={false}
@@ -410,10 +410,10 @@
 
     <div class="figure swipe">
       <div class="swipe-inner">
-      <a class="chart-link" href={explore(1980, 2000, 'month')} title="Open this chart in the explorer" bind:clientWidth={width2}>
+      <a class="chart-link" href={explore(1980, 2000, 'month', 'line')} title="Open this chart in the explorer" bind:clientWidth={width2}>
         <TimeChart
           agg={shuttleMir}
-          mode="stacked"
+          mode="line"
           unit="people"
           height={CHART_H}
           legend={false}
@@ -505,10 +505,10 @@
 
     <div class="figure swipe">
       <div class="swipe-inner">
-      <a class="chart-link" href={explore(2020, maxYear, 'month')} title="Open this chart in the explorer" bind:clientWidth={width4}>
+      <a class="chart-link" href={explore(2020, maxYear, 'month', 'line')} title="Open this chart in the explorer" bind:clientWidth={width4}>
         <TimeChart
           agg={dragonEra}
-          mode="stacked"
+          mode="line"
           unit="people"
           height={CHART_H}
           legend={false}
@@ -772,7 +772,7 @@
   .scrim {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(6, 8, 15, 0.62) 0%, rgba(6, 8, 15, 0.8) 55%, rgba(6, 8, 15, 0.9) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.4) 25%, rgba(0,0,0,.5) 50%, rgba(0,0,0,.4) 75%, rgba(0,0,0,0) 100%), linear-gradient(179deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 64, .2) 80%, rgba(0, 0, 255, .5) 95%, rgba(255, 64, 128, .7) 98.5%, rgba(255, 255, 128, .9) 99.5%, rgba(255,255,255,1) 100%), linear-gradient(150deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 64, .5) 80%, rgba(0, 0, 255, .7) 95%, rgba(255, 64, 128, .7) 98.5%, rgba(255, 255, 128, .9) 99.5%, rgba(255,255,255,1) 100%);
   }
   .backdrop-credit {
     position: fixed;
