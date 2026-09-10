@@ -10,6 +10,7 @@
   import { cubicOut } from 'svelte/easing';
   import type { Aggregate, Resolution, Series } from '$lib/data/engine';
   import { fmtValue, fmtCompact, fmtYear, fmtMonth, fmtDateTime } from '$lib/format';
+  import { utcFormat } from 'd3-time-format';
 
   export type ChartMode = 'stacked' | 'line' | 'share' | 'ring';
 
@@ -340,6 +341,10 @@
     const end = xScale.domain()[1].getTime();
     return xScale.ticks(Math.max(2, Math.floor(innerW / 90))).filter((t) => t.getTime() < end);
   });
+  // Tick labels: the year at January, the month name at other month starts, day-of-month within a month.
+  const fmtMon = utcFormat('%b');
+  const fmtDay = utcFormat('%-d %b');
+  const fmtXTick = (t: Date) => (t.getUTCMonth() === 0 && t.getUTCDate() === 1 ? fmtYear(t) : t.getUTCDate() === 1 ? fmtMon(t) : fmtDay(t));
   const fmtY = $derived((v: number) => (mode === 'share' ? `${Math.round(v * 100)}%` : fmtCompact(v)));
 
   // ------------------------------------------------------------ hover
@@ -537,7 +542,7 @@
           <text class="ytick" x="-8" y={yScale(t)} dy="0.32em" text-anchor="end">{fmtY(t)}</text>
         {/each}
         {#each xTicks as t}
-          <text class="xtick" x={xScale(t)} y={xAxis === 'top' ? -10 : innerH + 20} text-anchor="middle">{fmtYear(t)}</text>
+          <text class="xtick" x={xScale(t)} y={xAxis === 'top' ? -10 : innerH + 20} text-anchor="middle">{fmtXTick(t)}</text>
         {/each}
         <line class="axis" x1="0" x2={innerW} y1={innerH} y2={innerH} />
         {#if xAxis === 'top'}

@@ -18,6 +18,8 @@
     credit?: string;
     /** CSS object-position for the portrait crop */
     focus?: string;
+    /** opens in a new tab when set (the flight's Wikipedia page) */
+    href?: string;
   }
   let {
     moments,
@@ -50,7 +52,7 @@
 <div class="moments" class:portraits style:height="{tops.total}px" style:--scale={scale}>
   {#each moments as mo, i (mo.key)}
     <div class="line" style:left="{mo.x}px" style:height="{tops.rows[i] + (heights[i] ?? 0)}px"></div>
-    <div class="label" class:flip={flip(mo.x)} style:left="{mo.x}px" style:top="{tops.rows[i]}px" style:max-width="{budget(mo.x)}px" bind:clientHeight={heights[i]}>
+    <svelte:element this={mo.href ? 'a' : 'div'} href={mo.href} target={mo.href ? '_blank' : undefined} rel={mo.href ? 'noopener' : undefined} class="label" class:flip={flip(mo.x)} style:left="{mo.x}px" style:top="{tops.rows[i]}px" style:max-width="{budget(mo.x)}px" bind:clientHeight={heights[i]}>
       {#if portraits && mo.image}
         <img class="portrait" src={mo.image} alt={mo.credit ? `${mo.alt ?? mo.title}. ${mo.credit}` : (mo.alt ?? mo.title)} title={mo.credit} style:object-position={mo.focus} />
       {/if}
@@ -58,7 +60,7 @@
         <div class="title">{mo.title}</div>
         {#if mo.sub}<div class="sub">{mo.sub}</div>{/if}
       </div>
-    </div>
+    </svelte:element>
   {/each}
 </div>
 
@@ -88,6 +90,17 @@
     font-size: 0.85rem;
     line-height: 1.3;
     white-space: nowrap;
+  }
+  a.label {
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  a.label:hover {
+    background: var(--moments-bg-hover, var(--bg-elev));
+  }
+  a.label:hover .title {
+    text-decoration: underline;
   }
   .portraits .label {
     padding: 6px 14px 6px 8px;

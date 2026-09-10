@@ -69,11 +69,9 @@
     { flight: 'sts-131', title: 'Four Women in Orbit at Once', sub: 'STS-131 and Expedition 23 · April 2010' },
     { flight: 'shenzhou-9', title: 'Liu Yang: First Chinese Woman in Space', sub: 'Shenzhou 9 · June 2012' },
     { flight: 'soyuz-ms-12', title: 'Christina Koch: 328 Days, and the First All-Female Spacewalk', sub: 'ISS · March 2019 – February 2020' },
-    { flight: 'blue-origin-ns-16', title: 'Wally Funk: A Mercury 13 Pilot Finally Flies, at 82', sub: 'New Shepard · July 2021' },
     { flight: 'shenzhou-13', title: 'Wang Yaping: First Woman Aboard Tiangong, First Chinese Woman to Walk in Space', sub: 'Shenzhou 13 · October 2021' },
     { flight: 'axiom-mission-2', title: 'Rayyanah Barnawi: First Arab Woman in Space', sub: 'Axiom Mission 2 · May 2023' },
     { flight: 'polaris-dawn', title: 'Sarah Gillis and Anna Menon: First Commercial Spacewalk', sub: 'Polaris Dawn · September 2024' },
-    { flight: 'blue-origin-ns-31', title: 'First All-Female Crew Since Vostok 6', sub: 'New Shepard · April 2025' },
     { flight: 'artemis-ii', title: 'Christina Koch: First Woman to Fly to the Moon', sub: 'Artemis II · April 2026' },
   ];
 </script>
@@ -259,21 +257,33 @@
   );
 
   // ---- backdrop: one photograph per chapter, crossfading as the reader scrolls
+  // The opening R-7 launch stays up through the first space race chapter.
   const BACKDROPS = [
-    { id: 'intro', image: img('iss-2011.jpg'), credit: 'NASA · S134-E-010137 · the ISS from a departing Soyuz, 2011', pos: 'center 40%' },
-    { id: 'race', image: img('apollo-11-launch.jpg'), credit: 'NASA · GPN-2000-000630 · Apollo 11 lifts off, 16 July 1969', pos: 'center 30%' },
-    { id: 'shuttle-mir', image: img('mmu-1984.jpg'), credit: 'NASA · S84-27031 · Bruce McCandless untethered above Earth, 1984', pos: 'center 30%' },
-    { id: 'iss', image: img('atlantis-sts132-2010.jpg'), credit: 'NASA · STS-132 · Atlantis in orbit after undocking from the ISS, 2010', pos: 'center' },
+    { id: 'race', image: img('vostok-1-1961.jpg'), credit: 'Vostok 1 on the pad at Baikonur, 12 April 1961 · public domain', pos: 'center 30%' },
+    { id: 'shuttle-mir', image: img('mir-atlantis-sts71-1995.jpg'), credit: 'NASA · STS071-S-072 · Atlantis docked to Mir, seen from Soyuz, 4 July 1995', pos: 'center' },
+    { id: 'iss', image: img('kibo-sts131-2010.jpg'), credit: 'NASA · S131-E-010002 · STS-131 and Expedition 23 crews in Kibo, 14 April 2010', pos: 'center 40%' },
     { id: 'dragon', image: img('shenzhou-13.jpg'), credit: 'China Manned Space Engineering Office · Shenzhou 13 spacewalk, 2021 · CC BY 4.0', pos: 'center 30%' },
     { id: 'conclusion', image: img('tiangong-2023.jpg'), credit: 'China Manned Space Engineering Office · Tiangong from Shenzhou 15, 2023 · CC BY 4.0', pos: 'center' },
   ];
-  let backdrop = $state('intro');
+  let backdrop = $state('race');
+  // The photograph being replaced stays fully opaque underneath while the new one fades in on top,
+  // so the crossfade never dips through the dark page behind.
+  let previous = $state<string | null>(null);
+  let previousTimer: ReturnType<typeof setTimeout> | undefined;
+  const FADE_MS = 2000;
+  const showBackdrop = (id: string) => {
+    if (id === backdrop) return;
+    previous = backdrop;
+    backdrop = id;
+    clearTimeout(previousTimer);
+    previousTimer = setTimeout(() => (previous = null), FADE_MS);
+  };
   const backdropCredit = $derived(BACKDROPS.find((b) => b.id === backdrop)?.credit ?? '');
   /** Action: the chapter crossing the middle of the viewport picks the backdrop. */
   const chapter = (node: HTMLElement, id: string) => {
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) if (e.isIntersecting) backdrop = id;
+        for (const e of entries) if (e.isIntersecting) showBackdrop(id);
       },
       { rootMargin: '-50% 0px -50% 0px', threshold: 0 },
     );
@@ -286,7 +296,8 @@
     router.href('explore', { m: 'population', by: 'sex', r, c, from: String(from), to: String(to) });
 
   const launchOf = (flight: string) => Date.parse(ds.flightById.get(flight)!.launch);
-  const withTime = (mos: typeof WOMEN_IN_SPACE_MOMENTS) => mos.map((mo) => ({ ...mo, t: launchOf(mo.flight) }));
+  // Each moment links to its flight's Wikipedia article, opened in a new tab.
+  const withTime = (mos: typeof WOMEN_IN_SPACE_MOMENTS) => mos.map((mo) => ({ ...mo, t: launchOf(mo.flight), href: ds.flightById.get(mo.flight)?.wiki }));
   const raceMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(0, 1));
   const eraMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(1, 7));
   const issMoments = withTime(WOMEN_IN_SPACE_MOMENTS.slice(7, 12));
@@ -312,16 +323,16 @@
 
 <div class="backdrop" aria-hidden="true">
   {#each BACKDROPS as b (b.id)}
-    <img src={b.image} alt="" class:on={b.id === backdrop} style:object-position={b.pos} decoding="async" />
+    <img src={b.image} alt="" class:on={b.id === backdrop} class:under={b.id === previous} style:object-position={b.pos} decoding="async" />
   {/each}
   <div class="scrim"></div>
 </div>
 {#key backdrop}
-  <p class="backdrop-credit" transition:fade={{ duration: 2000 }}>{backdropCredit}</p>
+  <p class="backdrop-credit" transition:fade={{ duration: FADE_MS }}>{backdropCredit}</p>
 {/key}
 
 <article class="container page">
-  <header class="intro" use:chapter={'intro'}>
+  <header class="intro" use:chapter={'race'}>
     <p class="kicker">Story</p>
     <h1>Women in space</h1>
     <div class="prose">
@@ -638,6 +649,17 @@
   .chart-link:hover {
     background: var(--bg-muted);
   }
+  /* Time charts and their moment labels sit on 60% black so they read over the photographs. */
+  .swipe {
+    --moments-bg: rgba(0, 0, 0, 0.6);
+    --moments-bg-hover: rgba(0, 0, 0, 0.8);
+  }
+  .swipe .chart-link {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .swipe .chart-link:hover {
+    background: rgba(0, 0, 0, 0.75);
+  }
   .lede {
     max-width: 720px;
     margin: 0 auto 20px;
@@ -748,7 +770,8 @@
   .clock-note {
     margin: 18px 0 0;
   }
-  /* Backdrop: a fixed full-viewport photograph per chapter, crossfading over two seconds. */
+  /* Backdrop: a fixed full-viewport photograph per chapter. The incoming image fades in over two
+     seconds on top of the outgoing one, which stays opaque beneath it until the fade is done. */
   .backdrop {
     position: fixed;
     inset: 0;
@@ -763,11 +786,19 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 2s ease-in-out;
     filter: saturate(0.9);
+  }
+  .backdrop img.under {
+    opacity: 1;
+    z-index: 1;
   }
   .backdrop img.on {
     opacity: 1;
+    z-index: 2;
+    transition: opacity 2s ease-in-out;
+  }
+  .scrim {
+    z-index: 3;
   }
   .scrim {
     position: absolute;
@@ -791,7 +822,7 @@
     z-index: 1;
   }
   @media (prefers-reduced-motion: reduce) {
-    .backdrop img {
+    .backdrop img.on {
       transition: none;
     }
   }
